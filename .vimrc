@@ -8,7 +8,7 @@ map <S-enter> O<esc>
 map <enter> o<esc>
 iunmap <c-v>
 unmap <c-a>
-noremap q <c-v>
+noremap <c-q> <c-v>
 
 let mapleader = ","
 nnoremap <C-J> i<CR><Esc>k$
