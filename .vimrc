@@ -1,6 +1,7 @@
 source $VIMRUNTIME/mswin.vim
 runtime macros/matchit.vim
 
+set ttymouse=xterm2
 
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
 
