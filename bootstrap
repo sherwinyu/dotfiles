@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo dotfile copy over boostrap started
+pushd ~/
+mv .vimrc .vimrc_old
+mv .tmux.conf .tmux.conf_old
+mv .screenrc .screenrc_old
+mv .bashrc .screenrc_old
+
+ln -s dotfiles/.vimrc .vimrc
+ln -s dotfiles/.tmux.conf .tmux.conf
+ln -s dotfiles/.screenrc .screenrc
+ln -s dotfiles/.bashrc .bashrc
+echo dotfile copy over done!
+popd
+
+
+
