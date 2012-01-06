@@ -1,0 +1,3 @@
+"\e[1;5C": forward-word     # Ctrl+right  => forward word
+"\e[1;5D": backward-word    # Ctrl+left   => backward word
+
