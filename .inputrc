@@ -1,3 +1,26 @@
 "\e[1;5C": forward-word     # Ctrl+right  => forward word
 "\e[1;5D": backward-word    # Ctrl+left   => backward word
 
+#"\e0c": forward-word
+#"\e0d": backward-word
+
+#"\e0C": forward-word
+#["\e0D": backward-word
+
+# for tmux
+"\C-[OD" backward-word
+"\C-[OC" forward-word
+
+
+#Up/Down
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+#GNOME Terminal
+"\eOA": history-search-backward
+"\eOB": history-search-forward
+
+set completion-ignore-case On
+
+
+
+

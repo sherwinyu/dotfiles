@@ -9,8 +9,8 @@ map <S-enter> O<esc>
 map <enter> o<esc>
 iunmap <c-v>
 unmap <c-a>
-map <leader>v <c-v>
 let mapleader = ","
+map <leader>v <c-v>
 nnoremap <C-J> i<CR><Esc>k$
 unmap <c-v>
 
