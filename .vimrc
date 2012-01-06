@@ -9,10 +9,10 @@ map <S-enter> O<esc>
 map <enter> o<esc>
 iunmap <c-v>
 unmap <c-a>
-noremap <c-q> <c-v>
-
+map <leader>v <c-v>
 let mapleader = ","
 nnoremap <C-J> i<CR><Esc>k$
+unmap <c-v>
 
 set nocompatible
 set ve=block
