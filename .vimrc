@@ -128,3 +128,7 @@ fun! ShowFuncName()
 
 let g:CommandTMaxHeight=15
 
+" DiffOrig for sane recovery management. Choose (R)ecover, then call :DiffOrig to diff the recovered swap file with the original file.
+command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+  \ | wincmd p | diffthis
+
