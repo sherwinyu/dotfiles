@@ -7,12 +7,26 @@ map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
 
 map <S-enter> O<esc>
 map <enter> o<esc>
+noremap <space> i<space><esc> 
+
 iunmap <c-v>
 unmap <c-a>
 let mapleader = ","
 map <leader>v <c-v>
 nnoremap <C-J> i<CR><Esc>k$
 unmap <c-v>
+
+
+"2012 01 07 EXPERIMENTAL
+map ± 1gt
+map ² 2gt
+map ³ 3gt
+map ´ 4gt
+map µ 5gt
+map ¶ 6gt
+"2012 01 07 EXPERIMENTAL
+
+
 
 set nocompatible
 set ve=block
@@ -34,6 +48,8 @@ set softtabstop=2  "google settings
 
 set cink={,}
 set cindent
+set autoindent
+set smartindent
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 
 set guioptions-=m

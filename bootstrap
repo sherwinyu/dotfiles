@@ -8,12 +8,14 @@ mv .tmux.conf dotfiles_old
 mv .screenrc dotfiles_old
 mv .bashrc dotfiles_old
 mv .inputrc dotfiles_old
+mv .gitignore dotfiles_old
 
 ln -s dotfiles/.vimrc .vimrc
 ln -s dotfiles/.tmux.conf .tmux.conf
 ln -s dotfiles/.screenrc .screenrc
 ln -s dotfiles/.bashrc .bashrc
 ln -s dotfiles/.inputrc .inputrc
+ln -s dotfiles/.gitignore .inputrc
 echo dotfile copy over done!
 popd
 

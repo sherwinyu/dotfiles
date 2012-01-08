@@ -19,6 +19,7 @@
 "\eOA": history-search-backward
 "\eOB": history-search-forward
 
+#allow case insensitive file completion
 set completion-ignore-case On
 
 
