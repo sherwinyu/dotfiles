@@ -1,13 +1,16 @@
 source $VIMRUNTIME/mswin.vim
 runtime macros/matchit.vim
+"filetype plugin on
+"set ofu=syntaxcomplete#Complete
 
 set ttymouse=xterm2
+
 
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
 
 map <S-enter> O<esc>
 map <enter> o<esc>
-noremap <space> i<space><esc> 
+noremap <space> i<space><esc>
 
 iunmap <c-v>
 unmap <c-a>
@@ -15,6 +18,8 @@ let mapleader = ","
 map <leader>v <c-v>
 nnoremap <C-J> i<CR><Esc>k$
 unmap <c-v>
+
+set completeopt=menuone,longest  "IDE like behavior for autocompleting
 
 
 "2012 01 07 EXPERIMENTAL
