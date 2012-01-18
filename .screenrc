@@ -1,1 +1,18 @@
 escape ``
+
+hardstatus alwayslastline "%{rw}%H%{wk}|%{wr}%c%{wk}|%d%M|%?%-Lw%?%{wb}%n*%f%t%?(%u)%?%{wk}%?%+Lw%?"
+
+
+caption string "%?%F%{= Bk}%? %C%A %D %d-%m-%Y %{= kB} %t%= %?%F%{= Bk}%:%{= wk}%? %n "
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+
+hardstatus string '%{= kG}[ %{G}%H %{g}][%3= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+
+hardstatus string '%{gk}[ %{G}%H %{g}][%= %{w}%?%-w%?%{=b kR}(%{W}[%{Y}%n%{W}] %t%?(%u)%?%{=b kR})%{= kw}%?%+w%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %D %d/%M/%Y %c ]%{W}'
+
+
+
+
+
+
