@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+echo backup ~/.vim started
+pushd ~/
+mkdir ~/dotvim_old/
+
+cp -r ~/.vim/ ~/dotvim_old
+
+echo backup ~/.vim ended
+# mkdir ~/dotvim_old/plugin
+# pushd ~/.vim
+# pushd ~/plugin
+
+# mv command-t.vim ~/dotvim_old/plugin
+# mv matchit.vim ~/dotvim_old/plugin
+# mv rails.vim ~/dotvim_old/plugin
+# mv Rename.vim ~/dotvim_old/plugin
+# mv session.vim ~/dotvim_old/plugin
+# mv surround.vim ~/dotvim_old/plugin
+# popd
+# p
+
+
+
+
+
+
