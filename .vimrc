@@ -1,11 +1,11 @@
 source $VIMRUNTIME/mswin.vim
 runtime macros/matchit.vim
-"filetype plugin on
-"set ofu=syntaxcomplete#Complete
+filetype plugin on
 
-set ttymouse=xterm2
+set completeopt=menuone,longest  "IDE like behavior for autocompleting
+set ttymouse=xterm2 "what does this do???!
 
-
+let mapleader = ","
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
 
 map <S-enter> O<esc>
@@ -14,12 +14,10 @@ noremap <space> i<space><esc>
 
 iunmap <c-v>
 unmap <c-a>
-let mapleader = ","
 map <leader>v <c-v>
 nnoremap <C-J> i<CR><Esc>k$
 unmap <c-v>
 
-set completeopt=menuone,longest  "IDE like behavior for autocompleting
 
 
 "2012 01 07 EXPERIMENTAL
@@ -41,8 +39,6 @@ set textwidth=180
 set showmatch
 set ignorecase
 set smartcase
-set tabstop=4
-set shiftwidth=4
 set scrolloff=5
 set hidden
 set wildmenu
