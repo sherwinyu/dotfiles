@@ -2,10 +2,12 @@ source $VIMRUNTIME/mswin.vim
 runtime macros/matchit.vim
 filetype plugin on
 
-set completeopt=menuone,longest  "IDE like behavior for autocompleting
-set ttymouse=xterm2 "what does this do???!
 
-let mapleader = ","
+set completeopt=menuone,longest  "IDE like behavior for autocompleting
+set ttymouse=xterm "what does this do???!
+set mouse=a "allow scrolling with mouse wheel
+
+" let mapleader = "\"
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
 
 map <S-enter> O<esc>
@@ -27,7 +29,26 @@ map ³ 3gt
 map ´ 4gt
 map µ 5gt
 map ¶ 6gt
+
+map <f1> 1gt
+map <f2> 2gt
+map <f3> 3gt
+map <f4> 4gt
+map <f5> 5gt
+map <f6> 6gv
+map <leader>ev :e ~/.vimrc<CR>
+map <leader>rv :so ~/.vimrc<CR>
+
 "2012 01 07 EXPERIMENTAL
+
+"2012 01 25 EXPERIMENTAL
+inoremap kj <esc>
+imap <esc> $
+
+nmap j gj
+nmap k gk
+"2012 01 25 EXPERIMENTAL
+
 
 
 
@@ -58,6 +79,7 @@ set guioptions-=r
 set guioptions-=T
 
 "set autoindent
+
 set autowrite
 set incsearch "highlight as you go
 "set nowrap
@@ -66,7 +88,10 @@ set number
 set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
 set ww=hl "Allows h and l to move wrap lines
 "colorscheme evening
-color torte
+"color torte
+"color evening
+map <leader>hl :hi TabLineSel ctermfg=Black ctermbg=Yellow<cr>
+
 
 	syntax on
 
@@ -116,23 +141,21 @@ map <leader>sp :set path=$PWD/**<cr>
 nmap <silent> <leader>n :silent :set hlsearch!<CR>
 map <leader>cd :cd %:p:h<CR>
 map <leader>f :call ShowFuncName() <CR>
-map "< ^gi
-map "> =a#
 map <bs> X
 map <del> dl
-map cx bcw
 
 map <c-f1> :set wrap!<cr>
 
 
-map <c-f5> :e ~/.vimrc<cr>
-map <c-f6> :w<enter>:so ~/.vimrc<cr>
+" map <c-f5> :e ~/.vimrc<cr>
+" map <c-f6> :w<enter>:so ~/.vimrc<cr>
 
-map <f5> :e e:\syu\sherwin_temp.txt<cr>
-map <f6> :wq e:\syu\sherwin_temp.txt<cr>
+" map <f5> :e e:\syu\sherwin_temp.txt<cr>
+" map <f6> :wq e:\syu\sherwin_temp.txt<cr>
 "map <f6> :wq e:\temp_vim.txt<cr>
-map gs :w<CR>
-map gsq :wq<CR>
+map <leader>w :w<CR>
+map <leader>wq :wq<CR>
+map <leader>q :q<CR>
 
 fun! ShowFuncName()
 				let lnum = line(".")
