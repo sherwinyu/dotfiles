@@ -15,7 +15,7 @@ ln -s dotfiles/.tmux.conf .tmux.conf
 ln -s dotfiles/.screenrc .screenrc
 ln -s dotfiles/.bashrc .bashrc
 ln -s dotfiles/.inputrc .inputrc
-ln -s dotfiles/.gitignore .inputrc
+ln -s dotfiles/.gitignore .gitignore
 echo dotfile copy over done!
 popd
 

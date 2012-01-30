@@ -10,8 +10,8 @@ set mouse=a "allow scrolling with mouse wheel
 " let mapleader = "\"
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
 
-map <S-enter> O<esc>
-map <enter> o<esc>
+noremap <S-enter> O<esc>
+noremap <enter> o<esc>
 noremap <space> i<space><esc>
 
 iunmap <c-v>
@@ -95,8 +95,7 @@ map <leader>hl :hi TabLineSel ctermfg=Black ctermbg=Yellow<cr>
 
 	syntax on
 
-map gi i_<esc>r
-map tt 0i<tab><esc>
+noremap gi i_<esc>r
 map - ^
 noremap = $
 vnoremap & =
