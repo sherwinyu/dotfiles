@@ -1,11 +1,12 @@
 source ~/dotfiles/.git-completion.bash
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias grep='grep --color=auto'
+alias egrep='egrep --color=auto -i'
+alias fgrep='fgrep --color=auto -i'
+alias grep='grep --color=auto -i'
 alias dnstop='dnstop eth1'
-alias vim='vim.gnome'
+
 
 export INPUTRC=~/.inputrc
+export CLASSPATH=$CLASSPATH:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/mockito/mockito-all-1.9.0.jar
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 

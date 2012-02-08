@@ -21,6 +21,8 @@ nnoremap <C-J> i<CR><Esc>k$
 unmap <c-v>
 
 
+map <leader>s :%s/\s\+$//g<cr>
+map <leader>7 ggVG&<c-o><c-o>
 
 "2012 01 07 EXPERIMENTAL
 map ± 1gt
@@ -43,12 +45,15 @@ map <leader>rv :so ~/.vimrc<CR>
 
 "2012 01 25 EXPERIMENTAL
 inoremap kj <esc>
+vnoremap kj <esc>
 imap <esc> $
+vmap <esc> d
 
 nmap j gj
 nmap k gk
 "2012 01 25 EXPERIMENTAL
 
+imap <c-e> <c-o>dw " opposite of <c-w>
 
 
 
@@ -153,6 +158,7 @@ map <c-f1> :set wrap!<cr>
 " map <f6> :wq e:\syu\sherwin_temp.txt<cr>
 "map <f6> :wq e:\temp_vim.txt<cr>
 map <leader>w :w<CR>
+map <leader>wa :wa<CR>
 map <leader>wq :wq<CR>
 map <leader>q :q<CR>
 
