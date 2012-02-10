@@ -1,14 +1,10 @@
-source ~/dotfiles/.git-completion.bash
 alias egrep='egrep --color=auto -i'
 alias fgrep='fgrep --color=auto -i'
 alias grep='grep --color=auto -i'
 alias dnstop='dnstop eth1'
+alias ls='ls --color=auto'
 
 
-export INPUTRC=~/.inputrc
-export CLASSPATH=$CLASSPATH:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/mockito/mockito-all-1.9.0.jar
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 # Begin /etc/bashrc
 # Written for Beyond Linux From Scratch
@@ -25,22 +21,12 @@ export CLASSPATH=$CLASSPATH:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockit
 # Provides a colored /bin/ls command.  Used in conjunction with code in
 # /etc/profile.
 
-alias ls='ls --color=auto'
 
 # Provides prompt for non-login shells, specifically shells started
 # in the X environment. [Review the LFS archive thread titled
 # PS1 Environment Variable for a great case study behind this script
 # addendum.]
 
-
-# shows the git branch
-function parse_git_branch {
-  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
-  echo "("${ref#refs/heads/}")"
-}
-
-# reset color for output (after typing)
-trap 'echo -ne "\e[0m"' DEBUG
 
 # Regular Colors
 Black="\[\e[0;30m\]"       # Black
@@ -89,15 +75,40 @@ NORMAL="\[\e[0m\]"
 CYAN="\[\e0;36\]"
 RED="\[\e[1;31m\]"
 GREEN="\[\e[1;32m\]"
-if [[ $EUID == 0 ]] ; then # if you are root
-  export PS1="$RED\u [ $NORMAL\w$RED ]# $NORMAL"
-else
-  # export PS1='\[\033[01;32m\]\h\[\033[01;34m\] \w\[\033[31m\]$(__git_ps1 "(%s)") \[\033[01;34m\]$\[\033[00m\] '
-  # export PS1=" $IGreen\A $BIGreen\u@\h $BIGreen[ $BBlue\w$Yellow\$(__git_ps1)$BIGreen ]\$ $NORMAL" # $IYellow"
-  export PS1=" $IGreen\A $BIGreen\u@\h $BIGreen[ $BBlue\w$Yellow\$(__git_ps1)$BIGreen ]\$ $IYellow"
-fi
 
 # export PS1='\[\033[01;32m\]\h\[\033[01;34m\] \w\[\033[31m\]$(__git_ps1 "(%s)") \[\033[01;34m\]$\[\033[00m\] '
+
+if [ -n "$PS1" ]; then # -n for nonzero
+
+
+   echo This shell is interactive
+
+   export INPUTRC=~/.inputrc
+   export CLASSPATH=$CLASSPATH:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/mockito/mockito-all-1.9.0.jar
+
+  # shows the git branch
+  function parse_git_branch {
+    ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+    echo "("${ref#refs/heads/}")"
+  }
+
+  # reset color for output (after typing)
+  trap 'echo -ne "\e[0m"' DEBUG
+
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+
+  source ~/dotfiles/.git-completion.bash
+
+
+  if [[ $EUID == 0 ]] ; then # if you are root
+    export PS1="$RED\u [ $NORMAL\w$RED ]# $NORMAL"
+  else
+    # export PS1='\[\033[01;32m\]\h\[\033[01;34m\] \w\[\033[31m\]$(__git_ps1 "(%s)") \[\033[01;34m\]$\[\033[00m\] '
+    # export PS1=" $IGreen\A $BIGreen\u@\h $BIGreen[ $BBlue\w$Yellow\$(__git_ps1)$BIGreen ]\$ $NORMAL" # $IYellow"
+    export PS1=" $IGreen\A $BIGreen\u@\h $BIGreen[ $BBlue\w$Yellow\$(__git_ps1)$BIGreen ]\$ $IYellow"
+  fi
+fi
 
 
 # End /etc/bashrc
