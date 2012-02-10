@@ -118,6 +118,9 @@ augroup END
 autocmd InsertEnter * match none
 autocmd InsertLeave * match TrailingWhitespace /\s\+$/
 
+au BufNewFile,BufReadPost .z*,zsh*,zlog*	so $VIM/syntax/zsh.vim
+
+
 "map <c-k> 5k
 "map <c-j> 5j
 "map <c-l> 3l
