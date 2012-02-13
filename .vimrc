@@ -6,6 +6,7 @@ filetype plugin on
 set completeopt=menuone,longest  "IDE like behavior for autocompleting
 set ttymouse=xterm "what does this do???!
 set mouse=a "allow scrolling with mouse wheel
+set mouse=nv "temporary -- to learn not to use <esc> to leave insert mode
 
 " let mapleader = "\"
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
@@ -46,7 +47,7 @@ map <leader>rv :so ~/.vimrc<CR>
 "2012 01 25 EXPERIMENTAL
 inoremap kj <esc>
 vnoremap kj <esc>
-imap <esc> $
+imap <esc> $<esc>
 vmap <esc> d
 
 nmap j gj

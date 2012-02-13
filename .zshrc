@@ -3,7 +3,7 @@ HISTFILE=~/.histfile
 HISTSIZE=2000
 SAVEHIST=2000
 setopt appendhistory autocd beep extendedglob nomatch notify
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/syu/.zshrc'
@@ -17,6 +17,8 @@ alias fgrep='fgrep --color=auto -i'
 alias grep='grep --color=auto -i'
 alias dnstop='dnstop eth1'
 alias ls='ls --color=auto'
+alias zr='source ~/.zshrc'
+alias ze='vim ~/.zshrc'
 
 autoload -U colors && colors
 
@@ -42,3 +44,4 @@ RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}] %T"
 
 
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
