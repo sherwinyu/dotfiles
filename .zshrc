@@ -20,10 +20,28 @@ alias ls='ls --color=auto'
 alias zr='source ~/.zshrc'
 alias ze='vim ~/.zshrc'
 
+alias velleity='ssh syu@velleity.mc.yale.edu -p 2222'
+alias zoo='ssh sy23@node.zoo.cs.yale.edu'
+alias peacock='ssh sy23@peacock.zoo.cs.yale.edu'
+alias ladybug='ssh sy23@ladybug.zoo.cs.yale.edu'
+
+# get color aliases
 autoload -U colors && colors
 
 # Allow for functions in the prompt.
 setopt PROMPT_SUBST
+
+# spelling corrections
+setopt correctall
+
+# makes cd pushd
+setopt AUTO_PUSHD
+
+# cas insensitive completion
+unsetopt CASE_GLOB
+
+# 10 second wait if you do something that will delete everything.  I wish I'd had this before...
+setopt RM_STAR_WAIT
 
 # Autoload zsh functions.
 fpath=(~/.zsh/functions $fpath)
@@ -42,6 +60,17 @@ PROMPT=$' %B%{$fg[green]%}%n@%{$fg[green]%}%m%{$fg[green]%} [%b %{$fg[blue]%}%~ 
 RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}] %T"
 # PROMPT=$' %{${fg[green]}%}%n%~%b$(prompt_git_info)%{${fg[default]}%} '
 
+# Global Aliases
+alias -g G="| grep"
+alias -g L="| less"
+alias -g M='| more'
+alias -g H='| head'
+alias -g T='| tail'
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+# Local includes
+if [[ -r ~/.localinclude ]]; then
+    source ~/.localinclude
+    fi
