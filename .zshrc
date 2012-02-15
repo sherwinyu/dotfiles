@@ -71,8 +71,8 @@ preexec_functions+='preexec_update_git_vars'
 precmd_functions+='precmd_update_git_vars'
 chpwd_functions+='chpwd_update_git_vars'
 
-PROMPT=$' %B%{$fg[green]%}%n@%{$fg[green]%}%m%{$fg[green]%} [%b %{$fg[blue]%}%~ %$(prompt_git_info) %B%{$fg[green]%}]%b%{$reset_color%}%# %{$fg[yellow]%}df'
-RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}] %T"
+PROMPT=$' %B%{$fg[green]%}%n@%{$fg[green]%}%m%{$fg[green]%} [%b %{$fg[magenta]%}%~ %$(prompt_git_info) %B%{$fg[green]%}]%b%{$reset_color%}%# '
+RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}] %*"
 # PROMPT=$' %{${fg[green]}%}%n%~%b$(prompt_git_info)%{${fg[default]}%} '
 
 # Global Aliases
@@ -81,6 +81,8 @@ alias -g L="| less"
 alias -g M='| more'
 alias -g H='| head'
 alias -g T='| tail'
+
+export CLASSPATH=$CLASSPATH:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/mockito/mockito-all-1.9.0.jar
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
