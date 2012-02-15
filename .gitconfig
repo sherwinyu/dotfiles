@@ -4,6 +4,8 @@
 [core]
 	editor = vim
       excludesfile = /home/syu/.gitignore
+[diff]
+  tool = vimdiff
 [color]
   ui = auto
 [color "branch"]
