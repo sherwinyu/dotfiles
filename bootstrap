@@ -9,6 +9,8 @@ mv .screenrc dotfiles_old
 mv .bashrc dotfiles_old
 mv .inputrc dotfiles_old
 mv .gitignore dotfiles_old
+mv .gitconfig dotfiles_old
+mv .zshrc dotfiles_old
 
 ln -s dotfiles/.vimrc .vimrc
 ln -s dotfiles/.tmux.conf .tmux.conf
@@ -18,6 +20,7 @@ ln -s dotfiles/.inputrc .inputrc
 ln -s dotfiles/.gitignore .gitignore
 ln -s dotfiles/dotzsh .zsh
 ln -s dotfiles/.zshrc .zshrc
+ln -s dotfiles/.gitconfig .gitconfig
 
 echo dotfile copy over done!
 popd
