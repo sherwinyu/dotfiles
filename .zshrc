@@ -39,7 +39,8 @@ setopt correctall
 setopt AUTO_PUSHD
 
 # case insenstive completion try 2? source (http://zsh.sourceforge.net/Guide/zshguide06.html)
-zstyle ':completion:*' matcher-list  'm:{a-z}={A-Z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+alias ac="zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'"
 
 # partial word completion: source (http://zsh.sourceforge.net/Guide/zshguide06.html)
 # <tab> t.l autocomplets to twinklez.log
@@ -107,6 +108,7 @@ else
      start_agent;
 fi
 
+alias junit='java org.junit.runner.JUnitCore'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
