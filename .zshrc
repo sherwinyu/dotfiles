@@ -82,7 +82,7 @@ alias -g M='| more'
 alias -g H='| head'
 alias -g T='| tail'
 
-export CLASSPATH=$CLASSPATH:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/mockito/mockito-all-1.9.0.jar
+export CLASSPATH=.:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/mockito/mockito-all-1.9.0.jar
 
 SSH_ENV="$HOME/.ssh/environment"
 
@@ -114,3 +114,21 @@ fi
 if [[ -r ~/.localinclude ]]; then
     source ~/.localinclude
     fi
+
+
+function chpwd; {
+    DIRECTORY="$PWD"
+    while true; do
+        if [ -f './.env.rc' ]; then
+            source './.env.rc'
+            break
+        fi
+        if [ -f './env' ]; then
+            source './env'
+            break
+        fi
+        [ $PWD = '/' ] && break
+        cd -q ..
+    done
+    cd -q "$DIRECTORY"
+}

@@ -22,8 +22,11 @@ nnoremap <C-J> i<CR><Esc>k$
 unmap <c-v>
 
 
-map <leader>s :%s/\s\+$//g<cr>
-map <leader>7 ggVG&<c-o><c-o>
+map <leader>]s :%s/\s\+$//g<cr>
+map <leader>]7 ggVG&<c-o><c-o>
+map <leader>]f :CommandTFlush<CR>
+map <leader>]ve :e ~/.vimrc<CR>
+map <leader>]vr :so ~/.vimrc<CR>
 
 "2012 01 07 EXPERIMENTAL
 map ± 1gt
@@ -38,23 +41,22 @@ map <f2> 2gt
 map <f3> 3gt
 map <f4> 4gt
 map <f5> 5gt
-map <f6> 6gv
-map <leader>ev :e ~/.vimrc<CR>
-map <leader>rv :so ~/.vimrc<CR>
+map <f6> 6gt
+map <f7> 7gt
+map <f8> 8gt
 
 "2012 01 07 EXPERIMENTAL
 
 "2012 01 25 EXPERIMENTAL
 inoremap kj <esc>
 vnoremap kj <esc>
-imap <esc> $<esc>
-vmap <esc> d
 
 nmap j gj
 nmap k gk
 "2012 01 25 EXPERIMENTAL
 
-imap <c-e> <c-o>dw " opposite of <c-w>
+"opposite of <c-w>
+imap <c-e> <c-o>dw
 
 
 
@@ -90,6 +92,7 @@ set autowrite
 set incsearch "highlight as you go
 "set nowrap
 set wrap
+set relativenumber
 set number
 set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
 set ww=hl "Allows h and l to move wrap lines
@@ -152,7 +155,6 @@ map <leader>f :call ShowFuncName() <CR>
 map <bs> X
 map <del> dl
 
-map <c-f1> :set wrap!<cr>
 
 
 " map <c-f5> :e ~/.vimrc<cr>
@@ -181,3 +183,17 @@ let g:CommandTMaxHeight=15
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
   \ | wincmd p | diffthis
 
+map <leader>sn :call ToggleNumbering()<cr>
+map <leader>sw :set wrap!<cr>
+
+function! ToggleNumbering()
+    if exists("+relativenumber")
+        if &relativenumber
+            set number
+        else
+            set relativenumber
+        endif
+    else
+        set number!
+    endif
+endfunc
