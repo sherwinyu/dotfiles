@@ -7,6 +7,7 @@ set completeopt=menuone,longest  "IDE like behavior for autocompleting
 set ttymouse=xterm "what does this do???!
 set mouse=a "allow scrolling with mouse wheel
 set mouse=nv "temporary -- to learn not to use <esc> to leave insert mode
+let java_allow_cpp_keywords = 1
 
 " let mapleader = "\"
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
@@ -22,11 +23,12 @@ nnoremap <C-J> i<CR><Esc>k$
 unmap <c-v>
 
 
-map <leader>]s :%s/\s\+$//g<cr>
-map <leader>]7 ggVG&<c-o><c-o>
-map <leader>]f :CommandTFlush<CR>
-map <leader>]ve :e ~/.vimrc<CR>
-map <leader>]vr :so ~/.vimrc<CR>
+map <leader>=s :%s/\s\+$//g<cr>
+map <leader>=7 ggVG&<c-o><c-o>
+map <leader>=f :CommandTFlush<CR>
+map <leader>=ve :e ~/.vimrc<CR>
+map <leader>=vr :so ~/.vimrc<CR>
+map <leader>\t :tabnew<CR>
 
 "2012 01 07 EXPERIMENTAL
 map ± 1gt
@@ -49,7 +51,6 @@ map <f8> 8gt
 
 "2012 01 25 EXPERIMENTAL
 inoremap kj <esc>
-vnoremap kj <esc>
 
 nmap j gj
 nmap k gk
@@ -92,15 +93,20 @@ set autowrite
 set incsearch "highlight as you go
 "set nowrap
 set wrap
-set relativenumber
 set number
 set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
 set ww=hl "Allows h and l to move wrap lines
 "colorscheme evening
 "color torte
 "color evening
-map <leader>hl :hi TabLineSel ctermfg=Black ctermbg=Yellow<cr>
+"map <leader>hl :hi TabLineSel ctermfg=Black ctermbg=Yellow<cr>
+map <leader>hl :call SetUIHighlighting()<cr>
 
+function! SetUIHighlighting()
+  hi StatusLine   ctermfg=Yellow  guifg=#000000 ctermbg=Black guibg=#5f5f5f
+  "hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+  hi TabLineSel ctermfg=Black ctermbg=Yellow
+endfunc
 
 	syntax on
 
@@ -115,14 +121,16 @@ imap <c-backspace> <c-w>
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
-highlight default link TrailingWhitespace Error
-augroup filetypedetect
-  autocmd WinEnter,BufNewFile,BufRead * match TrailingWhitespace /\s\+$/
-augroup END
-autocmd InsertEnter * match none
-autocmd InsertLeave * match TrailingWhitespace /\s\+$/
 
-au BufNewFile,BufReadPost .z*,zsh*,zlog*	so $VIM/syntax/zsh.vim
+" map <leader>ss :hi clear TrailingWhiteSpace
+" highlight TrailingWhiteSpace ctermbg=Red
+" augroup filetypedetect
+  " autocmd WinEnter,BufNewFile,BufRead * match TrailingWhitespace /\s\+$/
+" augroup END
+" autocmd InsertEnter * match none
+" autocmd InsertLeave * match TrailingWhitespace /\s\+$/
+
+" au BufNewFile,BufReadPost .z*,zsh*,zlog*	so $VIM/syntax/zsh.vim
 
 
 "map <c-k> 5k
@@ -142,7 +150,7 @@ map <s-tab> <c-w>W
 map <c-tab> gt
 map <c-tab> gt
 map <C-s-tab> gT
-map <c-t> :tabnew<cr>
+map <c-t> 1gtgT:tabnew<cr>
 noremap <c-n> <tab>
 
 nmap <c-right> :bn<cr>

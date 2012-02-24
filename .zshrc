@@ -8,6 +8,8 @@ bindkey -e
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/syu/.zshrc'
 
+setopt inc_append_history
+
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -17,8 +19,8 @@ alias fgrep='fgrep --color=auto -i'
 alias grep='grep --color=auto -i'
 alias dnstop='dnstop eth1'
 alias ls='ls --color=auto'
+
 alias zr='source ~/.zshrc'
-alias ze='vim ~/.zshrc'
 
 # SSH aliases
 alias velleity='ssh syu@velleity.mc.yale.edu -p 2222'
