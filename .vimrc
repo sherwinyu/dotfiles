@@ -38,6 +38,11 @@ map ´ 4gt
 map µ 5gt
 map ¶ 6gt
 
+map [11~ 1gt
+map [12~ 2gt
+map [13~ 3gt
+map [14~ 4gT
+
 map <f1> 1gt
 map <f2> 2gt
 map <f3> 3gt

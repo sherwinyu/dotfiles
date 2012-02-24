@@ -21,6 +21,7 @@ alias dnstop='dnstop eth1'
 alias ls='ls --color=auto'
 
 alias zr='source ~/.zshrc'
+alias ze='vim ~/.zshrc'
 
 # SSH aliases
 alias velleity='ssh syu@velleity.mc.yale.edu -p 2222'
