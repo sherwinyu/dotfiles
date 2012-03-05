@@ -3,7 +3,7 @@
 	email = sherwin.x.yu@gmail.com
 [core]
 	editor = vim
-      excludesfile = /home/syu/.gitignore
+      excludesfile = ~/.gitignore
 [color]
   ui = auto
 [color "branch"]
