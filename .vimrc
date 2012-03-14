@@ -30,6 +30,21 @@ map <leader>=ve :e ~/.vimrc<CR>
 map <leader>=vr :so ~/.vimrc<CR>
 map <leader>\t :tabnew<CR>
 
+map <leader>p :set paste!<cr>
+
+map <leader>sn :call ToggleNumbering()<cr>
+map <leader>sw :set wrap!<cr>
+map <leader>sp :set path=$PWD/**<cr>
+nmap <silent> <leader>n :silent :set hlsearch!<CR>
+map <leader>cd :cd %:p:h<CR>
+map <leader>f :call ShowFuncName() <CR>
+
+map <leader>w :w<CR>
+map <leader>wa :wa<CR>
+map <leader>wq :wq<CR>
+map <leader>q :q<CR>
+map <leader>Q :q!<CR>
+
 "2012 01 07 EXPERIMENTAL
 map ± 1gt
 map ² 2gt
@@ -161,10 +176,6 @@ noremap <c-n> <tab>
 nmap <c-right> :bn<cr>
 nmap <c-left> :bp<cr>
 
-map <leader>sp :set path=$PWD/**<cr>
-nmap <silent> <leader>n :silent :set hlsearch!<CR>
-map <leader>cd :cd %:p:h<CR>
-map <leader>f :call ShowFuncName() <CR>
 map <bs> X
 map <del> dl
 
@@ -176,10 +187,6 @@ map <del> dl
 " map <f5> :e e:\syu\sherwin_temp.txt<cr>
 " map <f6> :wq e:\syu\sherwin_temp.txt<cr>
 "map <f6> :wq e:\temp_vim.txt<cr>
-map <leader>w :w<CR>
-map <leader>wa :wa<CR>
-map <leader>wq :wq<CR>
-map <leader>q :q<CR>
 
 fun! ShowFuncName()
 				let lnum = line(".")
@@ -196,8 +203,6 @@ let g:CommandTMaxHeight=15
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
   \ | wincmd p | diffthis
 
-map <leader>sn :call ToggleNumbering()<cr>
-map <leader>sw :set wrap!<cr>
 
 function! ToggleNumbering()
     if exists("+relativenumber")
