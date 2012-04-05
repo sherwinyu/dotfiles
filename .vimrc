@@ -34,6 +34,8 @@ map <leader>p :set paste!<cr>
 
 map <leader>sn :call ToggleNumbering()<cr>
 map <leader>sw :set wrap!<cr>
+map <leader>sf :call ToggleFolding()<cr>
+map <leader><f1> :set foldlevel=1<cr>
 map <leader>sp :set path=$PWD/**<cr>
 nmap <silent> <leader>n :silent :set hlsearch!<CR>
 map <leader>cd :cd %:p:h<CR>
@@ -44,6 +46,8 @@ map <leader>wa :wa<CR>
 map <leader>wq :wq<CR>
 map <leader>q :q<CR>
 map <leader>Q :q!<CR>
+
+map <leader><space> za
 
 "2012 01 07 EXPERIMENTAL
 map ± 1gt
@@ -111,8 +115,7 @@ set guioptions-=T
 
 set autowrite
 set incsearch "highlight as you go
-"set nowrap
-set wrap
+set nowrap
 set number
 set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
 set ww=hl "Allows h and l to move wrap lines
@@ -195,7 +198,7 @@ fun! ShowFuncName()
 				echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
 				echohl None
 				call search("\\%" . lnum . "l" . "\\%" . col . "c")
-				endfun
+endfun
 
 let g:CommandTMaxHeight=15
 
@@ -204,7 +207,7 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
   \ | wincmd p | diffthis
 
 
-function! ToggleNumbering()
+fun! ToggleNumbering()
     if exists("+relativenumber")
         if &relativenumber
             set number
@@ -215,3 +218,22 @@ function! ToggleNumbering()
         set number!
     endif
 endfunc
+
+fun! ToggleFolding()
+  if &foldlevel == 2
+    let &foldlevel = 1
+  else
+    let &foldlevel = 2
+  endif
+endfunc
+
+highlight Folded ctermbg=103 ctermfg=16
+
+set foldtext=MyFoldText()
+set foldlevel=2
+set foldnestmax=2
+fun! MyFoldText()
+  return getline(v:foldstart) . v:folddashes
+endfun
+set fdm=syntax
+
