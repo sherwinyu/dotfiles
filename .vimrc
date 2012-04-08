@@ -7,7 +7,7 @@ set completeopt=menuone,longest  "IDE like behavior for autocompleting
 set ttymouse=xterm "what does this do???!
 set mouse=a "allow scrolling with mouse wheel
 set mouse=nv "temporary -- to learn not to use <esc> to leave insert mode
-let java_allow_cpp_keywords = 1
+let java_allow_cpp_keywords = 1 "Annoying
 
 " let mapleader = "\"
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
