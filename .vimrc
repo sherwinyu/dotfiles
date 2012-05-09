@@ -3,6 +3,9 @@ runtime macros/matchit.vim
 filetype plugin on
 
 
+set rtp+=$GOROOT/misc/vim
+au BufRead,BufNewFile *.go set filetype=go
+
 set completeopt=menuone,longest  "IDE like behavior for autocompleting
 set ttymouse=xterm "what does this do???!
 set mouse=a "allow scrolling with mouse wheel
