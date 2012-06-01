@@ -1,7 +1,13 @@
  # Lines configured by zsh-newuser-install
+ #
+ #  17:30 syu@velleity [ ~/dropbox ]$ sudo mount -t vboxsf Downloads ~/dl
+ #  /sbin/mount.vboxsf: mounting failed with the error: No such file or directory
+ #   17:30 syu@velleity [ ~/dropbox ]$ sudo mount -t vboxsf Dropbox ~/dropbox
+ #   /sbin/mount.vboxsf: mounting failed with the error: Invalid argument
+ #
 HISTFILE=~/.histfile
-HISTSIZE=2000
-SAVEHIST=2000
+HISTSIZE=9000
+SAVEHIST=9000
 setopt appendhistory autocd beep extendedglob nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -43,7 +49,7 @@ setopt AUTO_PUSHD
 
 # case insenstive completion try 2? source (http://zsh.sourceforge.net/Guide/zshguide06.html)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-alias ac="zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'"
+alias zc="zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'"
 
 # partial word completion: source (http://zsh.sourceforge.net/Guide/zshguide06.html)
 # <tab> t.l autocomplets to twinklez.log
@@ -87,6 +93,7 @@ alias -g H='| head'
 alias -g T='| tail'
 
 export CLASSPATH=.:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/mockito/mockito-all-1.9.0.jar
+export GOPATH=/home/syu/projects/go:/home/syu/projects/ringmaster
 
 SSH_ENV="$HOME/.ssh/environment"
 

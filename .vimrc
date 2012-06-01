@@ -1,7 +1,9 @@
 source $VIMRUNTIME/mswin.vim
 runtime macros/matchit.vim
-filetype plugin on
+filetype plugin indent on
+syntax on
 
+set rtp+=$GOROOT/misc/vim
 
 set completeopt=menuone,longest  "IDE like behavior for autocompleting
 set ttymouse=xterm "what does this do???!
@@ -12,8 +14,8 @@ let java_allow_cpp_keywords = 1
 " let mapleader = "\"
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
 
-noremap <S-enter> O<esc>
-noremap <enter> o<esc>
+noremap <a-cr> O<esc>
+noremap <cr> o<esc>
 noremap <space> i<space><esc>
 
 iunmap <c-v>
@@ -47,7 +49,21 @@ map <leader>wq :wq<CR>
 map <leader>q :q<CR>
 map <leader>Q :q!<CR>
 
+map <leader>m :make<cr><space>
+map <leader>c :cw<cr>
+map <f12> :cn<cr>
+
 map <leader><space> za
+
+"2012 04 09 EXPERIMENTAL
+" inoremap { {<CR><BS>}<Esc>ko
+" END
+
+" function! SyntaxItem()
+    " return synIDattr(synID(line("."),col("."),1),"name")
+" endfunction
+
+" set statusline+=%{SyntaxItem()}
 
 "2012 01 07 EXPERIMENTAL
 map ± 1gt
@@ -131,7 +147,8 @@ function! SetUIHighlighting()
   hi TabLineSel ctermfg=Black ctermbg=Yellow
 endfunc
 
-	syntax on
+
+map . .'[
 
 noremap gi i_<esc>r
 map - ^
@@ -148,7 +165,7 @@ inoremap <c-w> <c-g>u<c-w>
 " map <leader>ss :hi clear TrailingWhiteSpace
 " highlight TrailingWhiteSpace ctermbg=Red
 " augroup filetypedetect
-  " autocmd WinEnter,BufNewFile,BufRead * match TrailingWhitespace /\s\+$/
+" autocmd WinEnter,BufNewFile,BufRead * match TrailingWhitespace /\s\+$/
 " augroup END
 " autocmd InsertEnter * match none
 " autocmd InsertLeave * match TrailingWhitespace /\s\+$/
@@ -192,38 +209,38 @@ map <del> dl
 "map <f6> :wq e:\temp_vim.txt<cr>
 
 fun! ShowFuncName()
-				let lnum = line(".")
-				let col = col(".")
-				echohl ModeMsg
-				echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
-				echohl None
-				call search("\\%" . lnum . "l" . "\\%" . col . "c")
+  let lnum = line(".")
+  let col = col(".")
+  echohl ModeMsg
+  echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
+  echohl None
+  call search("\\%" . lnum . "l" . "\\%" . col . "c")
 endfun
 
 let g:CommandTMaxHeight=15
 
 " DiffOrig for sane recovery management. Choose (R)ecover, then call :DiffOrig to diff the recovered swap file with the original file.
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-  \ | wincmd p | diffthis
+      \ | wincmd p | diffthis
 
 
 fun! ToggleNumbering()
-    if exists("+relativenumber")
-        if &relativenumber
-            set number
-        else
-            set relativenumber
-        endif
+  if exists("+relativenumber")
+    if &relativenumber
+      set number
     else
-        set number!
+      set relativenumber
     endif
+  else
+    set number!
+  endif
 endfunc
 
 fun! ToggleFolding()
-  if &foldlevel == 2
-    let &foldlevel = 1
+  if &foldlevel == 1
+    let &foldlevel = 0
   else
-    let &foldlevel = 2
+    let &foldlevel = 1
   endif
 endfunc
 
@@ -233,7 +250,48 @@ set foldtext=MyFoldText()
 set foldlevel=2
 set foldnestmax=2
 fun! MyFoldText()
-  return getline(v:foldstart) . v:folddashes
+  return substitute(getline(v:foldstart), '^\s\+', repeat(" ",indent(v:foldstart)), '')
+  " return getline(v:foldstart) 
 endfun
 set fdm=syntax
+
+function! HisFoldText()
+  let line = getline(v:foldstart)
+  if match( line, '^[ \t]*\(\/\*\|\/\/\)[*/\\]*[ \t]*$' ) == 0
+    let initial = substitute( line, '^\([ \t]\)*\(\/\*\|\/\/\)\(.*\)', '\1\2', '' )
+    let linenum = v:foldstart + 1
+    while linenum < v:foldend
+      let line = getline( linenum )
+      let comment_content = substitute( line, '^\([ \t\/\*]*\)\(.*\)$', '\2', 'g' )
+      if comment_content != ''
+        break
+      endif
+      let linenum = linenum + 1
+    endwhile
+    let sub = initial . ' ' . comment_content
+  else
+    let sub = line
+    let startbrace = substitute( line, '^.*{[ \t]*$', '{', 'g')
+    if startbrace == '{'
+      let line = getline(v:foldend)
+      let endbrace = substitute( line, '^[ \t]*}\(.*\)$', '}', 'g')
+      if endbrace == '}'
+        let sub = sub.substitute( line, '^[ \t]*}\(.*\)$', '...}\1', 'g')
+      endif
+    endif
+  endif
+  let n = v:foldend - v:foldstart + 1
+  let info = " " . n . " lines"
+  let sub = sub . "                                                                                                                  "
+  let num_w = getwinvar( 0, '&number' ) * getwinvar( 0, '&numberwidth' )
+  let fold_w = getwinvar( 0, '&foldcolumn' )
+  let sub = strpart( sub, 0, winwidth(0) - strlen( info ) - num_w - fold_w - 1 )
+  return sub . info
+endfunction
+
+
+
+set formatoptions=croql
+
+autocmd BufNewFile,BufReadPost *.go set filetype=go
 
