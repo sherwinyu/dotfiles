@@ -94,6 +94,10 @@ alias -g T='| tail'
 
 export CLASSPATH=.:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/mockito/mockito-all-1.9.0.jar
 export GOPATH=/home/syu/projects/go:/home/syu/projects/ringmaster
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 SSH_ENV="$HOME/.ssh/environment"
 
