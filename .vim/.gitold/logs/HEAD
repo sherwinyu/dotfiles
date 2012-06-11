@@ -1,0 +1,5 @@
+0000000000000000000000000000000000000000 3b48737c106e6f21ea1f0c368aaf3c5fde045779 df8a57d86be2a22fbc72e8776b399fa6 <sherwin.x.yu@gmail.com> 1326927281 -0500	commit (initial): created and added plugin
+3b48737c106e6f21ea1f0c368aaf3c5fde045779 60d11fe72a53bebf7fb19e727659ca9150cb73cd df8a57d86be2a22fbc72e8776b399fa6 <sherwin.x.yu@gmail.com> 1326927420 -0500	commit: added backup_vim
+60d11fe72a53bebf7fb19e727659ca9150cb73cd 0ed40993afa30b0ebf83d8f13d5fb0168b1bbb0c df8a57d86be2a22fbc72e8776b399fa6 <sherwin.x.yu@gmail.com> 1326927959 -0500	commit: added command-t
+0ed40993afa30b0ebf83d8f13d5fb0168b1bbb0c d73b4166af5b23c2f9658e30433d03ec194675f0 df8a57d86be2a22fbc72e8776b399fa6 <sherwin.x.yu@gmail.com> 1326928084 -0500	commit: new file: README.md
+d73b4166af5b23c2f9658e30433d03ec194675f0 a034d4a08b17044dda2a7ffc64e421bc4bf0ae19 df8a57d86be2a22fbc72e8776b399fa6 <sherwin.x.yu@gmail.com> 1326928302 -0500	commit: added autoload
