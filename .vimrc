@@ -298,3 +298,9 @@ set formatoptions=croql
 
 autocmd BufNewFile,BufReadPost *.go set filetype=go
 
+set background=dark
+let g:solarized_termcolors=16
+colorscheme solarized
+
+set t_Co=16
+

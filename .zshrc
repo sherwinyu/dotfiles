@@ -91,6 +91,10 @@ alias -g L="| less"
 alias -g M='| more'
 alias -g H='| head'
 alias -g T='| tail'
+alias -g BE='bundle exec'
+
+# aliasing TMUX to work with solarized vim
+alias tmux="TERM=screen-256color-bce tmux"
 
 export CLASSPATH=.:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/mockito/mockito-all-1.9.0.jar
 export GOPATH=/home/syu/projects/go:/home/syu/projects/ringmaster
@@ -133,6 +137,7 @@ if [[ -r ~/.localinclude ]]; then
 
 
 function chpwd; {
+    unsetopt AUTO_PUSHD
     DIRECTORY="$PWD"
     while true; do
         if [ -f './.env.rc' ]; then
@@ -147,4 +152,5 @@ function chpwd; {
         cd -q ..
     done
     cd -q "$DIRECTORY"
+    setopt AUTO_PUSHD
 }

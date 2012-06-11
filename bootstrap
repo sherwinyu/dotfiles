@@ -3,7 +3,9 @@
 echo dotfile copy over boostrap started
 pushd ~/
 mkdir ~/dotfiles_old
+
 mv .vimrc dotfiles_old
+mv .vim dotfiles_old
 mv .tmux.conf dotfiles_old
 mv .screenrc dotfiles_old
 mv .bashrc dotfiles_old
@@ -13,6 +15,7 @@ mv .gitconfig dotfiles_old
 mv .zshrc dotfiles_old
 
 ln -s dotfiles/.vimrc .vimrc
+ln -s dotfiles/.vim .vim
 ln -s dotfiles/.tmux.conf .tmux.conf
 ln -s dotfiles/.screenrc .screenrc
 ln -s dotfiles/.bashrc .bashrc
