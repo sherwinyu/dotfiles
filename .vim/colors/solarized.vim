@@ -484,6 +484,7 @@ exe "let s:fmt_ital     = ' ".s:vmode."=NONE".s:i.      " term=NONE".s:i."'"
 exe "let s:fmt_stnd     = ' ".s:vmode."=NONE".s:s.      " term=NONE".s:s."'"
 exe "let s:fmt_revr     = ' ".s:vmode."=NONE".s:r.      " term=NONE".s:r."'"
 exe "let s:fmt_revb     = ' ".s:vmode."=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'"
+exe "let s:fmt_revbu     = ' ".s:vmode."=NONE".s:r.s:b.s:u.  " term=NONE".s:r.s:b.s:u."'"
 " revbb (reverse bold for bright colors) is only set to actual bold in low 
 " color terminals (t_co=8, such as OS X Terminal.app) and should only be used 
 " with colors 8-15.
@@ -671,6 +672,17 @@ exe "hi! CursorColumn"   .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! CursorLine"     .s:fmt_uopt   .s:fg_none   .s:bg_base02  .s:sp_base1
 exe "hi! ColorColumn"    .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! Cursor"         .s:fmt_none   .s:fg_base03 .s:bg_base0
+
+"Sherwin's Additions for ShowTabColors"
+exe "hi! TabNumSel"        .s:fmt_undb   .s:fg_base01  .s:bg_base2 .s:sp_base00    .s:fmt_revbu
+exe "hi! TabWinNumSel"     .s:fmt_undb   .s:fg_base01 .s:bg_base2   .s:sp_base0  .s:fmt_revbu
+exe "hi! TabLineSel"     .s:fmt_undr   .s:fg_base01 .s:bg_base2   .s:sp_base0  .s:fmt_revr
+
+exe "hi! TabNum"        .s:fmt_undb   .s:fg_base0  .s:bg_base03  .s:sp_base0
+exe "hi! TabWinNum"     .s:fmt_bold   .s:fg_base0 .s:bg_base02   .s:sp_base0  
+exe "hi! TabLine"     .s:fmt_none   .s:fg_base0 .s:bg_base02   .s:sp_base0 
+
+
 hi! link lCursor Cursor
 exe "hi! MatchParen"     .s:fmt_bold   .s:fg_red    .s:bg_base01
 

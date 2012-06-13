@@ -1,5 +1,7 @@
 source $VIMRUNTIME/mswin.vim
 runtime macros/matchit.vim
+runtime autoload/shervim/ShowTabNumber.vim
+runtime autoload/shervim/ToggleBG.vim
 filetype plugin indent on
 syntax on
 
@@ -45,6 +47,13 @@ map <leader>sp :set path=$PWD/**<cr>
 nmap <silent> <leader>n :silent :set hlsearch!<CR>
 map <leader>cd :cd %:p:h<CR>
 map <leader>f :call ShowFuncName() <CR>
+
+nnoremap <silent> <Leader>t :CommandT<CR>
+nnoremap <silent> <Leader>B :CommandTBuffer<CR>
+
+nmap <leader>b :sb 
+
+
 
 map <leader>w :w<CR>
 map <leader>wa :wa<CR>
@@ -115,6 +124,7 @@ set smartcase
 set scrolloff=5
 set hidden
 set wildmenu
+set switchbuf+=usetab " so that using :sb doesn't open change current window
 
 set expandtab  "google settings
 set shiftwidth=2  "google settings
@@ -293,12 +303,14 @@ function! HisFoldText()
 endfunction
 
 
+set tabline=%!MyTabLine3()
+map <leader>=b :call ToggleBG()<CR>
 
 set formatoptions=croql
 
 autocmd BufNewFile,BufReadPost *.go set filetype=go
 
-set background=dark
+set background=light
 let g:solarized_termcolors=16
 colorscheme solarized
 

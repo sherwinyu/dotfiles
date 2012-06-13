@@ -1,1 +1,2 @@
 *.sw*
+*session.vim.lock
