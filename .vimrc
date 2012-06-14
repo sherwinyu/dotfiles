@@ -61,12 +61,13 @@ nnoremap <silent> <Leader>B :CommandTBuffer<CR>
 nmap <leader>b :sb 
 
 map <leader>w :w<CR>
+map <leader>W :w<CR>
 map <leader>wa :wa<CR>
 map <leader>wq :wq<CR>
 map <leader>wqa :wqa<CR>
 map <leader>q :q<CR>
-map <leader>qa :qa<CR>
 map <leader>Qa :qa!<CR>
+map <leader>Q :q!<CR>
 
 map <leader>m :make<cr><space>
 map <leader>c :cw<cr>
