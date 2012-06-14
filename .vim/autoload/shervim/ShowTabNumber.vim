@@ -168,7 +168,8 @@ if exists("+showtabline")
       let s .= i . '|'
       let s .= '%*'
       let other_files = ''
-      let remaining = min([12, len(buflist) ])
+
+      let remaining = min([4, len(buflist) ])
       let win = 1
       while remaining > 0
         if i == t

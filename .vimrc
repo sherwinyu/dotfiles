@@ -1,4 +1,5 @@
-source $VIMRUNTIME/mswin.vim
+"source $VIMRUNTIME/mswin.vim
+call pathogen#infect()
 runtime macros/matchit.vim
 runtime autoload/shervim/ShowTabNumber.vim
 runtime autoload/shervim/ToggleBG.vim
@@ -9,6 +10,7 @@ set rtp+=$GOROOT/misc/vim
 
 set rtp+=$GOROOT/misc/vim
 au BufRead,BufNewFile *.go set filetype=go
+
 
 set completeopt=menuone,longest  "IDE like behavior for autocompleting
 set ttymouse=xterm "what does this do???!
@@ -23,11 +25,14 @@ noremap <a-cr> O<esc>
 noremap <cr> o<esc>
 noremap <space> i<space><esc>
 
-iunmap <c-v>
-unmap <c-a>
-map <leader>v <c-v>
+" iunmap <c-v>
+" unmap <c-a>
+map <leader>v <c-v> "visual bloc
 nnoremap <C-J> i<CR><Esc>k$
-unmap <c-v>
+" unmap <c-v>
+map s<space> vs<space><space>
+
+
 
 
 map <leader>=s :%s/\s\+$//g<cr>
@@ -35,6 +40,8 @@ map <leader>=7 ggVG&<c-o><c-o>
 map <leader>=f :CommandTFlush<CR>
 map <leader>=ve :e ~/.vimrc<CR>
 map <leader>=vr :so ~/.vimrc<CR>
+map <leader>=ze :e ~/.zshrc<CR>
+
 map <leader>\t :tabnew<CR>
 
 map <leader>p :set paste!<cr>
@@ -53,13 +60,13 @@ nnoremap <silent> <Leader>B :CommandTBuffer<CR>
 
 nmap <leader>b :sb 
 
-
-
 map <leader>w :w<CR>
 map <leader>wa :wa<CR>
 map <leader>wq :wq<CR>
+map <leader>wqa :wqa<CR>
 map <leader>q :q<CR>
-map <leader>Q :q!<CR>
+map <leader>qa :qa<CR>
+map <leader>Qa :qa!<CR>
 
 map <leader>m :make<cr><space>
 map <leader>c :cw<cr>
@@ -76,6 +83,20 @@ map <leader><space> za
 " endfunction
 
 " set statusline+=%{SyntaxItem()}
+
+set laststatus=2 " always show status line
+
+set statusline=%t       "tail of the filename
+set statusline+=\ \ \ \ \[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
 
 "2012 01 07 EXPERIMENTAL
 map ± 1gt

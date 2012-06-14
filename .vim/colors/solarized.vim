@@ -682,6 +682,9 @@ exe "hi! TabNum"        .s:fmt_undb   .s:fg_base0  .s:bg_base03  .s:sp_base0
 exe "hi! TabWinNum"     .s:fmt_bold   .s:fg_base0 .s:bg_base02   .s:sp_base0  
 exe "hi! TabLine"     .s:fmt_none   .s:fg_base0 .s:bg_base02   .s:sp_base0 
 
+exe "hi! StatusLine"     .s:fmt_bold   .s:fg_base1  .s:bg_base02 .s:fmt_revb
+"End Sherwin's Additions
+
 
 hi! link lCursor Cursor
 exe "hi! MatchParen"     .s:fmt_bold   .s:fg_red    .s:bg_base01
