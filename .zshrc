@@ -28,6 +28,7 @@ alias ls='ls --color=auto'
 
 alias zr='source ~/.zshrc'
 alias ze='vim ~/.zshrc'
+alias b='cd ~-'
 
 # SSH aliases
 alias velleity='ssh syu@velleity.mc.yale.edu -p 2222'
@@ -46,6 +47,7 @@ setopt correctall
 
 # makes cd pushd
 setopt AUTO_PUSHD
+cdpath=($HOME/projects $HOME/dotfiles $HOME)
 
 # case insenstive completion try 2? source (http://zsh.sourceforge.net/Guide/zshguide06.html)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -92,6 +94,8 @@ alias -g M='| more'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g BE='bundle exec'
+alias -g xclip='xclip -selection c'
+alias -g X='| xclip'
 
 # aliasing TMUX to work with solarized vim
 alias tmux="TERM=screen-256color-bce tmux"
@@ -135,6 +139,10 @@ if [[ -r ~/.localinclude ]]; then
     source ~/.localinclude
     fi
 
+. ~/.zsh/z.sh
+function precmd () {
+    _z --add "$(pwd -P)"
+}
 
 function chpwd; {
     unsetopt AUTO_PUSHD

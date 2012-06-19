@@ -30,7 +30,7 @@ noremap <space> i<space><esc>
 map <leader>v <c-v> "visual bloc
 nnoremap <C-J> i<CR><Esc>k$
 " unmap <c-v>
-map s<space> vs<space><space>
+noremap s<space> vS<space><esc>
 
 
 
@@ -87,7 +87,7 @@ map <leader><space> za
 
 set laststatus=2 " always show status line
 
-set statusline=%t       "tail of the filename
+set statusline=%f       "tail of the filename
 set statusline+=\ \ \ \ \[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] "file format
 set statusline+=%h      "help file flag
@@ -183,7 +183,6 @@ function! SetUIHighlighting()
 endfunc
 
 
-map . .'[
 
 noremap gi i_<esc>r
 map - ^
