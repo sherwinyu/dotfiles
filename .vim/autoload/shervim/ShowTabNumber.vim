@@ -107,7 +107,7 @@ if exists("+showtabline")
     return s
   endfunction
 
-  function! MyTabLine3()
+  function! SherwinTabLine()
     " hi tabWinNum term=bold cterm=bold term=underline
 
      "hi TabNumSel    term=underline cterm=underline,bold ctermfg=7 ctermbg=8 gui=reverse
@@ -169,7 +169,7 @@ if exists("+showtabline")
       let s .= '%*'
       let other_files = ''
 
-      let remaining = min([4, len(buflist) ])
+      let remaining = min([2, len(buflist) ])
       let win = 1
       while remaining > 0
         if i == t

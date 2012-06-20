@@ -324,7 +324,7 @@ function! HisFoldText()
 endfunction
 
 
-set tabline=%!MyTabLine3()
+set tabline=%!SherwinTabLine()
 map <leader>=b :call ToggleBG()<CR>
 
 set formatoptions=croql
