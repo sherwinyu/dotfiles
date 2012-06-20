@@ -148,8 +148,8 @@ function chpwd; {
     unsetopt AUTO_PUSHD
     DIRECTORY="$PWD"
     while true; do
-        if [ -f './.env.rc' ]; then
-            source './.env.rc'
+        if [ -f './.envrc' ]; then
+            source './.envrc'
             break
         fi
         if [ -f './env' ]; then
