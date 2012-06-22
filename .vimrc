@@ -1,10 +1,11 @@
 "source $VIMRUNTIME/mswin.vim
+set nocompatible
+filetype plugin indent on
+syntax on
 call pathogen#infect()
 runtime macros/matchit.vim
 runtime autoload/shervim/ShowTabNumber.vim
 runtime autoload/shervim/ToggleBG.vim
-filetype plugin indent on
-syntax on
 
 set rtp+=$GOROOT/misc/vim
 
@@ -25,13 +26,20 @@ noremap <a-cr> O<esc>
 noremap <cr> o<esc>
 noremap <space> i<space><esc>
 
+map <c-v> "+p
+map <c-x> "+d
+map <c-c> "+y
+
 " iunmap <c-v>
 " unmap <c-a>
 map <leader>v <c-v> "visual bloc
 nnoremap <C-J> i<CR><Esc>k$
 " unmap <c-v>
-noremap s<space> vS<space><esc>
+map s<space> vS<space><space>
 
+
+nmap <right> :tabn<cr>
+nmap <left> :tabp<cr>
 
 
 
@@ -135,7 +143,6 @@ imap <c-e> <c-o>dw
 
 
 
-set nocompatible
 set ve=block
 set ruler
 set showmode
