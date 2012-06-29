@@ -28,3 +28,6 @@
 [submodule ".vim/sessions"]
 	path = .vim/sessions
 	url = git://github.com/sherwinyu/vim-sessions
+[submodule ".vim/bundle/ctrlp.vim"]
+	path = .vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
