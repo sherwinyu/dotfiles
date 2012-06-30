@@ -32,14 +32,14 @@ map <c-c> "+y
 
 " iunmap <c-v>
 " unmap <c-a>
-map <leader>v <c-v> "visual bloc
+
+"visual block
+noremap <leader>v <c-v> 
 nnoremap <C-J> i<CR><Esc>k$
 " unmap <c-v>
 map s<space> vS<space><space>
 
 
-nmap <right> :tabn<cr>
-nmap <left> :tabp<cr>
 
 
 
@@ -94,7 +94,6 @@ map <leader><space> za
 " set statusline+=%{SyntaxItem()}
 
 set laststatus=2 " always show status line
-
 set statusline=%f       "tail of the filename
 set statusline+=\ \ \ \ \[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] "file format
@@ -236,6 +235,8 @@ noremap <c-n> <tab>
 
 nmap <c-right> :bn<cr>
 nmap <c-left> :bp<cr>
+nmap <right> :tabn<cr>
+nmap <left> :tabp<cr>
 
 map <bs> X
 map <del> dl
@@ -330,6 +331,8 @@ function! HisFoldText()
   return sub . info
 endfunction
 
+map \=t1 :set tabline=%!SherwinTabLine()<CR>
+map \=t2 :set tabline=%!SherwinTabLineCompact()<CR>
 
 set tabline=%!SherwinTabLine()
 map <leader>=b :call ToggleBG()<CR>

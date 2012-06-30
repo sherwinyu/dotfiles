@@ -252,4 +252,115 @@ if exists("+showtabline")
     return s
   endfunction
 
+function! SherwinTabLineCompact()
+  " hi tabWinNum term=bold cterm=bold term=underline
+
+  "hi TabNumSel    term=underline cterm=underline,bold ctermfg=7 ctermbg=8 gui=reverse
+  "hi TabWinNumSel     term=underline,reverse cterm=underline,reverse,bold ctermfg=10 ctermbg=7 gui=bold
+  "hi TabLineSel     term=underline,reverse cterm=reverse ctermfg=10 ctermbg=7 gui=bold
+
+  "hi TabNum term=underline cterm=underline,bold ctermfg=12 ctermbg=8 gui=reverse
+  "hi TabWinNum    term=underline cterm=bold ctermfg=12 ctermbg=0 gui=reverse
+  "hi TabLine        term=underline cterm=NONE ctermfg=12 ctermbg=0 gui=underline guibg=DarkGrey
+  " TabLine        xxx term=underline cterm=underline ctermfg=12 ctermbg=0 gui=underline guibg=DarkGrey
+  " TabLineFill    xxx term=underline cterm=underline ctermfg=12 ctermbg=0 gui=reverse
+
+
+
+
+  " TabWinNum => the active win
+  "
+  " hi TabLineSel term=bold cterm=bold ctermfg=16 ctermbg=229j
+  " hi TabLineSel term=bold cterm=bold ctermfg=10 ctermbg=7
+  " hi TabWinNumSel term=bold cterm=bold ctermfg=90 ctermbg=229
+  " hi TabNumSel term=bold cterm=bold ctermfg=16 ctermbg=229
+  " hi TabLine term=underline ctermfg=16 ctermbg=145
+  " " hi TabLine term=underline ctermfg=12 ctermbg=0
+  " hi TabWinNum term=bold cterm=bold ctermfg=90 ctermbg=145
+  " hi TabNum term=bold cterm=bold ctermfg=16 ctermbg=14k
+
+  " hi TabNumSel term=bold cterm=reverse,bold ctermfg=10 ctermbg=7
+  " hi TabNum term=bold cterm=reverse ctermfg=10 ctermbg=12
+
+
+  " hi TabLine   term=underline cterm=underline ctermfg=12 ctermbg=0 gui=underline guibg=DarkGrey
+
+  let s = ''
+  let t = tabpagenr()
+  let i = 1
+  while i <= tabpagenr('$')
+    let buflist = tabpagebuflist(i)
+    let curWin = tabpagewinnr(i)
+    "let s .= (i == t ? '%#TabLineSel# %#TabNumSel#' : ' %#TabNum#')
+    let s .= (i == t ? '%#TabNumSel#' : ' %#TabNum#')
+    let s .= ' '
+    let s .= i . '|'
+    let s .= '%*'
+    let other_files = ''
+    let first_file = ''
+
+    if i == t
+      let first_file .= '%#TabWinNumSel#' 
+    else
+      let first_file .= '%#TabWinNum#' 
+    endif
+    let filename = fnamemodify(bufname(buflist[curWin-1]), ':t:r:r:r')
+    if filename == ''
+      let filename = '[_]'
+    endif
+    let first_file .= filename
+    let first_file .= ' '
+    let s .= first_file
+    if i == t
+      let i += 1
+      continue
+    endif
+
+    let remaining = min([3, len(buflist) - 1])
+    let win = 1
+    while remaining > 0
+      if curWin != win 
+        if i == t
+          if curWin == win
+            let other_files .= '%#TabWinNumSel#' 
+          else 
+            let other_files .= '%#TabLineSel#' 
+          endif
+
+        elseif curWin == win
+          let other_files .= '%#TabWinNum#' 
+        else 
+          let other_files .= '%#TabLine#' 
+        endif
+
+
+        " let other_files .= (win == curWin ? '%#TabLineSel#*' : '%#TabLineNum#*')
+        " if win != curWin
+        let filename = fnamemodify(bufname(buflist[win-1]), ':t:r:r:r') "check :help fnamemodify and :help mods
+        if filename == ''
+          let filename = '[_]'
+        endif
+        let other_files .= filename
+        if i == t
+          let other_files .= '%#TabLineSel#' 
+        else
+          let other_files .= '%#TabLine#' 
+        endif
+
+        let other_files .= ' '
+        " let other_files .= win - 1
+        let remaining -= 1
+        " endif
+      endif
+      let win +=  1
+
+    endwhile 
+    let s .= other_files
+    let i = i + 1
+  endwhile
+  let s .= '%T%#TabLineFill#%='
+  let s .= (tabpagenr('$') > 1 ? '%999XX' : 'X')
+  return s
+endfunction
+
 endif

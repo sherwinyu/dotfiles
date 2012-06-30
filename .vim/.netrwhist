@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/syu/.vim'
-let g:netrw_dirhist_2='/home/syu/.vim/autoload'
-let g:netrw_dirhist_3='/home/syu/.vim/autoload/shervim'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/syu/projects/communificiency/.git'
+let g:netrw_dirhist_2='/home/syu/projects/sample_app/.git'
+let g:netrw_dirhist_3='/home/syu/dotfiles/.vim/bundle'
+let g:netrw_dirhist_4='/home/syu/dotfiles/.vim/bundle/vim-abolish'
+let g:netrw_dirhist_5='/home/syu'
+let g:netrw_dirhist_6='/home/syu/projects/communificiency'
+let g:netrw_dirhist_7='/home/syu/projects/communificiency/app'
+let g:netrw_dirhist_8='/home/syu/projects/communificiency/app/assets'
+let g:netrw_dirhist_9='/home/syu/projects/communificiency/app/assets/stylesheets'
