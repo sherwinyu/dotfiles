@@ -7,6 +7,14 @@ runtime macros/matchit.vim
 runtime autoload/shervim/ShowTabNumber.vim
 runtime autoload/shervim/ToggleBG.vim
 
+" commands 201 07 01
+map <leader>G :tabnew <C-R>%<CR>:Gstatus<CR><c-w>o
+map <leader>gf <c-w>sgf:Gdiff<CR>
+map K <NOP> 
+"
+
+
+
 set rtp+=$GOROOT/misc/vim
 
 set rtp+=$GOROOT/misc/vim
@@ -16,7 +24,7 @@ au BufRead,BufNewFile *.go set filetype=go
 set completeopt=menuone,longest  "IDE like behavior for autocompleting
 set ttymouse=xterm "what does this do???!
 set mouse=a "allow scrolling with mouse wheel
-set mouse=nv "temporary -- to learn not to use <esc> to leave insert mode
+"set mouse=nv "temporary -- to learn not to use <esc> to leave insert mode
 let java_allow_cpp_keywords = 1 "Annoying
 
 " let mapleader = "\"
@@ -95,10 +103,11 @@ map <leader><space> za
 
 set laststatus=2 " always show status line
 set statusline=%f       "tail of the filename
+set statusline+=\ \ 
+set statusline+=%m      "modified flag
 set statusline+=\ \ \ \ \[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] "file format
 set statusline+=%h      "help file flag
-set statusline+=%m      "modified flag
 set statusline+=%r      "read only flag
 set statusline+=%y      "filetype
 set statusline+=%=      "left/right separator
@@ -151,8 +160,16 @@ set ignorecase
 set smartcase
 set scrolloff=5
 set hidden
-set wildmenu
+set wildmenu  
 set switchbuf+=usetab " so that using :sb doesn't open change current window
+
+
+cnoremap <C-A> <Home>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+  
 
 set expandtab  "google settings
 set shiftwidth=2  "google settings
@@ -175,7 +192,7 @@ set incsearch "highlight as you go
 set nowrap
 set number
 set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
-set ww=hl "Allows h and l to move wrap lines
+set whichwrap=hl[] "Allows h and l to move wrap lines and left right to wrap in insert mode
 "colorscheme evening
 "color torte
 "color evening
