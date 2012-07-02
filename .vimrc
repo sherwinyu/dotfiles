@@ -29,7 +29,6 @@ let java_allow_cpp_keywords = 1 "Annoying
 
 " let mapleader = "\"
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
-
 noremap <a-cr> O<esc>
 noremap <cr> o<esc>
 noremap <space> i<space><esc>
@@ -49,8 +48,9 @@ map s<space> vS<space><space>
 
 
 
+nmap <silent> <leader>t :CtrlP<CR>
 
-
+map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
 map <leader>=s :%s/\s\+$//g<cr>
 map <leader>=7 ggVG&<c-o><c-o>
 map <leader>=f :CommandTFlush<CR>
@@ -184,6 +184,8 @@ set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,
 set guioptions-=m
 set guioptions-=r
 set guioptions-=T
+"no left scroll bar
+set guioptions-=L 
 
 "set autoindent
 
@@ -360,7 +362,13 @@ autocmd BufNewFile,BufReadPost *.go set filetype=go
 
 set background=light
 let g:solarized_termcolors=16
+
 colorscheme solarized
+if has("gui_running")
+    " set fuoptions=maxvert,maxhorz
+    " au GUIEnter * set fullscreen
+endif
+
 
 set t_Co=16
 
