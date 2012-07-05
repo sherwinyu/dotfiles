@@ -97,6 +97,10 @@ alias -g BE='bundle exec'
 alias -g xclip='xclip -selection c'
 alias -g X='| xclip'
 
+bindkey '^Z' fancy-ctrl-z
+alias gitl='git --no-pager log'
+
+
 # aliasing TMUX to work with solarized vim
 alias tmux="TERM=screen-256color-bce tmux"
 
@@ -162,3 +166,16 @@ function chpwd; {
     cd -q "$DIRECTORY"
     setopt AUTO_PUSHD
 }
+
+
+# TODO(syu) put this in the correct place 
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    bg
+    zle redisplay
+  else
+    zle push-input
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z

@@ -10,10 +10,24 @@ runtime autoload/shervim/ToggleBG.vim
 " commands 201 07 01
 map <leader>G :tabnew <C-R>%<CR>:Gstatus<CR><c-w>o
 map <leader>gf <c-w>sgf:Gdiff<CR>
-map K <NOP> 
+"
 "
 
 
+"let g:ctrlp_max_files = 5000
+
+"" Optimize file searching
+"if has("unix")
+    "let g:ctrlp_user_command = {
+                "\   'types': {
+                "\       1: ['.git/', 'cd %s && git ls-files']
+                "\   },
+                "\   'fallback': 'find %s -type f | head -' . g:ctrlp_max_files
+                "\ }
+"endif
+
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_switch_buffer = 0 "disable it
 
 set rtp+=$GOROOT/misc/vim
 
@@ -48,11 +62,13 @@ map s<space> vS<space><space>
 
 
 
-nmap <silent> <leader>t :CtrlP<CR>
+" nnoremap <silent> <Leader>t :CommandT<CR>
+" nnoremap <silent> <Leader>B :CommandTBuffer<CR>
+nnoremap <silent> <leader>t :CtrlP<CR>
 
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
 map <leader>=s :%s/\s\+$//g<cr>
-map <leader>=7 ggVG&<c-o><c-o>
+map <leader>== ggVG&<c-o><c-o>
 map <leader>=f :CommandTFlush<CR>
 map <leader>=ve :e ~/.vimrc<CR>
 map <leader>=vr :so ~/.vimrc<CR>
@@ -71,13 +87,13 @@ nmap <silent> <leader>n :silent :set hlsearch!<CR>
 map <leader>cd :cd %:p:h<CR>
 map <leader>f :call ShowFuncName() <CR>
 
-nnoremap <silent> <Leader>t :CommandT<CR>
-nnoremap <silent> <Leader>B :CommandTBuffer<CR>
+nmap K <nop>
+
 
 nmap <leader>b :sb 
 
 map <leader>w :w<CR>
-map <leader>W :w<CR>
+map <leader>W :w!<CR>
 map <leader>wa :wa<CR>
 map <leader>wq :wq<CR>
 map <leader>wqa :wqa<CR>
