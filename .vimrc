@@ -157,6 +157,7 @@ map <f8> 8gt
 
 "2012 01 25 EXPERIMENTAL
 inoremap kj <esc>
+vnoremap <c-c> <esc>
 
 nmap j gj
 nmap k gk
