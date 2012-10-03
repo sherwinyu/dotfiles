@@ -1,9 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/syu/projects/communificiency/spec/models'
-let g:netrw_dirhist_2='/home/syu/dotfiles/.vim/autoload'
-let g:netrw_dirhist_3='/home/syu/dotfiles/.vim/autoload/shervim'
-let g:netrw_dirhist_4='/home/syu/projects/communificiency'
-let g:netrw_dirhist_5='/home/accts/sy23/projects/communificiency/app/views/layouts'
-let g:netrw_dirhist_6='/home/accts/sy23/projects/communificiency/My-Bootstrap-Site-NAVBAR'
-let g:netrw_dirhist_7='/home/accts/sy23/projects/communificiency'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/syu/projects/Parkifi'
+let g:netrw_dirhist_2='/Users/syu/projects/Parkifi/src'
+let g:netrw_dirhist_3='/Users/syu/projects/Parkifi/src/com'
+let g:netrw_dirhist_4='/Users/syu/projects/Parkifi/src/com/sherwinyu'
+let g:netrw_dirhist_5='/Users/syu/projects/Parkifi/src/com/sherwinyu/parkifi'

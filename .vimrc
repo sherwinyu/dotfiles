@@ -11,6 +11,10 @@ runtime autoload/shervim/ToggleBG.vim
 map <leader>G :tabnew <C-R>%<CR>:Gstatus<CR><c-w>o
 map <leader>gf <c-w>sgf:Gdiff<CR>
 "
+" for eclim
+map <leader>=j :%JavaFormat<cr>
+map <leader>1 :JavaCorrect<cr>
+"
 "
 
 
@@ -388,4 +392,6 @@ endif
 
 
 set t_Co=16
+
+
 
