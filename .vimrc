@@ -34,6 +34,23 @@ set rtp+=$GOROOT/misc/vim
 set rtp+=$GOROOT/misc/vim
 au BufRead,BufNewFile *.go set filetype=go
 
+map <leader>B :call JumpBackToBuffer()<cr><cr>
+nmap <leader>b :call JumpBackToBuffer()<cr>
+
+function! JumpBackToBuffer() 
+  let g:ctrlp_switch_buffer=2
+  CtrlPMRU
+  let g:ctrlp_switch_buffer=0
+endfunction
+
+" annoying
+map <c-w>c <NOP>
+map <c-w><c-c> <NOP>
+map <c-w>q <NOP>
+  
+
+  
+
 
 set completeopt=menuone,longest  "IDE like behavior for autocompleting
 set ttymouse=xterm "what does this do???!
@@ -90,7 +107,6 @@ map <leader>f :call ShowFuncName() <CR>
 nmap K <nop>
 
 
-nmap <leader>b :sb 
 
 map <leader>w :w<CR>
 map <leader>W :w!<CR>
@@ -164,6 +180,8 @@ nmap k gk
 
 "opposite of <c-w>
 imap <c-e> <c-o>dw
+imap <c-k> <c-o>d=
+imap <c-h> <c-o>d0
 
 
 
@@ -177,6 +195,9 @@ set smartcase
 set scrolloff=5
 set hidden
 set wildmenu  
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep  " MacOSX/Linux
+
+ 
 set switchbuf+=usetab " so that using :sb doesn't open change current window
 
 
@@ -208,6 +229,10 @@ set guioptions-=L
 set autowrite
 set incsearch "highlight as you go
 set nowrap
+set linebreak 
+set showbreak=                      ≡  
+map <leader>sl :set list!<CR>
+
 set number
 set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
 set whichwrap=hl[] "Allows h and l to move wrap lines and left right to wrap in insert mode
@@ -330,7 +355,7 @@ fun! MyFoldText()
   return substitute(getline(v:foldstart), '^\s\+', repeat(" ",indent(v:foldstart)), '')
   " return getline(v:foldstart) 
 endfun
-set fdm=syntax
+set fdm=manual
 
 function! HisFoldText()
   let line = getline(v:foldstart)
@@ -369,7 +394,7 @@ endfunction
 map \=t1 :set tabline=%!SherwinTabLine()<CR>
 map \=t2 :set tabline=%!SherwinTabLineCompact()<CR>
 
-set tabline=%!SherwinTabLine()
+set tabline=%!SherwinTabLineCompact()
 map <leader>=b :call ToggleBG()<CR>
 
 set formatoptions=croql

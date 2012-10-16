@@ -20,6 +20,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 #
+stty -ixon
 alias egrep='egrep --color=auto -i'
 alias fgrep='fgrep --color=auto -i'
 alias grep='grep --color=auto -i'
@@ -98,7 +99,8 @@ alias -g xclip='xclip -selection c'
 alias -g X='| xclip'
 
 bindkey '^Z' fancy-ctrl-z
-alias gitl='git --no-pager log'
+alias gitl='git --no-pager log --pretty=oneline'
+alias HL='heroku logs'
 
 
 # aliasing TMUX to work with solarized vim
@@ -108,6 +110,7 @@ export CLASSPATH=.:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/m
 export GOPATH=/home/syu/projects/go:/home/syu/projects/ringmaster
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:/home/syu/lib/play-1.2.4
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 

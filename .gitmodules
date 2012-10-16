@@ -31,3 +31,12 @@
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/vim-coffee-script"]
+	path = .vim/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "vim-octopress"]
+	path = vim-octopress
+	url = https://github.com/tobym/vim-octopress.git
+[submodule ".vim/bundle/vim-play"]
+	path = .vim/bundle/vim-play
+	url = git://github.com/tobym/vim-play.git
