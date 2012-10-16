@@ -1,3 +1,5 @@
 *.sw*
 *session.vim.lock
 *.vim.lock
+*.*.local
+.netrwhist

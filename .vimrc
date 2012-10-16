@@ -11,6 +11,10 @@ runtime autoload/shervim/ToggleBG.vim
 map <leader>G :tabnew <C-R>%<CR>:Gstatus<CR><c-w>o
 map <leader>gf <c-w>sgf:Gdiff<CR>
 "
+" for eclim
+map <leader>=j :%JavaFormat<cr>
+map <leader>1 :JavaCorrect<cr>
+"
 "
 
 
@@ -173,6 +177,7 @@ map <f8> 8gt
 
 "2012 01 25 EXPERIMENTAL
 inoremap kj <esc>
+vnoremap <c-c> <esc>
 
 nmap j gj
 nmap k gk
@@ -412,4 +417,6 @@ endif
 
 
 set t_Co=16
+
+
 
