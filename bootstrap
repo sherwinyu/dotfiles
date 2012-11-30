@@ -25,7 +25,8 @@ ln -s dotfiles/.gitignore .gitignore
 ln -s dotfiles/dotzsh .zsh
 ln -s dotfiles/.zshrc .zshrc
 ln -s dotfiles/.gitconfig .gitconfig
-ln -s dotfiles/.dircolors.ansi-dark .dircolors
+
+cp -s dotfiles/dircolors.ansi-dark .dircolors
 
 echo dotfile copy over done!
 popd

@@ -84,12 +84,13 @@ preexec_functions+='preexec_update_git_vars'
 precmd_functions+='precmd_update_git_vars'
 chpwd_functions+='chpwd_update_git_vars'
 
-PROMPT=$' %B%{$fg[green]%}%n@%{$fg[green]%}%m%{$fg[green]%} [%b %{$fg[magenta]%}%~ %$(prompt_git_info) %B%{$fg[green]%}]%b%{$reset_color%}%# '
-# RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}] %*"
-PROMPT="#F{green}%n@%m %# %F{yellow}"
+PROMPT=$' %B%{$fg[green]%}%n@%{$fg[green]%}%m%{$fg[green]%} [%b %{$fg[magenta]%}%~ %$(prompt_git_info) %B%{$fg[green]%}]%b%{$reset_color%}%# %{$fg[yellow]%}'
+RPROMPT="[%{$fg[yellow]%}%?] %*"
+# RPROMPT="5"
+# PROMPT="#F{green}%n@%m %# %F{yellow}"
 
 ## from http://stackoverflow.com/questions/9268836/zsh-change-prompt-input-color/13635653#13635653
-PROMPT="$fg[green]%n@%m %# %F{yellow}"
+# PROMPT="$fg[green]%n@%m %# %F{yellow}"
 preexec () { echo -ne "\e[0m" }
 
 # PROMPT=$' %{${fg[green]}%}%n%~%b$(prompt_git_info)%{${fg[default]}%} '
@@ -113,6 +114,7 @@ alias pkill='pkill -f'
 
 # aliasing TMUX to work with solarized vim
 alias tmux="TERM=screen-256color-bce tmux"
+eval `dircolors ~/.dircolors`
 
 export CLASSPATH=.:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/mockito/mockito-all-1.9.0.jar
 export GOPATH=/home/syu/projects/go:/home/syu/projects/ringmaster
@@ -199,3 +201,5 @@ bindkey '^Z' fancy-ctrl-z
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
+
+
