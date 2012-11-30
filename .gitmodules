@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/vim-play"]
 	path = .vim/bundle/vim-play
 	url = git://github.com/tobym/vim-play.git
+[submodule ".vim/bundle/handlebars"]
+	path = .vim/bundle/handlebars
+	url = git://github.com/nono/vim-handlebars.git

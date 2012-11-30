@@ -13,6 +13,7 @@ mv .inputrc dotfiles_old
 mv .gitignore dotfiles_old
 mv .gitconfig dotfiles_old
 mv .zshrc dotfiles_old
+mv .dircolors dotfiles_old
 
 ln -s dotfiles/.vimrc .vimrc
 ln -s dotfiles/.vim .vim
@@ -24,6 +25,7 @@ ln -s dotfiles/.gitignore .gitignore
 ln -s dotfiles/dotzsh .zsh
 ln -s dotfiles/.zshrc .zshrc
 ln -s dotfiles/.gitconfig .gitconfig
+ln -s dotfiles/.dircolors.ansi-dark .dircolors
 
 echo dotfile copy over done!
 popd

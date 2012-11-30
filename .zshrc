@@ -85,7 +85,13 @@ precmd_functions+='precmd_update_git_vars'
 chpwd_functions+='chpwd_update_git_vars'
 
 PROMPT=$' %B%{$fg[green]%}%n@%{$fg[green]%}%m%{$fg[green]%} [%b %{$fg[magenta]%}%~ %$(prompt_git_info) %B%{$fg[green]%}]%b%{$reset_color%}%# '
-RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}] %*"
+# RPROMPT="[%{$fg[yellow]%}%?%{$reset_color%}] %*"
+PROMPT="#F{green}%n@%m %# %F{yellow}"
+
+## from http://stackoverflow.com/questions/9268836/zsh-change-prompt-input-color/13635653#13635653
+PROMPT="$fg[green]%n@%m %# %F{yellow}"
+preexec () { echo -ne "\e[0m" }
+
 # PROMPT=$' %{${fg[green]}%}%n%~%b$(prompt_git_info)%{${fg[default]}%} '
 
 # Global Aliases
@@ -112,14 +118,11 @@ export CLASSPATH=.:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/m
 export GOPATH=/home/syu/projects/go:/home/syu/projects/ringmaster
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
-<<<<<<< HEAD
 export PATH=$PATH:/home/syu/lib/play-1.2.4
-=======
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:~/lib/play-1.2.4
 export PATH=$PATH:~/lib/android-sdk-macosx/platform-tools
 export PATH=$PATH:~/lib/android-sdk-macosx/tools
->>>>>>> a39ba54484e5af661be8733198fbd129c6cbe9e0
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
