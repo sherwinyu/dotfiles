@@ -6,6 +6,8 @@ call pathogen#infect()
 runtime macros/matchit.vim
 runtime autoload/shervim/ShowTabNumber.vim
 runtime autoload/shervim/ToggleBG.vim
+runtime autoload/shervim/CreatePathsOnSave.vim
+runtime autoload/shervim/ShowHighlightGroup.vim
 
 " commands 201 07 01
 map <leader>G :tabnew <C-R>%<CR>:Gstatus<CR><c-w>o
@@ -16,6 +18,8 @@ map <leader>=j :%JavaFormat<cr>
 map <leader>1 :JavaCorrect<cr>
 "
 "
+"
+inoremap j <c-o>cc<esc><b s>
 
 
 "let g:ctrlp_max_files = 5000
@@ -70,7 +74,7 @@ noremap <space> i<space><esc>
 
 map <c-v> "+p
 map <c-x> "+d
-map <c-c> "+y
+vmap <c-c> "+y
 
 " iunmap <c-v>
 " unmap <c-a>
@@ -120,6 +124,7 @@ map <leader>wqa :wqa<CR>
 map <leader>q :q<CR>
 map <leader>Qa :qa!<CR>
 map <leader>Q :q!<CR>
+map <leader><leader>q :bwipe!<cr>
 
 map <leader>m :make<cr><space>
 map <leader>c :cw<cr>
@@ -177,7 +182,6 @@ map <f8> 8gt
 
 "2012 01 25 EXPERIMENTAL
 inoremap kj <esc>
-vnoremap <c-c> <esc>
 
 nmap j gj
 nmap k gk
