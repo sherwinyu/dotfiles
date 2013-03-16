@@ -9,6 +9,7 @@ runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 
+
 " commands 201 07 01
 map <leader>G :tabnew <C-R>%<CR>:Gstatus<CR><c-w>o
 map <leader>gf <c-w>sgf:Gdiff<CR>
@@ -74,7 +75,7 @@ noremap <space> i<space><esc>
 
 map <c-v> "+p
 map <c-x> "+d
-vmap <c-c> "+y
+vmap <leader>c "+y
 
 " iunmap <c-v>
 " unmap <c-a>
@@ -128,7 +129,10 @@ map <leader><leader>q :bwipe!<cr>
 
 map <leader>m :make<cr><space>
 map <leader>c :cw<cr>
-map <f12> :cn<cr>
+
+map <leader>] :cn<cr>
+map <leader>[ :cp<cr>
+
 
 map <leader><space> za
 
