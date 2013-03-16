@@ -225,7 +225,8 @@ set cink={,}
 set cindent
 set autoindent
 set smartindent
-set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
+" set sessionoptions=buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
+set sessionoptions=buffers,curdir,folds,resize,tabpages,winsize,winpos
 
 set guioptions-=m
 set guioptions-=r
