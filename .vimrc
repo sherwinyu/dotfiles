@@ -10,6 +10,11 @@ runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 
 
+"commands 2013 04 06"
+imap <c-l> <c-o>h<c-o>/[\]\)\}\"\'\>]<cr><c-o>l
+nmap <c-l> h/[\]\)\}]<cr>l
+imap <c-s> <c-g>s
+
 " commands 201 07 01
 map <leader>G :tabnew <C-R>%<CR>:Gstatus<CR><c-w>o
 map <leader>gf <c-w>sgf:Gdiff<CR>
@@ -198,7 +203,6 @@ imap <c-h> <c-o>d0
 
 
 
-set ve=block
 set ruler
 set showmode
 set textwidth=180
@@ -427,5 +431,4 @@ endif
 
 set t_Co=16
 
-
-
+set virtualedit=onemore,insert,bloc
