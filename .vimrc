@@ -431,4 +431,4 @@ endif
 
 set t_Co=16
 
-set virtualedit=onemore,insert,bloc
+set virtualedit=onemore,insert,block
