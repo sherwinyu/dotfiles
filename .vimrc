@@ -10,6 +10,8 @@ runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 
 
+
+nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 " commands 201 07 01
 map <leader>G :tabnew <C-R>%<CR>:Gstatus<CR><c-w>o
 map <leader>gf <c-w>sgf:Gdiff<CR>

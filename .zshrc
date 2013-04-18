@@ -14,7 +14,11 @@ bindkey -e
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/syu/.zshrc'
 
+
+# History sharing (via http://askubuntu.com/questions/23630/how-do-you-share-history-between-terminals-in-zsh)
 setopt inc_append_history
+setopt share_history
+bindkey -M isearch '^S' history-incremental-search-forward
 
 autoload -Uz compinit
 compinit
@@ -26,6 +30,12 @@ alias fgrep='fgrep --color=auto -i'
 alias grep='grep --color=auto -i'
 alias dnstop='dnstop eth1'
 alias ls='ls --color=auto'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gd='git diff'
+alias gdc='git diff --cached'
+
 
 alias zr='source ~/.zshrc'
 alias ze='vim ~/.zshrc'
