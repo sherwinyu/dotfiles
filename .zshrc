@@ -32,9 +32,14 @@ alias dnstop='dnstop eth1'
 alias ls='ls --color=auto'
 alias gs='git status'
 alias ga='git add'
+alias gap='git add -p'
 alias gc='git commit'
+alias gcm='git commit -m'
+alias gcam='git commit -m'
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias gpush='git push'
+alias gpull='git pull'
 
 
 alias zr='source ~/.zshrc'
@@ -54,7 +59,8 @@ autoload -U colors && colors
 setopt PROMPT_SUBST
 
 # spelling corrections
-setopt correctall
+setopt correct
+unsetopt correctall
 
 # makes cd pushd
 setopt AUTO_PUSHD
