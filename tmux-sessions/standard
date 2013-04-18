@@ -1,0 +1,5 @@
+new -s 'standard'
+neww -n vim vim
+neww -n git zsh
+neww -n rspec zsh
+selectw -t 1
