@@ -9,6 +9,12 @@ runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 
+
+" Shortcuts for opening vim sessions
+nnoremap <leader>So :OpenSession<space>
+nnoremap <leader>Ss :SaveSession<space>
+
+" Shortcut for selecting just pasted text
 nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 "commands 2013 04 06"
 imap <c-l> <c-o>h<c-o>/[\]\)\}\"\'\>]<cr><c-o>l
@@ -104,6 +110,7 @@ map <leader>=f :CommandTFlush<CR>
 map <leader>=ve :e ~/.vimrc<CR>
 map <leader>=vr :so ~/.vimrc<CR>
 map <leader>=ze :e ~/.zshrc<CR>
+map <leader>=te :e ~/.tmux.conf<CR>
 
 map <leader>\t :tabnew<CR>
 
