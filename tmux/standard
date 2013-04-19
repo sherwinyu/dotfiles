@@ -1,5 +1,18 @@
-new -s 'standard'
-neww -n vim vim
+#1 
+new
+selectw -t 1
+rename-window vim
+
+#2 
 neww -n git zsh
+
+#3
 neww -n rspec zsh
+
+#4
+neww -n railss zsh
+
+#5
+neww -n railsc zsh
+
 selectw -t 1
