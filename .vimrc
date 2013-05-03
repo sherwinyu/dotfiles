@@ -9,7 +9,9 @@ runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 
-"2013 05 01 
+let g:seek_enable_jumps = 1
+
+"2013 05 01
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -82,7 +84,7 @@ au BufRead,BufNewFile *.go set filetype=go
 map <leader>B :call JumpBackToBuffer()<cr><cr>
 nmap <leader>b :call JumpBackToBuffer()<cr>
 
-function! JumpBackToBuffer() 
+function! JumpBackToBuffer()
   let g:ctrlp_switch_buffer=2
   CtrlPMRU
   let g:ctrlp_switch_buffer=0
@@ -114,7 +116,7 @@ vmap <leader>c "+y
 " unmap <c-a>
 
 "visual block
-noremap <leader>v <c-v> 
+noremap <leader>v <c-v>
 nnoremap <C-J> i<CR><Esc>k$
 " unmap <c-v>
 map s<space> vS<space><space>
@@ -162,6 +164,7 @@ map <leader>Q :q!<CR>
 map <leader><leader>q :bwipe!<cr>
 
 map <leader>m :make<cr><space>
+map <leader>m :sbm<cr>
 map <leader>c :cw<cr>
 
 map <leader>] :cn<cr>
@@ -181,8 +184,8 @@ map <leader><space> za
 " set statusline+=%{SyntaxItem()}
 
 set laststatus=2 " always show status line
-set statusline=%f       "tail of the filename
-set statusline+=\ \ 
+set statusline=%f        "tail of the filename
+set statusline+=\ \ "wala
 set statusline+=%m      "modified flag
 set statusline+=\ \ \ \ \[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] "file format
@@ -240,7 +243,7 @@ set ignorecase
 set smartcase
 set scrolloff=5
 set hidden
-set wildmenu  
+set wildmenu
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep  " MacOSX/Linux
 
 
@@ -269,14 +272,14 @@ set guioptions-=m
 set guioptions-=r
 set guioptions-=T
 "no left scroll bar
-set guioptions-=L 
+set guioptions-=L
 
 "set autoindent
 
 set autowrite
 set incsearch "highlight as you go
 set nowrap
-set linebreak 
+set linebreak
 set showbreak=                      ≡  
 map <leader>sl :set list!<CR>
 
@@ -400,7 +403,7 @@ set foldlevel=2
 set foldnestmax=2
 fun! MyFoldText()
   return substitute(getline(v:foldstart), '^\s\+', repeat(" ",indent(v:foldstart)), '')
-  " return getline(v:foldstart) 
+  " return getline(v:foldstart)
 endfun
 set fdm=manual
 
