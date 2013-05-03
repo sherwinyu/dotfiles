@@ -9,6 +9,31 @@ runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 
+"2013 05 01 
+" http://vim.wikia.com/wiki/Remove_unwanted_spaces
+autocmd BufWritePre * :%s/\s\+$//e
+
+
+
+" Indent guides
+let g:indentguides_state = 0
+function! IndentGuides() " {{{
+  if g:indentguides_state
+    let g:indentguides_state = 0
+    2match None
+  else
+    if &background=='dark'
+      hi def IndentGuides ctermbg=240
+    else
+      " hi def IndentGuides ctermbg=230
+      hi def IndentGuides ctermbg=245
+    endif
+    let g:indentguides_state = 1
+    execute '2match IndentGuides /\%(\_^\s*\)\@<=\%(\%'.(0*&sw+1).'v\|\%'.(1*&sw+1).'v\|\%'.(2*&sw+1).'v\|\%'.(3*&sw+1).'v\|\%'.(4*&sw+1).'v\|\%'.(5*&sw+1).'v\|\%'.(6*&sw+1).'v\|\%'.(7*&sw+1).'v\)\s/'
+  endif
+endfunction " }}}
+nnoremap <leader>i :call IndentGuides()<cr>
+
 
 " Shortcuts for opening vim sessions
 nnoremap <leader>So :OpenSession<space>
@@ -38,12 +63,12 @@ inoremap j <c-o>cc<esc><b s>
 
 "" Optimize file searching
 "if has("unix")
-    "let g:ctrlp_user_command = {
-                "\   'types': {
-                "\       1: ['.git/', 'cd %s && git ls-files']
-                "\   },
-                "\   'fallback': 'find %s -type f | head -' . g:ctrlp_max_files
-                "\ }
+"let g:ctrlp_user_command = {
+"\   'types': {
+"\       1: ['.git/', 'cd %s && git ls-files']
+"\   },
+"\   'fallback': 'find %s -type f | head -' . g:ctrlp_max_files
+"\ }
 "endif
 
 let g:ctrlp_working_path_mode = 0
@@ -67,9 +92,6 @@ endfunction
 map <c-w>c <NOP>
 map <c-w><c-c> <NOP>
 map <c-w>q <NOP>
-  
-
-  
 
 
 set completeopt=menuone,longest  "IDE like behavior for autocompleting
@@ -153,7 +175,7 @@ map <leader><space> za
 " END
 
 " function! SyntaxItem()
-    " return synIDattr(synID(line("."),col("."),1),"name")
+" return synIDattr(synID(line("."),col("."),1),"name")
 " endfunction
 
 " set statusline+=%{SyntaxItem()}
@@ -221,7 +243,7 @@ set hidden
 set wildmenu  
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep  " MacOSX/Linux
 
- 
+
 set switchbuf+=usetab " so that using :sb doesn't open change current window
 
 
@@ -230,7 +252,7 @@ cnoremap <C-F> <Right>
 cnoremap <C-B> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
-  
+
 
 set expandtab  "google settings
 set shiftwidth=2  "google settings
@@ -431,8 +453,8 @@ let g:solarized_termcolors=16
 
 colorscheme solarized
 if has("gui_running")
-    " set fuoptions=maxvert,maxhorz
-    " au GUIEnter * set fullscreen
+  " set fuoptions=maxvert,maxhorz
+  " au GUIEnter * set fullscreen
 endif
 
 

@@ -118,8 +118,8 @@ alias -g M='| more'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g BE='bundle exec'
-alias -g xclip='xclip -selection c'
-alias -g X='| xclip'
+# alias -g xclip='xclip -selection c'
+# alias -g X='| xclip'
 
 bindkey '^Z' fancy-ctrl-z
 
