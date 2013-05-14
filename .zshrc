@@ -41,7 +41,6 @@ alias gdc='git diff --cached'
 alias gpush='git push'
 alias gpull='git pull'
 
-
 alias zr='source ~/.zshrc'
 alias ze='vim ~/.zshrc'
 alias b='cd ~-'
@@ -202,7 +201,7 @@ function chpwd; {
 }
 
 
-# TODO(syu) put this in the correct place 
+# TODO(syu) put this in the correct place
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     bg
@@ -222,3 +221,7 @@ fi
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/bin # add usr bin
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

@@ -9,7 +9,10 @@ runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 
-let g:seek_enable_jumps = 1
+" let g:seek_enable_jumps = 1
+
+inoremap <a-j> <c-u><c-o>
+
 
 "2013 05 01
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
@@ -20,6 +23,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Indent guides
 let g:indentguides_state = 0
 function! IndentGuides() " {{{
+
+
   if g:indentguides_state
     let g:indentguides_state = 0
     2match None
@@ -223,19 +228,18 @@ map <f8> 8gt
 
 "2012 01 25 EXPERIMENTAL
 inoremap kj <esc>
-
 nmap j gj
 nmap k gk
 "2012 01 25 EXPERIMENTAL
 
-"opposite of <c-w>
-imap <c-e> <c-o>dw
+"opposite of <c-w> -- <alt-w>
+inoremap w <c-o>dw
+inoremap - <c-o>^
+inoremap = <c-o>$
+inoremap <c-a> <c-o>^
+inoremap <c-e> <c-o>$
 imap <c-k> <c-o>d=
-imap <c-h> <c-o>d0
 
-
-
-set ruler
 set showmode
 set textwidth=180
 set showmatch
@@ -464,3 +468,5 @@ endif
 set t_Co=16
 
 set virtualedit=onemore,insert,block
+
+set wildignore+=*/public/assets/source_maps/*
