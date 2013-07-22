@@ -12,6 +12,9 @@ runtime autoload/shervim/ShowHighlightGroup.vim
 " let g:seek_enable_jumps = 1
 
 inoremap <a-j> <c-u><c-o>
+inoremap <leader><leader>p binding.pry<cr><esc>
+nnoremap <leader><leader>p obinding.pry<esc>
+nnoremap <leader><leader>P Obinding.pry<esc>
 
 
 "2013 05 01

@@ -4,6 +4,7 @@
 --type-add=js=.js.erb,.coffee
 --type-set=cucumber=.feature
 --type-set=c=.c,.cpp,.ino,.pde,.h
+
 --ignore-dir=vendor
 --ignore-dir=log
 --ignore-dir=tmp
@@ -13,6 +14,7 @@
 --ignore-dir=public/assets/*
 --ignore-dir=spec/cassettes
 --ignore-dir=features/cassettes
+
 --smart-case
 --sort-files
 --color

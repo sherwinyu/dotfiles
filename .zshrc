@@ -131,6 +131,12 @@ alias pkill='pkill -f'
 alias tmux="TERM=screen-256color-bce tmux"
 eval `dircolors ~/.dircolors`
 
+# Force unique values in zsh path
+# via http://unix.stackexchange.com/questions/62579/is-there-a-way-to-add-a-directory-to-my-path-in-zsh-only-if-its-not-already-pre
+typeset -U path
+
+# Set up paths
+# TODO(syu): use path+=(~/foo) syntax
 export CLASSPATH=.:~/lib/junit/:~/lib/junit/junit-4.10.jar:~/lib/mockito:~/lib/mockito/mockito-all-1.9.0.jar
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export GOPATH=/home/syu/projects/go:/home/syu/projects/ringmaster
