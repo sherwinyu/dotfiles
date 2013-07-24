@@ -15,6 +15,7 @@ mv .gitconfig dotfiles_old
 mv .zshrc dotfiles_old
 mv .dircolors dotfiles_old
 mv .ackrc dotfiles_old
+mv .teamocil dotfiles_old
 
 ln -s dotfiles/.vimrc .vimrc
 ln -s dotfiles/.vim .vim
@@ -27,6 +28,7 @@ ln -s dotfiles/dotzsh .zsh
 ln -s dotfiles/.zshrc .zshrc
 ln -s dotfiles/.gitconfig .gitconfig
 ln -s dotfiles/.ackrc .ackrc
+ln -s dotfiles/.teamocil .teamocil
 
 cp -s dotfiles/dircolors.ansi-dark .dircolors
 

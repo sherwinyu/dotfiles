@@ -1,0 +1,38 @@
+windows:
+  - name: simple-one-and-three-panes
+    layout: main-vertical
+    panes:
+      - cmd: echo 'first pane'
+      - cmd: echo 'second pane'
+      - cmd: echo 'third pane'
+      - cmd: echo 'fourth pane'
+###
+# session:
+#
+#   - name: "my-first-window"
+#     clear: true
+#     options:
+#       synchronize-panes: true
+#     root: "~/dotfiles"
+#     filters:
+#       before:
+#         - "echo 'Let’s use ruby-1.9.3 for each pane in this window.'"
+#         - "rvm"
+#     panes:
+#       - cmd: "git status"
+#       - cmd: "bundle exec rails server --port 4000"
+#         focus: true
+#   - name: "my-second-window"
+#     layout: tiled
+#     root: "~/"
+#     panes:
+#       - cmd: "git status"
+#       - cmd: "bundle exec rails server --port 4000"
+#         focus: true
+#   - name: "my-third-window"
+#     layout: main-vertical
+#     root: "~/"
+#     panes:
+#       - cmd: "git status"
+#       - cmd: "bundle exec rails server --port 4000"
+#         focus: true
