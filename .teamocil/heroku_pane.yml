@@ -1,0 +1,45 @@
+<%
+  _proj = ENV['TEAMOCIL_PROJECT']
+  _branch = ENV['TEAMOCIL_BRANCH'] || "staging"
+  _env = ENV['TEAMOCIL_RAILS_ENV'] || _branch
+
+  project_name = _proj
+  deployed_app_name = "#{_proj}-#{_branch.downcase}"
+  branch_name = "#{_branch}"
+  env_name = "#{_branch.upcase}"
+%>
+session:
+  name: <%= "heroku-#{project_name}-#{branch_name}" %>
+  app_name: &APP_NAME <%= deployed_app_name %>
+  branch_name: &BRANCH_NAME <%= branch_name %>
+  root: &ROOT "~/projects/<%=project_name%>"
+  windows:
+    - name: "mon"
+      root: *ROOT
+      filters:
+        before:
+          - "source .envrc"
+      layout: even-horizontal
+      panes:
+        - cmd:
+          - "echo '-----configs----'"
+          - "echo project_name: <%= project_name %>"
+          - "echo branch_name: <%= branch_name %>"
+          - "echo env_name: <%= env_name %>"
+          - "echo deployed_app_name: <%= deployed_app_name %>"
+
+          - "echo '----commands-----'"
+          - "echo 'noglob rake figaro:heroku[<%=deployed_app_name%>] RAILS_ENV=<%=env_name%>' "
+          - "echo gpush <%= branch_name %>"
+          - "echo heroku rake db:migrate -r <%=branch_name%>"
+        - cmd: "heroku logs --tail -r <%= branch_name %>"
+
+    - name: "console"
+      root: *ROOT
+      filters:
+        before:
+          - "source .envrc"
+      layout: even-horizontal
+      panes:
+        - cmd: "heroku run console -r <%= branch_name %>"
+        - cmd: "watch heroku status -r <%= branch_name %>"

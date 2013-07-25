@@ -1,0 +1,16 @@
+<%
+  _proj = ENV['TEAMOCIL_PROJECT']
+  _branch = ENV['TEAMOCIL_BRANCH'] || "staging"
+
+  project_name = _proj
+  deployed_app_name = "#{_proj}-#{_branch.downcase}"
+  branch_name = "#{_branch}"
+  env_name = "#{_branch.upcase}"
+%>
+session:
+  name: "heroku"
+  app_name: &APP_NAME <%= deployed_app_name %>
+  branch_name: &BRANCH_NAME <%= branch_name %>
+  root: &ROOT "~/projects/<%=project_name%>"
+  windows:
+    - name: staging
