@@ -6,7 +6,7 @@
   project_name = _proj
   deployed_app_name = "#{_proj}-#{_branch.downcase}"
   branch_name = "#{_branch}"
-  env_name = "#{_branch.upcase}"
+  env_name = "#{_env}"
 %>
 session:
   name: <%= "heroku-#{project_name}-#{branch_name}" %>
