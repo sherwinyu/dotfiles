@@ -473,3 +473,4 @@ set t_Co=16
 set virtualedit=onemore,insert,block
 
 set wildignore+=*/public/assets/source_maps/*
+set wildignore+=*/build/*
