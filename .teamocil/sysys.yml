@@ -26,6 +26,7 @@ session:
       filters:
         before:
           - "source .envrc"
+      layout: main-horizontal
       panes:
         - cmd: echo 'rspec'
         - cmd: "zeus start"
