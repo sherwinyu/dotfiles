@@ -148,7 +148,6 @@ export PATH=$PATH:~/lib/play-1.2.4
 export PATH=$PATH:~/lib/android-sdk-macosx/platform-tools
 export PATH=$PATH:~/lib/android-sdk-macosx/tools
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 SSH_ENV="$HOME/.ssh/environment"
 
@@ -175,7 +174,6 @@ fi
 
 alias junit='java org.junit.runner.JUnitCore'
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 # Local includes
 if [[ -r ~/.localinclude ]]; then
@@ -226,7 +224,6 @@ fi
 
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/bin # add usr bin
 
 ### Added by the Heroku Toolbelt
