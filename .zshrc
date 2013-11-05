@@ -225,9 +225,10 @@ fi
 
 
 PATH=$PATH:$HOME/bin # add usr bin
-PATH=$HOME/.rbenv/bin:$HOME/bin # add usr bin
+PATH=$HOME/.rbenv/bin:$HOME/bin:$PATH # add usr bin
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
 
+eval "$(rbenv init -)"
