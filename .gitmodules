@@ -15,7 +15,7 @@
 	url = http://github.com/tpope/vim-endwise.git
 [submodule ".vim/bundle/vim-session"]
 	path = .vim/bundle/vim-session
-	url = git://github.com/xolox/vim-session.git
+	url = git://github.com/sherwinyu/vim-session.git
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = http://github.com/tpope/vim-surround.git
@@ -45,4 +45,4 @@
 	url = git://github.com/tpope/vim-repeat.git
 [submodule ".vim/bundle/vim-misc"]
 	path = .vim/bundle/vim-misc
-	url = git@github.com:xolox/vim-session.git
+	url = git@github.com:xolox/vim-misc.git
