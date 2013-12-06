@@ -16,6 +16,10 @@ inoremap <leader><leader>p binding.pry<cr><esc>
 nnoremap <leader><leader>p obinding.pry<esc>
 nnoremap <leader><leader>P Obinding.pry<esc>
 
+map <c-f> 4j
+map <c-b> 4k
+nnoremap <PageUp> 10j
+nnoremap <PageDown> 10k
 
 "2013 05 01
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
@@ -161,6 +165,9 @@ nmap K <nop>
 
 
 
+map <leader>E :e<space><c-r>%
+map <leader>R :Rename<space><c-r>%
+map <leader>e :e<space>
 map <leader>w :w<CR>
 map <leader>W :w!<CR>
 map <leader>wa :wa<CR>
@@ -244,7 +251,7 @@ inoremap <c-e> <c-o>$
 imap <c-k> <c-o>d=
 
 set showmode
-set textwidth=180
+set textwidth=100
 set showmatch
 set ignorecase
 set smartcase
@@ -412,7 +419,7 @@ fun! MyFoldText()
   return substitute(getline(v:foldstart), '^\s\+', repeat(" ",indent(v:foldstart)), '')
   " return getline(v:foldstart)
 endfun
-set fdm=manual
+set foldmethod=manual
 
 function! HisFoldText()
   let line = getline(v:foldstart)
@@ -474,3 +481,4 @@ set virtualedit=onemore,insert,block
 
 set wildignore+=*/public/assets/source_maps/*
 set wildignore+=*/build/*
+set wildignore+=*/doc/*

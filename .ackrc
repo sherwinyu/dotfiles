@@ -21,3 +21,5 @@
 --color
 --follow
 --group
+
+--pager=less -XFR
