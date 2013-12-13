@@ -11,6 +11,9 @@ runtime autoload/shervim/ShowHighlightGroup.vim
 
 " let g:seek_enable_jumps = 1
 
+" Disalbe error bells  http://vim.wikia.com/wiki/Disable_beeping
+set visualbell
+
 inoremap <a-j> <c-u><c-o>
 inoremap <leader><leader>p binding.pry<cr><esc>
 nnoremap <leader><leader>p obinding.pry<esc>
@@ -165,6 +168,7 @@ nmap K <nop>
 
 
 
+map <leader>sa :saveas<space><c-r>%
 map <leader>E :e<space><c-r>%
 map <leader>R :Rename<space><c-r>%
 map <leader>e :e<space>
