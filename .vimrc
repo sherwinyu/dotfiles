@@ -1,8 +1,9 @@
 "source $VIMRUNTIME/mswin.vim
+source ~/.vim/bundles.vim
 set nocompatible
 filetype plugin indent on
 syntax on
-call pathogen#infect()
+" call pathogen#infect()
 runtime macros/matchit.vim
 runtime autoload/shervim/ShowTabNumber.vim
 runtime autoload/shervim/ToggleBG.vim
