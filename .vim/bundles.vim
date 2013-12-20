@@ -15,7 +15,7 @@ Bundle 'surround.vim'
 Bundle 'fugitive.vim'
 Bundle 'rails.vim'
 Bundle 'Handlebars'
-Bundle 'coffee.vim'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 
