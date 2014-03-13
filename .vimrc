@@ -10,6 +10,25 @@ runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 
+"window navigation mappings
+nnoremap 00 0
+
+nnoremap +8 <c-w>k
+nnoremap +5 <c-w>j
+nnoremap +4 <c-w>h
+nnoremap +6 <c-w>l
+
+nnoremap 88 <c-w>k
+nnoremap 55 <c-w>j
+nnoremap 44 <c-w>h
+nnoremap 66 <c-w>l
+
+
+
+
+
+
+
 " let g:seek_enable_jumps = 1
 
 " Disalbe error bells  http://vim.wikia.com/wiki/Disable_beeping
