@@ -5,3 +5,6 @@
 .netrwhist
 zeus.json
 custom_plan.rb
+
+bundle/**
+~bundle/vundle
