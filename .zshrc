@@ -221,6 +221,7 @@ bindkey '^Z' fancy-ctrl-z
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 
 
@@ -229,6 +230,5 @@ PATH=$HOME/.rbenv/bin:$HOME/bin:$PATH # add usr bin
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
 
 eval "$(rbenv init -)"

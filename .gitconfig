@@ -3,7 +3,7 @@
 	email = sherwin.x.yu@gmail.com
 [core]
 	editor = vim
-      excludesfile = ~/.gitignore
+      excludesfile = /opt/boxen/config/git/gitignore
 [color]
   ui = auto
 [color "branch"]
@@ -19,3 +19,9 @@
   added = yellow
   changed = green
   untracked = cyan
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[hub]
+protocol = https
