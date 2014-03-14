@@ -10,23 +10,18 @@ runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 
-"window navigation mappings
-nnoremap 00 0
-
+" window navigation mappings
+" Press plus followed by numberpad to move in that direction
 nnoremap +8 <c-w>k
 nnoremap +5 <c-w>j
 nnoremap +4 <c-w>h
 nnoremap +6 <c-w>l
 
-nnoremap 88 <c-w>k
-nnoremap 55 <c-w>j
-nnoremap 44 <c-w>h
-nnoremap 66 <c-w>l
-
-
-
-
-
+" Copy to global clipboard from visual selection
+vnoremap <leader>y "+y
+" Paste from global clipboard
+noremap <leader>p "+p
+noremap <leader>P "+P
 
 
 " let g:seek_enable_jumps = 1
@@ -162,10 +157,9 @@ map s<space> vS<space><space>
 " nnoremap <silent> <Leader>B :CommandTBuffer<CR>
 nnoremap <silent> <leader>t :CtrlP<CR>
 
-map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
+" map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
 map <leader>=s :%s/\s\+$//g<cr>
 map <leader>== ggVG&<c-o><c-o>
-map <leader>=f :CommandTFlush<CR>
 map <leader>=ve :e ~/.vimrc<CR>
 map <leader>=vr :so ~/.vimrc<CR>
 map <leader>=ze :e ~/.zshrc<CR>
@@ -173,7 +167,8 @@ map <leader>=te :e ~/.tmux.conf<CR>
 
 map <leader>\t :tabnew<CR>
 
-map <leader>p :set paste!<cr>
+" Toggle paste mode in insertion
+map <leader><leader>p :set paste!<cr>
 
 map <leader>sn :call ToggleNumbering()<cr>
 map <leader>sw :set wrap!<cr>
