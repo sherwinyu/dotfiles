@@ -168,7 +168,7 @@ map <leader>=te :e ~/.tmux.conf<CR>
 map <leader>\t :tabnew<CR>
 
 " Toggle paste mode in insertion
-map <leader><leader>p :set paste!<cr>
+map <leader>=p :set paste!<cr>
 
 map <leader>sn :call ToggleNumbering()<cr>
 map <leader>sw :set wrap!<cr>
