@@ -129,7 +129,9 @@ alias pkill='pkill -f'
 
 # aliasing TMUX to work with solarized vim
 alias tmux="TERM=screen-256color-bce tmux"
-eval `dircolors ~/.dircolors`
+if [ -f '~/.dircolors' ]; then
+  eval `dircolors ~/.dircolors`
+fi
 
 # Force unique values in zsh path
 # via http://unix.stackexchange.com/questions/62579/is-there-a-way-to-add-a-directory-to-my-path-in-zsh-only-if-its-not-already-pre
