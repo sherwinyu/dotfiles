@@ -1,6 +1,6 @@
 session:
-  name: sysys
-  root: &ROOT "~/projects/sysys"
+  name: sp
+  root: &ROOT "~/projects/sp"
   windows:
     - name: vim
       root: *ROOT
@@ -9,7 +9,7 @@ session:
         before:
           - "source .envrc"
       panes:
-        - cmd: ["echo vim", "vim -S ~/dotfiles/.vim/sessions/sysys.vim"]
+        - cmd: ["echo vim", "vim -S ~/dotfiles/.vim/sessions/sp.vim"]
 
     - name: git
       root: *ROOT

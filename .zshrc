@@ -133,6 +133,9 @@ if [ -f '~/.dircolors' ]; then
   eval `dircolors ~/.dircolors`
 fi
 
+# teamocil defaults to teamocil here
+alias teamocil="teamocil --here"
+
 # Force unique values in zsh path
 # via http://unix.stackexchange.com/questions/62579/is-there-a-way-to-add-a-directory-to-my-path-in-zsh-only-if-its-not-already-pre
 typeset -U path
