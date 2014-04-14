@@ -20,6 +20,7 @@ Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
+Bundle 'tpope/vim-markdown'
 
 " ...rest of bundles
 
