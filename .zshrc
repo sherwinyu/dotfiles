@@ -111,6 +111,7 @@ preexec () { echo -ne "\e[0m" }
 # PROMPT=$' %{${fg[green]}%}%n%~%b$(prompt_git_info)%{${fg[default]}%} '
 
 # Global Aliases
+alias -g NG="noglob"
 alias -g G="| grep"
 alias -g L="| less"
 alias -g M='| more'
