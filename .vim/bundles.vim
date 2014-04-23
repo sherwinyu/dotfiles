@@ -20,9 +20,9 @@ Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
-Bundle 'xolox/vim-session'
-Bundle 'xolox/vim-session'
 Bundle 'camelcasemotion'
+Bundle 'slim-template/vim-slim.git'
+
 
 " ...rest of bundles
 

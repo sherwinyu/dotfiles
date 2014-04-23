@@ -1,21 +1,21 @@
 # Arrived on after much experimentaiton
-# This works: 
+# This works:
 #
-#      send-keys "cd ~/project/weave" Enter 
+#      send-keys "cd ~/project/weave" Enter
 #
-# But requires doing it for every window. 
+# But requires doing it for every window.
 # I wanted a solution that "propagates" for every window, ala how you would do it if you were actually creating the windows yourself
 # So I looked into default-path.
 # At first I tried using default-path "~/projects/weave" but it didn't like the ~ relative path.
 # So instead we will use the $HOME variable
 
-set-option -g default-path "$HOME/projects/sysys"
+set-option -g default-path "$HOME/projects/sp"
 
 #1 Vim
 new
 selectw -t 1
 rename-window vim
-send-keys "cd ~/projects/sysys" Enter
+send-keys "cd ~/projects/sp" Enter
 send-keys "vim" Enter
 
 #2 Git
@@ -38,4 +38,4 @@ send-keys "cd ." Enter
 send-keys "rails c" Enter
 
 selectw -t 1
-rename-session 'sherwinpoints'
+rename-session 'sp'

@@ -9,6 +9,7 @@ runtime autoload/shervim/ShowTabNumber.vim
 runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
+runtime autoload/shervim/AdjustWindowMode.vim
 
 " window navigation mappings
 " Press plus followed by numberpad to move in that direction
@@ -16,6 +17,9 @@ nnoremap +8 <c-w>k
 nnoremap +5 <c-w>j
 nnoremap +4 <c-w>h
 nnoremap +6 <c-w>l
+
+" http://stackoverflow.com/questions/18219444/remove-underscore-as-a-word-separator-in-vim
+set iskeyword+=-
 
 " Copy to global clipboard from visual selection
 vnoremap <leader>y "+y
@@ -29,7 +33,13 @@ noremap <leader>P "+P
 " Disalbe error bells  http://vim.wikia.com/wiki/Disable_beeping
 set visualbell
 
-inoremap <a-j> <c-u><c-o>
+" Inserts Braces for csss style indentation and properly aligns cursor
+" Utilizes i_<c-j> and i_<c-s>
+imap <c-b> <c-s>B<c-j><cr>
+
+" inserts a new line while keeping the cursor in the same place
+inoremap <c-j> <CR><c-o>k<c-o>$
+
 inoremap <leader><leader>p binding.pry<cr><esc>
 nnoremap <leader><leader>p obinding.pry<esc>
 nnoremap <leader><leader>P Obinding.pry<esc>
@@ -42,7 +52,6 @@ nnoremap <PageDown> 10k
 "2013 05 01
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 autocmd BufWritePre * :%s/\s\+$//e
-
 
 
 " Indent guides
@@ -138,9 +147,6 @@ noremap <a-cr> O<esc>
 noremap <cr> o<esc>
 noremap <space> i<space><esc>
 
-map <c-v> "+p
-map <c-x> "+d
-vmap <leader>c "+y
 
 " iunmap <c-v>
 " unmap <c-a>
