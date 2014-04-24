@@ -1,5 +1,4 @@
-let g:adjusting_windows = 0
-
+" Generic helper function to reset the statusline
 function! SetStatusLine()
   set laststatus=2 " always show status line
   set statusline=%f        "tail of the filename
@@ -16,49 +15,59 @@ function! SetStatusLine()
   set statusline+=\ %P    "percent through file
 endfunction
 
+" Function to undo adjust-window-mode
+"
 function! ExitAdjustMode()
-      silent! nunmap =
-      silent! nunmap -
-      silent! nunmap ]
-      silent! nunmap [
-      silent! nunmap kj
-      silent! nunmap <c-c>
+    " We unmap the mapped keys, if any. Using `silent!` to suppress errors
+    silent! nunmap =
+    silent! nunmap -
+    silent! nunmap ]
+    silent! nunmap [
+    silent! nunmap kj
+    silent! nunmap <c-c>
+    silent! nunmap q
+
+    " Then we add back in the old mappings
     silent! exe 'nnoremap = '. g:adjust_windows_equals
     silent! exe 'nnoremap - '. g:adjust_windows_dash
     silent! exe 'nnoremap ] '. g:adjust_windows_right_bracket
     silent! exe 'nnoremap [ '. g:adjust_windows_left_bracket
 
+    " Reclaim the status line
     call SetStatusLine()
+
+    " Reclaim the timeoutlen
     let &timeoutlen = g:adjust_timeout_len
 endfunction
 
+" Function to enter adjust-window mode
 function! EnterAdjustMode()
+  " Store all our settings: mappings and the timeooutlen setting
+  " The `statusline` setting will be set by a function
   let g:adjust_windows_equals = maparg('=')
   let g:adjust_windows_dash = maparg('-')
   let g:adjust_windows_right_bracket = maparg(']')
   let g:adjust_windows_left_bracket = maparg('[')
   let g:adjust_timeout_len = &timeoutlen
 
+  " Show the status line (note: no quotations!)
   set statusline=---Adjusting---
+
+  " We need to set the map timeout length to 0 because otherwise we block on ] and [ keys (which
+  " wait for ]] and [[ respectively)
   set timeoutlen=0
 
   nnoremap = 5<c-w>+
   nnoremap - 5<c-w>-
   nnoremap ] 5<c-w>>
   nnoremap [ 5<c-w><
-  nnoremap kj :call ExitAdjustMode()<CR>
-  nnoremap <c-c> :call ExitAdjustMode()<CR>
+  nnoremap <silent> kj :call ExitAdjustMode()<CR>
+  nnoremap <silent> <c-c> :call ExitAdjustMode()<CR>
+  nnoremap <silent> q :call ExitAdjustMode()<CR>
 endfunction
 
 function! ToggleAdjustWindowMode()
-  " If we're currently already adjusting windows
-  if g:adjusting_windows
-    let g:adjusting_windows = 0
-    call ExitAdjustMode()
-  else
-    let g:adjusting_windows = 1
-    call EnterAdjustMode()
-  endif
+  call EnterAdjustMode()
 endfunction
 
-map <leader><cr> :call ToggleAdjustWindowMode()<CR>
+map <silent> <leader><cr> :call ToggleAdjustWindowMode()<CR>

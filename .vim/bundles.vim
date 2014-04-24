@@ -22,7 +22,7 @@ Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 Bundle 'camelcasemotion'
 Bundle 'slim-template/vim-slim.git'
-
+Bundle 'tpope/vim-markdown'
 
 " ...rest of bundles
 
