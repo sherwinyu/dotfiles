@@ -185,15 +185,6 @@ fi
 alias junit='java org.junit.runner.JUnitCore'
 
 
-# Local includes
-if [[ -r ~/.localinclude ]]; then
-    source ~/.localinclude
-    fi
-
-. ~/.zsh/z.sh
-function precmd () {
-    _z --add "$(pwd -P)"
-}
 
 function chpwd; {
     unsetopt AUTO_PUSHD
@@ -214,7 +205,6 @@ function chpwd; {
     setopt AUTO_PUSHD
 }
 
-
 # TODO(syu) put this in the correct place
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
@@ -231,7 +221,6 @@ bindkey '^Z' fancy-ctrl-z
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 
 
@@ -241,4 +230,16 @@ PATH=$HOME/.rbenv/bin:$HOME/bin:$PATH # add usr bin
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-eval "$(rbenv init -)"
+# Local includes
+if [[ -r ~/.localinclude ]]; then
+    source ~/.localinclude
+fi
+
+
+function loadslow {
+  # This line is SUPER slow
+  [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
+  # This line is also SUPER slow
+  eval "$(rbenv init -)"
+}
