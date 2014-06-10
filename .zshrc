@@ -45,6 +45,13 @@ alias gco='git checkout'
 alias gpush='git push'
 alias gpull='git pull'
 
+alias hrc='heroku run console'
+alias hl='heroku logs'
+alias ht='heroku logs --tail'
+alias -g RP="-r prod"
+alias -g RS="-r staging"
+
+
 alias zr='source ~/.zshrc'
 alias ze='vim ~/.zshrc'
 alias b='cd ~-'
@@ -128,7 +135,6 @@ alias -g BE='bundle exec'
 bindkey '^Z' fancy-ctrl-z
 
 alias gitl='git --no-pager log --pretty=oneline'
-alias HL='heroku logs'
 alias pkill='pkill -f'
 
 
