@@ -27,6 +27,10 @@ vnoremap <leader>y "+y
 noremap <leader>p "+p
 noremap <leader>P "+P
 
+" Disable Ex mode
+" http://www.bestofvim.com/tip/leave-ex-mode-good/
+noremap Q <nop>
+
 
 " let g:seek_enable_jumps = 1
 
