@@ -46,6 +46,8 @@ alias gpush='git push'
 alias gpull='git pull'
 
 alias hrc='heroku run console'
+alias hr='heroku run'
+alias hrr='heroku run rake'
 alias hl='heroku logs'
 alias ht='heroku logs --tail'
 alias -g RP="-r prod"
@@ -227,6 +229,23 @@ bindkey '^Z' fancy-ctrl-z
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
+
+
+#################################################################
+# Expand aliases as you type them
+# From: http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
+globalias() {
+   if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
+     zle _expand_alias
+     zle expand-word
+   fi
+   zle self-insert
+}
+zle -N globalias
+bindkey " " globalias
+bindkey "^ " magic-space           # control-space to bypass completion
+bindkey -M isearch " " magic-space # normal space during searches
+################################################################
 
 
 
