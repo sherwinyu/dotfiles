@@ -1,3 +1,4 @@
+--type-add=puppet=.pp
 --type-add=css=.sass,.less,.scss
 --type-add=ruby=.rake,.rsel,.builder,.thor
 --type-add=html=.haml,.html.erb,.html.haml
