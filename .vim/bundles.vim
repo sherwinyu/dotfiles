@@ -23,6 +23,7 @@ Bundle 'xolox/vim-session'
 Bundle 'camelcasemotion'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'tpope/vim-markdown'
+Bundle 'Puppet-Syntax-Highlighting'
 
 " ...rest of bundles
 
