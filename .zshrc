@@ -25,44 +25,6 @@ compinit
 # End of lines added by compinstall
 #
 stty -ixon
-alias egrep='egrep --color=auto -i'
-alias fgrep='fgrep --color=auto -i'
-alias grep='grep --color=auto -i'
-alias dnstop='dnstop eth1'
-alias ls='ls --color=auto'
-alias gs='git status'
-alias ga='git add'
-alias gap='git add -p'
-alias gc='git commit'
-alias gcm='git commit -m'
-alias gcam='git commit -am'
-alias gcv='git commit -v'
-alias gcav='git commit -av'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gdns='git diff --name-status'
-alias gco='git checkout'
-alias gpush='git push'
-alias gpull='git pull'
-
-alias hrc='heroku run console'
-alias hr='heroku run'
-alias hrr='heroku run rake'
-alias hl='heroku logs'
-alias ht='heroku logs --tail'
-alias -g RP="-r prod"
-alias -g RS="-r staging"
-
-
-alias zr='source ~/.zshrc'
-alias ze='vim ~/.zshrc'
-alias b='cd ~-'
-
-# SSH aliases
-alias velleity='ssh syu@velleity.mc.yale.edu -p 2222'
-alias zoo='ssh sy23@node.zoo.cs.yale.edu'
-alias peacock='ssh sy23@peacock.zoo.cs.yale.edu'
-alias ladybug='ssh sy23@ladybug.zoo.cs.yale.edu'
 
 # get color aliases
 autoload -U colors && colors
@@ -123,16 +85,6 @@ preexec () { echo -ne "\e[0m" }
 
 # PROMPT=$' %{${fg[green]}%}%n%~%b$(prompt_git_info)%{${fg[default]}%} '
 
-# Global Aliases
-alias -g NG="noglob"
-alias -g G="| grep"
-alias -g L="| less"
-alias -g M='| more'
-alias -g H='| head'
-alias -g T='| tail'
-alias -g BE='bundle exec'
-# alias -g xclip='xclip -selection c'
-# alias -g X='| xclip'
 
 bindkey '^Z' fancy-ctrl-z
 
@@ -268,3 +220,5 @@ function loadslow {
   # This line is also SUPER slow
   eval "$(rbenv init -)"
 }
+
+source ~/dotfiles/.zsh.aliases
