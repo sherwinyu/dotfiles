@@ -212,5 +212,4 @@ function loadslow {
   eval "$(rbenv init -)"
 }
 
-source ~/dotfiles/.zsh.aliases
-source ~/dotfiles/.zsh.fancy_ctrlz
+source ~/dotfiles/.zsh.MANIFEST
