@@ -1,3 +1,6 @@
 source ~/dotfiles/.zsh.aliases
 source ~/dotfiles/.zsh.fancy_ctrlz
-source ~/dotfiles/.zsh.prompt
+
+if [[ -r ~/.zshrc.local ]]; then
+  source ~/dotfiles/.zshrc.local
+fi
