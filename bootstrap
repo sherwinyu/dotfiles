@@ -34,7 +34,7 @@ ln -s dotfiles/.teamocil .teamocil
 ln -s dotfiles/.irbrc .irbrc
 ln -s dotfiles/.pryrc .pryrc
 
-cp -s dotfiles/dircolors.ansi-dark .dircolors
+cp dotfiles/dircolors.ansi-dark .dircolors
 
 echo dotfile copy over done!
 popd

@@ -23,7 +23,9 @@ bindkey -M isearch '^S' history-incremental-search-forward
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-#
+
+# Need to disable flow control (basically lets terminal respond to <c-s>
+# http://stackoverflow.com/questions/7865123/vim-mapping-key-does-not-work#comment9595660_7865307
 stty -ixon
 
 # get color aliases
