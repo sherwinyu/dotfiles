@@ -8,6 +8,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=9000
 SAVEHIST=9000
+
 setopt appendhistory autocd beep extendedglob nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -88,7 +89,6 @@ preexec () { echo -ne "\e[0m" }
 # PROMPT=$' %{${fg[green]}%}%n%~%b$(prompt_git_info)%{${fg[default]}%} '
 
 
-bindkey '^Z' fancy-ctrl-z
 
 alias gitl='git --no-pager log --pretty=oneline'
 alias pkill='pkill -f'
@@ -167,17 +167,6 @@ function chpwd; {
     setopt AUTO_PUSHD
 }
 
-# TODO(syu) put this in the correct place
-fancy-ctrl-z () {
-  if [[ $#BUFFER -eq 0 ]]; then
-    bg
-    zle redisplay
-  else
-    zle push-input
-  fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
 
 
 if [ -f ~/.zshrc.local ]; then
@@ -224,3 +213,4 @@ function loadslow {
 }
 
 source ~/dotfiles/.zsh.aliases
+source ~/dotfiles/.zsh.fancy_ctrlz
