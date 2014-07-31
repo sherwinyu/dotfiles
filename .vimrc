@@ -511,3 +511,4 @@ set virtualedit=onemore,insert,block
 set wildignore+=*/public/assets/source_maps/*
 set wildignore+=*/build/*
 set wildignore+=*/doc/*
+set wildignore+=*/benchling/static/*

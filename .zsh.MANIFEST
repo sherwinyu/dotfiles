@@ -1,6 +1,13 @@
+stty -ixon
+
 source ~/dotfiles/.zsh.aliases
 source ~/dotfiles/.zsh.fancy_ctrlz
+source ~/dotfiles/.zsh.navigation
 
 if [[ -r ~/dotfiles/.zshrc.local ]]; then
   source ~/dotfiles/.zshrc.local
 fi
+
+# Make rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

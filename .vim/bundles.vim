@@ -24,6 +24,8 @@ Bundle 'camelcasemotion'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'tpope/vim-markdown'
 Bundle 'Puppet-Syntax-Highlighting'
+Bundle 'groenewege/vim-less'
+Bundle 'jade.vim'
 
 " ...rest of bundles
 
