@@ -3,7 +3,7 @@
 
 echo dotfile copy over boostrap started
 pushd ~/
-mkdir ~/dotfiles_old
+mkdir -p ~/dotfiles_old
 
 mv .vimrc dotfiles_old
 mv .vim dotfiles_old
@@ -18,6 +18,10 @@ mv .dircolors dotfiles_old
 mv .ackrc dotfiles_old
 mv .teamocil dotfiles_old
 mv .irbrc dotfiles_old
+mv .agignore dotfiles_old
+
+mv .yadr dotfiles_old
+mv .zprezto dotfiles_old
 
 ln -s dotfiles/.vimrc .vimrc
 ln -s dotfiles/.vim .vim
@@ -33,6 +37,10 @@ ln -s dotfiles/.ackrc .ackrc
 ln -s dotfiles/.teamocil .teamocil
 ln -s dotfiles/.irbrc .irbrc
 ln -s dotfiles/.pryrc .pryrc
+ln -s dotfiles/.agignore .agignore
+
+ln -s dotfiles/.yadr .yadr
+ln -s dotfiles/.zprezto .zprezto
 
 cp dotfiles/dircolors.ansi-dark .dircolors
 
