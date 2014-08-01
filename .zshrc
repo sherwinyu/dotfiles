@@ -14,12 +14,14 @@ source ~/.yadr/zsh/custom_prompt_path.zsh
 source ~/.yadr/zsh/fasd.zsh
 source ~/.yadr/zsh/git.zsh
 # source ~/.yadr/zsh/key-bindings.zsh
+
 source ~/.yadr/zsh/last-command.zsh
 source ~/.yadr/zsh/noglob.zsh
 source ~/.yadr/zsh/rm.zsh
 source ~/.yadr/zsh/secrets.zsh
 source ~/.yadr/zsh/theme.zsh
 # source ~/.yadr/zsh/vi-mode.zsh
+
 source ~/.yadr/zsh/zmv.zsh
 source ~/.yadr/zsh/zsh-aliases.zsh
 source ~/.yadr/zsh/zzzz_after.zsh
