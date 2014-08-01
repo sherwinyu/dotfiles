@@ -1,0 +1,18 @@
+# pack-refs with: peeled fully-peeled 
+d541eef923c24bf0983465c57c93504db3476985 refs/remotes/origin/issue/231
+5be4a78b55acba1fbfcb6a7767d7d0743623660d refs/remotes/origin/issue/276
+113f6763c22c31dff15a7f776c991596e150e4a1 refs/remotes/origin/issue/306
+bf9dbfd5b95c44b14a8a6af8ecf965ecea50fb29 refs/remotes/origin/master
+d1cf3f5a5dd6064f6756ab28b8417cad78912ef1 refs/remotes/origin/module/autosuggestions
+5f675b0c670b5d2c24c79378962b78c391ec10a9 refs/remotes/origin/module/completion
+5ecbb49630d8a9b74a66aa31d9f79d69bd355ec0 refs/remotes/origin/module/update
+7d8ef303ed59661db4b000aaab5d9d345542eb6b refs/remotes/origin/module/zaw
+e3696d2c2862a9c5cb57723dba2133b97cb7ab87 refs/remotes/origin/pull/517
+d196c6a15a2b7226a7b950996a707b6ee0c040d0 refs/remotes/origin/pull/533
+72f8d15b21dd82603d548531d62ae30ded5d24e7 refs/remotes/origin/pull/556
+fb13aa332738c8c414bc4cb602a9bc2378da2a27 refs/remotes/origin/revision/do-not-use
+5c7bd2009cc3598e25b8cc607c199b75040e0f34 refs/remotes/origin/revision/prezto
+8d9ec24335400a1796937bc8e9caa9830767a762 refs/remotes/origin/revision/use-command_not_found_handler
+f5f295cc99d65edbcfeba24d992286bf7e76000f refs/remotes/origin/revision/zdotdir-prezto
+5bc0fda43ea9bf2599d778b442398a8eae96e71d refs/remotes/origin/theme/peepcode
+2d23cc45ec408748a7e2037626695ac1e5dc798c refs/remotes/origin/themes
