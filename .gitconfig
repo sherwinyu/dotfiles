@@ -13,7 +13,7 @@
 [color "diff"]
   meta = yellow bold
   frag = magenta bold
-  old = red 
+  old = red
   new = green
 [color "status"]
   added = yellow
@@ -25,3 +25,6 @@ helper = /opt/boxen/bin/boxen-git-credential
 
 [hub]
 protocol = https
+
+[alias]
+  turnt = checkout

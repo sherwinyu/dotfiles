@@ -493,6 +493,8 @@ map <leader>=b :call ToggleBG()<CR>
 set formatoptions=croql
 
 autocmd BufNewFile,BufReadPost *.go set filetype=go
+autocmd WinEnter * checktime
+autocmd BufWinEnter * checktime
 
 set background=light
 let g:solarized_termcolors=16
