@@ -22,7 +22,7 @@ alias hrc='heroku run console'
 alias hr='heroku run'
 alias hrr='heroku run rake'
 alias hl='heroku logs'
-alias ht='heroku logs --tail'
+alias hlt='heroku logs --tail'
 alias -g RP="-r prod"
 alias -g RS="-r staging"
 
@@ -45,8 +45,10 @@ alias -g G="| grep"
 alias -g L="| less"
 alias -g M='| more'
 alias -g H='| head'
-alias -g T='| tail'
+alias -g TL='| tail'
+alias -g T='| tee'
 alias -g C="| pbcopy"
+alias -g X="| tee >(pbcopy)"
 alias -g BE='bundle exec'
 
 # OVERRIDES FOR PREZTO
