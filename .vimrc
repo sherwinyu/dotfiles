@@ -18,6 +18,19 @@ nnoremap +5 <c-w>j
 nnoremap +4 <c-w>h
 nnoremap +6 <c-w>l
 
+nnoremap <PageUp> 5<c-w>+
+nnoremap <PageDown> 5<c-w>-
+nnoremap <home> 5<c-w>>
+nnoremap <end> 5<c-w><
+
+nnoremap <left> <c-w>h
+nnoremap <right> <c-w>l
+nnoremap <up> <c-w>k
+nnoremap <down> <c-w>j
+
+
+
+
 " http://stackoverflow.com/questions/18219444/remove-underscore-as-a-word-separator-in-vim
 set iskeyword+=-
 
@@ -365,19 +378,6 @@ inoremap <c-w> <c-g>u<c-w>
 
 " au BufNewFile,BufReadPost .z*,zsh*,zlog*	so $VIM/syntax/zsh.vim
 
-
-"map <c-k> 5k
-"map <c-j> 5j
-"map <c-l> 3l
-"map <c-h> 3h
-"map <s-k> vk
-"map <s-j> vj
-"map <s-h> vh
-"map <s-l> vl
-"vmap <s-k> k
-"vmap <s-j> j
-"vmap <s-h> h
-"vmap <s-l> l
 map <tab> <c-w>w
 map <s-tab> <c-w>W
 map <c-tab> gt
@@ -386,10 +386,10 @@ map <C-s-tab> gT
 map <c-t> 1gtgT:tabnew<cr>
 noremap <c-n> <tab>
 
-nmap <c-right> :bn<cr>
-nmap <c-left> :bp<cr>
-nmap <right> :tabn<cr>
-nmap <left> :tabp<cr>
+" nmap <c-right> :bn<cr>
+" nmap <c-left> :bp<cr>
+" nmap <right> :tabn<cr>
+" nmap <left> :tabp<cr>
 
 map <bs> X
 map <del> dl
