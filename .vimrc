@@ -28,8 +28,9 @@ nnoremap <right> <c-w>l
 nnoremap <up> <c-w>k
 nnoremap <down> <c-w>j
 
-
-
+" shift left, shift right to change tabs
+nnoremap [1;2C gt
+nnoremap [1;2D gT
 
 " http://stackoverflow.com/questions/18219444/remove-underscore-as-a-word-separator-in-vim
 set iskeyword+=-
