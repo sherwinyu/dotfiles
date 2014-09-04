@@ -26,6 +26,8 @@ Bundle 'tpope/vim-markdown'
 Bundle 'Puppet-Syntax-Highlighting'
 Bundle 'groenewege/vim-less'
 Bundle 'jade.vim'
+Bundle 'Syntastic'
+Bundle 'Vitality'
 
 " ...rest of bundles
 
