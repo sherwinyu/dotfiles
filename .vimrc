@@ -6,10 +6,15 @@ syntax on
 " call pathogen#infect()
 runtime macros/matchit.vim
 runtime autoload/shervim/ShowTabNumber.vim
+runtime autoload/shervim/RelativeNumbers.vim
 runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 runtime autoload/shervim/AdjustWindowMode.vim
+
+
+set splitright " focus new window after vertical splitting
+set splitbelow " focus new window after horizontal splitting
 
 " window navigation mappings
 " Press plus followed by numberpad to move in that direction
@@ -281,8 +286,8 @@ map <f8> 8gt
 
 "2012 01 25 EXPERIMENTAL
 inoremap kj <esc>
-nmap j gj
-nmap k gk
+" nmap j gj
+" nmap k gk
 "2012 01 25 EXPERIMENTAL
 
 "opposite of <c-w> -- <alt-w>
@@ -301,11 +306,10 @@ set smartcase
 set scrolloff=5
 set hidden
 set wildmenu
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep  " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep,*.pyc  " MacOSX/Linux
 
 
 set switchbuf+=usetab " so that using :sb doesn't open change current window
-
 
 cnoremap <C-A> <Home>
 cnoremap <C-F> <Right>
