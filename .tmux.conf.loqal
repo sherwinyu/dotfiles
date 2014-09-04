@@ -1,13 +1,13 @@
 # Sample tmux.conf.local, for OS X
 
-# source: https://gist.github.com/brendanhay/1769870#comment-588285
-
 set-option -g default-command "reattach-to-user-namespace -l zsh"
 
-bind-key -t vi-copy 'x' copy-selection
+# Source: http://robots.thoughtbot.com/tmux-copy-paste-on-os-x-a-better-future
 
-unbind-key -t vi-copy 'y'
+# Setup 'v' to begin selection as in Vim
+bind-key -t vi-copy v begin-selection
+bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 
-bind y send-keys x\;\
-       run-shell "reattach-to-user-namespace -l zsh -c 'tmux show-buffer | pbcopy'"\; \
-       display-message "copied"
+# Update default binding of `Enter` to also use copy-pipe
+unbind -t vi-copy Enter
+bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
