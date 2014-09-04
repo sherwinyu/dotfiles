@@ -1,0 +1,13 @@
+# Sample tmux.conf.local, for OS X
+
+# source: https://gist.github.com/brendanhay/1769870#comment-588285
+
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+
+bind-key -t vi-copy 'x' copy-selection
+
+unbind-key -t vi-copy 'y'
+
+bind y send-keys x\;\
+       run-shell "reattach-to-user-namespace -l zsh -c 'tmux show-buffer | pbcopy'"\; \
+       display-message "copied"
