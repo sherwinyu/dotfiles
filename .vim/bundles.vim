@@ -28,6 +28,8 @@ Bundle 'groenewege/vim-less'
 Bundle 'jade.vim'
 Bundle 'Syntastic'
 Bundle 'Vitality'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'justinmk/vim-sneak'
 
 " ...rest of bundles
 
