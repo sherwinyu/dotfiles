@@ -1,6 +1,9 @@
 autocmd FocusLost * :set norelativenumber
 autocmd FocusGained * :set relativenumber
 
+autocmd WinEnter * :set relativenumber
+autocmd WinLeave * :set norelativenumber
+
 autocmd BufEnter * :set relativenumber
 autocmd BufLeave * :set norelativenumber
 

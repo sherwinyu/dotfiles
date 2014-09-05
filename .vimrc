@@ -11,6 +11,8 @@ runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 runtime autoload/shervim/AdjustWindowMode.vim
+runtime autoload/shervim/sneak.vim
+runtime autoload/shervim/easymotion.vim
 
 
 set splitright " focus new window after vertical splitting
@@ -53,7 +55,7 @@ noremap Q <nop>
 
 " let g:seek_enable_jumps = 1
 
-" Disalbe error bells  http://vim.wikia.com/wiki/Disable_beeping
+" Disaleb error bells  http://vim.wikia.com/wiki/Disable_beeping
 set visualbell
 
 " Inserts Braces for csss style indentation and properly aligns cursor
@@ -106,8 +108,8 @@ nnoremap <leader>Ss :SaveSession<space>
 " Shortcut for selecting just pasted text
 nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 "commands 2013 04 06"
-imap <c-l> <c-o>h<c-o>/[\]\)\}\"\'\>]<cr><c-o>l
-nmap <c-l> h/[\]\)\}]<cr>l
+inoremap <c-l> <c-o>h<c-o>/[\]\)\}\"\'\>]<cr><c-o>l
+nnoremap <c-l> h/[\]\)\}]<cr>l
 imap <c-s> <c-g>s
 
 " commands 201 07 01
