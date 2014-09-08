@@ -111,6 +111,7 @@ nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 " inoremap <c-l> <c-o>h<c-o>/[\]\)\}\"\'\>]<cr><c-o>l
 " nnoremap <c-l> h/[\]\)\}]<cr>l
 let g:AutoPairsShortcutJump = '<c-l>'
+
 imap <c-s> <c-g>s
 
 " commands 201 07 01
