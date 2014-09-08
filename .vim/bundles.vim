@@ -30,6 +30,7 @@ Bundle 'Syntastic'
 Bundle 'Vitality'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'justinmk/vim-sneak'
+Bundle 'jiangmiao/auto-pairs'
 
 " ...rest of bundles
 

@@ -108,8 +108,9 @@ nnoremap <leader>Ss :SaveSession<space>
 " Shortcut for selecting just pasted text
 nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 "commands 2013 04 06"
-inoremap <c-l> <c-o>h<c-o>/[\]\)\}\"\'\>]<cr><c-o>l
-nnoremap <c-l> h/[\]\)\}]<cr>l
+" inoremap <c-l> <c-o>h<c-o>/[\]\)\}\"\'\>]<cr><c-o>l
+" nnoremap <c-l> h/[\]\)\}]<cr>l
+let g:AutoPairsShortcutJump = '<c-l>'
 imap <c-s> <c-g>s
 
 " commands 201 07 01
