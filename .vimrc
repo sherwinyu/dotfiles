@@ -13,7 +13,11 @@ runtime autoload/shervim/ShowHighlightGroup.vim
 runtime autoload/shervim/AdjustWindowMode.vim
 runtime autoload/shervim/sneak.vim
 runtime autoload/shervim/easymotion.vim
+runtime autoload/shervim/autopairs.vim
 
+
+" http://vim.1045645.n5.nabble.com/Extremely-slow-when-using-relativenumber-amp-syntax-highlighting-td5721149.html
+set lazyredraw
 
 set splitright " focus new window after vertical splitting
 set splitbelow " focus new window after horizontal splitting
@@ -110,7 +114,7 @@ nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 "commands 2013 04 06"
 " inoremap <c-l> <c-o>h<c-o>/[\]\)\}\"\'\>]<cr><c-o>l
 " nnoremap <c-l> h/[\]\)\}]<cr>l
-let g:AutoPairsShortcutJump = '<c-l>'
+" replaced by autopairs.vim
 
 imap <c-s> <c-g>s
 
