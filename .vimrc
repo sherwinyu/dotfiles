@@ -1,4 +1,15 @@
+let g:sneak#use_ic_scs = 1
 "source $VIMRUNTIME/mswin.vim
+
+" Trying this as default.. we'll see how I like it
+" source: http://tilvim.com/2013/12/20/camelcase.html
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+noremap <silent> gw w
+noremap <silent> gb b
+noremap <silent> ge e
+
 source ~/.vim/bundles.vim
 set nocompatible
 filetype plugin indent on
@@ -18,9 +29,6 @@ runtime autoload/shervim/autopairs.vim
 
 " http://vim.1045645.n5.nabble.com/Extremely-slow-when-using-relativenumber-amp-syntax-highlighting-td5721149.html
 set lazyredraw
-
-set splitright " focus new window after vertical splitting
-set splitbelow " focus new window after horizontal splitting
 
 " window navigation mappings
 " Press plus followed by numberpad to move in that direction
@@ -56,8 +64,6 @@ noremap <leader>P "+P
 " http://www.bestofvim.com/tip/leave-ex-mode-good/
 noremap Q <nop>
 
-
-" let g:seek_enable_jumps = 1
 
 " Disaleb error bells  http://vim.wikia.com/wiki/Disable_beeping
 set visualbell
