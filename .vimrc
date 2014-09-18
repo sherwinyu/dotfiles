@@ -18,6 +18,7 @@ syntax on
 runtime macros/matchit.vim
 runtime autoload/shervim/ShowTabNumber.vim
 runtime autoload/shervim/RelativeNumbers.vim
+runtime autoload/shervim/CursorLine.vim
 runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
@@ -30,9 +31,15 @@ runtime autoload/shervim/autopairs.vim
 " http://vim.1045645.n5.nabble.com/Extremely-slow-when-using-relativenumber-amp-syntax-highlighting-td5721149.html
 set lazyredraw
 
+"interpoate a string
+map <space>i ysiWBysiW"li#kj
+
+" easier to find line
+set cursorline
+
 " window navigation mappings
 " Press plus followed by numberpad to move in that direction
-nnoremap +8 <c-w>k
+"{nnoremap}" +8 <c-w>k
 nnoremap +5 <c-w>j
 nnoremap +4 <c-w>h
 nnoremap +6 <c-w>l
