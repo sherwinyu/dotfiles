@@ -26,8 +26,10 @@ runtime autoload/shervim/AdjustWindowMode.vim
 runtime autoload/shervim/sneak.vim
 runtime autoload/shervim/easymotion.vim
 runtime autoload/shervim/autopairs.vim
+runtime autoload/shervim/session.vim
 
 
+set timeoutlen=190
 " http://vim.1045645.n5.nabble.com/Extremely-slow-when-using-relativenumber-amp-syntax-highlighting-td5721149.html
 set lazyredraw
 
@@ -116,11 +118,6 @@ function! IndentGuides() " {{{
   endif
 endfunction " }}}
 nnoremap <leader>i :call IndentGuides()<cr>
-
-
-" Shortcuts for opening vim sessions
-nnoremap <leader>So :OpenSession<space>
-nnoremap <leader>Ss :SaveSession<space>
 
 " Shortcut for selecting just pasted text
 nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
