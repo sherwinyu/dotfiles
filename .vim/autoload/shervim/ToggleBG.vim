@@ -1,9 +1,10 @@
 function! ToggleBG()
   if &background=='dark'
     let &background='light'
-    call IndentGuides()
+    call SetGuiCursor()
   else
     let &background='dark'
-    call IndentGuides()
+    call SetGuiCursor()
   endif
 endfunc
+let &background='dark'

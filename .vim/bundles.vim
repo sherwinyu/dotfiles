@@ -12,6 +12,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-abolish'
 Bundle 'heartsentwined/vim-emblem'
 Bundle 'ctrlp.vim'
+Bundle 'JazzCore/ctrlp-cmatcher'
 Bundle 'surround.vim'
 Bundle 'fugitive.vim'
 Bundle 'rails.vim'
@@ -31,6 +32,19 @@ Bundle 'Vitality'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'justinmk/vim-sneak'
 Bundle 'jiangmiao/auto-pairs'
+Bundle 'textobj-user'
+Bundle 'textobj-indent'
+" Bundle 'textobj-function'
+Bundle 'tek/vim-textobj-ruby'
+"Bundle 'bps/vim-textobj-python'
+Bundle 'beloglazov/vim-textobj-quotes'
+Bundle 'commentary.vim'
+Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'rking/ag.vim'
+
+
+
 
 " ...rest of bundles
 

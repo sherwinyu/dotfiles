@@ -7,7 +7,7 @@ nmap F <Plug>Sneak_F
 nmap t <Plug>Sneak_t
 nmap T <Plug>Sneak_T
 
-nmap f <nop>
+" nmap f <nop>
 nmap <leader>f <Plug>(easymotion-f)
 
 " 1 : Case sensitivity is determined by 'ignorecase' and 'smartcase'.

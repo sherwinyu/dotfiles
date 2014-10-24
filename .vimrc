@@ -3,12 +3,6 @@ let g:sneak#use_ic_scs = 1
 
 " Trying this as default.. we'll see how I like it
 " source: http://tilvim.com/2013/12/20/camelcase.html
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-noremap <silent> gw w
-noremap <silent> gb b
-noremap <silent> ge e
 
 source ~/.vim/bundles.vim
 set nocompatible
@@ -27,24 +21,23 @@ runtime autoload/shervim/sneak.vim
 runtime autoload/shervim/easymotion.vim
 runtime autoload/shervim/autopairs.vim
 runtime autoload/shervim/session.vim
+runtime autoload/shervim/splitjoin.vim
+runtime autoload/shervim/camel_case_motion.vim
+runtime autoload/shervim/gui.vim
+
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
+let g:ctrlp_max_files = 0
 
 
-set timeoutlen=190
-" http://vim.1045645.n5.nabble.com/Extremely-slow-when-using-relativenumber-amp-syntax-highlighting-td5721149.html
+set timeoutlen=250
+" http://vim.1045645.n5.nabble.com/Extremely-slow-when-using-relativenumber-amp-syntax-highlighting-td5721149.html"
 set lazyredraw
 
 "interpoate a string
-map <space>i ysiWBysiW"li#kj
+map g<space>i ysiWBysiW"li#kj
 
-" easier to find line
+" easier to find linq
 set cursorline
-
-" window navigation mappings
-" Press plus followed by numberpad to move in that direction
-"{nnoremap}" +8 <c-w>k
-nnoremap +5 <c-w>j
-nnoremap +4 <c-w>h
-nnoremap +6 <c-w>l
 
 nnoremap <PageUp> 5<c-w>+
 nnoremap <PageDown> 5<c-w>-
@@ -56,7 +49,11 @@ nnoremap <right> <c-w>l
 nnoremap <up> <c-w>k
 nnoremap <down> <c-w>j
 
-" shift left, shift right to change tabs
+" shift left, shift right to change tabs [terminal]
+nnoremap <s-right> gt
+nnoremap <s-left> gT
+
+" shift left, shift right to change tabs [terminal]
 nnoremap [1;2C gt
 nnoremap [1;2D gT
 
@@ -72,6 +69,9 @@ noremap <leader>P "+P
 " Disable Ex mode
 " http://www.bestofvim.com/tip/leave-ex-mode-good/
 noremap Q <nop>
+
+" Don't close windows with <c-c>
+nmap <c-w><c-c> <nop>
 
 
 " Disaleb error bells  http://vim.wikia.com/wiki/Disable_beeping
@@ -141,7 +141,6 @@ map <leader>1 :JavaCorrect<cr>
 inoremap j <c-o>cc<esc><b s>
 
 
-"let g:ctrlp_max_files = 5000
 
 "" Optimize file searching
 "if has("unix")
@@ -205,7 +204,7 @@ map s<space> vS<space><space>
 nnoremap <silent> <leader>t :CtrlP<CR>
 
 " map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
-map <leader>=s :%s/\s\+$//g<cr>
+" map <leader>=s :%s/\s\+$//g<cr>
 map <leader>== ggVG&<c-o><c-o>
 map <leader>=ve :e ~/.vimrc<CR>
 map <leader>=vr :so ~/.vimrc<CR>
@@ -254,16 +253,6 @@ map <leader>[ :cp<cr>
 
 map <leader><space> za
 
-"2012 04 09 EXPERIMENTAL
-" inoremap { {<CR><BS>}<Esc>ko
-" END
-
-" function! SyntaxItem()
-" return synIDattr(synID(line("."),col("."),1),"name")
-" endfunction
-
-" set statusline+=%{SyntaxItem()}
-
 set laststatus=2 " always show status line
 set statusline=%f        "tail of the filename
 set statusline+=\ \ "wala
@@ -300,13 +289,8 @@ map <f6> 6gt
 map <f7> 7gt
 map <f8> 8gt
 
-"2012 01 07 EXPERIMENTAL
 
-"2012 01 25 EXPERIMENTAL
 inoremap kj <esc>
-" nmap j gj
-" nmap k gk
-"2012 01 25 EXPERIMENTAL
 
 "opposite of <c-w> -- <alt-w>
 inoremap w <c-o>dw
@@ -321,7 +305,7 @@ set textwidth=100
 set showmatch
 set ignorecase
 set smartcase
-set scrolloff=5
+set scrolloff=10
 set hidden
 set wildmenu
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep,*.pyc  " MacOSX/Linux
@@ -347,11 +331,6 @@ set smartindent
 " set sessionoptions=buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 set sessionoptions=buffers,curdir,folds,resize,tabpages,winsize,winpos
 
-set guioptions-=m
-set guioptions-=r
-set guioptions-=T
-"no left scroll bar
-set guioptions-=L
 
 "set autoindent
 
@@ -365,26 +344,12 @@ map <leader>sl :set list!<CR>
 set number
 set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
 set whichwrap=hl[] "Allows h and l to move wrap lines and left right to wrap in insert mode
-"colorscheme evening
-"color torte
-"color evening
-"map <leader>hl :hi TabLineSel ctermfg=Black ctermbg=Yellow<cr>
-map <leader>hl :call SetUIHighlighting()<cr>
-
-function! SetUIHighlighting()
-  hi StatusLine   ctermfg=Yellow  guifg=#000000 ctermbg=Black guibg=#5f5f5f
-  "hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
-  hi TabLineSel ctermfg=Black ctermbg=Yellow
-endfunc
-
-
 
 noremap gi i_<esc>r
 map - ^
 noremap = $
 vnoremap & =
 
-map yc yl
 noremap <a-j> J
 imap <c-backspace> <c-w>
 inoremap <c-u> <c-g>u<c-u>
@@ -409,24 +374,10 @@ map <C-s-tab> gT
 map <c-t> 1gtgT:tabnew<cr>
 noremap <c-n> <tab>
 
-" nmap <c-right> :bn<cr>
-" nmap <c-left> :bp<cr>
-" nmap <right> :tabn<cr>
-" nmap <left> :tabp<cr>
-
 map <bs> X
 map <del> dl
 
-
-
-" map <c-f5> :e ~/.vimrc<cr>
-" map <c-f6> :w<enter>:so ~/.vimrc<cr>
-
-" map <f5> :e e:\syu\sherwin_temp.txt<cr>
-" map <f6> :wq e:\syu\sherwin_temp.txt<cr>
-"map <f6> :wq e:\temp_vim.txt<cr>
-
-fun! ShowFuncName()
+function! ShowFuncName()
   let lnum = line(".")
   let col = col(".")
   echohl ModeMsg
@@ -434,8 +385,6 @@ fun! ShowFuncName()
   echohl None
   call search("\\%" . lnum . "l" . "\\%" . col . "c")
 endfun
-
-let g:CommandTMaxHeight=15
 
 " DiffOrig for sane recovery management. Choose (R)ecover, then call :DiffOrig to diff the recovered swap file with the original file.
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
@@ -473,40 +422,6 @@ fun! MyFoldText()
 endfun
 set foldmethod=manual
 
-function! HisFoldText()
-  let line = getline(v:foldstart)
-  if match( line, '^[ \t]*\(\/\*\|\/\/\)[*/\\]*[ \t]*$' ) == 0
-    let initial = substitute( line, '^\([ \t]\)*\(\/\*\|\/\/\)\(.*\)', '\1\2', '' )
-    let linenum = v:foldstart + 1
-    while linenum < v:foldend
-      let line = getline( linenum )
-      let comment_content = substitute( line, '^\([ \t\/\*]*\)\(.*\)$', '\2', 'g' )
-      if comment_content != ''
-        break
-      endif
-      let linenum = linenum + 1
-    endwhile
-    let sub = initial . ' ' . comment_content
-  else
-    let sub = line
-    let startbrace = substitute( line, '^.*{[ \t]*$', '{', 'g')
-    if startbrace == '{'
-      let line = getline(v:foldend)
-      let endbrace = substitute( line, '^[ \t]*}\(.*\)$', '}', 'g')
-      if endbrace == '}'
-        let sub = sub.substitute( line, '^[ \t]*}\(.*\)$', '...}\1', 'g')
-      endif
-    endif
-  endif
-  let n = v:foldend - v:foldstart + 1
-  let info = " " . n . " lines"
-  let sub = sub . "                                                                                                                  "
-  let num_w = getwinvar( 0, '&number' ) * getwinvar( 0, '&numberwidth' )
-  let fold_w = getwinvar( 0, '&foldcolumn' )
-  let sub = strpart( sub, 0, winwidth(0) - strlen( info ) - num_w - fold_w - 1 )
-  return sub . info
-endfunction
-
 map \=t1 :set tabline=%!SherwinTabLine()<CR>
 map \=t2 :set tabline=%!SherwinTabLineCompact()<CR>
 
@@ -516,22 +431,11 @@ map <leader>=b :call ToggleBG()<CR>
 set formatoptions=croql
 
 autocmd BufNewFile,BufReadPost *.go set filetype=go
+
 autocmd WinEnter * checktime
 autocmd BufWinEnter * checktime
 
-set background=light
-let g:solarized_termcolors=16
-
-colorscheme solarized
-if has("gui_running")
-  " set fuoptions=maxvert,maxhorz
-  " au GUIEnter * set fullscreen
-endif
-
-
-set t_Co=16
-
-set virtualedit=onemore,insert,block
+set virtualedit=insert,block
 
 set wildignore+=*/public/assets/source_maps/*
 set wildignore+=*/build/*
