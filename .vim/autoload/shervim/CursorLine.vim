@@ -9,15 +9,6 @@
 " autocmd BufEnter * :set nocursorline
 " autocmd BufLeave * :set cursorline
 
-autocmd FocusGained * :set cursorcolumn
-autocmd FocusLost * :set nocursorcolumn
-
-autocmd WinEnter * :set cursorcolumn
-autocmd WinLeave * :set nocursorcolumn
-
-autocmd BufEnter * :set cursorcolumn
-autocmd BufLeave * :set nocursorcolumn
-
 " Toggle cursorline
 map <silent> <leader>=c  :call SetCursorLine()<CR>
 
@@ -48,6 +39,9 @@ function! SetCursorLine()
     let g:cursor_line_highlight = 0
   endif
 endfunction
+
+
+map <silent> <esc><esc> :call FlashCursor()<cr>
 
 function! FlashCursor()
   set cursorcolumn!

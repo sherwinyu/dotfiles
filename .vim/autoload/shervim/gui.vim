@@ -51,9 +51,27 @@ endfunc
 set t_Co=16
 if has("gui_running")
   set fuoptions=maxvert,maxhorz
-  au GUIEnter * set fullscreen
+  " au GUIEnter * set fullscreen
+endif
+
+if has("gui_running")
+  let g:airline_theme = 'solarized'
+  let g:airline_powerline_fonts = 1
+else
+  let g:airline_powerline_fonts = 0
+  let g:airline_theme = 'luna'
+  let g:airline_theme = 'base16'
 endif
 
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=16
+
+set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+
+" let g:airline#extensions#default#section_truncate_width = {
+"     \ 'b': 79,
+"     \ 'x': 60,
+"     \ 'y': 88,
+"     \ 'z': 45,
+"     \ }

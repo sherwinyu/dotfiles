@@ -11,7 +11,7 @@ function! SetStatusLine()
   set statusline+=%y      "filetype
   set statusline+=%=      "left/right separator
   set statusline+=%c,     "cursor column
-  set statusline+=%l/%L   "cursor line/total lines
+  set statusline+=%l/%L   "cursor line/total linek
   set statusline+=\ %P    "percent through file
 endfunction
 
@@ -34,7 +34,8 @@ function! ExitAdjustMode()
     silent! exe 'nnoremap [ '. g:adjust_windows_left_bracket
 
     " Reclaim the status line
-    call SetStatusLine()
+    " call SetStatusLine()
+    echom 'Done adjusting.'
 
     " Reclaim the timeoutlen
     let &timeoutlen = g:adjust_timeout_len
@@ -51,7 +52,8 @@ function! EnterAdjustMode()
   let g:adjust_timeout_len = &timeoutlen
 
   " Show the status line (note: no quotations!)
-  set statusline=---Adjusting---
+  " set statusline=---Adjusting---
+  echom '----Adjusting-----'
 
   " We need to set the map timeout length to 0 because otherwise we block on ] and [ keys (which
   " wait for ]] and [[ respectively)
@@ -71,3 +73,13 @@ function! ToggleAdjustWindowMode()
 endfunction
 
 map <silent> <leader><cr> :call ToggleAdjustWindowMode()<CR>
+
+
+
+"===========================================
+" Handylines
+nnoremap <c-s-l> 10<c-w>>
+nnoremap <c-s-h> 10<c-w><
+nnoremap <c-s-k> 10<c-w>-
+nnoremap <c-s-j> 10<c-w>+
+
