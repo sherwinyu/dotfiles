@@ -29,7 +29,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'jade.vim'
 Bundle 'Syntastic'
 Bundle 'Vitality'
-Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'Lokaltog/vim-easymotion'
 Bundle 'justinmk/vim-sneak'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'textobj-user'
@@ -42,6 +42,8 @@ Bundle 'commentary.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rking/ag.vim'
+Bundle 'bling/vim-airline'
+Bundle 'Shougo/unite.vim'
 
 
 

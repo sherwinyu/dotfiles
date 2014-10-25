@@ -24,7 +24,9 @@ runtime autoload/shervim/session.vim
 runtime autoload/shervim/splitjoin.vim
 runtime autoload/shervim/camel_case_motion.vim
 runtime autoload/shervim/gui.vim
+runtime autoload/shervim/unite.vim
 
+let g:airline_powerline_fonts = 1
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
 let g:ctrlp_max_files = 0
 
@@ -32,6 +34,7 @@ let g:ctrlp_max_files = 0
 set timeoutlen=250
 " http://vim.1045645.n5.nabble.com/Extremely-slow-when-using-relativenumber-amp-syntax-highlighting-td5721149.html"
 set lazyredraw
+set ttyfast
 
 "interpoate a string
 map g<space>i ysiWBysiW"li#kj
@@ -79,10 +82,11 @@ set visualbell
 
 " Inserts Braces for csss style indentation and properly aligns cursor
 " Utilizes i_<c-j> and i_<c-s>
-imap <c-b> <c-s>B<c-j><cr>
+imap <c-b> <c-s>B<c-cr><cr>
 
 " inserts a new line while keeping the cursor in the same place
-inoremap <c-j> <CR><c-o>k<c-o>$
+inoremap <c-cr> <CR><c-o>k<c-o>$
+nnoremap <c-cr> i<CR><Esc>k$
 
 inoremap <leader><leader>p binding.pry<cr><esc>
 nnoremap <leader><leader>p obinding.pry<esc>
@@ -129,7 +133,7 @@ nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 imap <c-s> <c-g>s
 
 " commands 201 07 01
-map <leader>G :tabnew <C-R>%<CR>:Gstatus<CR><c-w>o
+map <leader>G :tabnew <C-R>%<CR>:Gstatus<CR><c-w>
 map <leader>gf <c-w>sgf:Gdiff<CR>
 "
 " for eclim
@@ -193,7 +197,6 @@ noremap <space> i<space><esc>
 
 "visual block
 noremap <leader>v <c-v>
-nnoremap <C-J> i<CR><Esc>k$
 " unmap <c-v>
 map s<space> vS<space><space>
 
@@ -208,6 +211,7 @@ nnoremap <silent> <leader>t :CtrlP<CR>
 map <leader>== ggVG&<c-o><c-o>
 map <leader>=ve :e ~/.vimrc<CR>
 map <leader>=vr :so ~/.vimrc<CR>
+map <leader>=r :so <c-r>%<CR>
 map <leader>=ze :e ~/.zshrc<CR>
 map <leader>=te :e ~/.tmux.conf<CR>
 
@@ -254,18 +258,18 @@ map <leader>[ :cp<cr>
 map <leader><space> za
 
 set laststatus=2 " always show status line
-set statusline=%f        "tail of the filename
-set statusline+=\ \ "wala
-set statusline+=%m      "modified flag
-set statusline+=\ \ \ \ \[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{&ff}] "file format
-set statusline+=%h      "help file flag
-set statusline+=%r      "read only flag
-set statusline+=%y      "filetype
-set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
+" set statusline=%f        "tail of the filename
+" set statusline+=\ \ "wal
+" set statusline+=%m      "modified flag
+" set statusline+=\ \ \ \ \[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+" set statusline+=%{&ff}] "file format
+" set statusline+=%h      "help file flag
+" set statusline+=%r      "read only flag
+" set statusline+=%y      "filetype
+" set statusline+=%=      "left/right separator
+" set statusline+=%c,     "cursor column
+" set statusline+=%l/%L   "cursor line/total lines
+" set statusline+=\ %P    "percent through file
 
 "2012 01 07 EXPERIMENTAL
 map ± 1gt
@@ -338,7 +342,7 @@ set autowrite
 set incsearch "highlight as you go
 set nowrap
 set linebreak
-set showbreak=                      ≡  
+"set showbreak=                      ≡  
 map <leader>sl :set list!<CR>
 
 set number
