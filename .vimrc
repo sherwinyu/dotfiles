@@ -74,7 +74,8 @@ noremap <leader>P "+P
 noremap Q <nop>
 
 " Don't close windows with <c-c>
-nmap <c-w><c-c> <nop>
+nmap <c-w>c <nop>
+imap <c-c> <nop>
 
 
 " Disaleb error bells  http://vim.wikia.com/wiki/Disable_beeping
@@ -121,7 +122,7 @@ function! IndentGuides() " {{{
     execute '2match IndentGuides /\%(\_^\s*\)\@<=\%(\%'.(0*&sw+1).'v\|\%'.(1*&sw+1).'v\|\%'.(2*&sw+1).'v\|\%'.(3*&sw+1).'v\|\%'.(4*&sw+1).'v\|\%'.(5*&sw+1).'v\|\%'.(6*&sw+1).'v\|\%'.(7*&sw+1).'v\)\s/'
   endif
 endfunction " }}}
-nnoremap <leader>i :call IndentGuides()<cr>
+nnoremap <leader>si :call IndentGuides()<cr>
 
 " Shortcut for selecting just pasted text
 nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
@@ -218,21 +219,22 @@ map <leader>=te :e ~/.tmux.conf<CR>
 map <leader>\t :tabnew<CR>
 
 " Toggle paste mode in insertion
-map <leader>=p :set paste!<cr>
+map <leader>sp :set paste!<cr>
 
-map <leader>sn :call ToggleNumbering()<cr>
 map <leader>sw :set wrap!<cr>
 map <leader>sf :call ToggleFolding()<cr>
 map <leader><f1> :set foldlevel=1<cr>
-map <leader>sp :set path=$PWD/**<cr>
+map <leader>sP :set path=$PWD/**<cr>
 nmap <silent> <leader>n :silent :set hlsearch!<CR>
 map <leader>cd :cd %:p:h<CR>
 map <leader>f :call ShowFuncName() <CR>
 
+"information-file -- show the filepath
+map <leader>if :echom "<c-r>%"<CR>
+
 nmap K <nop>
 
-
-
+map <leader>isso echom "set sessionoptions=buffers,curdir,tabpages,winsize"
 map <leader>sa :saveas<space><c-r>%
 map <leader>E :e<space><c-r>%
 map <leader>R :Rename<space><c-r>%

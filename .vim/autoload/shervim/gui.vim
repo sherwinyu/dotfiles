@@ -57,10 +57,15 @@ endif
 if has("gui_running")
   let g:airline_theme = 'solarized'
   let g:airline_powerline_fonts = 1
+  let g:airline_theme = 'base16'
+  let g:airline_theme = 'bubblegum'
+  set background=light
 else
+  set background=dark
   let g:airline_powerline_fonts = 0
   let g:airline_theme = 'luna'
   let g:airline_theme = 'base16'
+  let g:airline_theme = 'bubblegum'
 endif
 
 set background=dark
@@ -69,9 +74,43 @@ let g:solarized_termcolors=16
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
-" let g:airline#extensions#default#section_truncate_width = {
-"     \ 'b': 79,
-"     \ 'x': 60,
-"     \ 'y': 88,
-"     \ 'z': 45,
-"     \ }
+let g:airline#extensions#default#section_truncate_width = {
+    \ 'b': 80,
+    \ 'x': 65,
+    \ 'y': 65,
+    \ 'z': 40,
+    \ }
+
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
+
+" Show, for the right most column
+" %l is line number
+" %c is column number
+" %P is percentage of file
+let g:airline_section_z = '%l:%c[%P]'
+
+"let g:airline_section_a = '%#__accent_bold#%{airline#util#wrap(airline#parts#mode(),0)}%#__restore__#%{airline#util#append(airline#parts#paste(),0)}%{airline#util#append("",0)}%{airline#util#append(airline#parts#iminsert(),0)}'
+" filename
+" let g:airline_section_a = '%<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
+"                            %<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#
+" let g:airline_section_c = airline#section#create_left(['mode', 'paste', 'capslock'])
+
+
+" Currently not used
+function! SetAirline()
+  let g:airline_section_b = g:airline_section_a
+  let g:airline_section_a = g:airline_section_c
+  let g:airline_section_c = ''
+endfunction
