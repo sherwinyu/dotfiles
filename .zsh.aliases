@@ -31,6 +31,8 @@ alias hlt='heroku logs --tail'
 alias -g RP="-r prod"
 alias -g RS="-r staging"
 
+# macvim
+alias mvi="open -a MacVim ."
 
 alias zr='source ~/.zshrc'
 alias ze='vim ~/.zshrc'
