@@ -25,10 +25,16 @@ runtime autoload/shervim/splitjoin.vim
 runtime autoload/shervim/camel_case_motion.vim
 runtime autoload/shervim/gui.vim
 runtime autoload/shervim/unite.vim
+runtime autoload/shervim/you_complete_me.vim
 
 let g:airline_powerline_fonts = 1
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
 let g:ctrlp_max_files = 0
+
+"""" UTILITIES """
+"utility-s for converting last search to a substitute
+map <leader>us :s/<c-r>///g<left><left>
+map <leader>uS :%s/<c-r>///g<left><left>
 
 
 set timeoutlen=250
@@ -86,8 +92,11 @@ set visualbell
 imap <c-b> <c-s>B<c-cr><cr>
 
 " inserts a new line while keeping the cursor in the same place
+" ctrl-cr OR leader-j
 inoremap <c-cr> <CR><c-o>k<c-o>$
 nnoremap <c-cr> i<CR><Esc>k$
+inoremap <leader>j <CR><c-o>k<c-o>$
+nnoremap <leader>j i<CR><Esc>k$
 
 inoremap <leader><leader>p binding.pry<cr><esc>
 nnoremap <leader><leader>p obinding.pry<esc>
