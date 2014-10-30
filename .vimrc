@@ -27,6 +27,9 @@ runtime autoload/shervim/gui.vim
 runtime autoload/shervim/unite.vim
 runtime autoload/shervim/you_complete_me.vim
 
+" make braces light colored in coffee
+highlight link coffeeCurly comment
+
 let g:airline_powerline_fonts = 1
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
 let g:ctrlp_max_files = 0
@@ -306,6 +309,7 @@ map <f8> 8gt
 
 
 inoremap kj <esc>
+inoremap jk <esc>
 
 "opposite of <c-w> -- <alt-w>
 inoremap w <c-o>dw
