@@ -75,6 +75,7 @@ let g:solarized_termcolors=16
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
 let g:airline#extensions#default#section_truncate_width = {
+    \ 'a': 400,
     \ 'b': 80,
     \ 'x': 65,
     \ 'y': 65,
@@ -110,7 +111,8 @@ let g:airline_section_z = '%l:%c[%P]'
 
 " Currently not used
 function! SetAirline()
-  let g:airline_section_b = g:airline_section_a
-  let g:airline_section_a = g:airline_section_c
-  let g:airline_section_c = ''
+  let g:airline_section_branch = g:airline_section_b
+  let g:airline_section_b = g:airline_section_c
+  " let g:airline_section_a = g:airline_section_c
+  let g:airline_section_c = g:airline_section_branch
 endfunction

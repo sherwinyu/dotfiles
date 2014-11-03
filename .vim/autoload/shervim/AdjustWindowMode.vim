@@ -71,15 +71,3 @@ endfunction
 function! ToggleAdjustWindowMode()
   call EnterAdjustMode()
 endfunction
-
-map <silent> <leader><cr> :call ToggleAdjustWindowMode()<CR>
-
-
-
-"===========================================
-" Handylines
-nnoremap <c-s-l> 10<c-w>>
-nnoremap <c-s-h> 10<c-w><
-nnoremap <c-s-k> 10<c-w>-
-nnoremap <c-s-j> 10<c-w>+
-
