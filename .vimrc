@@ -17,6 +17,7 @@ runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 runtime autoload/shervim/AdjustWindowMode.vim
+runtime autoload/shervim/window_management.vim
 runtime autoload/shervim/sneak.vim
 runtime autoload/shervim/easymotion.vim
 runtime autoload/shervim/autopairs.vim
@@ -39,7 +40,11 @@ let g:ctrlp_max_files = 0
 map <leader>us :s/<c-r>///g<left><left>
 map <leader>uS :%s/<c-r>///g<left><left>
 
+noremap > >>
+noremap < <<
 
+
+map <leader><cr> <c-w>p
 set timeoutlen=250
 " http://vim.1045645.n5.nabble.com/Extremely-slow-when-using-relativenumber-amp-syntax-highlighting-td5721149.html"
 set lazyredraw
@@ -48,18 +53,9 @@ set ttyfast
 "interpoate a string
 map g<space>i ysiWBysiW"li#kj
 
-" easier to find linq
+" easier to find line
 set cursorline
 
-nnoremap <PageUp> 5<c-w>+
-nnoremap <PageDown> 5<c-w>-
-nnoremap <home> 5<c-w>>
-nnoremap <end> 5<c-w><
-
-nnoremap <left> <c-w>h
-nnoremap <right> <c-w>l
-nnoremap <up> <c-w>k
-nnoremap <down> <c-w>j
 
 " shift left, shift right to change tabs [terminal]
 nnoremap <s-right> gt
@@ -85,6 +81,9 @@ noremap Q <nop>
 " Don't close windows with <c-c>
 nmap <c-w>c <nop>
 imap <c-c> <nop>
+map <c-w>c <NOP>
+map <c-w><c-c> <NOP>
+map <c-w>q <NOP>
 
 
 " Disaleb error bells  http://vim.wikia.com/wiki/Disable_beeping
@@ -186,10 +185,6 @@ function! JumpBackToBuffer()
   let g:ctrlp_switch_buffer=0
 endfunction
 
-" annoying
-map <c-w>c <NOP>
-map <c-w><c-c> <NOP>
-map <c-w>q <NOP>
 
 
 set completeopt=menuone,longest  "IDE like behavior for autocompleting
@@ -234,11 +229,12 @@ map <leader>\t :tabnew<CR>
 map <leader>sp :set paste!<cr>
 
 map <leader>sw :set wrap!<cr>
-map <leader>sf :call ToggleFolding()<cr>
+map <leader>=b :call ToggleBG()<CR>
+map <leader>sl :set list!<CR>
 map <leader><f1> :set foldlevel=1<cr>
 map <leader>sP :set path=$PWD/**<cr>
 nmap <silent> <leader>n :silent :set hlsearch!<CR>
-map <leader>cd :cd %:p:h<CR>
+map <leader>ucd :cd %:p:h<CR>
 map <leader>f :call ShowFuncName() <CR>
 
 "information-file -- show the filepath
@@ -246,7 +242,7 @@ map <leader>if :echom "<c-r>%"<CR>
 
 nmap K <nop>
 
-map <leader>isso echom "set sessionoptions=buffers,curdir,tabpages,winsize"
+map <leader>isso :echom "set sessionoptions=buffers,curdir,tabpages,winsize"
 map <leader>sa :saveas<space><c-r>%
 map <leader>E :e<space><c-r>%
 map <leader>R :Rename<space><c-r>%
@@ -284,29 +280,6 @@ set laststatus=2 " always show status line
 " set statusline+=%c,     "cursor column
 " set statusline+=%l/%L   "cursor line/total lines
 " set statusline+=\ %P    "percent through file
-
-"2012 01 07 EXPERIMENTAL
-map ± 1gt
-map ² 2gt
-map ³ 3gt
-map ´ 4gt
-map µ 5gt
-map ¶ 6gt
-
-map [11~ 1gt
-map [12~ 2gt
-map [13~ 3gt
-map [14~ 4gT
-
-map <f1> 1gt
-map <f2> 2gt
-map <f3> 3gt
-map <f4> 4gt
-map <f5> 5gt
-map <f6> 6gt
-map <f7> 7gt
-map <f8> 8gt
-
 
 inoremap kj <esc>
 inoremap jk <esc>
@@ -358,7 +331,6 @@ set incsearch "highlight as you go
 set nowrap
 set linebreak
 "set showbreak=                      ≡  
-map <leader>sl :set list!<CR>
 
 set number
 set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
@@ -385,13 +357,6 @@ inoremap <c-w> <c-g>u<c-w>
 
 " au BufNewFile,BufReadPost .z*,zsh*,zlog*	so $VIM/syntax/zsh.vim
 
-map <tab> <c-w>w
-map <s-tab> <c-w>W
-map <c-tab> gt
-map <c-tab> gt
-map <C-s-tab> gT
-map <c-t> 1gtgT:tabnew<cr>
-noremap <c-n> <tab>
 
 map <bs> X
 map <del> dl
@@ -409,27 +374,6 @@ endfun
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
       \ | wincmd p | diffthis
 
-
-fun! ToggleNumbering()
-  if exists("+relativenumber")
-    if &relativenumber
-      set number
-    else
-      set relativenumber
-    endif
-  else
-    set number!
-  endif
-endfunc
-
-fun! ToggleFolding()
-  if &foldlevel == 1
-    let &foldlevel = 0
-  else
-    let &foldlevel = 1
-  endif
-endfunc
-
 highlight Folded ctermbg=103 ctermfg=16
 
 set foldtext=MyFoldText()
@@ -437,15 +381,12 @@ set foldlevel=2
 set foldnestmax=2
 fun! MyFoldText()
   return substitute(getline(v:foldstart), '^\s\+', repeat(" ",indent(v:foldstart)), '')
-  " return getline(v:foldstart)
 endfun
 set foldmethod=manual
 
 map \=t1 :set tabline=%!SherwinTabLine()<CR>
 map \=t2 :set tabline=%!SherwinTabLineCompact()<CR>
-
 set tabline=%!SherwinTabLineCompact()
-map <leader>=b :call ToggleBG()<CR>
 
 set formatoptions=croql
 
