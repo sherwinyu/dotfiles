@@ -62,6 +62,10 @@ alias -g BE='bundle exec'
 # OVERRIDES FOR PREZTO
 unalias sp
 
+# TMUX handlers
+alias tmxsp="cd ~/projects/sp; tmux at -t sp || tmux new -s sp"
+alias tmxbe="cd ~/work/aurelia; tmux at -t be || tmux new -s be"
+
 
 # ARC / BENCHLING
 alias clinteastwood="arc lint"
