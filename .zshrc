@@ -9,7 +9,8 @@ fi
 source ~/.yadr/zsh/0000_before.zsh
 source ~/.yadr/zsh/0_path.zsh
 source ~/.yadr/zsh/aliases.zsh
-source ~/.yadr/zsh/colors.zsh
+
+# source ~/.yadr/zsh/colors.zsh commenting out because it messes up grep color
 source ~/.yadr/zsh/custom_prompt_path.zsh
 source ~/.yadr/zsh/fasd.zsh
 source ~/.yadr/zsh/git.zsh

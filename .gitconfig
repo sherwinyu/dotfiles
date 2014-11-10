@@ -11,7 +11,7 @@
   local = yellow
   remote = green
 [color "diff"]
-  meta = yellow bold
+  meta = yellow
   frag = magenta bold
   old = red
   new = green
@@ -28,3 +28,5 @@ protocol = https
 
 [alias]
   turnt = checkout
+[log]
+	decorate = short
