@@ -51,7 +51,7 @@ set lazyredraw
 set ttyfast
 
 "interpoate a string
-map g<space>i ysiWBysiW"li#kj
+" map g<space>i ysiWBysiW"li#kj
 
 " easier to find line
 set cursorline
@@ -79,11 +79,11 @@ noremap <leader>P "+P
 noremap Q <nop>
 
 " Don't close windows with <c-c>
-nmap <c-w>c <nop>
-imap <c-c> <nop>
-map <c-w>c <NOP>
-map <c-w><c-c> <NOP>
-map <c-w>q <NOP>
+nnoremap <c-w>c <NOP>
+inoremap <c-c> <>
+nnoremap <c-w>c  i<esc>l
+nnoremap <c-w><c-c> i<esc>l
+noremap <c-w>q <NOP>
 
 
 " Disaleb error bells  http://vim.wikia.com/wiki/Disable_beeping
@@ -193,11 +193,10 @@ set mouse=a "allow scrolling with mouse wheel
 "set mouse=nv "temporary -- to learn not to use <esc> to leave insert mode
 let java_allow_cpp_keywords = 1 "Annoying
 
-" let mapleader = "\"
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
 noremap <a-cr> O<esc>
 noremap <cr> o<esc>
-noremap <space> i<space><esc>
+noremap <space><space> i<space><esc>
 
 
 " iunmap <c-v>
@@ -283,6 +282,8 @@ set laststatus=2 " always show status line
 
 inoremap kj <esc>
 inoremap jk <esc>
+vnoremap <space><space> <esc>
+cnoremap kj <esc>
 
 "opposite of <c-w> -- <alt-w>
 inoremap w <c-o>dw
@@ -358,7 +359,6 @@ inoremap <c-w> <c-g>u<c-w>
 " au BufNewFile,BufReadPost .z*,zsh*,zlog*	so $VIM/syntax/zsh.vim
 
 
-map <bs> X
 map <del> dl
 
 function! ShowFuncName()

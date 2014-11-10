@@ -8,6 +8,12 @@ nnoremap <right> <c-w>l
 nnoremap <up> <c-w>k
 nnoremap <down> <c-w>j
 
+"Disable <c-w>h/j/k/l
+nnoremap <c-w>h <NOP>
+nnoremap <c-w>j <NOP>
+nnoremap <c-w>k <NOP>
+nnoremap <c-w>l <NOP>
+
 " Tab navigation
 map ± 1gt
 map ² 2gt
@@ -16,10 +22,10 @@ map ´ 4gt
 map µ 5gt
 map ¶ 6gt
 
-map [11~ 1gt
-map [12~ 2gt
-map [13~ 3gt
-map [14~ 4gT
+" map [11~ 1gt
+" map [12~ 2gt
+" map [13~ 3gt
+" map [14~ 4gT
 
 map <f1> 1gt
 map <f2> 2gt
