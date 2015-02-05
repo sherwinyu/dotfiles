@@ -4,6 +4,7 @@ export EDITOR=vim
 source ~/dotfiles/.zsh.aliases
 source ~/dotfiles/.zsh.fancy_ctrlz
 source ~/dotfiles/.zsh.navigation
+source ~/dotfiles/.zsh.commandline
 
 if [[ -r ~/dotfiles/.zshrc.local ]]; then
   source ~/dotfiles/.zshrc.local
@@ -12,3 +13,5 @@ fi
 # Make rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+bindkey -e

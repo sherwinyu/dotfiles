@@ -80,3 +80,4 @@ alias tmxdf="cd ~/dotfiles; tmux at -t df || tmux new -s df"
 # ARC / BENCHLING
 alias clinteastwood="arc lint"
 alias adbz="arc diff --background 0"
+alias adbzpc="adbz --plan-changes"
