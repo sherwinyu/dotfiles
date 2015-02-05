@@ -1,8 +1,8 @@
 " Dependant on xolox-vim-session
 
 " Shortcuts for opening vim sessions
-nnoremap <leader>So :OpenSession<space>
-nnoremap <leader>Ss :SaveSession<space>
+nnoremap <leader><leader>o :OpenSession!<space>
+nnoremap <leader><leader>s :SaveSession!<space>
 
 " Shortcut for cloning the tabsession
-nnoremap <leader>Sj :SaveTabSession! temp<CR>:tabnew<CR>:OpenTabSession! temp<CR>
+nnoremap <leader><leader>sj :SaveTabSession! temp<CR>:tabnew<CR>:OpenTabSession! temp<CR>
