@@ -10,9 +10,6 @@ omap <silent> ige <Plug>CamelCaseMotion_ie
 
 vmap <silent> X iW
 vmap <silent> x <Plug>CamelCaseMotion_iw
-vmap <silent> igw <Plug>CamelCaseMotion_iw
-vmap <silent> igb <Plug>CamelCaseMotion_ib
-vmap <silent> ige <Plug>CamelCaseMotion_ie
 
 
 " And textobj

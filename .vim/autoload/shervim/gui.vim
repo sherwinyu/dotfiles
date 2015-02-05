@@ -76,9 +76,9 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
 let g:airline#extensions#default#section_truncate_width = {
     \ 'a': 400,
-    \ 'b': 80,
-    \ 'x': 65,
-    \ 'y': 65,
+    \ 'b': 400,
+    \ 'x': 400,
+    \ 'y': 400,
     \ 'z': 40,
     \ }
 
@@ -100,7 +100,7 @@ let g:airline_mode_map = {
 " %l is line number
 " %c is column number
 " %P is percentage of file
-let g:airline_section_z = '%l:%c[%P]'
+let g:airline_section_z = '  %c  |  %P'
 
 "let g:airline_section_a = '%#__accent_bold#%{airline#util#wrap(airline#parts#mode(),0)}%#__restore__#%{airline#util#append(airline#parts#paste(),0)}%{airline#util#append("",0)}%{airline#util#append(airline#parts#iminsert(),0)}'
 " filename
