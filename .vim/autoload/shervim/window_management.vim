@@ -85,3 +85,45 @@ map <leader><leader><tab> <c-w>p
 
 " Helper for adjusting windows
 map <silent> <leader>uw :call ToggleAdjustWindowMode()<CR>
+
+
+" Helper for zooming windows
+" Source: http://vim.wikia.com/wiki/Window_zooming_convenience
+function! WidthResizeWindow()
+  let l:num_windows = (winnr('$') - 1)
+  let l:win_width = (&columns - 110) / num_windows
+  vertical resize 50
+endfunction
+
+function! ZoomWindow()
+  if winwidth(0) < 110
+    let l:current_win_number = winnr()
+    " Resize every window
+    normal! <c-w>1w
+    windo call WidthResizeWindow()
+    echom "Smaller than 110, resizing"
+
+    "Go back to current win number
+    exe l:current_win_number . "wincmd w"
+    vertical resize 110
+  endif
+
+  "Maximize veritcally, always
+  wincmd _
+endfunction
+
+function! ToggleMaxWins()
+  if exists('g:windowMax')
+    au! maxCurrWin
+    wincmd =
+    unlet g:windowMax
+  else
+    augroup maxCurrWin
+        " au BufEnter * wincmd _ | wincmd |
+        au! WinEnter * call ZoomWindow()
+    augroup END
+    do maxCurrWin WinEnter
+    let g:windowMax=1
+  endif
+endfunction
+nnoremap <Leader><Leader>z :call ToggleMaxWins()<CR>

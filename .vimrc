@@ -244,7 +244,7 @@ map <leader>sl :set list!<CR>
 map <leader><f1> :set foldlevel=1<cr>
 map <leader>sP :set path=$PWD/**<cr>
 nmap <silent> <leader>n :silent :set hlsearch!<CR>
-map <leader>ucd :cd %:p:h<CR>
+map <leader>icd :cd %:p:h<CR>
 map <leader>f :call ShowFuncName() <CR>
 
 "information-file -- show the filepath
@@ -404,6 +404,7 @@ autocmd BufNewFile,BufReadPost *.go set filetype=go
 autocmd WinEnter * checktime
 autocmd BufWinEnter * checktime
 
+set path+=~/dotfiles/.vim
 set virtualedit=insert,block,onemore
 
 set wildignore+=*/public/assets/source_maps/*

@@ -100,7 +100,15 @@ let g:airline_mode_map = {
 " %l is line number
 " %c is column number
 " %P is percentage of file
-let g:airline_section_z = '  %c  |  %P'
+" let g:airline_section_z = '  %c  |  %P  '
+let g:airline_section_z = '  %c  |  %P %{ZoomModeSigil()}'
+function! ZoomModeSigil()
+  if exists('g:windowMax')
+    echom 'zoom mode'
+    return 'Z+'
+  endif
+  return ''
+endfunction
 
 "let g:airline_section_a = '%#__accent_bold#%{airline#util#wrap(airline#parts#mode(),0)}%#__restore__#%{airline#util#append(airline#parts#paste(),0)}%{airline#util#append("",0)}%{airline#util#append(airline#parts#iminsert(),0)}'
 " filename
@@ -108,11 +116,17 @@ let g:airline_section_z = '  %c  |  %P'
 "                            %<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#
 " let g:airline_section_c = airline#section#create_left(['mode', 'paste', 'capslock'])
 
+function! MyAirlineOverride(...)
+  call a:l.add_section
+endfunction
+
 
 " Currently not used
 function! SetAirline()
   let g:airline_section_branch = g:airline_section_b
   let g:airline_section_b = g:airline_section_c
+  if g:windowMax
+    echom 'windowMax!!'
   " let g:airline_section_a = g:airline_section_c
   let g:airline_section_c = g:airline_section_branch
 endfunction
