@@ -1,3 +1,4 @@
+let mapleader = "\<F12>"
 let g:sneak#use_ic_scs = 1
 "source $VIMRUNTIME/mswin.vim
 
@@ -25,8 +26,23 @@ runtime autoload/shervim/session.vim
 runtime autoload/shervim/splitjoin.vim
 runtime autoload/shervim/camel_case_motion.vim
 runtime autoload/shervim/gui.vim
-runtime autoload/shervim/unite.vim
+" runtime autoload/shervim/unite.vim
 runtime autoload/shervim/you_complete_me.vim
+
+
+inoremap <c-q> <esc>ld^i
+
+inoremap \\ \
+inoremap \u <esc>ld^i
+inoremap \u <esc>ld^i
+
+nmap <space> <Leader>
+nmap <space><space> <Leader><leader>
+vmap <space> <Leader>
+vmap <space><space> <Leader><leader>
+
+imap \ <Leader>
+
 
 " make braces light colored in coffee
 highlight link coffeeCurly comment
@@ -40,36 +56,28 @@ let g:ctrlp_max_files = 0
 map <leader>us :s/<c-r>///g<left><left>
 map <leader>uS :%s/<c-r>///g<left><left>
 
-noremap > >>
-noremap < <<
+nnoremap > >>
+nnoremap < <<
 
-
-map <leader><cr> <c-w>p
-set timeoutlen=250
+set timeoutlen=350
 " http://vim.1045645.n5.nabble.com/Extremely-slow-when-using-relativenumber-amp-syntax-highlighting-td5721149.html"
 set lazyredraw
 set ttyfast
 
-"interpoate a string
-" map g<space>i ysiWBysiW"li#kj
+"interpolate a string (utility - interpolate)
+map <space>ui ysiWBysiW"li#kj
 
 " easier to find line
 set cursorline
 
 
-" shift left, shift right to change tabs [terminal]
-nnoremap <s-right> gt
-nnoremap <s-left> gT
-
-" shift left, shift right to change tabs [terminal]
-nnoremap [1;2C gt
-nnoremap [1;2D gT
 
 " http://stackoverflow.com/questions/18219444/remove-underscore-as-a-word-separator-in-vim
 set iskeyword+=-
 
 " Copy to global clipboard from visual selection
 vnoremap <leader>y "+y
+noremap <leader>yy "+yy
 " Paste from global clipboard
 noremap <leader>p "+p
 noremap <leader>P "+P
@@ -77,6 +85,8 @@ noremap <leader>P "+P
 " Disable Ex mode
 " http://www.bestofvim.com/tip/leave-ex-mode-good/
 noremap Q <nop>
+noremap q: <nop>
+noremap Q: q:
 
 " Don't close windows with <c-c>
 nnoremap <c-w>c <NOP>
@@ -111,7 +121,14 @@ nnoremap <PageDown> 10k
 
 "2013 05 01
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd FileType jade let b:noStripWhitespace=1
+autocmd BufWritePre * call StripTrailingWhiteSpace()
+function! StripTrailingWhiteSpace()
+  if exists('b:noStripWhitespace')
+    return
+  endif
+  %s/\s\+$//e
+endfunction
 
 
 " Indent guides
@@ -142,6 +159,7 @@ nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 " nnoremap <c-l> h/[\]\)\}]<cr>l
 " replaced by autopairs.vim
 
+" Helper for vim surround in insert mode
 imap <c-s> <c-g>s
 
 " commands 201 07 01
@@ -196,8 +214,7 @@ let java_allow_cpp_keywords = 1 "Annoying
 map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
 noremap <a-cr> O<esc>
 noremap <cr> o<esc>
-noremap <space><space> i<space><esc>
-
+noremap g<space> i<space><esc>
 
 " iunmap <c-v>
 " unmap <c-a>
@@ -208,13 +225,8 @@ noremap <leader>v <c-v>
 map s<space> vS<space><space>
 
 
-
-" nnoremap <silent> <Leader>t :CommandT<CR>
-" nnoremap <silent> <Leader>B :CommandTBuffer<CR>
 nnoremap <silent> <leader>t :CtrlP<CR>
 
-" map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
-" map <leader>=s :%s/\s\+$//g<cr>
 map <leader>== ggVG&<c-o><c-o>
 map <leader>=ve :e ~/.vimrc<CR>
 map <leader>=vr :so ~/.vimrc<CR>
@@ -222,7 +234,6 @@ map <leader>=r :so <c-r>%<CR>
 map <leader>=ze :e ~/.zshrc<CR>
 map <leader>=te :e ~/.tmux.conf<CR>
 
-map <leader>\t :tabnew<CR>
 
 " Toggle paste mode in insertion
 map <leader>sp :set paste!<cr>
@@ -263,8 +274,6 @@ map <leader>c :cw<cr>
 map <leader>] :cn<cr>
 map <leader>[ :cp<cr>
 
-
-map <leader><space> za
 
 set laststatus=2 " always show status line
 " set statusline=%f        "tail of the filename
@@ -384,8 +393,8 @@ fun! MyFoldText()
 endfun
 set foldmethod=manual
 
-map \=t1 :set tabline=%!SherwinTabLine()<CR>
-map \=t2 :set tabline=%!SherwinTabLineCompact()<CR>
+"map \=t1 :set tabline=%!SherwinTabLine()<CR>
+"map \=t2 :set tabline=%!SherwinTabLineCompact()<CR>
 set tabline=%!SherwinTabLineCompact()
 
 set formatoptions=croql
@@ -395,7 +404,7 @@ autocmd BufNewFile,BufReadPost *.go set filetype=go
 autocmd WinEnter * checktime
 autocmd BufWinEnter * checktime
 
-set virtualedit=insert,block
+set virtualedit=insert,block,onemore
 
 set wildignore+=*/public/assets/source_maps/*
 set wildignore+=*/build/*
