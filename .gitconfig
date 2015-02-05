@@ -28,5 +28,6 @@ protocol = https
 
 [alias]
   turnt = checkout
+  reese = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short)  %(refname:short)'
 [log]
 	decorate = short
