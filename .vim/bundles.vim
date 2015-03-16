@@ -43,6 +43,11 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'rking/ag.vim'
 Bundle 'bling/vim-airline'
 Bundle 'Shougo/unite.vim'
+Bundle 'AndrewRadev/unite.vim'
+Bundle 'AndrewRadev/switch.vim'
+Bundle 'AndrewRadev/sideways.vim'
+Bundle 'hynek/vim-python-pep8-indent'
+
 
 
 

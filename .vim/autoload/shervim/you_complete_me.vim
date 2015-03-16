@@ -4,3 +4,9 @@ let g:ycm_seed_identifiers_with_syntax = 1
 
 " Allow completion inside comments
 let g:ycm_complete_in_comments = 1
+
+"Disable semantic completion for ruby files
+let g:ycm_filetype_specific_completion_to_disable = {
+  \ 'ruby': 1,
+  \ 'coffee': 1
+  \ }
