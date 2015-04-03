@@ -41,10 +41,5 @@ function! SetCursorLine()
 endfunction
 
 
-map <silent> <esc><esc> :call FlashCursor()<cr>
-
-function! FlashCursor()
-  set cursorcolumn!
-endfunction
 
 call SetCursorLine()
