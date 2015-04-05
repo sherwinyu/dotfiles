@@ -101,10 +101,3 @@ nnoremap <leader><leader>P Obinding.pry<esc>
 
 nnoremap > >>
 nnoremap < <<
-
-
-"commands 2013 04 06"
-" inoremap <c-l> <c-o>h<c-o>/[\]\)\}\"\'\>]<cr><c-o>l
-" nnoremap <c-l> h/[\]\)\}]<cr>l
-" replaced by autopairs.vim
-

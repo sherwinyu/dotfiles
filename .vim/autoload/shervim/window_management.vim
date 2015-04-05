@@ -23,7 +23,7 @@ function! JumpToLastTab()
 endfunction
 
 function! CreateTabLast()
-  JumpToLastTab()
+  call JumpToLastTab()
   exe 'tabnew'
 endfunction
 
