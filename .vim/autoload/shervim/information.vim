@@ -13,6 +13,8 @@ map <leader>icd :cd %:p:h<CR>
 "information-file -- show the filepath
 map <leader>if :echom "<c-r>%"<CR>
 
+map <leader>ifc :let @+ = expand("%")<CR>:echom "Copied file path:  <c-r>%"<CR>
+
 map <leader>isso :echom "set sessionoptions=buffers,curdir,tabpages,winsize"
 
 " Highlight long lines

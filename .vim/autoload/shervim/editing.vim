@@ -35,6 +35,7 @@ inoremap <leader>j <CR><c-o>k<c-o>$
 nnoremap <leader>j i<CR><Esc>k$
 
 " what is this supposed to do?? alt-j -- works in terminal
+" alt-j to kill current line and delete to previous line (to undo an extra enter, for instance)
 inoremap j <c-o>cc<esc><bs>
 
 noremap <a-cr> O<esc>
@@ -50,31 +51,6 @@ noremap <del> dl
 " Insert a character
 noremap gi i_<esc>r
 
-noremap - ^
-noremap = $
-vnoremap & =
-
-" Move forward in jumplist
-nnoremap <c-n> <c-i>
-
-function! g:AddPositionToJumpList()
-  let l:cursor_pos = getpos('.')
-  let l:target_line = l:cursor_pos[1]
-  let l:target_col = l:cursor_pos[2]
-  execute "normal " . target_line . "G" . target_col . "|"
-endfunction
-
-" Jump out an indentation
-" Relies on vaI and vii text objects (textobj-indent)
-" Works by selecitn around the indent, then moving cursor to one line above it
-nmap <leader>k :call g:AddPositionToJumpList()<CR>vaiok<c-c>
-
-
-" Jump to start / end of line
-inoremap - <c-o>^
-inoremap = <c-o>$
-inoremap <c-a> <c-o>^
-inoremap <c-e> <c-o>$
 
 " Insert an undo break before deleting in insert mode
 " Kill line to left
@@ -97,7 +73,7 @@ inoremap <leader><leader>p binding.pry<cr><esc>
 nnoremap <leader><leader>p obinding.pry<esc>
 nnoremap <leader><leader>P Obinding.pry<esc>
 
-
-
+" Easy indentation in/out
 nnoremap > >>
 nnoremap < <<
+

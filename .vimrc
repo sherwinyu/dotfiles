@@ -29,6 +29,8 @@ runtime autoload/shervim/gui.vim
 runtime autoload/shervim/information.vim
 runtime autoload/shervim/file_lifecycle.vim
 runtime autoload/shervim/editing.vim
+runtime autoload/shervim/navigating.vim
+"   - includes indentwise
 runtime autoload/shervim/abbreviations.vim
 " runtime autoload/shervim/unite.vim
 runtime autoload/shervim/you_complete_me.vim

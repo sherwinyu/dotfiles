@@ -47,8 +47,7 @@ Bundle 'AndrewRadev/unite.vim'
 Bundle 'AndrewRadev/switch.vim'
 Bundle 'AndrewRadev/sideways.vim'
 Bundle 'hynek/vim-python-pep8-indent'
-
-
+Bundle 'jeetsukumaran/vim-indentwise'
 
 
 
