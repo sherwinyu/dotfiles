@@ -9,3 +9,5 @@ custom_plan.rb
 .vim/bundle/*
 .s3config
 .s3cfg
+
+.vim/sessions/*
