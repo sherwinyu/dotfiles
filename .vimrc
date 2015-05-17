@@ -1,11 +1,10 @@
-let mapleader = "\<F12>"
+let mapleader = "\<F13>"
 let g:sneak#use_ic_scs = 1
 "source $VIMRUNTIME/mswin.vim
-
-" Trying this as default.. we'll see how I like it
-" source: http://tilvim.com/2013/12/20/camelcase.html
-
+"
+let g:yankstack_map_keys = 0
 source ~/.vim/bundles.vim
+
 set nocompatible
 filetype plugin indent on
 syntax on
@@ -30,10 +29,11 @@ runtime autoload/shervim/information.vim
 runtime autoload/shervim/file_lifecycle.vim
 runtime autoload/shervim/editing.vim
 runtime autoload/shervim/navigating.vim
+runtime autoload/shervim/yankstack.vim
 "   - includes indentwise
 runtime autoload/shervim/abbreviations.vim
 " runtime autoload/shervim/unite.vim
-runtime autoload/shervim/you_complete_me.vim
+" runtime autoload/shervim/you_complete_me.vim
 runtime autoload/shervim/ctrl_p.vim
 
 " """"""""""""""""""""""""""""""""""""""
@@ -185,6 +185,8 @@ set wildignore+=*/public/assets/source_maps/*
 set wildignore+=*/build/*
 set wildignore+=*/doc/*
 set wildignore+=*/benchling/static/*
+set wildignore+=*/js-build/*
+set wildignore+=*/node_modules/*
 
 
 " DiffOrig for sane recovery management. Choose (R)ecover, then call :DiffOrig to diff the recovered swap file with the original file.

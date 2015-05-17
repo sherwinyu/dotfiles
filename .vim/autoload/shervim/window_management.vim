@@ -32,10 +32,10 @@ endfunction
 " leader-tab to jump to last-used tab
 let g:lasttab = 1
 au TabLeave * let g:lasttab = tabpagenr()
-nmap <f12><f11> :exe "tabn ".g:lasttab<CR>
+nmap <f12> :exe "tabn ".g:lasttab<CR>
 
 " F9 prev tab / F10 next tab
-" Note: F12 isn't used because F12 is used as leader
+" Note: F12 isn't used because F12 is used to jump to previously used tab
 map <f9> gT
 map <f10> gt
 "F11 jumps to last tab (two 1s is like a stop)

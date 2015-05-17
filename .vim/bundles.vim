@@ -4,6 +4,7 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+let g:AutoPairs = {}
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
@@ -28,22 +29,29 @@ Bundle 'groenewege/vim-less'
 Bundle 'jade.vim'
 Bundle 'Syntastic'
 Bundle 'Vitality'
+
 " Bundle 'Lokaltog/vim-easymotion'
 Bundle 'justinmk/vim-sneak'
 Bundle 'jiangmiao/auto-pairs'
+Bundle 'cohama/lexima.vim'
+Bundle 'maxbrunsfeld/vim-yankstack'
+""Bundle 'vim-scripts/autoclose'
 Bundle 'textobj-user'
 Bundle 'textobj-indent'
 " Bundle 'textobj-function'
 Bundle 'tek/vim-textobj-ruby'
 "Bundle 'bps/vim-textobj-python'
+
 Bundle 'beloglazov/vim-textobj-quotes'
 Bundle 'commentary.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'Valloric/YouCompleteMe'
+
 Bundle 'rking/ag.vim'
 Bundle 'bling/vim-airline'
-Bundle 'Shougo/unite.vim'
-Bundle 'AndrewRadev/unite.vim'
+" Bundle 'Shougo/unite.vim'
+" Bundle 'AndrewRadev/unite.vim'
+
 Bundle 'AndrewRadev/switch.vim'
 Bundle 'AndrewRadev/sideways.vim'
 Bundle 'hynek/vim-python-pep8-indent'

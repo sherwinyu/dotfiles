@@ -27,3 +27,8 @@ nmap <leader>k :call g:AddPositionToJumpList()<CR>vaiok<c-c>
 
 map gk <Plug>(IndentWisePreviousEqualIndent)
 map gj <Plug>(IndentWiseNextEqualIndent)
+
+vnoremap <leader>* "vy<c-c>:Ag <c-r>v
+nnoremap <leader>* :Ag <c-r><c-w>
+nnoremap <leader>/ :Ag <c-r>/
+nnoremap <leader>A :Ag<space>

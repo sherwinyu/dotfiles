@@ -12,7 +12,8 @@ function! JumpBackToBuffer()
   let g:ctrlp_switch_buffer=0
 endfunction
 
-nnoremap <silent> <leader>t :CtrlP<CR>
+" nnoremap <silent> <leader>t :CtrlP<CR>
+let g:ctrlp_map =  '<leader>t'
 " nnoremap <silent> <leader>fm :CtrlP<CR>model
 " nnoremap <silent> <leader>fM :CtrlP<CR>migrat
 

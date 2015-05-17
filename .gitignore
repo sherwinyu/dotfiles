@@ -5,6 +5,7 @@
 .netrwhist
 zeus.json
 custom_plan.rb
+.notes
 
 .vim/bundle/*
 .s3config

@@ -26,6 +26,16 @@ imap <c-s> <c-g>s
 " Utilizes i_<c-j> and i_<c-s>
 imap <c-b> <c-s>B<c-cr><cr>
 
+" Have to explicitly set it (since yankstack is blwoing away the vmap for S)
+vmap S <plug>VSurround
+
+" Wrap current word in parens
+nmap <leader>gb ysiwb
+" Wrap current word in a function call (puts cursor in insert mode afterward)
+nmap <leader>gf ysiwbi
+" Wrap current selection in a function call
+vmap <leader>gf Sb
+
 
 " inserts a new line while keeping the cursor in the same place
 " ctrl-cr OR leader-j
@@ -76,4 +86,7 @@ nnoremap <leader><leader>P Obinding.pry<esc>
 " Easy indentation in/out
 nnoremap > >>
 nnoremap < <<
+
+
+
 

@@ -36,3 +36,6 @@ sourceit ~/work/dotfiles/.zshrc.benchling
 sourceit ~/.zshrc.benchling
 
 source ~/dotfiles/.zsh.MANIFEST
+
+export NVM_DIR="/Users/yxy/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

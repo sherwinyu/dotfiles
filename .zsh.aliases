@@ -16,16 +16,22 @@ alias gcAH='git commit --amend -C HEAD'
 alias gcv='git commit -v'
 alias gcav='git commit -av'
 alias gd='git diff'
+alias gdw='git diff -w'
 alias gdc='git diff --cached'
+alias gdcw='git diff --cached -w'
 alias gdns='git diff --name-status'
 alias gco='git checkout'
 alias gpush='git push'
 alias gpull='git pull'
+unalias gr
+alias grb="git rebase"
+alias grbi="git rebase -i"
 alias gl='git log --pretty=format:"[%h] %an %cr: %s"'
 alias gll="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gld='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn]" --decorate --date=relative'
 alias glds='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn]" --decorate --date=short'
 alias gfl='git log -u'
+alias gR='git reese'
 
 alias hrc='heroku run console'
 alias hr='heroku run'
@@ -61,7 +67,8 @@ alias -g H='| head'
 alias -g TL='| tail'
 alias -g T='| tee'
 alias -g C="| pbcopy"
-alias -g X="| tee >(pbcopy)"
+alias -g COPY="| tee >(pbcopy)"
+alias -g X="| xargs"
 alias -g BE='bundle exec'
 
 alias -g CA='--color=always'
