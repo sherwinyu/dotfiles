@@ -11,6 +11,7 @@ syntax on
 " call pathogen#infect()
 runtime macros/matchit.vim
 runtime autoload/shervim/ShowTabNumber.vim
+runtime autoload/shervim/Taboo.vim
 runtime autoload/shervim/RelativeNumbers.vim
 runtime autoload/shervim/CursorLine.vim
 runtime autoload/shervim/ToggleBG.vim
@@ -164,7 +165,8 @@ set ttyfast
 
 
 " set sessionoptions=buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
-set sessionoptions=buffers,curdir,folds,resize,tabpages,winsize,winpos
+" Globals required to save tab names
+set sessionoptions=buffers,curdir,folds,resize,tabpages,winsize,winpos,globals
 
 set autowrite
 set incsearch "highlight as you go
@@ -207,7 +209,7 @@ fun! MyFoldText()
 endfun
 set foldmethod=manual
 
-set tabline=%!SherwinTabLineCompact()
+" set tabline=%!SherwinTabLineCompact()
 
 set formatoptions=croql
 

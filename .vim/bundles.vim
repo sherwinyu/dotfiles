@@ -49,8 +49,6 @@ Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'rking/ag.vim'
 Bundle 'bling/vim-airline'
-" Bundle 'Shougo/unite.vim'
-" Bundle 'AndrewRadev/unite.vim'
 
 Bundle 'AndrewRadev/switch.vim'
 Bundle 'AndrewRadev/sideways.vim'
@@ -58,6 +56,7 @@ Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'jeetsukumaran/vim-indentwise'
 Bundle 'vim-scripts/ctrlp-funky'
 Bundle 'vim-scripts/ctrlp-funky'
+Bundle 'gcmt/taboo.vim'
 
 " ...rest of bundles
 
