@@ -65,7 +65,7 @@ nnoremap <leader>A :Ag<space>
 " Tags
 nnoremap <leader><f12> :!ctags -R coffee benchling<CR>
 nnoremap <leader>ft :CtrlPBufTag<CR>
-nnoremap <leader><leader>t :CtrlPFunky
+nnoremap <leader><leader>t :CtrlPFunky<CR>
 
 
 " Set up gf for coffee requires
