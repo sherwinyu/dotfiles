@@ -1,4 +1,4 @@
-function! ShowFuncName()
+function! ShowNameOfFunc()
   let lnum = line(".")
   let col = col(".")
   echohl ModeMsg
@@ -6,7 +6,8 @@ function! ShowFuncName()
   echohl None
   call search("\\%" . lnum . "l" . "\\%" . col . "c")
 endfun
-map <leader>f :call ShowFuncName() <CR>
+
+map <leader>inf :call ShowNameOfFunc() <CR>
 
 map <leader>icd :cd %:p:h<CR>
 
