@@ -4,12 +4,14 @@
 "visual block
 noremap <leader>v <c-v>
 
-" Copy to global clipboard from visual selection
-vnoremap <leader>y "+y
-noremap <leader>yy "+yy
-" Paste from global clipboard
-noremap <leader>p "+p
-noremap <leader>P "+P
+" Temporarily disable global copy and paste
+" " Copy to global clipboard from visual selection
+" vnoremap <leader>y "+y
+" noremap <leader>yy "+yy
+" " Paste from global clipboard
+" noremap <leader>p "+p<>
+" noremap <leader>P "+P
+set clipboard=unnamed
 
 
 " Shortcut for selecting just pasted text
