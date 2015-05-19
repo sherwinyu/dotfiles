@@ -63,6 +63,10 @@ cnoremap kj <esc>
 highlight link coffeeCurly comment
 let g:airline_powerline_fonts = 1
 
+" Hide swp files
+set backupdir=~/.vimlocal/backup//
+set directory=~/.vimlocal/swap//
+set undodir=~/.vimlocal/undo//
 
 
 """" UTILITIES """

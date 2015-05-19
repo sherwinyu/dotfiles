@@ -1,4 +1,5 @@
 " Dependant on xolox-vim-session
+let g:session_autoload = 0
 
 " Shortcuts for opening vim sessions
 nnoremap <leader><leader>o :OpenSession!<space>
