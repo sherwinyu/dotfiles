@@ -56,8 +56,7 @@ Bundle 'AndrewRadev/switch.vim'
 Bundle 'AndrewRadev/sideways.vim'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'jeetsukumaran/vim-indentwise'
-
-
+Bundle 'vim-scripts/ctrlp-funky'
 
 " ...rest of bundles
 

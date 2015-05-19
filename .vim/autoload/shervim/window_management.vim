@@ -54,8 +54,8 @@ nnoremap <s-left> gT
 " <c-t> for at end
 
 map <c-t> :call CreateTabLast()<CR>
-" <leader><leader>t for right where we are
-map <leader><leader>t :tabnew<CR>
+" <leader><c-t>t for right where we are
+map <leader><c-t>t :tabnew<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

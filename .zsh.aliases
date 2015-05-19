@@ -88,3 +88,5 @@ alias clinteastwood="arc lint"
 alias adbz="arc diff --background 0"
 alias adbzpc="adbz --plan-changes"
 alias arm="alembic revision -m"
+
+alias retag="ctags -R coffee benchling"

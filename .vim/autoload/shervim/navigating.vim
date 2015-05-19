@@ -38,6 +38,22 @@ map gj <Plug>(IndentWiseNextEqualIndent)
 "
 
 
+" Toggling quickfix
+" let t:quickfix_is_open = 0
+function! QuickfixToggle()
+  " if t:quickfix_is_open
+  if &buftype == "quickfix"
+    cclose
+    " let t:quickfix_is_open = 0
+    execute t:quickfix_return_to_window . "wincmd w"
+  else
+    let t:quickfix_return_to_window = winnr()
+    copen
+    " let t:quickfix_is_open = 1
+  endif
+endfunction
+map <leader><f1> :call QuickfixToggle()<CR>
+
 
 
 " Searching via Ag.vim
@@ -47,9 +63,12 @@ nnoremap <leader>/ :Ag <c-r>/
 nnoremap <leader>A :Ag<space>
 
 " Tags
+nnoremap <leader><f12> :!ctags -R coffee benchling<CR>
 nnoremap <leader>ft :CtrlPBufTag<CR>
+nnoremap <leader><leader>t :CtrlPFunky
 
 
 " Set up gf for coffee requires
 set path+=~/work/aurelia/coffee
 set suffixesadd=.coffee
+
