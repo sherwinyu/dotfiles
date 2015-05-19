@@ -6,5 +6,6 @@ function! ToggleBG()
     let &background='dark'
     call SetGuiCursor()
   endif
+    call g:HiLinks()
 endfunc
 let &background='dark'

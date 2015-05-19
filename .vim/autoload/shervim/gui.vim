@@ -14,7 +14,7 @@ highlight oCursor guibg=lightgreen
 function! SetGuiCursor()
   highlight oCursor guibg=lightgreen
   if &background=='dark'
-    highlight Cursor guibg=lightmagenta
+    highlight Cursor guibg=magenta
   else
     highlight Cursor guibg=darkmagenta
   endif
@@ -69,8 +69,82 @@ else
 endif
 
 set background=dark
-colorscheme solarized
 let g:solarized_termcolors=16
+
+
+function! g:HiLinks()
+  " Color corrects
+  " hi link vimCommand keyword
+  if has("gui_running")
+    hi Search guifg=#000000 guibg=moccasin
+    hi coffeeObjAssign guifg=steelblue
+    hi coffeeExtendedOp guifg=sienna4
+    hi statement guifg=peru
+    hi LineNr guibg=gray14
+    hi CursorLineNr guibg=gray14
+    hi CursorLineNr guifg=darkorange3
+    hi CursorLine guibg=#222729
+  endif
+endfunction
+
+function! ColorschemeDune()
+  colorscheme base16-atelierdune
+endfunction
+nnoremap <leader>=1 :call ColorschemeDune()<CR>
+
+function! ColorschemeMocha()
+  colorscheme base16-mocha
+  call g:HiLinks()
+endfunction
+nnoremap <leader>=2 :call ColorschemeMocha()<CR>
+
+
+" TWILIGHT
+function! ColorschemeTwilight()
+  colorscheme base16-twilight
+  call g:HiLinks()
+endfunction
+nnoremap <leader>=3 :call ColorschemeTwilight()<CR>
+
+
+
+" EIGHTIES
+function! Colorschemeeighties()
+  colorscheme base16-eighties
+  call g:HiLinks()
+endfunction
+nnoremap <leader>=4 :call Colorschemeeighties()<CR>
+
+
+
+
+" SOLARIZED
+function! ColorschemeSolarized()
+  colorscheme base16-solarized
+endfunction
+nnoremap <leader>=5 :call ColorschemeSolarized()<CR>
+
+
+function! ColorschemeSolarizedS()
+  colorscheme solarized
+endfunction
+nnoremap <leader>=6 :call ColorschemeSolarizedS()<CR>
+
+
+
+
+
+if has("gui_running")
+  colorscheme base16-twilight
+else
+  colorscheme solarized
+endif
+
+
+
+
+
+
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
