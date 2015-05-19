@@ -1,4 +1,4 @@
-let mapleader = "\<F13>"
+let mapleader = "\<F14>"
 let g:sneak#use_ic_scs = 1
 "source $VIMRUNTIME/mswin.vim
 "
