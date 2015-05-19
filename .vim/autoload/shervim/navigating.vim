@@ -28,7 +28,28 @@ nmap <leader>k :call g:AddPositionToJumpList()<CR>vaiok<c-c>
 map gk <Plug>(IndentWisePreviousEqualIndent)
 map gj <Plug>(IndentWiseNextEqualIndent)
 
-vnoremap <leader>* "vy<c-c>:Ag <c-r>v
-nnoremap <leader>* :Ag <c-r><c-w>
+
+
+
+
+"
+" ==================================================================== ACROSS FILES  ==========================================================
+"
+"
+
+
+
+
+" Searching via Ag.vim
+vnoremap <leader>* "vy<c-c>:Ag <c-r>v<CR>
+nnoremap <leader>* :Ag <c-r><c-w><CR>
 nnoremap <leader>/ :Ag <c-r>/
 nnoremap <leader>A :Ag<space>
+
+" Tags
+nnoremap <leader>ft :CtrlPBufTag<CR>
+
+
+" Set up gf for coffee requires
+set path+=~/work/aurelia/coffee
+set suffixesadd=.coffee
