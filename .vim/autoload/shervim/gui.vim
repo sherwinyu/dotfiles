@@ -46,6 +46,9 @@ function! SetUIHighlighting()
   hi StatusLine   ctermfg=Yellow  guifg=#000000 ctermbg=Black guibg=#5f5f5f
   "hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
   hi TabLineSel ctermfg=Black ctermbg=Yellow
+  " TabLineSel - is the current (so to say) active tab label.
+  " TabLine - are the labels which are not currently active.
+  " TabLineFill - is the remaining of the tabline where there is no labels (background).
 endfunc
 
 set t_Co=16
@@ -84,6 +87,11 @@ function! g:HiLinks()
     hi CursorLineNr guibg=gray14
     hi CursorLineNr guifg=darkorange3
     hi CursorLine guibg=#222729
+
+    hi TabLine guibg=gray10 gui=underline
+    hi TabLineSel guifg=darkseagreen2 guibg=#5f5a60
+    " hi TabLine guifg=gray10
+    hi TabLineFill guibg=gray10 gui=underline
   endif
 endfunction
 
