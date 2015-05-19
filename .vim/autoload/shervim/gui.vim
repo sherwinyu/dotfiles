@@ -6,6 +6,8 @@ set guioptions-=r
 set guioptions-=T
 "no left scroll bar
 set guioptions-=L
+" Use console-like tabs
+set guioptions-=e
 
 highlight Cursor guibg=pink
 highlight iCursor guifg=white guibg=steelblue
@@ -144,6 +146,7 @@ nnoremap <leader>=6 :call ColorschemeSolarizedS()<CR>
 
 if has("gui_running")
   colorscheme base16-twilight
+  call g:HiLinks()
 else
   colorscheme solarized
 endif
