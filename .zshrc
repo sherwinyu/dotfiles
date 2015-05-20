@@ -31,7 +31,7 @@ sourceit ~/.yadr/zsh/zmv.zsh
 sourceit ~/.yadr/zsh/zsh-aliases.zsh
 sourceit ~/.yadr/zsh/zzzz_after.zsh
 
-sourceit ~/work/dotfiles/.zshrc.benchling
+source ~/work/work_dotfiles/.zshrc.benchling
 # Personal overrides
 sourceit ~/.zshrc.benchling
 
