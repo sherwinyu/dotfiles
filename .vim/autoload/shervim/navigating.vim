@@ -45,9 +45,9 @@ function! QuickfixToggle()
   if &buftype == "quickfix"
     cclose
     " let t:quickfix_is_open = 0
-    execute t:quickfix_return_to_window . "wincmd w"
+    " execute t:quickfix_return_to_window . "wincmd w"
   else
-    let t:quickfix_return_to_window = winnr()
+    " let t:quickfix_return_to_window = winnr()
     copen
     " let t:quickfix_is_open = 1
   endif
