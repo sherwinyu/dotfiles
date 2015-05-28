@@ -29,10 +29,12 @@ set guicursor+=n-v-c:blinkwait100
 set guicursor+=n-v-c:blinkoff100
 
 set guicursor+=n-v-c:blinkon100
-set guicursor+=n-v-c:blinkwait100
+set guicursor+=n-v-c:blinkwait10
 set guicursor+=n-v-c:blinkoff100
 set guicursor+=o:oCursor
 call SetGuiCursor()
+
+noremap <leader>scc :set cursorcolumn!<CR>
 
 
 " Show highlighting group under cursor
