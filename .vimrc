@@ -60,6 +60,10 @@ cnoremap kj <esc>
 
 """""""""""""""""""""""""""""""""""""""
 
+if has("gui_running")
+  nmap ` :silent !osascript ~/dotfiles/scripts/activate_iterm.scpt<CR>
+endif
+
 " make braces light colored in coffee
 highlight link coffeeCurly comment
 let g:airline_powerline_fonts = 1
