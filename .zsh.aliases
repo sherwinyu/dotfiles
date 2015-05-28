@@ -21,6 +21,7 @@ alias gdc='git diff --cached'
 alias gdcw='git diff --cached -w'
 alias gdns='git diff --name-status'
 alias gco='git checkout'
+alias gcob='git checkout -b'
 alias gpush='git push'
 alias gpull='git pull'
 alias grb="git rebase"
