@@ -33,8 +33,10 @@ vmap S <plug>VSurround
 
 " Wrap current word in parens
 nmap <leader>gb ysiwb
+nmap <leader>gB ysiWb
 " Wrap current word in a function call (puts cursor in insert mode afterward)
 nmap <leader>gf ysiwbi
+nmap <leader>gF ysiWbi
 " Wrap current selection in a function call
 vmap <leader>gf Sb
 
