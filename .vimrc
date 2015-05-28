@@ -31,6 +31,7 @@ runtime autoload/shervim/file_lifecycle.vim
 runtime autoload/shervim/editing.vim
 runtime autoload/shervim/navigating.vim
 runtime autoload/shervim/yankstack.vim
+runtime autoload/shervim/DeleteHiddenBuffers.vim
 "   - includes indentwise
 runtime autoload/shervim/abbreviations.vim
 " runtime autoload/shervim/unite.vim
