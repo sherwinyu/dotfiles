@@ -10,7 +10,7 @@ set guioptions-=L
 set guioptions-=e
 
 highlight Cursor guibg=pink
-highlight iCursor guifg=white guibg=steelblue
+highlight iCursor guibg=deepskyblue
 highlight oCursor guibg=lightgreen
 
 function! SetGuiCursor()
@@ -23,15 +23,14 @@ function! SetGuiCursor()
 endfunction
 
 set guicursor=n-v-c:block-Cursor
-" set guicursor+=i:ver100-iCursor
+
 set guicursor+=n-v-c:blinkon100
 set guicursor+=n-v-c:blinkwait100
 set guicursor+=n-v-c:blinkoff100
+set guicursor+=o:block-blinkWait0-oCursor
+set guicursor+=o:blinkWait0
 
-set guicursor+=n-v-c:blinkon100
-set guicursor+=n-v-c:blinkwait10
-set guicursor+=n-v-c:blinkoff100
-set guicursor+=o:oCursor
+set guicursor+=i:ver30-iCursor
 call SetGuiCursor()
 
 noremap <leader>scc :set cursorcolumn!<CR>
@@ -83,6 +82,8 @@ function! g:HiLinks()
   " Color corrects
   " hi link vimCommand keyword
   if has("gui_running")
+    hi iCursor guibg=deepskyblue
+    highlight oCursor guibg=lightgreen
     hi Search guifg=#000000 guibg=moccasin
     hi coffeeObjAssign guifg=steelblue
     hi coffeeExtendedOp guifg=sienna4
