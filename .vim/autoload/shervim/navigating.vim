@@ -25,6 +25,20 @@ vnoremap & =
 " Works by selecting around the indent, then moving cursor to one line above it
 nmap <leader>k :call g:AddPositionToJumpList()<CR>vaiok<c-c>
 
+" Jump to end of an indent block
+nmap <leader>% :call g:JumpToEndOfIndentBlock()<CR>
+function! g:JumpToEndOfIndentBlock()
+  "j              move down
+  silent normal j
+  "vai            select indent group, positioning cursor at bottom
+  silent normal vai
+  "<c-c> End visual mode
+  execute "silent normal! \<esc>"
+  "?\\s\<CR>      reverse search for non whitespace. Need to \ escape the \S (regex) and the <CR>
+  execute "silent normal! ?\\S\<CR>"
+endfunction
+
+
 map gk <Plug>(IndentWisePreviousEqualIndent)
 map gj <Plug>(IndentWiseNextEqualIndent)
 
