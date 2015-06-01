@@ -26,6 +26,7 @@ runtime autoload/shervim/session.vim
 runtime autoload/shervim/splitjoin.vim
 runtime autoload/shervim/camel_case_motion.vim
 runtime autoload/shervim/gui.vim
+runtime autoload/shervim/lightline.vim
 runtime autoload/shervim/information.vim
 runtime autoload/shervim/file_lifecycle.vim
 runtime autoload/shervim/editing.vim

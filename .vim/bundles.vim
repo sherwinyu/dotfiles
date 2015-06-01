@@ -48,7 +48,7 @@ Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'rking/ag.vim'
-Bundle 'bling/vim-airline'
+Bundle 'itchyny/lightline.vim'
 
 Bundle 'AndrewRadev/switch.vim'
 Bundle 'AndrewRadev/sideways.vim'
