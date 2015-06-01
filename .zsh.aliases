@@ -1,4 +1,5 @@
 alias egrep='egrep --color=auto -i'
+
 alias fgrep='fgrep --color=auto -i'
 alias grep='grep --color=auto -i'
 alias dnstop='dnstop eth1'
@@ -66,8 +67,8 @@ alias -g M='| more'
 alias -g H='| head'
 alias -g TL='| tail'
 alias -g T='| tee'
-alias -g C="| pbcopy"
-alias -g COPY="| tee >(pbcopy)"
+alias -g C="| tee >(pbcopy)"
+alias -g CSILENT="| pbcopy"
 alias -g X="| xargs"
 alias -g BE='bundle exec'
 
