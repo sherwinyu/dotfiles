@@ -78,8 +78,12 @@ set undodir=~/.vimlocal/undo//
 
 """" UTILITIES """
 "utility-s for converting last search to a substitute
-map <leader>us :s/<c-r>///g<left><left>
-map <leader>uS :%s/<c-r>///g<left><left>
+nmap <leader>us :s/<c-r>///g<left><left>
+nmap <leader>uS :%s/<c-r>///g<left><left>
+
+"v-utility-s for converting selected text to a substitute
+vmap <leader>us y:s/<c-r>"//g<left><left>
+vmap <leader>uS y:%s/<c-r>"//g<left><left>
 
 "interpolate a string (utility - interpolate)
 map <space>ui ysiWBysiW"li#kj
