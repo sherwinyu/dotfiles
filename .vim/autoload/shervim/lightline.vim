@@ -1,8 +1,11 @@
-" \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
 let g:lightline = {
+      \ 'colorscheme': 'winkle',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], ['filename', 'modified'], ['ctrlpmark'] ],
       \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'] ],
+      \ },
+      \ 'inactive': {
+      \   'left': [['filename', 'modified']],
       \ },
       \ 'component_function': {
       \   'filename': 'MyFilename',
@@ -76,5 +79,4 @@ function! MyModified()
   else
     return ''
   endif
-
 endfunction
