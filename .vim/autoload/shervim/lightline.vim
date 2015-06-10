@@ -1,7 +1,7 @@
 " \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
 let g:lightline = {
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], ['filename' ], ['ctrlpmark'] ],
+      \   'left': [ [ 'mode', 'paste' ], ['filename', 'modified'], ['ctrlpmark'] ],
       \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'] ],
       \ },
       \ 'component_function': {
@@ -11,6 +11,7 @@ let g:lightline = {
       \   'fileencoding': 'MyFileencoding',
       \   'mode': 'MyMode',
       \   'ctrlpmark': 'CtrlPMark',
+      \   'modified': 'MyModified',
       \ },
       \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
@@ -67,4 +68,13 @@ endfunction
 
 function! CtrlPStatusFunc_2(str)
   return lightline#statusline(0)
+endfunction
+
+function! MyModified()
+  if &modified
+    return '+'
+  else
+    return ''
+  endif
+
 endfunction
