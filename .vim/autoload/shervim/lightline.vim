@@ -75,7 +75,7 @@ endfunction
 
 function! MyModified()
   if &modified
-    return '+'
+    return 'MODIFIED'
   else
     return ''
   endif

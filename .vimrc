@@ -95,7 +95,7 @@ map <space>ui ysiWBysiW"li#kj
 " http://www.bestofvim.com/tip/leave-ex-mode-good/
 noremap Q <nop>
 noremap q: <nop>
-inoremap <c-c> <>
+" inoremap <c-c> <>
 
 " Disable K
 nmap K <nop>

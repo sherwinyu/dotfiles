@@ -75,7 +75,9 @@ inoremap <c-k> <c-g>u<c-o>d$
 " ctrl-w: Kill word to left
 inoremap <c-w> <c-g>u<c-w>
 " alt-w: Kill word to right
-inoremap w <c-o>dw
+inoremap d <c-o>de
+inoremap ∂ <c-o>de
+
 
 map s<space> vS<space><space>
 

@@ -19,4 +19,3 @@ abbrev cwu componentWillUpdate
 abbrev pt propTypes
 abbrev gis getInitialState
 abbrev gdp getDefaultProps
-
