@@ -19,3 +19,10 @@ abbrev cwu componentWillUpdate
 abbrev pt propTypes
 abbrev gis getInitialState
 abbrev gdp getDefaultProps
+
+abbrev dsa db.session.add
+abbrev dsaa db.session.add_all
+abbrev dsd db.session.delete
+abbrev dsc db.session.commit
+abbrev dsr db.session.rollback
+abbrev dsq db.session.query

@@ -4,7 +4,6 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-let g:AutoPairs = {}
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
@@ -33,7 +32,6 @@ Bundle 'Vitality'
 " Bundle 'Lokaltog/vim-easymotion'
 Bundle 'justinmk/vim-sneak'
 Bundle 'jiangmiao/auto-pairs'
-Bundle 'cohama/lexima.vim'
 Bundle 'maxbrunsfeld/vim-yankstack'
 ""Bundle 'vim-scripts/autoclose'
 Bundle 'textobj-user'

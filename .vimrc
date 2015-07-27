@@ -79,11 +79,16 @@ set undodir=~/.vimlocal/undo//
 
 """" UTILITIES """
 "utility-s for converting last search to a substitute
-nmap <leader>us :s/<c-r>///g<left><left>
-nmap <leader>uS :%s/<c-r>///g<left><left>
+"Explanation:
+" left left <c-r>/ to insert the searched text (which we'll used to replace)
+" <c-f> opens up the command line mode.
+" we delete the \> \< brackets
+" then <c-c> to close
+nmap <leader>us :s/<c-r>///g<left><left><c-r>/<c-f>hhxxbhhxxee<c-c>
+nmap <leader>uS :%s/<c-r>///g<left><left><c-r>/<c-f>hhxxbhhxxee<c-c>
 
 "v-utility-s for converting selected text to a substitute
-vmap <leader>us y:s/<c-r>"//g<left><left>
+vmap <leader>us y:s/<c-r>"//g
 vmap <leader>uS y:%s/<c-r>"//g<left><left>
 
 "interpolate a string (utility - interpolate)
@@ -135,8 +140,8 @@ map <leader>[ :cp<cr>
 
 " Command line mappings
 cnoremap <C-A> <Home>
-cnoremap <C-F> <Right>
-cnoremap <C-B> <Left>
+" cnoremap <C-F> <Right>
+" cnoremap <C-B> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 

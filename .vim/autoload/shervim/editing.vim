@@ -53,7 +53,7 @@ nnoremap <leader>j i<CR><Esc>k$
 inoremap j <c-o>cc<esc><bs>
 
 noremap <a-cr> O<esc>
-noremap <cr> o<esc>
+noremap <cr> o<space><bs><esc>
 noremap g<space> i<space><esc>
 
 " Rotate arguments
