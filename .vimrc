@@ -232,3 +232,4 @@ set formatoptions=croql
 autocmd WinEnter * checktime
 autocmd BufWinEnter * checktime
 
+autocmd FileType crontab set backupcopy=yes
