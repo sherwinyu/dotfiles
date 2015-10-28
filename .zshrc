@@ -31,6 +31,10 @@ sourceit ~/.yadr/zsh/zmv.zsh
 sourceit ~/.yadr/zsh/zsh-aliases.zsh
 sourceit ~/.yadr/zsh/zzzz_after.zsh
 
+gsed() {
+  ag -l $1 | xargs sed -i '' "s/$1/$2/g"
+}
+
 source ~/work/work_dotfiles/.zshrc.benchling
 # Personal overrides
 sourceit ~/.zshrc.benchling

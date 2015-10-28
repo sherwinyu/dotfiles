@@ -68,6 +68,7 @@ alias -g H='| head'
 alias -g TL='| tail'
 alias -g T='| tee'
 alias -g C="| tee >(pbcopy)"
+alias -g R="pbcopy <"
 alias -g CSILENT="| pbcopy"
 alias -g X="| xargs"
 alias -g BE='bundle exec'
@@ -90,5 +91,6 @@ alias clinteastwood="arc lint"
 alias ad="arc diff"
 alias adpc="ad --plan-changes"
 alias arm="alembic revision -m"
+alias aP="arc patch"
 
 alias retag="ctags -R coffee benchling"
