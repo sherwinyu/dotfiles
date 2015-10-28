@@ -140,6 +140,7 @@ nnoremap <leader>=5 :call ColorschemeSolarized()<CR>
 
 function! ColorschemeSolarizedS()
   colorscheme solarized
+  highlight iCursor guifg=white guibg=steelblue
 endfunction
 nnoremap <leader>=6 :call ColorschemeSolarizedS()<CR>
 

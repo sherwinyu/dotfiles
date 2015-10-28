@@ -12,7 +12,7 @@ abbrev RPTfr React.PropTypes.func.isRequired
 abbrev RPTor React.PropTypes.object.isRequired
 abbrev RPTnr React.PropTypes.number.isRequired
 
-abbrev IPDB import ipdb; ipdb.set_trace()
+abbrev IPDB import ipdb; ipdb.set_trace()  # nopep8
 
 abbrev cdu componentDidUpdate
 abbrev cwu componentWillUpdate
