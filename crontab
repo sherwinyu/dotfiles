@@ -1,7 +1,12 @@
+
+00 22  * * 0-4 Say 'Prepare to go to bed!'
+30 22  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed!'
+35 22  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed!'
+40 22  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed!'
 45 22  * * 0-4 /sbin/ifconfig en0 down
 50 22  * * 0-4 /sbin/ifconfig en0 down
 55 22  * * 0-4 /sbin/ifconfig en0 down
-*/5 23  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed'
-*/5 0  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
-*/5 1  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
-*/5 2  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
+*/4 23  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed'
+*/3 0  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
+*/2 1  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
+*/1 2  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
