@@ -16,6 +16,8 @@ abbrev IPDB import ipdb; ipdb.set_trace()  # nopep8
 
 abbrev cdu componentDidUpdate
 abbrev cwu componentWillUpdate
+abbrev cdm componentdidmount
+abbrev cwum componentWillUnmount
 abbrev pt propTypes
 abbrev gis getInitialState
 abbrev gdp getDefaultProps
