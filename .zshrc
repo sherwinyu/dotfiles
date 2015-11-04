@@ -35,6 +35,15 @@ gsed() {
   ag -l $1 | xargs sed -i '' "s/$1/$2/g"
 }
 
+# copy the rest of the line to keyboard
+# usage:
+# $ cc some_long_file_path
+copy_args() {
+  echo "$@" | tr -d '\n' | pbcopy
+}
+alias cc=copy_arg
+alias -g TRIM="| tr -d '\n'"
+
 source ~/work/work_dotfiles/.zshrc.benchling
 # Personal overrides
 sourceit ~/.zshrc.benchling
