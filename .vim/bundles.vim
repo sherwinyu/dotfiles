@@ -56,6 +56,8 @@ Bundle 'vim-scripts/ctrlp-funky'
 Bundle 'gcmt/taboo.vim'
 Bundle 'kshenoy/vim-signature'
 
+Bundle 'dag/vim2hs'
+
 " ...rest of bundles
 
 filetype plugin indent on     " required!

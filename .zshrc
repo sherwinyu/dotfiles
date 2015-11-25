@@ -41,7 +41,7 @@ gsed() {
 copy_args() {
   echo "$@" | tr -d '\n' | pbcopy
 }
-alias cc=copy_arg
+alias cc=copy_args
 alias -g TRIM="| tr -d '\n'"
 
 source ~/work/work_dotfiles/.zshrc.benchling
