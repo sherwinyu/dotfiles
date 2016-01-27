@@ -1,3 +1,5 @@
+abbrev Rcf React.createFactory
+abbrev Rcfr React.createFactory require
 abbrev RPT React.PropTypes
 abbrev RPTb React.PropTypes.bool
 abbrev RPTs React.PropTypes.string

@@ -18,10 +18,6 @@ map <leader>ifc :let @+ = expand("%")<CR>:echom "Copied file path:  <c-r>%"<CR>
 
 map <leader>isso :echom "set sessionoptions=buffers,curdir,tabpages,winsize"
 
-" Highlight long lines
-map <leader>h :match ErrorMsg '\%>80v.\+'<cr>
-
-
 " Indent guides
 let g:indentguides_state = 0
 function! IndentGuides() " {{{

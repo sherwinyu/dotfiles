@@ -93,6 +93,7 @@ nnoremap <leader><leader>P Obinding.pry<esc>
 nnoremap > >>
 nnoremap < <<
 
+inoremap <D-'> <c-o>f,l
 
 
 
