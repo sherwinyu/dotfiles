@@ -93,4 +93,8 @@ alias adpc="ad --plan-changes"
 alias arm="alembic revision -m"
 alias aP="arc patch"
 
+alias ag="ag --noheading"
+alias agh="ag --heading"
+alias agpi="ag_python_import"
+
 alias retag="ctags -R coffee benchling"

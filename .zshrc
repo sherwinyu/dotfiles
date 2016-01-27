@@ -44,6 +44,24 @@ copy_args() {
 alias cc=copy_args
 alias -g TRIM="| tr -d '\n'"
 
+# Fast ag
+# http://zshwiki.org/home/scripting/args
+agg() {
+  ag "$*"
+}
+
+# faketty () { script -q "$(printf "%q " "$@")"; }
+ag_python_import() {
+  # ag --heading "import.*$1" | head -n 50 | sed 's/\(^[^:]*:[0-9]*:\)//g'
+  # ag --heading "import.*$1" | head -n 50 | sed 's/\(^[0-9]*:[0-9]*:\)//g'
+  agp --heading "import.*$1" | head -n 50 | sed 's/^[^:]*:[0-9]*://g'
+  # faketty ag --heading "import.*$1" | head -n 50
+  # script -q /dev/null ag --heading "import.*$1" | head -n 100 | sed 's/^[0-9]*:[0-9]*:/waaaaa/g'
+
+}
+alias agpi=ag_python_import
+
+
 source ~/work/work_dotfiles/.zshrc.benchling
 # Personal overrides
 sourceit ~/.zshrc.benchling
