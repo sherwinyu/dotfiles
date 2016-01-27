@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+import subprocess
+import sys
+
+# Usage:
+# python coffee-jshint-wrapper.py coffee/app.coffee
+
+# Motivation: this is a super light wrapper against `coffee-jshint`, which reformats cofee-jshints
+# output to per-line output.
+# E.g.,
+#   ```
+#   app.coffee
+#   42:3: 'undefinedVar' is not defined.
+#   46:2: 'otherVar' is not defined.
+#   ```
+#
+# Will be formatted into:
+#   ```
+#   app.coffee:42:3: 'undefinedVar' is not defined.
+#   app.coffee:46:2: 'otherVar' is not defined.
+#   ```
+#
+# So that vim's `errorformat` (:help errorformat), which is also used by Syntastic, can process it.
+
+try:
+    # Hardcoded for now. Should be user-specifiable
+    options_string = '--options browser,devel,mocha,noarg,freeze,nonew,nonbsp,undef,loopfunc,-W002,-W007  --globals module,require,describeWithWarningsIgnored'
+    # window,mocha,describe,it,_,Backbone,$,d3,beforeEach,afterEach,document,location,before,after'
+    filename = sys.argv[1]
+    command = 'coffee-jshint %s %s' % (options_string, filename)
+    print 'Running: ' + command
+    subprocess.check_output(command,
+                            stderr=subprocess.STDOUT,
+                            shell=True)
+
+# If the linter exits with 1, then the lint output is actually stored on the error
+except subprocess.CalledProcessError as e:
+    lines = e.output.split('\n')[1:]
+    filepath = lines[0]
+    outlines = ['%s:%s' % (filepath, line) for line in lines[1:] if line.strip()]
+    for line in outlines:
+        print line
