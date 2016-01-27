@@ -58,6 +58,8 @@ Bundle 'kshenoy/vim-signature'
 
 Bundle 'dag/vim2hs'
 
+Bundle 'airblade/vim-gitgutter'
+
 " ...rest of bundles
 
 filetype plugin indent on     " required!

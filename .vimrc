@@ -2,7 +2,11 @@ let mapleader = "\<F14>"
 let g:sneak#use_ic_scs = 1
 "source $VIMRUNTIME/mswin.vim
 "
+let g:syntastic_coffee_checkers = ['coffeejshint', 'coffeelint']
 let g:yankstack_map_keys = 0
+let g:gitgutter_enabled = 1
+let g:gitgutter_realtime = 0
+let g:gitgutter_realtime_eager = 0
 source ~/.vim/bundles.vim
 
 set nocompatible
@@ -39,6 +43,7 @@ runtime autoload/shervim/abbreviations.vim
 " runtime autoload/shervim/unite.vim
 " runtime autoload/shervim/you_complete_me.vim
 runtime autoload/shervim/ctrl_p.vim
+runtime autoload/shervim/GitGutter.vim
 
 " """"""""""""""""""""""""""""""""""""""
 " LEADER AND ESCAPE CONFIG
