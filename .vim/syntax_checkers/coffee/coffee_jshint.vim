@@ -17,20 +17,20 @@
   " {'lnum': 32, 'bufnr': 1, 'col': 12, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'text': '''window'' is not defined.'}
   " {'lnum': 33, 'bufnr': 1, 'col': 17, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'text': '''document'' is not defined.'}
 
-function! SyntaxCheckers_coffee_coffeejshint_IsAvailable()
-  " echom 'aaaaaaa is available'
-  return 1
-endfunction
+"function! SyntaxCheckers_coffee_coffeejshint_IsAvailable()
+"  " echom 'aaaaaaa is available'
+"  return 1
+"endfunction
 
 function! SyntaxCheckers_coffee_coffeejshint_GetLocList() dict
   let makeprg = self.makeprgBuild({})
 
   let errorformat = '%f:%l:%c: %m'
   let loclist = SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat})
-  for e in loclist
-    " echom string(e)
-    " echom 'aaa'
-  endfor
+  " for e in loclist
+  "   echom string(e)
+  "   echom 'aaa'
+  " endfor
 
   return loclist
 endfunction

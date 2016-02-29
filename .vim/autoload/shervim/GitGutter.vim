@@ -18,4 +18,5 @@ function! GitGutterToggle()
 endfunction
 
 
-nnoremap <silent> <leader>sg :call GitGutterToggle()<cr>
+nnoremap <silent> <leader>sgg :call GitGutterToggle()<cr>
+nnoremap <silent> <leader>sgd :let g:gitgutter_diff_args = 'HEAD'

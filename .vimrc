@@ -38,6 +38,7 @@ runtime autoload/shervim/editing.vim
 runtime autoload/shervim/navigating.vim
 runtime autoload/shervim/yankstack.vim
 runtime autoload/shervim/DeleteHiddenBuffers.vim
+runtime autoload/shervim/CleanupRequires.vim
 "   - includes indentwise
 runtime autoload/shervim/abbreviations.vim
 " runtime autoload/shervim/unite.vim
@@ -68,9 +69,9 @@ cnoremap kj <esc>
 
 """""""""""""""""""""""""""""""""""""""
 
-if has("gui_running")
-  nmap ` :silent !osascript ~/dotfiles/scripts/activate_iterm.scpt<CR>
-endif
+" if has("gui_running")
+"   nmap ` :silent !osascript ~/dotfiles/scripts/activate_iterm.scpt<CR>
+" endif
 
 " make braces light colored in coffee
 highlight link coffeeCurly comment
