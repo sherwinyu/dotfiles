@@ -31,8 +31,10 @@ sourceit ~/.yadr/zsh/zmv.zsh
 sourceit ~/.yadr/zsh/zsh-aliases.zsh
 sourceit ~/.yadr/zsh/zzzz_after.zsh
 
-gsed() {
-  ag -l $1 | xargs sed -i '' "s/$1/$2/g"
+alias sed=gsed
+
+ggsed() {
+  ag -l $1 | xargs gsed -i -e "s/$1/$2/g"
 }
 
 # copy the rest of the line to keyboard
