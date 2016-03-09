@@ -84,5 +84,5 @@ nnoremap <leader><leader>t :CtrlPFunky<CR>
 
 " Set up gf for coffee requires
 set path+=~/work/aurelia/coffee
-set suffixesadd=.coffee
+set suffixesadd=.coffee,.js
 

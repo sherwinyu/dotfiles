@@ -61,7 +61,11 @@ ag_python_import() {
   # script -q /dev/null ag --heading "import.*$1" | head -n 100 | sed 's/^[0-9]*:[0-9]*:/waaaaa/g'
 
 }
-alias agpi=ag_python_import
+
+ag_coffee_require() {
+  agc "require.*$1"
+}
+alias agcr=ag_coffee_require
 
 
 source ~/work/work_dotfiles/.zshrc.benchling
