@@ -60,6 +60,9 @@ Bundle 'dag/vim2hs'
 
 Bundle 'airblade/vim-gitgutter'
 
+"JS syntax highlighting
+Bundle 'othree/yajs.vim'
+
 " ...rest of bundles
 
 filetype plugin indent on     " required!
