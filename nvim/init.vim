@@ -11,7 +11,7 @@ let g:syntastic_coffee_checkers = ['coffeejshint', 'coffeelint']
 let g:gitgutter_enabled = 1
 let g:gitgutter_realtime = 0
 let g:gitgutter_realtime_eager = 0
-" source ~/.vim/bundles.vim
+source ~/.config/nvim/bundles.vim
 
 set nocompatible
 filetype plugin indent on
@@ -33,9 +33,9 @@ runtime autoload/shervim/autopairs.vim
 runtime autoload/shervim/session.vim
 runtime autoload/shervim/splitjoin.vim
 runtime autoload/shervim/camel_case_motion.vim
-runtime autoload/shervim/gui.vim
-runtime autoload/shervim/lightline.vim
-runtime autoload/shervim/lightline_winkle_colorscheme.vim
+" runtime autoload/shervim/gui.vim
+" runtime autoload/shervim/lightline.vim
+" runtime autoload/shervim/lightline_winkle_colorscheme.vim
 runtime autoload/shervim/information.vim
 runtime autoload/shervim/file_lifecycle.vim
 runtime autoload/shervim/editing.vim

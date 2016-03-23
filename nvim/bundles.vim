@@ -43,7 +43,7 @@ Bundle 'tek/vim-textobj-ruby'
 Bundle 'beloglazov/vim-textobj-quotes'
 Bundle 'commentary.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'rking/ag.vim'
 Bundle 'itchyny/lightline.vim'
