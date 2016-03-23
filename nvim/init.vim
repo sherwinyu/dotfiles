@@ -36,6 +36,71 @@ runtime autoload/shervim/navigating.vim
 
 
 
+" Disable error bells  http://vim.wikia.com/wiki/Disable_beeping
+set visualbell
+set completeopt=menuone,longest  "IDE like behavior for autocompleting
+set mouse=a "allow scrolling with mouse wheel
+
+set laststatus=2 " always show status line
+
+set showmode
+set textwidth=100
+set showmatch
+set ignorecase
+set smartcase
+set scrolloff=10
+set hidden
+set wildmenu
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep,*.pyc  " MacOSX/Linux
+
+
+set switchbuf+=usetab " so that using :sb doesn't open change current window
+set expandtab  "google settings
+set shiftwidth=2  "google settings
+set softtabstop=2  "google settings
+set cink={,}
+set cindent
+set autoindent
+set smartindent
+
+set timeoutlen=350
+" http://vim.1045645.n5.nabble.com/Extremely-slow-when-using-relativenumber-amp-syntax-highlighting-td5721149.html"
+set lazyredraw
+
+
+" set sessionoptions=buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
+" Globals required to save tab names
+set sessionoptions=buffers,curdir,folds,resize,tabpages,winsize,winpos,globals
+
+set autowrite
+set incsearch "highlight as you go
+set nowrap
+set linebreak
+
+" easier to find line
+set cursorline
+
+" http://stackoverflow.com/questions/18219444/remove-underscore-as-a-word-separator-in-vim
+set iskeyword+=-
+
+set number
+set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
+set whichwrap=hl[] "Allows h and l to move wrap lines and left right to wrap in insert mode
+
+set path+=~/dotfiles/.vim
+set virtualedit=insert,block,onemore
+
+set wildignore+=*/public/assets/source_maps/*
+set wildignore+=*/build/*
+set wildignore+=*/doc/*
+set wildignore+=*/benchling/static/*
+set wildignore+=*/js-build/*
+set wildignore+=*/node_modules/*
+set formatoptions=croql
+
+
+
+
 
 
 
@@ -43,10 +108,37 @@ runtime autoload/shervim/navigating.vim
 
 
 "---------------------------------------------------------------------------------
+filetype off                   " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-abolish'
+Bundle 'heartsentwined/vim-emblem'
+Bundle 'ctrlp.vim'
+Bundle 'JazzCore/ctrlp-cmatcher'
+Bundle 'surround.vim'
+filetype plugin indent on     " required!
 
 
 
 
+
+
+
+
+
+
+
+
+
+"---------------------------------------------------------------------------------
+"---------------------------------------------------------------------------------
+"---------------------------------------------------------------------------------
+"---------------------------------------------------------------------------------
 if 0
 let g:syntastic_coffee_checkers = ['coffeejshint', 'coffeelint']
 
@@ -153,82 +245,16 @@ map <leader>s1 :set foldlevel=1<cr>
 map <leader>sP :set path=$PWD/**<cr>
 nmap <silent> <leader>n :silent :set hlsearch!<CR>
 
-
-
 map <leader>m :sbm<cr>
 map <leader>] :cn<cr>
 map <leader>[ :cp<cr>
 
 " Command line mappings
 cnoremap <C-A> <Home>
-" cnoremap <C-F> <Right>
-" cnoremap <C-B> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 
 
-" Disable error bells  http://vim.wikia.com/wiki/Disable_beeping
-set visualbell
-set completeopt=menuone,longest  "IDE like behavior for autocompleting
-set mouse=a "allow scrolling with mouse wheel
-
-set laststatus=2 " always show status line
-
-set showmode
-set textwidth=100
-set showmatch
-set ignorecase
-set smartcase
-set scrolloff=10
-set hidden
-set wildmenu
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep,*.pyc  " MacOSX/Linux
-
-
-set switchbuf+=usetab " so that using :sb doesn't open change current window
-set expandtab  "google settings
-set shiftwidth=2  "google settings
-set softtabstop=2  "google settings
-set cink={,}
-set cindent
-set autoindent
-set smartindent
-
-set timeoutlen=350
-" http://vim.1045645.n5.nabble.com/Extremely-slow-when-using-relativenumber-amp-syntax-highlighting-td5721149.html"
-set lazyredraw
-set ttyfast
-
-
-" set sessionoptions=buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
-" Globals required to save tab names
-set sessionoptions=buffers,curdir,folds,resize,tabpages,winsize,winpos,globals
-
-set autowrite
-set incsearch "highlight as you go
-set nowrap
-set linebreak
-"set showbreak=                      ≡  
-
-" easier to find line
-set cursorline
-
-" http://stackoverflow.com/questions/18219444/remove-underscore-as-a-word-separator-in-vim
-set iskeyword+=-
-
-set number
-set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
-set whichwrap=hl[] "Allows h and l to move wrap lines and left right to wrap in insert mode
-
-set path+=~/dotfiles/.vim
-set virtualedit=insert,block,onemore
-
-set wildignore+=*/public/assets/source_maps/*
-set wildignore+=*/build/*
-set wildignore+=*/doc/*
-set wildignore+=*/benchling/static/*
-set wildignore+=*/js-build/*
-set wildignore+=*/node_modules/*
 
 
 " DiffOrig for sane recovery management. Choose (R)ecover, then call :DiffOrig to diff the recovered swap file with the original file.
@@ -237,17 +263,6 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 
 highlight Folded ctermbg=103 ctermfg=16
 
-set foldtext=MyFoldText()
-set foldlevel=2
-set foldnestmax=2
-fun! MyFoldText()
-  return substitute(getline(v:foldstart), '^\s\+', repeat(" ",indent(v:foldstart)), '')
-endfun
-set foldmethod=manual
-
-" set tabline=%!SherwinTabLineCompact()
-
-set formatoptions=croql
 
 autocmd WinEnter * checktime
 autocmd BufWinEnter * checktime
