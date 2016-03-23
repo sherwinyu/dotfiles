@@ -36,6 +36,7 @@ runtime autoload/shervim/navigating.vim
 
 
 
+syntax on
 " Disable error bells  http://vim.wikia.com/wiki/Disable_beeping
 set visualbell
 set completeopt=menuone,longest  "IDE like behavior for autocompleting
@@ -53,12 +54,11 @@ set hidden
 set wildmenu
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep,*.pyc  " MacOSX/Linux
 
-
 set switchbuf+=usetab " so that using :sb doesn't open change current window
-set expandtab  "google settings
-set shiftwidth=2  "google settings
-set softtabstop=2  "google settings
-set cink={,}
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set cinkeys={,} "
 set cindent
 set autoindent
 set smartindent
@@ -149,7 +149,6 @@ let g:gitgutter_realtime_eager = 0
 source ~/.config/nvim/bundles.vim
 
 filetype plugin indent on
-syntax on
 " call pathogen#infect()
 runtime macros/matchit.vim
 runtime autoload/shervim/ShowTabNumber.vim
