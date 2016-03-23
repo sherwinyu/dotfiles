@@ -1,54 +1,4 @@
 let mapleader = "\<F14>"
-let g:sneak#use_ic_scs = 1
-"source $VIMRUNTIME/mswin.vim
-
-let g:syntastic_coffee_checkers = ['coffeejshint', 'coffeelint']
-
-
-"delete let g:yankstack_map_keys = 0
-"delete runtime autoload/shervim/yankstack.vim
-"
-let g:gitgutter_enabled = 1
-let g:gitgutter_realtime = 0
-let g:gitgutter_realtime_eager = 0
-source ~/.config/nvim/bundles.vim
-
-set nocompatible
-filetype plugin indent on
-syntax on
-" call pathogen#infect()
-runtime macros/matchit.vim
-runtime autoload/shervim/ShowTabNumber.vim
-runtime autoload/shervim/Taboo.vim
-runtime autoload/shervim/RelativeNumbers.vim
-runtime autoload/shervim/CursorLine.vim
-runtime autoload/shervim/ToggleBG.vim
-runtime autoload/shervim/CreatePathsOnSave.vim
-runtime autoload/shervim/ShowHighlightGroup.vim
-runtime autoload/shervim/AdjustWindowMode.vim
-runtime autoload/shervim/window_management.vim
-runtime autoload/shervim/sneak.vim
-runtime autoload/shervim/easymotion.vim
-runtime autoload/shervim/autopairs.vim
-runtime autoload/shervim/session.vim
-runtime autoload/shervim/splitjoin.vim
-runtime autoload/shervim/camel_case_motion.vim
-" runtime autoload/shervim/gui.vim
-" runtime autoload/shervim/lightline.vim
-" runtime autoload/shervim/lightline_winkle_colorscheme.vim
-runtime autoload/shervim/information.vim
-runtime autoload/shervim/file_lifecycle.vim
-runtime autoload/shervim/editing.vim
-runtime autoload/shervim/navigating.vim
-runtime autoload/shervim/DeleteHiddenBuffers.vim
-runtime autoload/shervim/CleanupRequires.vim
-"   - includes indentwise
-runtime autoload/shervim/abbreviations.vim
-" runtime autoload/shervim/unite.vim
-" runtime autoload/shervim/you_complete_me.vim
-runtime autoload/shervim/ctrl_p.vim
-runtime autoload/shervim/GitGutter.vim
-
 " """"""""""""""""""""""""""""""""""""""
 " LEADER AND ESCAPE CONFIG
 
@@ -69,6 +19,68 @@ inoremap kj <esc>
 inoremap jk <esc>
 vnoremap <space><space> <esc>
 cnoremap kj <esc>
+
+runtime autoload/shervim/file_lifecycle.vim
+" runtime autoload/shervim/RelativeNumbers.vim
+runtime autoload/shervim/window_management.vim
+runtime autoload/shervim/autopairs.vim
+runtime autoload/shervim/session.vim
+runtime autoload/shervim/splitjoin.vim
+runtime autoload/shervim/CleanupRequires.vim
+runtime autoload/shervim/ctrl_p.vim
+runtime autoload/shervim/editing.vim
+runtime autoload/shervim/information.vim
+runtime autoload/shervim/CreatePathsOnSave.vim
+runtime autoload/shervim/navigating.vim
+
+
+
+
+
+
+
+
+
+
+"---------------------------------------------------------------------------------
+
+
+
+
+if 0
+let g:syntastic_coffee_checkers = ['coffeejshint', 'coffeelint']
+
+
+"delete let g:yankstack_map_keys = 0
+"delete runtime autoload/shervim/yankstack.vim
+"
+let g:gitgutter_enabled = 1
+let g:gitgutter_realtime = 0
+let g:gitgutter_realtime_eager = 0
+source ~/.config/nvim/bundles.vim
+
+filetype plugin indent on
+syntax on
+" call pathogen#infect()
+runtime macros/matchit.vim
+runtime autoload/shervim/ShowTabNumber.vim
+runtime autoload/shervim/Taboo.vim
+runtime autoload/shervim/CursorLine.vim
+runtime autoload/shervim/ToggleBG.vim
+runtime autoload/shervim/ShowHighlightGroup.vim
+runtime autoload/shervim/AdjustWindowMode.vim
+runtime autoload/shervim/sneak.vim
+runtime autoload/shervim/easymotion.vim
+runtime autoload/shervim/camel_case_motion.vim
+" runtime autoload/shervim/gui.vim
+" runtime autoload/shervim/lightline.vim
+" runtime autoload/shervim/lightline_winkle_colorscheme.vim
+" runtime autoload/shervim/DeleteHiddenBuffers.vim
+"   - includes indentwise
+runtime autoload/shervim/abbreviations.vim
+" runtime autoload/shervim/unite.vim
+" runtime autoload/shervim/you_complete_me.vim
+runtime autoload/shervim/GitGutter.vim
 
 """""""""""""""""""""""""""""""""""""""
 
@@ -241,3 +253,4 @@ autocmd WinEnter * checktime
 autocmd BufWinEnter * checktime
 
 autocmd FileType crontab set backupcopy=yes
+endif
