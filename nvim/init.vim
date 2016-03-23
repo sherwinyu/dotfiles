@@ -63,10 +63,8 @@ set cindent
 set autoindent
 set smartindent
 
+set number
 set timeoutlen=350
-" http://vim.1045645.n5.nabble.com/Extremely-slow-when-using-relativenumber-amp-syntax-highlighting-td5721149.html"
-set lazyredraw
-
 
 " set sessionoptions=buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 " Globals required to save tab names
@@ -83,7 +81,6 @@ set cursorline
 " http://stackoverflow.com/questions/18219444/remove-underscore-as-a-word-separator-in-vim
 set iskeyword+=-
 
-set number
 set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
 set whichwrap=hl[] "Allows h and l to move wrap lines and left right to wrap in insert mode
 
