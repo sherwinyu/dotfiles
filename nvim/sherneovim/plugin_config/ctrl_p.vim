@@ -12,4 +12,4 @@ function! JumpBackToBuffer()
   let g:ctrlp_switch_buffer=0
 endfunction
 
-let g:ctrlp_map =  '<leader>t'
+" let g:ctrlp_map =  '<leader>t'

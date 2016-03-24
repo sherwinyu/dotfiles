@@ -13,6 +13,11 @@ Plug 'JazzCore/ctrlp-cmatcher'
 call LoadPluginConfig('ctrl_p')
 
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+call LoadPluginConfig('fzf')
+
+
 " GUI / aesthetics
 Plug 'itchyny/lightline.vim'
 Plug 'gcmt/taboo.vim'
@@ -45,12 +50,19 @@ Plug 'benekastah/neomake'
 call LoadPluginConfig('neomake')
 
 
+" Completion
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-jedi'
+call LoadPluginConfig('deoplete')
+
+
 
 " --  Languages
 Plug 'groenewege/vim-less'
 Plug 'othree/yajs.vim', {'for': ['javascript']}
 Plug 'kchmck/vim-coffee-script'
 Plug 'heartsentwined/vim-emblem'
+Plug 'jade.vim'
 
 call plug#end()
 
@@ -81,7 +93,6 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'slim-template/vim-slim.git'
 Plug 'tpope/vim-markdown'
 Plug 'Puppet-Syntax-Highlighting'
-Plug 'jade.vim'
 
 Plug 'justinmk/vim-sneak'
 Plug 'maxbrunsfeld/vim-yankstack'

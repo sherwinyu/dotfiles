@@ -31,8 +31,6 @@ runtime autoload/shervim/lightline_winkle_colorscheme.vim
 
 
 
-
-
 " """"""""""""""""""""""""""""""""""""""
 " LEADER AND ESCAPE CONFIG
 

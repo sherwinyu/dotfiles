@@ -9,3 +9,5 @@ let g:neomake_javascript_eslint_maker = {
         \ '%W%f: line %l\, col %c\, Warning - %m'
         \ }
 let g:neomake_javascript_enabled_makers = ['eslint']
+
+autocmd! BufWritePost * Neomake
