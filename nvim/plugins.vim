@@ -30,6 +30,8 @@ Plug 'justinmk/vim-sneak'
 call LoadPluginConfig('sneak')
 Plug 'camelcasemotion'
 call LoadPluginConfig('camel_case_motion')
+Plug 'AndrewRadev/switch.vim'
+Plug 'jeetsukumaran/vim-indentwise'
 
 
 " Editing
@@ -114,8 +116,6 @@ Plug 'textobj-user'
 
 Plug 'rking/ag.vim'
 
-Plug 'AndrewRadev/switch.vim'
-Plug 'jeetsukumaran/vim-indentwise'
 Plug 'kshenoy/vim-signature'
 
 Plug 'dag/vim2hs'
