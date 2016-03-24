@@ -78,4 +78,6 @@ source ~/dotfiles/.zsh.MANIFEST
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
-plugins=(safe-paste)
+# plugins=(safe-paste)
+
+export PATH="/Users/yxy/dotfiles/bin:$PATH"
