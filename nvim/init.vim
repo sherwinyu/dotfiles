@@ -98,7 +98,7 @@ map <c-f> 4j
 map <c-b> 4k
 nnoremap <PageUp> 10j
 nnoremap <PageDown> 10k
-
+noremap * :set hlsearch<CR>*N
 
 "
 " - SETTINGS -----------------------------------------------------------

@@ -24,12 +24,16 @@ Plug 'gcmt/taboo.vim'
 call LoadPluginConfig('Taboo')
 
 
+
 " Moving within a file
+Plug 'justinmk/vim-sneak'
+call LoadPluginConfig('sneak')
 Plug 'camelcasemotion'
 call LoadPluginConfig('camel_case_motion')
 
 
 " Editing
+Plug 'AndrewRadev/sideways.vim'
 Plug 'commentary.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-endwise'
@@ -56,8 +60,8 @@ Plug 'zchee/deoplete-jedi'
 call LoadPluginConfig('deoplete')
 
 
-
 " --  Languages
+Plug 'hynek/vim-python-pep8-indent'
 Plug 'groenewege/vim-less'
 Plug 'othree/yajs.vim', {'for': ['javascript']}
 Plug 'kchmck/vim-coffee-script'
@@ -94,9 +98,7 @@ Plug 'slim-template/vim-slim.git'
 Plug 'tpope/vim-markdown'
 Plug 'Puppet-Syntax-Highlighting'
 
-Plug 'justinmk/vim-sneak'
 Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'textobj-user'
 Plug 'textobj-indent'
 Plug 'tek/vim-textobj-ruby'
 
@@ -107,13 +109,12 @@ xmap q iq
 omap q iq
 
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'textobj-user'
 " Plug 'Valloric/YouCompleteMe'
 
 Plug 'rking/ag.vim'
 
 Plug 'AndrewRadev/switch.vim'
-Plug 'AndrewRadev/sideways.vim'
-Plug 'hynek/vim-python-pep8-indent'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'kshenoy/vim-signature'
 
