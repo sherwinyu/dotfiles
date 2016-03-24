@@ -100,53 +100,74 @@ function! g:HiLinks()
   endif
 endfunction
 
-function! ColorschemeDune()
-  colorscheme base16-atelierdune
-endfunction
-nnoremap <leader>=1 :call ColorschemeDune()<CR>
+nnoremap <leader>=1 :call ColorschemeTomorrow()<CR>
+nnoremap <leader>=2 :call ColorschemeTomorrowNight()<CR>
+nnoremap <leader>=3 :call ColorschemeSolarizedLight()<CR>
+nnoremap <leader>=4 :call ColorschemeSolarizedDark()<CR>
 
-function! ColorschemeMocha()
-  colorscheme base16-mocha
+" nnoremap <leader>=4 :call Colorschemeeighties()<CR>
+" nnoremap <leader>=5 :call ColorschemeSolarized()<CR>
+" nnoremap <leader>=6 :call ColorschemeTwilight()<CR>
+
+function! ColorschemeTomorrow()
+  colorscheme Tomorrow
   call g:HiLinks()
 endfunction
-nnoremap <leader>=2 :call ColorschemeMocha()<CR>
 
-
-" TWILIGHT
-function! ColorschemeTwilight()
-  colorscheme base16-twilight
+function! ColorschemeTomorrowNight()
+  colorscheme Tomorrow-Night
   call g:HiLinks()
 endfunction
-nnoremap <leader>=3 :call ColorschemeTwilight()<CR>
 
-
-
-" EIGHTIES
-function! Colorschemeeighties()
-  colorscheme base16-eighties
-  call g:HiLinks()
-endfunction
-nnoremap <leader>=4 :call Colorschemeeighties()<CR>
-
-
-
-
-" SOLARIZED
-function! ColorschemeSolarized()
-  colorscheme base16-solarized
-endfunction
-nnoremap <leader>=5 :call ColorschemeSolarized()<CR>
-
-
-function! ColorschemeSolarizedS()
+function! ColorschemeSolarizedLight()
+  set background=light
   colorscheme solarized
   highlight iCursor guifg=white guibg=steelblue
+  call g:HiLinks()
 endfunction
-nnoremap <leader>=6 :call ColorschemeSolarizedS()<CR>
+
+function! ColorschemeSolarizedDark()
+  set background=dark
+  colorscheme solarized
+  highlight iCursor guifg=white guibg=steelblue
+  call g:HiLinks()
+endfunction
 
 
 
 
+" function! ColorschemeDune()
+"   colorscheme base16-atelierdune
+"   call g:HiLinks()
+" endfunction
+
+" function! ColorschemeMocha()
+"   colorscheme base16-mocha
+"   call g:HiLinks()
+" endfunction
+
+
+" " TWILIGHT
+" function! ColorschemeTwilight()
+"   colorscheme base16-twilight
+"   call g:HiLinks()
+" endfunction
+
+" " EIGHTIES
+" function! Colorschemeeighties()
+"   colorscheme base16-eighties
+"   call g:HiLinks()
+" endfunction
+
+" " SOLARIZED
+" function! ColorschemeSolarized()
+"   colorscheme base16-solarized
+" endfunction
+
+" function! ColorschemeSolarizedS()
+"   colorscheme solarized
+"   highlight iCursor guifg=white guibg=steelblue
+" endfunction
 
 if has("gui_running")
   colorscheme base16-twilight
