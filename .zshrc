@@ -73,3 +73,5 @@ source ~/work/work_dotfiles/.zshrc.benchling
 sourceit ~/.zshrc.benchling
 
 source ~/dotfiles/.zsh.MANIFEST
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

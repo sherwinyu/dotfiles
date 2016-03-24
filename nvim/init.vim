@@ -1,4 +1,38 @@
 let mapleader = "\<F14>"
+
+function! LoadFile(filename)
+  execute 'source ~/.config/nvim/sherneovim/' . a:filename
+endfunction
+
+source ~/.config/nvim/plugins.vim
+set path+=~/dotfiles/nvim
+set path+=~/dotfiles/nvim/sherneovim
+set path+=~/dotfiles/nvim/sherneovim/plugin_config
+set suffixesadd+=.vim
+
+" """"""""""""""""""""""""""""""""""""""
+" Modules to load modules load ------------------------------------
+
+runtime autoload/shervim/file_lifecycle.vim
+runtime autoload/shervim/RelativeNumbers.vim
+runtime autoload/shervim/window_management.vim
+runtime autoload/shervim/session.vim
+runtime autoload/shervim/splitjoin.vim
+runtime autoload/shervim/CleanupRequires.vim
+runtime autoload/shervim/editing.vim
+runtime autoload/shervim/information.vim
+runtime autoload/shervim/CreatePathsOnSave.vim
+runtime autoload/shervim/navigating.vim
+
+runtime autoload/shervim/gui.vim
+runtime autoload/shervim/lightline.vim
+runtime autoload/shervim/lightline_winkle_colorscheme.vim
+
+
+
+
+
+
 " """"""""""""""""""""""""""""""""""""""
 " LEADER AND ESCAPE CONFIG
 
@@ -15,26 +49,62 @@ vmap <space><space> <Leader><leader>
 
 imap \ <Leader>
 
+" """"""""""""""""""""""""""""""""""""""
+" MAPPINGS
+"
+
 inoremap kj <esc>
 inoremap jk <esc>
 vnoremap <space><space> <esc>
 cnoremap kj <esc>
 
-runtime autoload/shervim/file_lifecycle.vim
-" runtime autoload/shervim/RelativeNumbers.vim
-runtime autoload/shervim/window_management.vim
-runtime autoload/shervim/autopairs.vim
-runtime autoload/shervim/session.vim
-runtime autoload/shervim/splitjoin.vim
-runtime autoload/shervim/CleanupRequires.vim
-runtime autoload/shervim/ctrl_p.vim
-runtime autoload/shervim/editing.vim
-runtime autoload/shervim/information.vim
-runtime autoload/shervim/CreatePathsOnSave.vim
-runtime autoload/shervim/navigating.vim
+" Leader-SETTING mappings
+map <leader>sp :set paste!<cr>
+map <leader>sw :set wrap!<cr>
+map <leader>=b :call ToggleBG()<CR>
+map <leader>sl :set list!<CR>
+map <leader>s1 :set foldlevel=1<cr>
+map <leader>sP :set path=$PWD/**<cr>
+nmap <silent> <leader>n :silent :set hlsearch!<CR>
+
+map <leader>m :sbm<cr>
+map <leader>] :cn<cr>
+map <leader>[ :cp<cr>
+
+" Command line mappings
+cnoremap <C-A> <Home>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+
+"""" UTILITIES """
+"utility-s for converting last search to a substitute
+"Explanation:
+" left left <c-r>/ to insert the searched text (which we'll used to replace)
+" <c-f> opens up the command line mode.
+" we delete the \> \< brackets
+" then <c-c> to close
+nmap <leader>us :s/<c-r>///g<left><left><c-r>/<c-f>hhxxbhhxxee<c-c>
+nmap <leader>uS :%s/<c-r>///g<left><left><c-r>/<c-f>hhxxbhhxxee<c-c>
+"v-utility-s for converting selected text to a substitute
+vmap <leader>us y:s/<c-r>"//g
+vmap <leader>uS y:%s/<c-r>"//g<left><left>
+
+""" DISABLED STUFF
+" Disable Ex mode
+" http://www.bestofvim.com/tip/leave-ex-mode-good/
+noremap Q <nop>
+noremap q: <nop>
+nmap K <nop>
+
+map <c-f> 4j
+map <c-b> 4k
+nnoremap <PageUp> 10j
+nnoremap <PageDown> 10k
 
 
-
+"
+" - SETTINGS -----------------------------------------------------------
+"
 
 syntax on
 " Disable error bells  http://vim.wikia.com/wiki/Disable_beeping
@@ -84,7 +154,6 @@ set iskeyword+=-
 set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
 set whichwrap=hl[] "Allows h and l to move wrap lines and left right to wrap in insert mode
 
-set path+=~/dotfiles/.vim
 set virtualedit=insert,block,onemore
 
 set wildignore+=*/public/assets/source_maps/*
@@ -95,130 +164,39 @@ set wildignore+=*/js-build/*
 set wildignore+=*/node_modules/*
 set formatoptions=croql
 
-
-
-
-
-
-
-
-
-
-"---------------------------------------------------------------------------------
-filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-abolish'
-Bundle 'heartsentwined/vim-emblem'
-Bundle 'ctrlp.vim'
-Bundle 'JazzCore/ctrlp-cmatcher'
-Bundle 'surround.vim'
-filetype plugin indent on     " required!
-
-
-
-
-
-
-
-
-
-
-
-
-
-"---------------------------------------------------------------------------------
-"---------------------------------------------------------------------------------
-"---------------------------------------------------------------------------------
-"---------------------------------------------------------------------------------
-if 0
-let g:syntastic_coffee_checkers = ['coffeejshint', 'coffeelint']
-
-
-"delete let g:yankstack_map_keys = 0
-"delete runtime autoload/shervim/yankstack.vim
-"
-let g:gitgutter_enabled = 1
-let g:gitgutter_realtime = 0
-let g:gitgutter_realtime_eager = 0
-source ~/.config/nvim/bundles.vim
-
-filetype plugin indent on
-" call pathogen#infect()
-runtime macros/matchit.vim
-runtime autoload/shervim/ShowTabNumber.vim
-runtime autoload/shervim/Taboo.vim
-runtime autoload/shervim/CursorLine.vim
-runtime autoload/shervim/ToggleBG.vim
-runtime autoload/shervim/ShowHighlightGroup.vim
-runtime autoload/shervim/AdjustWindowMode.vim
-runtime autoload/shervim/sneak.vim
-runtime autoload/shervim/easymotion.vim
-runtime autoload/shervim/camel_case_motion.vim
-" runtime autoload/shervim/gui.vim
-" runtime autoload/shervim/lightline.vim
-" runtime autoload/shervim/lightline_winkle_colorscheme.vim
-" runtime autoload/shervim/DeleteHiddenBuffers.vim
-"   - includes indentwise
-runtime autoload/shervim/abbreviations.vim
-" runtime autoload/shervim/unite.vim
-" runtime autoload/shervim/you_complete_me.vim
-runtime autoload/shervim/GitGutter.vim
-
-"""""""""""""""""""""""""""""""""""""""
-
-" if has("gui_running")
-"   nmap ` :silent !osascript ~/dotfiles/scripts/activate_iterm.scpt<CR>
-" endif
-
-" make braces light colored in coffee
-highlight link coffeeCurly comment
-let g:airline_powerline_fonts = 1
-
 " Hide swp files
 set backupdir=~/.vimlocal/backup//
 set directory=~/.vimlocal/swap//
 set undodir=~/.vimlocal/undo//
 
 
-"""" UTILITIES """
-"utility-s for converting last search to a substitute
-"Explanation:
-" left left <c-r>/ to insert the searched text (which we'll used to replace)
-" <c-f> opens up the command line mode.
-" we delete the \> \< brackets
-" then <c-c> to close
-nmap <leader>us :s/<c-r>///g<left><left><c-r>/<c-f>hhxxbhhxxee<c-c>
-nmap <leader>uS :%s/<c-r>///g<left><left><c-r>/<c-f>hhxxbhhxxee<c-c>
 
-"v-utility-s for converting selected text to a substitute
-vmap <leader>us y:s/<c-r>"//g
-vmap <leader>uS y:%s/<c-r>"//g<left><left>
+
+
+
+
+
+"---------------------------------------------------------------------------------
+"---------------------------------------------------------------------------------
+"---------------------------------------------------------------------------------
+"---------------------------------------------------------------------------------
+"---------------------------------------------------------------------------------
+if 0
+
+runtime autoload/shervim/CursorLine.vim
+runtime autoload/shervim/ToggleBG.vim
+runtime autoload/shervim/ShowHighlightGroup.vim
+runtime autoload/shervim/AdjustWindowMode.vim
+runtime autoload/shervim/sneak.vim
+"   - includes indentwise
+runtime autoload/shervim/abbreviations.vim
+" runtime autoload/shervim/unite.vim
+" runtime autoload/shervim/you_complete_me.vim
+
+"""""""""""""""""""""""""""""""""""""""
 
 "interpolate a string (utility - interpolate)
 map <space>ui ysiWBysiW"li#kj
-
-
-""" DISABLED STUFF
-" Disable Ex mode
-" http://www.bestofvim.com/tip/leave-ex-mode-good/
-noremap Q <nop>
-noremap q: <nop>
-" inoremap <c-c> <>
-
-" Disable K
-nmap K <nop>
-
-
-map <c-f> 4j
-map <c-b> 4k
-nnoremap <PageUp> 10j
-nnoremap <PageDown> 10k
 
 "2013 05 01
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
@@ -232,33 +210,12 @@ function! StripTrailingWhiteSpace()
 endfunction
 
 
-" Leader-SETTING mappings
-map <leader>sp :set paste!<cr>
-map <leader>sw :set wrap!<cr>
-map <leader>=b :call ToggleBG()<CR>
-map <leader>sl :set list!<CR>
-map <leader>s1 :set foldlevel=1<cr>
-map <leader>sP :set path=$PWD/**<cr>
-nmap <silent> <leader>n :silent :set hlsearch!<CR>
-
-map <leader>m :sbm<cr>
-map <leader>] :cn<cr>
-map <leader>[ :cp<cr>
-
-" Command line mappings
-cnoremap <C-A> <Home>
-cnoremap <Esc>b <S-Left>
-cnoremap <Esc>f <S-Right>
-
-
-
 
 " DiffOrig for sane recovery management. Choose (R)ecover, then call :DiffOrig to diff the recovered swap file with the original file.
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
       \ | wincmd p | diffthis
 
 highlight Folded ctermbg=103 ctermfg=16
-
 
 autocmd WinEnter * checktime
 autocmd BufWinEnter * checktime

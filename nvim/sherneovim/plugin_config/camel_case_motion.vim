@@ -12,8 +12,4 @@ vmap <silent> X iW
 vmap <silent> x <Plug>CamelCaseMotion_iw
 
 
-" And textobj
-" cq dq yq vq operates on any sort of qoute (vim-textobj-quotes)
-xmap q iq
-omap q iq
 
