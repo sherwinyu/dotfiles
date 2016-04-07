@@ -78,7 +78,7 @@ set background=dark
 let g:solarized_termcolors=16
 
 
-function! g:HiLinks()
+function! g:HiLinks(isDark)
   " Color corrects
   " hi link vimCommand keyword
   if has("gui_running")
@@ -98,6 +98,38 @@ function! g:HiLinks()
     " hi TabLine guifg=gray10
     hi TabLineFill guibg=gray10 gui=underline
   endif
+
+  if a:isDark
+    highlight javascriptDeemphasized ctermfg=DarkGray
+    highlight javascriptIdentifierName ctermfg=Blue
+  else
+    highlight javascriptIdentifierName ctermfg=Blue
+    highlight javascriptDeemphasized ctermfg=Gray
+  endif
+  highlight javascriptProp ctermfg=Red
+  highlight javascriptMethod ctermfg=Red
+
+  highlight link javaScriptBraces javascriptDeemphasized
+  highlight link javaScriptParens javascriptDeemphasized
+  highlight link javascriptEndColons javascriptDeemphasized
+
+  highlight javascriptFuncArg cterm=italic ctermfg=DarkCyan
+  highlight javascriptFuncArgObject cterm=italic ctermfg=DarkBlue
+  " Fix else
+  highlight link javascriptConditionalElse javaScriptConditional
+
+  " Fix keyword highlighting
+  highlight jsKeyword ctermfg=DarkYellow
+  highlight link javascriptClassSuper  jsKeyword
+  highlight link javascriptImport  jsKeyword
+  highlight link javascriptExport jsKeyword
+  highlight link javascriptExportDefault jsKeyword
+  highlight link javascriptClassKeyword jsKeyword
+  highlight link javascriptClassExtends jsKeyword
+
+  highlight link javascriptBOMWindowProp Normal
+
+
 endfunction
 
 nnoremap <leader>=1 :call ColorschemeTomorrow()<CR>
@@ -105,32 +137,28 @@ nnoremap <leader>=2 :call ColorschemeTomorrowNight()<CR>
 nnoremap <leader>=3 :call ColorschemeSolarizedLight()<CR>
 nnoremap <leader>=4 :call ColorschemeSolarizedDark()<CR>
 
-" nnoremap <leader>=4 :call Colorschemeeighties()<CR>
-" nnoremap <leader>=5 :call ColorschemeSolarized()<CR>
-" nnoremap <leader>=6 :call ColorschemeTwilight()<CR>
-
 function! ColorschemeTomorrow()
   colorscheme Tomorrow
-  call g:HiLinks()
+  call g:HiLinks(0)
 endfunction
 
 function! ColorschemeTomorrowNight()
   colorscheme Tomorrow-Night
-  call g:HiLinks()
+  call g:HiLinks(1)
 endfunction
 
 function! ColorschemeSolarizedLight()
   set background=light
   colorscheme solarized
   highlight iCursor guifg=white guibg=steelblue
-  call g:HiLinks()
+  call g:HiLinks(0)
 endfunction
 
 function! ColorschemeSolarizedDark()
   set background=dark
   colorscheme solarized
   highlight iCursor guifg=white guibg=steelblue
-  call g:HiLinks()
+  call g:HiLinks(1)
 endfunction
 
 
@@ -173,7 +201,7 @@ if has("gui_running")
   colorscheme base16-twilight
   call g:HiLinks()
 else
-  colorscheme solarized
+  call ColorschemeTomorrowNight()
 endif
 
 

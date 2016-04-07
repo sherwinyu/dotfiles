@@ -1,4 +1,4 @@
-let g:neomake_verbose=3
+let g:neomake_verbose=0
 let g:neomake_logfile='/tmp/error.log'
 
 " Modiified from https://github.com/benekastah/neomake/blob/master/autoload/neomake/makers/ft/javascript.vim

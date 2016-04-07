@@ -20,9 +20,11 @@ runtime autoload/shervim/session.vim
 runtime autoload/shervim/splitjoin.vim
 runtime autoload/shervim/CleanupRequires.vim
 runtime autoload/shervim/editing.vim
+runtime autoload/shervim/chomp.vim
 runtime autoload/shervim/information.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/navigating.vim
+runtime autoload/shervim/ShowSyntaxGroup.vim
 
 runtime autoload/shervim/gui.vim
 runtime autoload/shervim/lightline.vim
@@ -86,6 +88,16 @@ nmap <leader>uS :%s/<c-r>///g<left><left><c-r>/<c-f>hhxxbhhxxee<c-c>
 "v-utility-s for converting selected text to a substitute
 vmap <leader>us y:s/<c-r>"//g
 vmap <leader>uS y:%s/<c-r>"//g<left><left>
+
+nmap <leader>uri Iimport<space><esc>2Wc2wfrom<esc>A;<esc>
+
+noremap * :set hlsearch<CR>*N
+
+let @s="mtA;kj`t"
+noremap <leader>; @s
+vnoremap @s :normal @s<CR>
+vnoremap <leader>; :normal @s<CR>
+
 
 """ DISABLED STUFF
 " Disable Ex mode

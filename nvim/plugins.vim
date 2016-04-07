@@ -34,6 +34,14 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'jeetsukumaran/vim-indentwise'
 
 
+" Text selection
+Plug 'kana/vim-textobj-user'
+Plug 'glts/vim-textobj-comment'
+Plug 'kana/vim-textobj-indent'
+call LoadPluginConfig('vim-textobj-indent')
+
+
+
 " Editing
 Plug 'AndrewRadev/sideways.vim'
 Plug 'commentary.vim'
@@ -65,7 +73,12 @@ call LoadPluginConfig('deoplete')
 " --  Languages
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'groenewege/vim-less'
+
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'othree/yajs.vim', {'for': ['javascript']}
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'gavocanov/vim-js-indent', { 'for': ['javascript', 'javascript.jsx'] }
+
 Plug 'kchmck/vim-coffee-script'
 Plug 'heartsentwined/vim-emblem'
 Plug 'jade.vim'

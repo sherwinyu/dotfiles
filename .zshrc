@@ -81,3 +81,5 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 # plugins=(safe-paste)
 
 export PATH="/Users/yxy/dotfiles/bin:$PATH"
+
+export EDITOR=/usr/local/bin/nvim
