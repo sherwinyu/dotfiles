@@ -1,0 +1,78 @@
+
+--regex-ruby=/(^|[:;])[ \t]*([A-Z][[:alnum:]_]+) *=/\2/c,class,constant/
+--regex-ruby=/(^|;)[ \t]*(has_many|belongs_to|has_one|has_and_belongs_to_many)\(? *:([[:alnum:]_]+)/\3/f,function,association/
+--regex-ruby=/(^|;)[ \t]*(named_)?scope\(? *:([[:alnum:]_]+)/\3/f,function,named_scope/
+--regex-ruby=/(^|;)[ \t]*expose\(? *:([[:alnum:]_]+)/\2/f,function,exposure/
+--regex-ruby=/(^|;)[ \t]*event\(? *:([[:alnum:]_]+)/\2/f,function,aasm_event/
+--regex-ruby=/(^|;)[ \t]*event\(? *:([[:alnum:]_]+)/\2!/f,function,aasm_event/
+--regex-ruby=/(^|;)[ \t]*event\(? *:([[:alnum:]_]+)/\2?/f,function,aasm_event/
+
+--langdef=markdown
+--langmap=markdown:.md.markdown.mdown.mkd.mkdn
+--regex-markdown=/^#[ \t]+(.*)/\1/h,heading1/
+--regex-markdown=/^##[ \t]+(.*)/\1/h,heading2/
+--regex-markdown=/^###[ \t]+(.*)/\1/h,heading3/
+
+--langdef=coffee
+--langmap=coffee:.coffee
+--regex-coffee=/(^|=[ \t])*class ([A-Za-z]+\.)*([A-Za-z]+)( extends [A-Za-z.]+)?$/\3/c,class/
+--regex-coffee=/^[ \t]*(module\.)?(exports\.)?@?([A-Za-z.]+):.*[-=]>.*$/\3/m,method/
+--regex-coffee=/^[ \t]*(module\.)?(exports\.)?([A-Za-z.]+)[ \t]+=.*[-=]>.*$/\3/f,function/
+--regex-coffee=/^[ \t]*([A-Za-z.]+)[ \t]+=[^->\n]*$/\1/v,variable/
+--regex-coffee=/^[ \t]*@([A-Za-z.]+)[ \t]+=[^->\n]*$/\1/f,field/
+--regex-coffee=/^[ \t]*@([A-Za-z.]+):[^->\n]*$/\1/f,static field/
+--regex-coffee=/^[ \t]*([A-Za-z.]+):[^->\n]*$/\1/f,field/
+--regex-coffee=/(constructor: \()@([A-Za-z.]+)/\2/f,field/
+--regex-coffee=/(constructor: \()@[A-Za-z.]+(, @([A-Za-z.]+)){0}/\3/f,field/
+--regex-coffee=/(constructor: \()@[A-Za-z.]+(, @([A-Za-z.]+)){1}/\3/f,field/
+--regex-coffee=/(constructor: \()@[A-Za-z.]+(, @([A-Za-z.]+)){2}/\3/f,field/
+--regex-coffee=/(constructor: \()@[A-Za-z.]+(, @([A-Za-z.]+)){3}/\3/f,field/
+--regex-coffee=/(constructor: \()@[A-Za-z.]+(, @([A-Za-z.]+)){4}/\3/f,field/
+--regex-coffee=/(constructor: \()@[A-Za-z.]+(, @([A-Za-z.]+)){5}/\3/f,field/
+--regex-coffee=/(constructor: \()@[A-Za-z.]+(, @([A-Za-z.]+)){6}/\3/f,field/
+--regex-coffee=/(constructor: \()@[A-Za-z.]+(, @([A-Za-z.]+)){7}/\3/f,field/
+--regex-coffee=/(constructor: \()@[A-Za-z.]+(, @([A-Za-z.]+)){8}/\3/f,field/
+--regex-coffee=/(constructor: \()@[A-Za-z.]+(, @([A-Za-z.]+)){9}/\3/f,field/
+
+--python-kinds=-i
+--python-kinds=-v
+
+--exclude=node_modules
+--exclude=coverage
+
+--langdef=comment
+
+--langdef=js
+--langmap=js:.js
+--regex-javascript=/[ \t.]([A-Z][A-Z0-9._$]+)[ \t]*[=:][ \t]*([0-9"'\[\{]|null)/\1/n,constant/
+--regex-javascript=/(hello)/\1/n,constant/
+
+--regex-comment=/^  (function def)   /\1/X,XXX/
+--regex-javascript=/([A-Za-z$_][A-Za-z0-9_$]+)[ \t]*\([^)]*\) \{/\1/f,function/
+
+
+
+
+
+
+
+--regex-javascript=/
+
+--regex-javascript=/\.([A-Za-z0-9._$]+)[ \t]*=[ \t]*\{/\1/o,object/
+
+--regex-javascript=/['"]*([A-Za-z0-9_$]+)['"]*[ \t]*:[ \t]*\{/\1/o,object/
+
+--regex-javascript=/([A-Za-z0-9._$]+)\[["']([A-Za-z0-9_$]+)["']\][ \t]*=[ \t]*\{/\1\.\2/o,object/
+
+
+--regex-javascript=/([A-Za-z0-9._$]+)[ \t]*=[ \t]*\(function\(\)/\1/c,class/
+
+--regex-javascript=/['"]*([A-Za-z0-9_$]+)['"]*:[ \t]*\(function\(\)/\1/c,class/
+
+--regex-javascript=/class[ \t]+([A-Za-z0-9._$]+)[ \t]*/\1/c,class/
+
+--regex-javascript=/([A-Za-z$][A-Za-z0-9_$()]+)[ \t]*=[ \t]*[Rr]eact.createClass[ \t]*\(/\1/c,class/
+
+
+
+--regex-javascript=/([A-Za-z$][A-Za-z0-9_$]+)[ \t]*=[ \t]*function[ \t]*\(/\1/f,function/
