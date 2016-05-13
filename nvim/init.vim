@@ -186,7 +186,7 @@ set iskeyword+=-
 set bs=eol,indent,start " Allows backspace to delte past start in Insert mode
 set whichwrap=hl[] "Allows h and l to move wrap lines and left right to wrap in insert mode
 
-set virtualedit=insert,block,onemore
+set virtualedit=insert,block
 
 set wildignore+=*/public/assets/source_maps/*
 set wildignore+=*/build/*
@@ -222,8 +222,8 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 "---------------------------------------------------------------------------------
 "---------------------------------------------------------------------------------
 "---------------------------------------------------------------------------------
-if 0
 
+if 0
 runtime autoload/shervim/CursorLine.vim
 runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
