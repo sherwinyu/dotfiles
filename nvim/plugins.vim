@@ -50,6 +50,9 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-abolish'
 Plug 'surround.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-unimpaired'
+call LoadPluginConfig('unimpaired')
+Plug 'tpope/vim-unimpaired'
 call LoadPluginConfig('autopairs')
 
 

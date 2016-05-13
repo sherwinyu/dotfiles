@@ -10,7 +10,7 @@ set path+=~/dotfiles/nvim/sherneovim
 set path+=~/dotfiles/nvim/sherneovim/plugin_config
 set suffixesadd+=.vim
 
-" """"""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""
 " Modules to load modules load ------------------------------------
 
 runtime autoload/shervim/file_lifecycle.vim
@@ -25,6 +25,7 @@ runtime autoload/shervim/information.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/navigating.vim
 runtime autoload/shervim/ShowSyntaxGroup.vim
+runtime autoload/shervim/abbreviations.vim
 
 runtime autoload/shervim/gui.vim
 runtime autoload/shervim/lightline.vim
@@ -33,7 +34,7 @@ runtime autoload/shervim/lightline_winkle_colorscheme.vim
 
 
 
-" """"""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""
 " LEADER AND ESCAPE CONFIG
 
 inoremap <c-q> <esc>ld^i
@@ -180,6 +181,15 @@ set directory=~/.vimlocal/swap//
 set undodir=~/.vimlocal/undo//
 
 
+" Automatically check if file has been changed
+autocmd WinEnter * checktime
+autocmd BufWinEnter * checktime
+
+" DiffOrig for sane recovery management. Choose (R)ecover, then call :DiffOrig to diff the recovered swap file with the original file.
+command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+      \ | wincmd p | diffthis
+
+
 
 
 
@@ -197,38 +207,15 @@ runtime autoload/shervim/CursorLine.vim
 runtime autoload/shervim/ToggleBG.vim
 runtime autoload/shervim/ShowHighlightGroup.vim
 runtime autoload/shervim/AdjustWindowMode.vim
-runtime autoload/shervim/sneak.vim
 "   - includes indentwise
-runtime autoload/shervim/abbreviations.vim
 " runtime autoload/shervim/unite.vim
 " runtime autoload/shervim/you_complete_me.vim
 
 """""""""""""""""""""""""""""""""""""""
 
-"interpolate a string (utility - interpolate)
-map <space>ui ysiWBysiW"li#kj
-
-"2013 05 01
-" http://vim.wikia.com/wiki/Remove_unwanted_spaces
-autocmd FileType jade let b:noStripWhitespace=1
-autocmd BufWritePre * call StripTrailingWhiteSpace()
-function! StripTrailingWhiteSpace()
-  if exists('b:noStripWhitespace')
-    return
-  endif
-  %s/\s\+$//e
-endfunction
-
-
-
-" DiffOrig for sane recovery management. Choose (R)ecover, then call :DiffOrig to diff the recovered swap file with the original file.
-command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-      \ | wincmd p | diffthis
 
 highlight Folded ctermbg=103 ctermfg=16
 
-autocmd WinEnter * checktime
-autocmd BufWinEnter * checktime
 
 autocmd FileType crontab set backupcopy=yes
 endif

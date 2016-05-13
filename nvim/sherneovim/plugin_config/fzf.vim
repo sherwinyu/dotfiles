@@ -1,5 +1,14 @@
 nmap <leader>t  :FZF<cr>
-nmap <leader><leader>t  :BTags<cr>
+nmap <leader>T  :BTags<cr>
+nmap <leader>l  :BLines<cr>
+nmap <leader>h  :History<cr>
+nmap <leader>/  :History/<cr>
+
+nmap <leader>b :Buffers<cr>
+nmap <leader>^ :History<cr><cr>
+
+nmap <leader>> :FZF<cr><c-r>
+
 
 nmap <leader><tab> <plug>(fzf-maps-n)
 

@@ -97,3 +97,6 @@ inoremap <D-'> <c-o>f,l
 
 
 
+
+"Paragraph bubbling is found in unimpaired config
+
