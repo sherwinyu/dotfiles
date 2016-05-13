@@ -88,6 +88,58 @@ nnoremap <c-w>l <NOP>
 map \ <c-w><c-w>
 map ] <c-w><c-w>
 
+
+
+
+map <c-w><tab>  :call MoveToPrevTab()<CR>
+map <c-w>\  :call MoveToNextTab()<CR>
+
+function! MoveToPrevTab()
+  "there is only one window
+  if tabpagenr('$') == 1 && winnr('$') == 1
+    return
+  endif
+  "preparing new window
+  let l:tab_nr = tabpagenr('$')
+  let l:cur_buf = bufnr('%')
+  if tabpagenr() != 1
+    close!
+    if l:tab_nr == tabpagenr('$')
+      tabprev
+    endif
+    sp
+  else
+    close!
+    exe "0tabnew"
+  endif
+  "opening current buffer in new window
+  exe "b".l:cur_buf
+endfunc
+
+function! MoveToNextTab()
+  "there is only one window
+  if tabpagenr('$') == 1 && winnr('$') == 1
+    return
+  endif
+  "preparing new window
+  let l:tab_nr = tabpagenr('$')
+  let l:cur_buf = bufnr('%')
+  if tabpagenr() < tab_nr
+    close!
+    if l:tab_nr == tabpagenr('$')
+      tabnext
+    endif
+    sp
+  else
+    close!
+    tabnew
+  endif
+  "opening current buffer in new window
+  exe "b".l:cur_buf
+endfunc
+
+
+
 "Tab: Previous window
 map <tab> <c-w>W
 
@@ -138,4 +190,3 @@ function! ToggleMaxWins()
     let g:windowMax=1
   endif
 endfunction
-nnoremap <Leader><Leader>z :call ToggleMaxWins()<CR>
