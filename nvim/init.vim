@@ -84,20 +84,41 @@ cnoremap <Esc>f <S-Right>
 " <c-f> opens up the command line mode.
 " we delete the \> \< brackets
 " then <c-c> to close
-nmap <leader>us :s/<c-r>///g<left><left><c-r>/<c-f>hhxxbhhxxee<c-c>
-nmap <leader>uS :%s/<c-r>///g<left><left><c-r>/<c-f>hhxxbhhxxee<c-c>
+" nmap <leader>us :s/<c-r>///g<left><left><c-r>/<c-f>hhxxbhhxxee<c-c>
+" nmap <leader>uS2 :%s/<c-r>//<c-r>//g<c-f>02fv$s/\(\\<\|\\>\)//g<cr><c-c>
+"/g<left><left><c-r>/<c-f>hhxxbhhxxee<c-c>
+
+" %s/\<_setReviewFilterInProgress\>/\<_handleFilterInProgressReviews\>/g
+
+" nmap <leader>uS :%s/<c-r>///g<left><left><c-r>/<c-f>hhxxbhhxxee<c-c>
 "v-utility-s for converting selected text to a substitute
-vmap <leader>us y:s/<c-r>"//g
-vmap <leader>uS y:%s/<c-r>"//g<left><left>
+" vmap <leader>us y:s/<c-r>"//g
+" vmap <leader>uS y:%s/<c-r>"//g<left><left>
 
 nmap <leader>uri Iimport<space><esc>2Wc2wfrom<esc>A;<esc>
 
+" nice!
+nmap <leader>uS n"tyiw:%s/<c-r>//<c-r>t/g<left><left>
+nmap <leader>us "tyiw:s/<c-r>//<c-r>t/g<left><left>
+
 noremap * :set hlsearch<CR>*N
 
+"Insert semicolons and commas
 let @s="mtA;kj`t"
+let @c="mtA,kj`t"
 noremap <leader>; @s
+noremap <leader>, @c
 vnoremap @s :normal @s<CR>
 vnoremap <leader>; :normal @s<CR>
+vnoremap <leader>, :normal @c<CR>
+
+"Surround word with <> and drop into insert mode
+map <leader>a ysiWaEi<space>
+
+"convert : to =
+let @e="f:c2l=kj"
+nnoremap <leader>= :normal @e<CR>
+
 
 
 """ DISABLED STUFF
