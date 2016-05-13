@@ -100,14 +100,21 @@ function! g:HiLinks(isDark)
   endif
 
   if a:isDark
+    highlight javascriptIdentifierName ctermfg=Cyan
     highlight javascriptDeemphasized ctermfg=DarkGray
-    highlight javascriptIdentifierName ctermfg=Blue
+    highlight javascriptOpBold ctermfg=Magenta cterm=bold
+    highlight javascriptReserved ctermfg=Magenta
   else
-    highlight javascriptIdentifierName ctermfg=Blue
+    highlight javascriptIdentifierName ctermfg=Green
     highlight javascriptDeemphasized ctermfg=Gray
+    highlight javascriptOpBold ctermfg=DarkMagenta cterm=bold
   endif
+
+  highlight link javascriptOpSymbol javascriptOpBold
+  highlight link javascriptComma javascriptOpBold
+  highlight link javascriptOpSymbols javascriptOpBold
+
   highlight javascriptProp ctermfg=Red
-  highlight javascriptMethod ctermfg=Red
 
   highlight link javaScriptBraces javascriptDeemphasized
   highlight link javaScriptParens javascriptDeemphasized
