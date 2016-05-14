@@ -1,6 +1,6 @@
 stty -ixon
 
-export EDITOR=vim
+export EDITOR=nvim
 source ~/dotfiles/.zsh.variables
 source ~/dotfiles/.zsh.aliases
 source ~/dotfiles/.zsh.fancy_ctrlz
