@@ -26,6 +26,7 @@ runtime autoload/shervim/CreatePathsOnSave.vim
 runtime autoload/shervim/navigating.vim
 runtime autoload/shervim/ShowSyntaxGroup.vim
 runtime autoload/shervim/abbreviations.vim
+runtime autoload/shervim/insert_debug.vim
 
 runtime autoload/shervim/gui.vim
 runtime autoload/shervim/lightline.vim
@@ -38,7 +39,6 @@ runtime autoload/shervim/lightline_winkle_colorscheme.vim
 " LEADER AND ESCAPE CONFIG
 
 inoremap <c-q> <esc>ld^i
-
 inoremap \\ \
 inoremap \u <esc>ld^i
 inoremap \u <esc>ld^i
@@ -48,7 +48,7 @@ nmap <space><space> <Leader><leader>
 vmap <space> <Leader>
 vmap <space><space> <Leader><leader>
 
-imap \ <Leader>
+
 
 " """"""""""""""""""""""""""""""""""""""
 " MAPPINGS

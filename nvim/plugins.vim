@@ -31,6 +31,7 @@ call LoadPluginConfig('sneak')
 Plug 'camelcasemotion'
 call LoadPluginConfig('camel_case_motion')
 Plug 'AndrewRadev/switch.vim'
+call LoadPluginConfig('switch')
 Plug 'jeetsukumaran/vim-indentwise'
 
 

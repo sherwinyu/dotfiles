@@ -4,6 +4,7 @@
 "visual block
 noremap <leader>v <c-v>
 
+
 " Temporarily disable global copy and paste
 " " Copy to global clipboard from visual selection
 " vnoremap <leader>y "+y
@@ -45,7 +46,7 @@ vmap <leader>gf Sb
 " ctrl-cr OR leader-j
 inoremap <c-cr> <CR><c-o>k<c-o>$
 nnoremap <c-cr> i<CR><Esc>k$
-inoremap <leader>j <CR><c-o>k<c-o>$
+inoremap \j <CR><c-o>k<c-o>$
 nnoremap <leader>j i<CR><Esc>k$
 
 " what is this supposed to do?? alt-j -- works in terminal
@@ -85,9 +86,8 @@ map s<space> vS<space><space>
 map <leader>- :Switch<cr>
 
 
-inoremap <leader><leader>p binding.pry<cr><esc>
-nnoremap <leader><leader>p obinding.pry<esc>
-nnoremap <leader><leader>P Obinding.pry<esc>
+
+
 
 " Easy indentation in/out
 nnoremap > >>
