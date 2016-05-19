@@ -74,6 +74,10 @@ call LoadPluginConfig('neomake')
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-jedi'
 call LoadPluginConfig('deoplete')
+Plug 'SirVer/ultisnips'
+call LoadPluginConfig('ultisnips')
+Plug 'honza/vim-snippets'
+
 
 
 " --  Languages
