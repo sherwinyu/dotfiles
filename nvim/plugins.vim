@@ -7,9 +7,9 @@ endfunction
 
 
 " File navigation
-Plug 'ctrlp.vim'
-Plug 'vim-scripts/ctrlp-funky'
-Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'ctrlp.vim', {'on': ['CtrlP', 'CtrlPMRU']}
+Plug 'vim-scripts/ctrlp-funky', {'on': ['CtrlP', 'CtrlPMRU']}
+Plug 'JazzCore/ctrlp-cmatcher', {'on': ['CtrlP', 'CtrlPMRU']}
 call LoadPluginConfig('ctrl_p')
 
 
@@ -26,7 +26,7 @@ call LoadPluginConfig('Taboo')
 
 
 " Moving within a file
-Plug 'justinmk/vim-sneak'
+Plug 'justinmk/vim-sneak', {'on': '<Plug>Sneak_s'}
 call LoadPluginConfig('sneak')
 Plug 'camelcasemotion'
 call LoadPluginConfig('camel_case_motion')
@@ -66,7 +66,7 @@ Plug 'tpope/vim-fugitive'
 
 
 " Linting
-Plug 'benekastah/neomake'
+Plug 'benekastah/neomake', {'on': 'Neomake'}
 call LoadPluginConfig('neomake')
 
 

@@ -1,5 +1,4 @@
-map <leader>B :call JumpBackToBuffer()<cr><cr>
-nmap <leader>b :call JumpBackToBuffer()<cr>
+nmap <leader>B :call JumpBackToBuffer()<cr>
 
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
 let g:ctrlp_max_files = 0
