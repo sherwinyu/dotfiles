@@ -40,6 +40,8 @@ Plug 'kana/vim-textobj-user'
 Plug 'glts/vim-textobj-comment'
 Plug 'kana/vim-textobj-indent'
 call LoadPluginConfig('vim-textobj-indent')
+Plug 'wellle/targets.vim'
+call LoadPluginConfig('targets')
 
 
 
