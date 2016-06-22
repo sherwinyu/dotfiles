@@ -53,7 +53,7 @@ call LoadPluginConfig('targets')
 Plug 'AndrewRadev/sideways.vim'
 Plug 'commentary.vim'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-abolish'
 Plug 'surround.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -77,10 +77,10 @@ call LoadPluginConfig('neomake')
 " Completion
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-jedi'
-call LoadPluginConfig('deoplete')
 Plug 'SirVer/ultisnips'
 call LoadPluginConfig('ultisnips')
 Plug 'honza/vim-snippets'
+call LoadPluginConfig('deoplete')
 
 
 
