@@ -61,7 +61,8 @@ endfunction
 nmap <leader> viw"ty:FZF<cr><c-\><c-n>"tpa<space><bar><space><c-\><c-n>:call<space>SetRegisterT()<cr>"tpa<space>
 
 " leader g r   Go to ReactClass
-nmap <leader>gr <leader>*createClass
+nmap <leader>grc <leader>*createClass
+nmap <leader>gru <leader>*<
 
 " leader g d   Go to definition (for javascriptw)
 nmap <leader>gd gd$F'gf
