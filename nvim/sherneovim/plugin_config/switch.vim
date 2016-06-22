@@ -3,13 +3,14 @@ let g:switch_definitions = [
       \ ['true', 'false'],
       \ ['&&', '||'],
       \ [': ', '='],
+      \ ['@', 'this.'],
       \]
 
 
 
 
-" augroup filetype_coffee_switch
-"   autocmd!
+"     " Prepend with \v for very magic
+"     " Must escape = (with \=) as well
 let g:switch_custom_definitions = [
         \   {
         \     '\v'. '(\w+) \= require[ (](''.+'')\)?': 'import \1 from \2;',
@@ -22,8 +23,6 @@ let g:switch_custom_definitions = [
 
 " augroup filetype_coffee_switch
 "   autocmd!
-"     " Prepend with \v for very magic
-"     " Must escape = (with \=) as well
 "   autocmd FileType coffee let b:switch_custom_definitions = [
 "         \   {
 "         \     '\v'. '(\w+) \= require[ (](''.+'')\)?': 'import \1 from \2;',
