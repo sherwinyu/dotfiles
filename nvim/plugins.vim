@@ -23,6 +23,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'gcmt/taboo.vim'
 call LoadPluginConfig('Taboo')
 
+" Distraction free writing
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+call LoadPluginConfig('goyo')
 
 
 " Moving within a file
