@@ -2,7 +2,7 @@
 	name = Sherwin Yu
 	email = sherwin.x.yu@gmail.com
 [core]
-	editor = vim
+	editor = nvim
       excludesfile = /opt/boxen/config/git/gitignore
 [color]
   ui = auto
