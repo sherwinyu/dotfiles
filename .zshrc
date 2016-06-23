@@ -96,5 +96,12 @@ export EDITOR=/usr/local/bin/nvim
 # zsh: Place this in .zshrc after "source /Users/georgen/.iterm2_shell_integration.zsh".
 source ~/.iterm2_shell_integration.zsh
 iterm2_print_user_vars() {
-  iterm2_set_user_var gitBranch 'asdf' # $((git branch 2> /dev/null) | grep \* | cut -c3-)
+  iterm2_set_user_var gitBranch  $((git branch 2> /dev/null) | grep \* | cut -c3-)
+}
+
+gulpTest() {
+  trimmedPath = ${$1#coffee}
+  derp = 'js-build'${trimmedPath}
+  echo derp
+  gulp test --testFile $derp
 }
