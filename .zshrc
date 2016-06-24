@@ -99,9 +99,11 @@ iterm2_print_user_vars() {
   iterm2_set_user_var gitBranch  $((git branch 2> /dev/null) | grep \* | cut -c3-)
 }
 
-gulpTest() {
-  trimmedPath = ${$1#coffee}
-  derp = 'js-build'${trimmedPath}
-  echo derp
-  gulp test --testFile $derp
+gT() {
+  testPath=$1
+  testPath=${testPath#coffee}
+  testPath=${testPath/coffee$/js}
+  testPath='js-build'${testPath}
+  echo $testPath
+  gulp test --testFile $testPath
 }
