@@ -1,3 +1,7 @@
+snippet l! "console.log"
+console.log(${0:'$1'});
+endsnippet
+
 snippet rie! "React If Else"
 {(() => {
   if ($1) {
@@ -7,6 +11,23 @@ snippet rie! "React If Else"
   }
 })()}
 endsnippet
+
+snippet r?! "React Ternary"
+{
+  ${1:conditional}
+  ? ${2:true_expression}
+  : ${3:false_expression}
+}
+
+{(() => {
+  if ($1) {
+    $2
+  } else {
+  $3
+  }
+})()}
+endsnippet
+
 
 snippet d3it! "describe 3 it"
 describe('${1:`!p snip.rv = fn.split(os.extsep)[0]`}', () => {
