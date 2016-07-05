@@ -107,3 +107,5 @@ gT() {
   echo $testPath
   gulp test --testFile $testPath
 }
+
+nvm use default
