@@ -1,5 +1,15 @@
-snippet l! "console.log"
-console.log(${0:'$1'});
+snippet l "console.log"
+console.log(${1:'$2'});
+endsnippet
+
+snippet s1l "console.log"
+console.log(${1:'$2'});
+endsnippet
+
+snippet =>
+() => {
+  $1
+}
 endsnippet
 
 snippet rie! "React If Else"
@@ -18,74 +28,120 @@ snippet r?! "React Ternary"
   ? ${2:true_expression}
   : ${3:false_expression}
 }
-
-{(() => {
-  if ($1) {
-    $2
-  } else {
-  $3
-  }
-})()}
 endsnippet
 
 
-snippet d3it! "describe 3 it"
-describe('${1:`!p snip.rv = fn.split(os.extsep)[0]`}', () => {
-  it('$2', () => {
 
-  });
-  it('$3', () => {
-
-  });
-  it('$4', () => {
-
-  });
+snippet describe "describe block ('...', () => {  })"
+describe('$1', () => {
+  $2
 });
+$0
 endsnippet
 
 
-snippet e! "expect"
-expect($1).$0
-endsnippet
 
-
-snippet describe! "describe verbose"
-describe('${1:`!p snip.rv = fn.split(os.extsep)[0]`}', () => {
-	$0
-});
-endsnippet
-
-snippet it! "it"
+snippet it "it"
 it('${1:It}', () => {
-	$0
+  $2
 });
+$0
 endsnippet
 
-snippet bee! "beforeEach"
+
+snippet ex "expect(...)."
+expect($1).${2:ok()};$3
+endsnippet
+
+
+
+snippet beforeEach "beforeEach"
 beforeEach(() => {
-	$0
+  $0
 });
 endsnippet
 
-snippet afe! "afterEach"
+
+
+snippet afterEach "afterEach"
 afterEach(() => {
-	$0
-	hello
-	$1
-	goodbye
-	$2
+  $0
 });
 endsnippet
 
-snippet before! "before"
+
+
+snippet before "before"
 before(() => {
-	$0
+  $0
 });
 endsnippet
 
-snippet after! "after"
+
+
+snippet after "after"
 after(() => {
-	$0
+  $0
+});
+endsnippet
+
+
+
+
+
+
+
+
+
+snippet reactTest "React Test snippet"
+/* eslint-env mocha */
+import {expect} from 'chai';
+import {mount} from 'enzyme';
+import React from 'react';
+import sinon from 'sinon';
+
+import $1 from '/$1';
+
+
+const TEST_PROPS = {
+  prop1: {
+    prop2: [{name: 'col1', value: 'val1'}, {name: 'col2', value: 'val2'}, {name: 'col4', val: 'val4'}],
+  },
+};
+
+
+describe('${1:MyComponent}', () => {
+  const sandbox = sinon.sandbox.create();
+
+  afterEach(() => {
+    sandbox.restore();
+  });
+
+  it('renders a <button> if props.compact', () => {
+    const ${2:myComponent} = mount(<$1 {...TEST_PROPS} propOverride={true} />);
+    expect($2.find('button')).present();
+  });
+
+  it('renders a <a> if props.compact', () => {
+    const $2 = mount(<$1 {...TEST_PROPS} propOveride={false} />);
+    expect($2.find('a')).present();
+  });
+
+  it('renders a tooltip', () => {
+    const $2 = mount(<$1 {...TEST_PROPS} compact={true} />);
+    expect($2.find(Tooltip)).present();
+    expect($2.find(Tooltip).props()).subsetContain({
+      title: 'Create Project',
+    });
+    expect($2.find(''));
+  });
+
+  it('does something with a simulate', () => {
+    const stubCreateSourceModalOpen = sandbox.stub(CreateSourceModal, 'open');
+    const $2 = mount(<$1 {...TEST_PROPS} compact={true} />);
+    $2.find('a').simulate('click');
+    expect(stubCreateSourceModalOpen).calledOnce();
+  });
 });
 endsnippet
 
