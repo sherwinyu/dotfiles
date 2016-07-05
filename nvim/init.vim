@@ -27,6 +27,7 @@ runtime autoload/shervim/navigating.vim
 runtime autoload/shervim/ShowSyntaxGroup.vim
 runtime autoload/shervim/abbreviations.vim
 runtime autoload/shervim/insert_debug.vim
+runtime autoload/shervim/terminal.vim
 
 runtime autoload/shervim/gui.vim
 runtime autoload/shervim/lightline.vim
@@ -98,8 +99,12 @@ cnoremap <Esc>f <S-Right>
 nmap <leader>uri Iimport<space><esc>2Wc2wfrom<esc>A;<esc>
 
 " nice!
+" Uses t as temporary register
 nmap <leader>uS n"tyiw:%s/<c-r>//<c-r>t/g<left><left>
 nmap <leader>us "tyiw:s/<c-r>//<c-r>t/g<left><left>
+
+vnoremap <leader>uS "ty:%s/<c-r>t/<c-r>t/g<left><left>
+vnoremap <leader>us "ty:s/<c-r>t/<c-r>t/g<left><left>
 
 noremap * :set hlsearch<CR>*N
 

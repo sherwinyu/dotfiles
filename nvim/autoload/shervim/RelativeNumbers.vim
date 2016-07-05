@@ -1,20 +1,21 @@
 function! SetLineNumberAutocommands()
   augroup LineNumbers
     autocmd!
-    autocmd FocusLost * :set norelativenumber
-    autocmd FocusGained * :set relativenumber
 
-    autocmd WinEnter * :set relativenumber
-    autocmd WinLeave * :set norelativenumber
+    autocmd FocusLost * :call SetRelativeNumberUnlessInTermWindow(0)
+    autocmd FocusGained * :call SetRelativeNumberUnlessInTermWindow(1)
 
-    autocmd BufEnter * :set relativenumber
-    autocmd BufLeave * :set norelativenumber
+    autocmd WinEnter * :call SetRelativeNumberUnlessInTermWindow(1)
+    autocmd WinLeave * :call SetRelativeNumberUnlessInTermWindow(0)
 
-    autocmd InsertLeave * :set relativenumber
-    autocmd InsertEnter * :set norelativenumber
+    autocmd BufEnter * :call SetRelativeNumberUnlessInTermWindow(1)
+    autocmd BufLeave * :call SetRelativeNumberUnlessInTermWindow(0)
 
-    autocmd CmdwinEnter * :set norelativenumber
-    autocmd CmdwinLeave * :set relativenumber
+    autocmd InsertLeave * :call SetRelativeNumberUnlessInTermWindow(1)
+    autocmd InsertEnter * :call SetRelativeNumberUnlessInTermWindow(0)
+
+    autocmd CmdwinEnter * :call SetRelativeNumberUnlessInTermWindow(0)
+    autocmd CmdwinLeave * :call SetRelativeNumberUnlessInTermWindow(1)
 
     autocmd CmdwinEnter * :set background=dark
     autocmd CmdwinLeave * :set background=light
@@ -22,6 +23,18 @@ function! SetLineNumberAutocommands()
 endfunction
 
 call SetLineNumberAutocommands()
+
+
+function! SetRelativeNumberUnlessInTermWindow(no)
+  if exists('b:IsTerminal')
+    return
+  endif
+  if a:no
+    :set norelativenumber
+  else
+    :set relativenumber
+  endif
+endfunction
 
 
 " Set k and j update teh jumplist"

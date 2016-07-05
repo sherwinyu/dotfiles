@@ -68,6 +68,8 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'tpope/vim-fugitive'
 
+" Terminal
+Plug 'kassio/neoterm'
 
 " Linting
 Plug 'benekastah/neomake', {'on': 'Neomake'}
