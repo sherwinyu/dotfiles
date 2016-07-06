@@ -161,7 +161,8 @@ set hidden
 set wildmenu
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep,*.pyc  " MacOSX/Linux
 
-set switchbuf+=usetab " so that using :sb doesn't open change current window
+"set switchbuf+=usetab " so that using :sb doesn't open change current window
+"2016-06-27: DISABLING for now to get quicklist jumping better
 set expandtab
 set shiftwidth=2
 set softtabstop=2
