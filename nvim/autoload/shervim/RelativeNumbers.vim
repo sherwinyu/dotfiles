@@ -25,14 +25,14 @@ endfunction
 call SetLineNumberAutocommands()
 
 
-function! SetRelativeNumberUnlessInTermWindow(no)
+function! SetRelativeNumberUnlessInTermWindow(yesRelativeNumber)
   if exists('b:IsTerminal')
     return
   endif
-  if a:no
-    :set norelativenumber
-  else
+  if a:yesRelativeNumber
     :set relativenumber
+  else
+    :set norelativenumber
   endif
 endfunction
 
