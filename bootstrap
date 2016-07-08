@@ -23,6 +23,8 @@ mv .agignore dotfiles_old
 mv .yadr dotfiles_old
 mv .zprezto dotfiles_old
 
+mkdir .config
+ln -s dotfiles/nvim .config/nvim
 ln -s dotfiles/.vimrc .vimrc
 ln -s dotfiles/.vim .vim
 ln -s dotfiles/.tmux.conf .tmux.conf
