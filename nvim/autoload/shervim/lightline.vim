@@ -16,8 +16,8 @@ let g:lightline = {
       \   'ctrlpmark': 'CtrlPMark',
       \   'modified': 'MyModified',
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 
 
