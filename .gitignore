@@ -12,3 +12,4 @@ custom_plan.rb
 .s3cfg
 
 .vim/sessions/*
+.DS_STORE
