@@ -25,6 +25,8 @@ alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gpush='git push'
 alias gpull='git pull'
+alias grs="git reset"
+alias grsH="git reset --hard"
 alias grb="git rebase"
 alias grbi="git rebase -i"
 alias gl='git log --pretty=format:"[%h] %an %cr: %s"'
@@ -76,9 +78,6 @@ alias -g BE='bundle exec'
 alias -g CA='--color=always'
 alias -g CAAP='--color=always | ack --passthru'
 alias -g HI='|ack --passthru'
-
-# OVERRIDES FOR PREZTO
-unalias sp
 
 # TMUX handlers
 alias tmxsp="cd ~/projects/sp; tmux at -t sp || tmux new -s sp"

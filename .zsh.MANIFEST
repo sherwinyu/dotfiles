@@ -1,6 +1,14 @@
 stty -ixon
 
+sourceit() {
+  [[ -e $!  ]] && source $1
+}
+
+
 export EDITOR=nvim
+export PATH="/Users/yxy/dotfiles/bin:$PATH"
+export EDITOR=/usr/local/bin/nvim
+
 source ~/dotfiles/.zsh.variables
 source ~/dotfiles/.zsh.aliases
 source ~/dotfiles/.zsh.fancy_ctrlz
@@ -16,3 +24,63 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 bindkey -e
+
+alias sed=gsed
+
+ggsed() {
+  ag -l $1 | xargs gsed -i -e "s/$1/$2/g"
+}
+
+# copy the rest of the line to keyboard
+# usage:
+# $ cc some_long_file_path
+copy_args() {
+  echo "$@" | tr -d '\n' | pbcopy
+}
+alias cc=copy_args
+alias -g TRIM="| tr -d '\n'"
+
+# Fast ag
+# http://zshwiki.org/home/scripting/args
+agg() {
+  ag "$*"
+}
+ag_python_import() {
+  agp --heading "import.*$1" | head -n 50 | sed 's/^[^:]*:[0-9]*://g'
+}
+ag_coffee_require() {
+  agc "require.*$1"
+}
+alias agcr=ag_coffee_require
+
+source ~/.benchling-dotfiles/.zshrc.benchling
+# Personal overrides
+sourceit ~/.zshrc.benchling
+
+
+
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# # zsh: Place this in .zshrc after "source /Users/georgen/.iterm2_shell_integration.zsh".
+# source ~/.iterm2_shell_integration.`basename $SHELL`
+# iterm2_print_user_vars() {
+#    iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
+#    }
+
+# zsh: Place this in .zshrc after "source /Users/georgen/.iterm2_shell_integration.zsh".
+# source ~/.iterm2_shell_integration.zsh
+# iterm2_print_user_vars() {
+#   iterm2_set_user_var gitBranch  $((git branch 2> /dev/null) | grep \* | cut -c3-)
+# }
+
+gT() {
+  testPath=$1
+  testPath=${testPath#coffee}
+  testPath=${testPath/coffee$/js}
+  testPath='js-build'${testPath}
+  echo $testPath
+  gulp test --testFile $testPath
+}
+
+# FZF setup
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
