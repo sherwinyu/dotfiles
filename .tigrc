@@ -1,0 +1,2 @@
+# Copy commit hash
+bind generic y !@zsh -c "echo -n %(commit) | pbcopy"
