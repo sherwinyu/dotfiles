@@ -10,6 +10,7 @@ set path+=~/dotfiles/nvim/sherneovim
 set path+=~/dotfiles/nvim/sherneovim/plugin_config
 set suffixesadd+=.vim
 
+
 """""""""""""""""""""""""""""""""""""""
 " Modules to load modules load ------------------------------------
 
@@ -55,10 +56,20 @@ vmap <space><space> <Leader><leader>
 " MAPPINGS
 "
 
+nnoremap <c-c> <esc>ggVGcDONT USE CTRL C
+inoremap <c-c> <esc>ggVGcDONT USE CTRL C
+vnoremap <c-d> <esc>
+
+
+" Disable mouse drag
+" From: http://vim.wikia.com/wiki/Make_mouse_drag_not_select_text_or_go_into_visual_mode
+noremap <LeftDrag> <LeftMouse>
+noremap! <LeftDrag> <LeftMouse>
+
 inoremap kj <esc>
 inoremap jk <esc>
 vnoremap <space><space> <esc>
-cnoremap kj <esc>
+cnoremap kj <c-c>
 
 " Leader-SETTING mappings
 map <leader>sp :set paste!<cr>
@@ -129,8 +140,9 @@ nnoremap <leader>= :normal @e<CR>
 """ DISABLED STUFF
 " Disable Ex mode
 " http://www.bestofvim.com/tip/leave-ex-mode-good/
-noremap Q <nop>
-noremap q: <nop>
+nnoremap q: <nop>
+nnoremap q <nop>
+nnoremap Q q
 nmap K <nop>
 
 map <c-f> 4j

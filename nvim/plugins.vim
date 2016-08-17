@@ -7,12 +7,10 @@ endfunction
 
 
 " File navigation
-Plug 'ctrlp.vim', {'on': ['CtrlP', 'CtrlPMRU']}
-Plug 'vim-scripts/ctrlp-funky', {'on': ['CtrlP', 'CtrlPMRU']}
-Plug 'JazzCore/ctrlp-cmatcher', {'on': ['CtrlP', 'CtrlPMRU']}
-call LoadPluginConfig('ctrl_p')
-
-
+" Plug 'ctrlp.vim', {'on': ['CtrlP', 'CtrlPMRU']}
+" Plug 'vim-scripts/ctrlp-funky', {'on': ['CtrlP', 'CtrlPMRU']}
+" Plug 'JazzCore/ctrlp-cmatcher', {'on': ['CtrlP', 'CtrlPMRU']}
+" call LoadPluginConfig('ctrl_p')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call LoadPluginConfig('fzf')
@@ -24,7 +22,7 @@ Plug 'gcmt/taboo.vim'
 call LoadPluginConfig('Taboo')
 
 " Distraction free writing
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/limelight.vim'
 call LoadPluginConfig('goyo')
 
@@ -91,7 +89,7 @@ call LoadPluginConfig('deoplete')
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'groenewege/vim-less'
 
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'othree/yajs.vim', {'for': ['javascript']}
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'gavocanov/vim-js-indent', { 'for': ['javascript', 'javascript.jsx'] }

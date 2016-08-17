@@ -44,8 +44,6 @@ map gj <Plug>(IndentWiseNextEqualIndent)
 
 
 
-
-
 "
 " ==================================================================== ACROSS FILES  ==========================================================
 "
@@ -84,5 +82,7 @@ nnoremap <leader><leader>t :CtrlPFunky<CR>
 
 " Set up gf for coffee requires
 set path+=~/work/aurelia/coffee
+set path+=~/aurelia/coffee
+set path+=~/aurelia/
 set suffixesadd+=.coffee,.js
 
