@@ -56,6 +56,16 @@ alias agcr=ag_coffee_require
 source ~/.benchling-dotfiles/.zshrc.benchling
 # Personal overrides
 sourceit ~/.zshrc.benchling
+alias grbd='git rebase dev'
+alias grbid='git rebase -i dev'
+alias rs='bin/runserver'
+alias psqlb='bin/psql -h localhost benchling'
+alias rc='bin/shell'
+alias gp='gulp'
+alias pyunittest='bin/pyunittest'
+alias wau='workon aurelia'
+
+# END PERSONAL OVERRIDESKJ
 
 
 
@@ -73,13 +83,8 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 #   iterm2_set_user_var gitBranch  $((git branch 2> /dev/null) | grep \* | cut -c3-)
 # }
 
-gT() {
-  testPath=$1
-  testPath=${testPath#coffee}
-  testPath=${testPath/coffee$/js}
-  testPath='js-build'${testPath}
-  echo $testPath
-  gulp test --testFile $testPath
+gt() {
+  gp test --testFile $1
 }
 
 # FZF setup
