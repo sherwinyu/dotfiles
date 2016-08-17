@@ -6,18 +6,28 @@ snippet s1l "console.log"
 console.log(${1:'$2'});
 endsnippet
 
-snippet =>
-() => {
-  $1
-}
+snippet => "javascript function inline"
+($1) => $0
 endsnippet
+
+
+snippet =>{ "javascript function body"
+($1) => {
+  $2
+$0
+endsnippet
+
 
 snippet rie! "React If Else"
 {(() => {
   if ($1) {
-    $2
+    return (
+      $2
+    );
   } else {
-  $3
+    return (
+      $3
+    );
   }
 })()}
 endsnippet
@@ -28,6 +38,12 @@ snippet r?! "React Ternary"
   ? ${2:true_expression}
   : ${3:false_expression}
 }
+endsnippet
+
+snippet r&&! "React and-block"
+{${1:conditional} && (
+  ${2:<component>}$0
+)}
 endsnippet
 
 
@@ -166,3 +182,20 @@ const WorkspaceItemTab = React.createClass({
 });
 endsnippet
 
+
+
+snippet pstr "React.PropTypes.string"
+React.PropTypes.string
+endsnippet
+
+snippet pnum "React.PropTypes.number"
+React.PropTypes.number
+endsnippet
+
+snippet pbool "React.PropTypes.bool"
+React.PropTypes.bool
+endsnippet
+
+snippet pfunc "React.PropTypes.func"
+React.PropTypes.func
+endsnippet
