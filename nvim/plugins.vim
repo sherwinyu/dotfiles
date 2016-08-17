@@ -52,6 +52,7 @@ call LoadPluginConfig('targets')
 " Editing
 Plug 'AndrewRadev/sideways.vim'
 Plug 'commentary.vim'
+call LoadPluginConfig('commentary')
 Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-abolish'
@@ -99,6 +100,8 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'heartsentwined/vim-emblem'
 Plug 'jade.vim'
 
+Plug 'airblade/vim-gitgutter'
+call LoadPluginConfig('gitgutter')
 call plug#end()
 
 
@@ -149,11 +152,9 @@ Plug 'kshenoy/vim-signature'
 
 Plug 'dag/vim2hs'
 
-Plug 'airblade/vim-gitgutter'
 let g:gitgutter_enabled = 1
 let g:gitgutter_realtime = 0
 let g:gitgutter_realtime_eager = 0
-runtime autoload/shervim/GitGutter.vim
 
 "JS syntax highlighting
 endif

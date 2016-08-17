@@ -19,4 +19,4 @@ endfunction
 
 
 nnoremap <silent> <leader>sgg :call GitGutterToggle()<cr>
-nnoremap <silent> <leader>sgd :let g:gitgutter_diff_args = 'HEAD'
+nnoremap <silent> <leader>sgd :let g:gitgutter_diff_args = 'HEAD~1'
