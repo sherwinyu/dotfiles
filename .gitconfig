@@ -4,6 +4,7 @@
 [core]
 	editor = nvim
       excludesfile = /opt/boxen/config/git/gitignore
+	pager = less -F -X
 [color]
   ui = auto
 [color "branch"]
