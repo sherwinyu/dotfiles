@@ -3,12 +3,7 @@ stty -ixon
 sourceit() {
   [[ -e $!  ]] && source $1
 }
-
-
-export EDITOR=nvim
-export PATH="/Users/yxy/dotfiles/bin:$PATH"
-export EDITOR=/usr/local/bin/nvim
-
+source ~/.benchling-dotfiles/.zshrc.benchling
 source ~/dotfiles/.zsh.variables
 source ~/dotfiles/.zsh.aliases
 source ~/dotfiles/.zsh.fancy_ctrlz
@@ -19,18 +14,15 @@ if [[ -r ~/dotfiles/.zshrc.local ]]; then
   source ~/dotfiles/.zshrc.local
 fi
 
-# Make rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="/Users/yxy/dotfiles/bin:$PATH"
+export EDITOR=/usr/local/bin/nvim
 
 bindkey -e
 
 alias sed=gsed
-
 ggsed() {
   ag -l $1 | xargs gsed -i -e "s/$1/$2/g"
 }
-
 # copy the rest of the line to keyboard
 # usage:
 # $ cc some_long_file_path
@@ -45,47 +37,18 @@ alias -g TRIM="| tr -d '\n'"
 agg() {
   ag "$*"
 }
-ag_python_import() {
-  agp --heading "import.*$1" | head -n 50 | sed 's/^[^:]*:[0-9]*://g'
-}
-ag_coffee_require() {
-  agc "require.*$1"
-}
-alias agcr=ag_coffee_require
-
-source ~/.benchling-dotfiles/.zshrc.benchling
-# Personal overrides
-sourceit ~/.zshrc.benchling
-alias grbd='git rebase dev'
-alias grbid='git rebase -i dev'
-alias rs='bin/runserver'
-alias psqlb='bin/psql -h localhost benchling'
-alias rc='bin/shell'
-alias gp='gulp'
-alias pyunittest='bin/pyunittest'
-alias wau='workon aurelia'
-
-# END PERSONAL OVERRIDESKJ
-
-
-
-export FZF_DEFAULT_COMMAND='ag -g ""'
-
-# # zsh: Place this in .zshrc after "source /Users/georgen/.iterm2_shell_integration.zsh".
-# source ~/.iterm2_shell_integration.`basename $SHELL`
-# iterm2_print_user_vars() {
-#    iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
-#    }
-
-# zsh: Place this in .zshrc after "source /Users/georgen/.iterm2_shell_integration.zsh".
-# source ~/.iterm2_shell_integration.zsh
-# iterm2_print_user_vars() {
-#   iterm2_set_user_var gitBranch  $((git branch 2> /dev/null) | grep \* | cut -c3-)
-# }
-
 gt() {
   gp test --testFile $1
 }
 
-# FZF setup
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Personal overrides for work
+alias grbd='git rebase dev'
+alias grbid='git rebase -i dev'
+alias d='bin/dev'
+alias rs='bin/runserver'
+alias psqlb='bin/psql -h localhost benchling'
+alias rc='bin/dev shell'
+alias gp='gulp'
+alias pyunittest='bin/pyunittest'
+alias wau='workon aurelia'
+# END PERSONAL OVERRIDES

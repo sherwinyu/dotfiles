@@ -1,4 +1,22 @@
 export NVM_DIR="/Users/sherwin/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+NODE_VERSION="v4.4.7"
+. "$NVM_DIR/nvm.sh" --no-use
+export PATH="${PATH}:${HOME}/.nvm/versions/node/${NODE_VERSION}/bin"
 
-eval $(dinghy env)
+# Replaced with exporting variables directly!
+# eval $(dinghy env)
+export DOCKER_HOST=tcp://192.168.99.100:2376
+export DOCKER_CERT_PATH=/Users/sherwin/.docker/machine/machines/dev
+export DOCKER_TLS_VERIFY=1
+export DOCKER_MACHINE_NAME=dev
+
+# FZF setup
+export FZF_DEFAULT_COMMAND='ag -g ""'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Make rbenv
+source_rb_env() {
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+}
