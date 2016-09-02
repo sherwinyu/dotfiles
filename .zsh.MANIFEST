@@ -38,17 +38,5 @@ agg() {
   ag "$*"
 }
 gt() {
-  gp test --testFile $1
+  gulp test --testFile $1
 }
-
-# Personal overrides for work
-alias grbd='git rebase dev'
-alias grbid='git rebase -i dev'
-alias d='bin/dev'
-alias rs='bin/runserver'
-alias psqlb='bin/psql -h localhost benchling'
-alias rc='bin/dev shell'
-alias gp='gulp'
-alias pyunittest='bin/pyunittest'
-alias wau='workon aurelia'
-# END PERSONAL OVERRIDES

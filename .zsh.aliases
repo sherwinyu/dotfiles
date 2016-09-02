@@ -29,6 +29,8 @@ alias grs="git reset"
 alias grsH="git reset --hard"
 alias grb="git rebase"
 alias grbi="git rebase -i"
+alias grbd='git rebase dev'
+alias grbid='git rebase -i dev'
 alias gl='git log --pretty=format:"[%h] %an %cr: %s"'
 alias gll="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gld='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn]" --decorate --date=relative'
@@ -45,9 +47,6 @@ alias hl='heroku logs'
 alias hlt='heroku logs --tail'
 alias -g RP="-r prod"
 alias -g RS="-r staging"
-
-# macvim
-alias mvi="open -a MacVim ."
 
 alias zr='source ~/.zshrc'
 alias ze='nvim ~/.zshrc'
@@ -93,6 +92,14 @@ alias ad="arc diff"
 alias adpc="ad --plan-changes"
 alias arm="alembic revision -m"
 alias aP="arc patch"
+alias d='bin/dev'
+alias db='bin/db'
+alias rs='bin/runserver'
+alias psqlb='bin/psql -h localhost benchling'
+alias rc='bin/dev shell'
+alias gp='gulp'
+alias pyunittest='bin/dev pyunit'
+alias wau='workon aurelia'
 
 alias ag="ag --noheading"
 alias agh="ag --heading"
