@@ -56,8 +56,6 @@ vmap <space><space> <Leader><leader>
 " MAPPINGS
 "
 
-nnoremap <c-c> <esc>ggVGcDONT USE CTRL C
-inoremap <c-c> <esc>ggVGcDONT USE CTRL C
 vnoremap <c-d> <esc>
 
 
