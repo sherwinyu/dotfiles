@@ -1,4 +1,4 @@
-
+# weekdays
 00 22  * * 0-4 Say 'Prepare to go to bed!'
 30 22  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed!'
 35 22  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed!'
@@ -10,3 +10,19 @@
 */3 0  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
 */2 1  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
 */1 2  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
+
+
+# weekends
+# Warning at 23:00
+# Off at 23:30
+# Every 3 minutes at 0:00
+00 23  * * 5-6 Say 'Prepare to go to bed!'
+30 23  * * 5-6 /sbin/ifconfig en0 down; say 'Go to bed!'
+35 23  * * 5-6 /sbin/ifconfig en0 down; say 'Go to bed!'
+40 23  * * 5-6 /sbin/ifconfig en0 down; say 'Go to bed!'
+45 23  * * 5-6 /sbin/ifconfig en0 down
+50 23  * * 5-6 /sbin/ifconfig en0 down
+55 23  * * 5-6 /sbin/ifconfig en0 down
+*/3 0  * * 6-7 /sbin/ifconfig en0 down; say 'Go to bed'
+*/2 1  * * 6-7 /sbin/ifconfig en0 down; say 'Go to bed'
+*/1 2  * * 6-7 /sbin/ifconfig en0 down; say 'Go to bed'
