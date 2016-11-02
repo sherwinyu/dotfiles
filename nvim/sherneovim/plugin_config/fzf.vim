@@ -13,8 +13,7 @@ nmap <leader>> :FZF<cr><c-r>
 nmap <leader><tab> <plug>(fzf-maps-n)
 
 imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-f> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 function! s:fzf_statusline()
@@ -69,17 +68,17 @@ nmap <leader>gd gd$F'gf
 
 
 
-function! s:ag_with_opts(arg, bang)
-  let tokens  = split(a:arg)
-  let ag_opts = join(filter(copy(tokens), 'v:val =~ "^-"'))
-  let query   = join(filter(copy(tokens), 'v:val !~ "^-"'))
-  call fzf#vim#ag(query, ag_opts, a:bang ? {} : {'down': '40%'})
-endfunction
+" function! s:ag_with_opts(arg, bang)
+"   let tokens  = split(a:arg)
+"   let ag_opts = join(filter(copy(tokens), 'v:val =~ "^-"'))
+"   let query   = join(filter(copy(tokens), 'v:val !~ "^-"'))
+"   call fzf#vim#ag(query, ag_opts, a:bang ? {} : {'down': '40%'})
+" endfunction
 
-augroup vim_enter_fzf
-  autocmd!
-  autocmd VimEnter * command! -nargs=* -bang Agv call s:ag_with_opts(<q-args>, <bang>0)
-augroup ENDK
+" augroup vim_enter_fzf
+"   autocmd!
+"   autocmd VimEnter * command! -nargs=* -bang Agv call s:ag_with_opts(<q-args>, <bang>0)
+" augroup ENDK
 
 
 

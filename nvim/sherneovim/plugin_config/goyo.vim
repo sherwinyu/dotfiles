@@ -1,4 +1,4 @@
-nnoremap <leader>sg :Goyo<cr>
+nnoremap <leader>sgo :Goyo<cr>
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
