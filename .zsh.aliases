@@ -38,7 +38,10 @@ alias glds='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%c
 alias gfl='git log -u'
 alias gR='git reese'
 alias gcor='gco $(git branch --sort=-committerdate | fzf-tmux -d 10)'
+alias gcod='gco dev'
 alias -g BRANCH='$(git branch | fzf-tmux -d 10)'
+
+alias gsxnvim="gs --porcelain | cut -d ' ' -f 3 X nvim "
 
 alias hrc='heroku run console'
 alias hr='heroku run'
