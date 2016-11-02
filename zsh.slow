@@ -1,8 +1,9 @@
 export NVM_DIR="/Users/sherwin/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-NODE_VERSION="v4.4.7"
+NODE_VERSION="4.4.7"
 . "$NVM_DIR/nvm.sh" --no-use
-export PATH="${PATH}:${HOME}/.nvm/versions/node/${NODE_VERSION}/bin"
+export PATH=$HOME/.nvm/versions/node/v$NODE_VERSION/bin:$PATH
+
 
 # Replaced with exporting variables directly!
 # eval $(dinghy env)
