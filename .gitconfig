@@ -3,7 +3,6 @@
 	email = sherwin.x.yu@gmail.com
 [core]
 	editor = nvim
-      excludesfile = /opt/boxen/config/git/gitignore
 	pager = less -F -X
 [color]
   ui = auto
@@ -22,7 +21,6 @@
   untracked = cyan
 
 [credential]
-helper = /opt/boxen/bin/boxen-git-credential
 
 [hub]
 protocol = https
