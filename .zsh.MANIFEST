@@ -40,3 +40,8 @@ agg() {
 gt() {
   gulp test --testFile $1
 }
+
+
+function genome_grep() {
+  curl $1 2>/dev/null | gunzip -c | grep ">" | grep "(plasmid\|chloroplast\|incision element\|mitochondrial\|mitochondrion)"
+}
