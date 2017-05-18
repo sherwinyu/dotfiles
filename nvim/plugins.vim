@@ -56,8 +56,9 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-abolish'
 Plug 'surround.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-unimpaired'
-call LoadPluginConfig('unimpaired')
+" Fuck this shit
+" Plug 'tpope/vim-unimpaired'
+" call LoadPluginConfig('unimpaired')
 Plug 'tpope/vim-unimpaired'
 call LoadPluginConfig('autopairs')
 

@@ -6,4 +6,8 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
+" Unmap the =p and =P defined by vim-unimpaired
+nunmap =p
+nunmap =P
+
 " Source: http://vimcasts.org/episodes/bubbling-text/
