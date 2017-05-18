@@ -1,4 +1,0 @@
-benchling/static
-benchling/static/*
-*.pyc
-node_modules/
