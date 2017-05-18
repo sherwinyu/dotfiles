@@ -70,7 +70,8 @@ map <leader><f1> :call QuickfixToggle()<CR>
 
 " Searching via FZF / ag
 vnoremap <leader>* "vy<c-c>:Ag <c-r>v<CR>
-nnoremap <leader>* :Ag <c-r><c-w><CR>
+nnoremap <leader>* :Ag <c-r><c-w><CR>!test<space>
+nnoremap <leader>& :Ag <c-r><c-w><CR>
 nnoremap <leader>/ :Ag <c-r>/
 nnoremap <leader>A :Ag<space>
 

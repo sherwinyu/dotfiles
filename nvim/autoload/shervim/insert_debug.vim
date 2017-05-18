@@ -16,4 +16,4 @@ function! InsertDebugger(should_insert_on_newline)
 endfunction
 
 nnoremap <leader>d :silent :call InsertDebugger(1)<cr>
-inoremap \d <c-o>:silent :call InsertDebugger(1)<cr><c-o>o
+inoremap \d <c-g>u<c-o>:silent :call InsertDebugger(1)<cr><c-o>o

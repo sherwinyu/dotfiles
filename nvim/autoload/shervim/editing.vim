@@ -39,7 +39,7 @@ nmap <leader>gB ysiWb
 nmap <leader>gf ysiwbi
 nmap <leader>gF ysiWbi
 " Wrap current selection in a function call
-vmap <leader>gf Sb
+vmap <leader>gf Sbi
 
 
 " inserts a new line while keeping the cursor in the same place

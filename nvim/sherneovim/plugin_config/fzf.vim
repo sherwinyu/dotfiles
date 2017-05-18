@@ -81,5 +81,4 @@ nmap <leader>gd gd$F'gf
 " augroup ENDK
 
 
-
-
+let g:fzf_history_dir = '~/.local/share/fzf-history'

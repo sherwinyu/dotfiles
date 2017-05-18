@@ -20,3 +20,6 @@ endfunction
 
 nnoremap <silent> <leader>sgg :call GitGutterToggle()<cr>
 nnoremap <silent> <leader>sgd :let g:gitgutter_diff_args = 'HEAD~1'
+
+nnoremap <silent> <leader>} :GitGutterNextHunk<cr>
+nnoremap <silent> <leader>{ :GitGutterPrevHunk<cr>
