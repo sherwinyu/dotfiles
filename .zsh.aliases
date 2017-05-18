@@ -42,6 +42,7 @@ alias glds='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%c
 alias gfl='git log -u'
 alias gR='git reese'
 alias gcor='gco $(git branch --sort=-committerdate | fzf-tmux -d 10)'
+alias crev='scripts/dev/checkout_revision'
 alias gcod='gco dev'
 alias -g BRANCH='$(git branch | fzf-tmux -d 10)'
 
@@ -105,7 +106,7 @@ alias rs='bin/runserver'
 alias psqlb='bin/psql -h localhost benchling'
 alias rc='bin/dev shell'
 alias gp='gulp'
-alias pyunittest='bin/dev pyunit'
+alias pt='bin/dev pyunit'
 alias wau='workon aurelia'
 
 alias ag="ag --noheading"
@@ -113,3 +114,8 @@ alias agh="ag --heading"
 alias agpi="ag_python_import"
 
 alias retag="ctags -R coffee benchling"
+
+alias vimdiff='nvim -d'
+
+# Benchling psql
+alias psqlb='bin/dev psql -h localhost benchling'
