@@ -40,9 +40,71 @@ function! s:dashcase(word)
   return substitute(s:snakecase(a:word),'_','-','g')
 endfunction
 
-function! SetRegisterT()
-  let @t=s:dashcase(@t)
+function! SetRegisterT(register_contents)
+  let @t=a:register_contents
 endfunction
+
+function! GetNameVariationsForFZF(word_param)
+  let word = a:word_param
+  return word . ' | ' . s:snakecase(word) . ' | ' . s:dashcase(word)
+endfunction
+
+function! ShortFileName()
+  " %      is full filename
+  " :t     is tail
+  " :r     is root (trim extension)
+  return expand('%:t:r')
+endfunction
+
+" Returns the 'alternate name' of the file.
+" If current file is a test, it returns its corresponding file.
+" If it's a file, it returns the corresponding test.
+" Works for both python and js / coffee files
+"
+" Examples:
+" Invoked with current file: coffee/samples/__tests__/ContainerSchemasPage-test.js
+"   -> returns 'coffee/samples/ContainerSchemasPage.js'
+" Invoked with current file: benchling/api/samples/storables.py
+"   -> returns 'tests/unit/api/samples/storables_test.py'
+function! AltName()
+  let filename = expand('%')
+
+  " :e get extension, e.g., 'py'
+  if expand('%:e') == 'py'
+    let test_header = 'tests/unit'
+    let unit_header = 'benchling'
+
+    " if it's a python test
+    if filename =~ '^' . test_header
+      let filename = substitute(filename, test_header, unit_header, '')
+      let filename = substitute(filename, '_test.py$', '.py', '')
+      return filename
+    else
+      let filename = substitute(filename, unit_header, test_header, '')
+      let filename = substitute(filename, '.py$', '_test.py', '')
+      return filename
+    endif
+  endif
+
+  if expand('%:e') == 'coffee' || expand('%:e') == 'js'
+   " coffee/samples/__tests__/ContainerSchemasPage-test.js
+   " coffee/samples/ContainerSchemasPage.js
+
+    " if it's a js test
+    if filename =~ '__tests__'
+      let filename = substitute(filename, '/__tests__', '', '')
+      let filename = substitute(filename, '-test.js', '.js', '')
+      return filename
+    else
+    " :t  get tail, e.g., ContainerSchemasPage-test.js
+      let unit_name = expand('%:t')
+      let filename = substitute(filename, unit_name, '__tests__/' . unit_name, '')
+      let filename = substitute(filename, '.js$', '-test.js', '')
+      return filename
+    endif
+  endif
+endfunction
+
 
 "   leader ctrl-]  for go to file from variable name.
 "   Running this on 'ModalAnchor' will FZF search for 'ModalAnchor | modal-anchor'
@@ -50,14 +112,23 @@ endfunction
 "   viw"t                            copy word under cursor into temporary register t
 "   :FZF<cr>                         start FZF
 "   <c-\><c-n>                       exit terminal mode
-"   "tp                              paste word under cursor from temporary registry t
-"   a                                resume search mode
-"   <space><bar><space>              Insert a | (for OR search)
-"   <c-\><c-n>                       Exit terminal mode again
-"   :call<space>SetRegisterT()<cr>   Copy the dash-cased version of the word into register t
-"   "tp                              Paste the dashed veresion
+"   :call<space>SetRegisterT(...)<cr>   Copy the name variations of the word into register t
+"   "tp                              Paste the name variations (e.g., `CreateContainers | create_containers | create-containers`)
 "   a<space>                         Re enter terminal mode and append a space
-nmap <leader> viw"ty:FZF<cr><c-\><c-n>"tpa<space><bar><space><c-\><c-n>:call<space>SetRegisterT()<cr>"tpa<space>
+nmap <leader> viw"ty:FZF<cr><c-\><c-n>:call<space>SetRegisterT(GetNameVariationsForFZF(@t, 0))<cr>"tpa<space>
+
+" Jump to alternate file
+" nmap <leader>^ :call<space>SetRegisterT(AltName())<cr>:FZF<cr><c-\><c-n>"tpa<space>
+nmap <leader>^ :exe ':e ' . AltName()<cr>
+
+tmap \t <space>'test<space>
+tmap \T <space>!test<space>
+tmap \c <space>^coffee<space>
+tmap \j <space>^coffee<space>
+tmap \p <space>^benchling<space>
+tmap \b <space>^benchling<space>
+tmap \a <space>'api<space>
+
 
 " leader g r   Go to ReactClass
 nmap <leader>grc <leader>*createClass
