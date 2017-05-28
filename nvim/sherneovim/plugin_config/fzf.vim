@@ -121,13 +121,13 @@ nmap <leader> viw"ty:FZF<cr><c-\><c-n>:call<space>SetRegisterT(GetNameVariation
 " nmap <leader>^ :call<space>SetRegisterT(AltName())<cr>:FZF<cr><c-\><c-n>"tpa<space>
 nmap <leader>^ :exe ':e ' . AltName()<cr>
 
-tmap \t <space>'test<space>
-tmap \T <space>!test<space>
+tmap \T <space>'test<space>
+tmap \t <space>!test<space>
 tmap \c <space>^coffee<space>
 tmap \j <space>^coffee<space>
 tmap \p <space>^benchling<space>
 tmap \b <space>^benchling<space>
-tmap \a <space>'api<space>
+tmap \a <space>'/api<space>
 
 
 " leader g r   Go to ReactClass
