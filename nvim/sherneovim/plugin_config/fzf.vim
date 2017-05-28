@@ -137,19 +137,9 @@ nmap <leader>gru <leader>*<
 " leader g d   Go to definition (for javascriptw)
 nmap <leader>gd gd$F'gf
 
+nmap <leader>gd gd$F'gf
 
-
-" function! s:ag_with_opts(arg, bang)
-"   let tokens  = split(a:arg)
-"   let ag_opts = join(filter(copy(tokens), 'v:val =~ "^-"'))
-"   let query   = join(filter(copy(tokens), 'v:val !~ "^-"'))
-"   call fzf#vim#ag(query, ag_opts, a:bang ? {} : {'down': '40%'})
-" endfunction
-
-" augroup vim_enter_fzf
-"   autocmd!
-"   autocmd VimEnter * command! -nargs=* -bang Agv call s:ag_with_opts(<q-args>, <bang>0)
-" augroup ENDK
+nmap <leader>gs :GFiles?<CR>
 
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
