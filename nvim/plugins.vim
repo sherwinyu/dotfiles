@@ -59,7 +59,6 @@ Plug 'jiangmiao/auto-pairs'
 " Fuck this shit
 " Plug 'tpope/vim-unimpaired'
 " call LoadPluginConfig('unimpaired')
-Plug 'tpope/vim-unimpaired'
 call LoadPluginConfig('autopairs')
 
 
