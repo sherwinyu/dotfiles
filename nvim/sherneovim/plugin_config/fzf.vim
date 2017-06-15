@@ -115,7 +115,7 @@ endfunction
 "   :call<space>SetRegisterT(...)<cr>   Copy the name variations of the word into register t
 "   "tp                              Paste the name variations (e.g., `CreateContainers | create_containers | create-containers`)
 "   a<space>                         Re enter terminal mode and append a space
-nmap <leader> viw"ty:FZF<cr><c-\><c-n>:call<space>SetRegisterT(GetNameVariationsForFZF(@t, 0))<cr>"tpa<space>
+nmap <leader> viw"ty:FZF<cr><c-\><c-n>:call<space>SetRegisterT(GetNameVariationsForFZF(@t))<cr>"tpa<space>
 
 " Jump to alternate file
 " nmap <leader>^ :call<space>SetRegisterT(AltName())<cr>:FZF<cr><c-\><c-n>"tpa<space>
