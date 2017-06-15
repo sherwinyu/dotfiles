@@ -1,32 +1,32 @@
-abbrev Rcf React.createFactory
-abbrev Rcfr React.createFactory require
-abbrev RPT React.PropTypes
-abbrev RPTb React.PropTypes.bool
-abbrev RPTs React.PropTypes.string
-abbrev RPTf React.PropTypes.func
-abbrev RPTo React.PropTypes.object
-abbrev RPTn React.PropTypes.number
+iabbrev Rcf React.createFactory
+iabbrev Rcfr React.createFactory require
+iabbrev RPT React.PropTypes
+iabbrev RPTb React.PropTypes.bool
+iabbrev RPTs React.PropTypes.string
+iabbrev RPTf React.PropTypes.func
+iabbrev RPTo React.PropTypes.object
+iabbrev RPTn React.PropTypes.number
 
-abbrev RPT React.PropTypes
-abbrev RPTbr React.PropTypes.bool.isRequired
-abbrev RPTsr React.PropTypes.string.isRequired
-abbrev RPTfr React.PropTypes.func.isRequired
-abbrev RPTor React.PropTypes.object.isRequired
-abbrev RPTnr React.PropTypes.number.isRequired
+iabbrev RPT React.PropTypes
+iabbrev RPTbr React.PropTypes.bool.isRequired
+iabbrev RPTsr React.PropTypes.string.isRequired
+iabbrev RPTfr React.PropTypes.func.isRequired
+iabbrev RPTor React.PropTypes.object.isRequired
+iabbrev RPTnr React.PropTypes.number.isRequired
 
-abbrev IPDB import ipdb; ipdb.set_trace()  # nopep8
+iabbrev IPDB import ipdb; ipdb.set_trace()  # nopep8
 
-abbrev cdu componentDidUpdate
-abbrev cwu componentWillUpdate
-abbrev cdm componentdidmount
-abbrev cwum componentWillUnmount
-abbrev pt propTypes
-abbrev gis getInitialState
-abbrev gdp getDefaultProps
+iabbrev cdu componentDidUpdate
+iabbrev cwu componentWillUpdate
+iabbrev cdm componentdidmount
+iabbrev cwum componentWillUnmount
+iabbrev pt propTypes
+iabbrev gis getInitialState
+iabbrev gdp getDefaultProps
 
-abbrev dsa db.session.add
-abbrev dsaa db.session.add_all
-abbrev dsd db.session.delete
-abbrev dsc db.session.commit
-abbrev dsr db.session.rollback
-abbrev dsq db.session.query
+iabbrev dsa db.session.add
+iabbrev dsaa db.session.add_all
+iabbrev dsd db.session.delete
+iabbrev dsc db.session.commit
+iabbrev dsr db.session.rollback
+iabbrev dsq db.session.query
