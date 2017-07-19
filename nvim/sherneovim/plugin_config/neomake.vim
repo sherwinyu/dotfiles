@@ -11,3 +11,6 @@ let g:neomake_javascript_eslint_maker = {
 let g:neomake_javascript_enabled_makers = ['eslint']
 
 autocmd! BufWritePost * Neomake
+
+nmap <leader>} :lnext<cr>
+nmap <leader>{ :lprevious<cr>
