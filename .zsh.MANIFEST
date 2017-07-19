@@ -23,6 +23,11 @@ alias sed=gsed
 ggsed() {
   ag -l $1 | xargs gsed -i -e "s/$1/$2/g"
 }
+
+remove_prints() {
+  gd dev... --numstat | cut -f 3 | xargs gsed -i -e "/print/d"
+}
+
 # copy the rest of the line to keyboard
 # usage:
 # $ cc some_long_file_path
