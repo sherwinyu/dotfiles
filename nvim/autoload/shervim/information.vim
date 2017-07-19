@@ -17,7 +17,7 @@ map <leader>if :echom "<c-r>%"<CR>
 map <leader>ifc :let @+ = expand("%")<CR>:echom "Copied file path:  <c-r>%"<CR>
 
 " Super janky command to copy a python test
-map <leader>itc ?def test_<cr>w"ayw<space>kw"byw:let @+ = "pyunittest " . expand("%") . ":<c-r>b" . ".<c-r>a"<CR>:echom "Copied test path:  <c-r>%"<CR>
+map <leader>itc ?def test_<cr>w"ayw<space>kw"byw:let @+ = "pt " . expand("%") . ":<c-r>b" . ".<c-r>a"<CR>:echom "Copied test path:  <c-r>%"<CR>
 
 map <leader>isso :echom "set sessionoptions=buffers,curdir,tabpages,winsize"
 
