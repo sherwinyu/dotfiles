@@ -30,6 +30,7 @@ runtime autoload/shervim/abbreviations.vim
 runtime autoload/shervim/insert_debug.vim
 runtime autoload/shervim/terminal.vim
 runtime autoload/shervim/CloseHiddenBuffers.vim
+runtime autoload/shervim/SortWords.vim
 
 runtime autoload/shervim/gui.vim
 runtime autoload/shervim/lightline.vim
