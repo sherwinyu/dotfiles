@@ -21,6 +21,7 @@ runtime autoload/shervim/session.vim
 runtime autoload/shervim/splitjoin.vim
 runtime autoload/shervim/CleanupRequires.vim
 runtime autoload/shervim/editing.vim
+runtime autoload/shervim/mass-editing.vim
 runtime autoload/shervim/chomp.vim
 runtime autoload/shervim/information.vim
 runtime autoload/shervim/CreatePathsOnSave.vim
@@ -119,14 +120,6 @@ vnoremap <leader>us "ty:s/<c-r>t/<c-r>t/g<left><left>
 
 noremap * :set hlsearch<CR>*N
 
-"Insert semicolons and commas
-let @s="mtA;kj`t"
-let @c="mtA,kj`t"
-noremap <leader>; @s
-noremap <leader>, @c
-vnoremap @s :normal @s<CR>
-vnoremap <leader>; :normal @s<CR>
-vnoremap <leader>, :normal @c<CR>
 
 "Surround word with <> and drop into insert mode
 map <leader>a ysiWaEi<space>
@@ -142,7 +135,6 @@ nnoremap <leader>= :normal @e<CR>
 " http://www.bestofvim.com/tip/leave-ex-mode-good/
 nnoremap q: <nop>
 nnoremap q <nop>
-nnoremap Q q
 nmap K <nop>
 
 map <c-f> 4j
