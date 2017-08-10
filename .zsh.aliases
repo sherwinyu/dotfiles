@@ -41,7 +41,7 @@ alias gld='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn
 alias glds='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn]" --decorate --date=short'
 alias gfl='git log -u'
 alias gR='git reese'
-alias gcor='gco $(git branch --sort=-committerdate | fzf-tmux -d 10)'
+alias gcor='gco $(git branch --sort=-committerdate | fzf-tmux --multi -d 10 -l 30%)'
 alias crev='scripts/dev/checkout_revision'
 alias gcod='gco dev'
 alias -g BRANCH='$(git branch | fzf-tmux -d 10)'
@@ -99,6 +99,7 @@ alias tmxdf="cd ~/dotfiles; tmux at -t df || tmux new -s df"
 # ARC / BENCHLING
 alias clinteastwood="arc lint"
 alias ad="arc diff"
+alias adod="arc diff origin/dev"
 alias adpc="ad --plan-changes"
 alias arm="alembic revision -m"
 alias aP="arc patch"
@@ -106,7 +107,7 @@ alias d='bin/dev'
 alias db='bin/db'
 alias rs='bin/runserver'
 alias psqlb='bin/psql -h localhost benchling'
-alias rc='bin/dev shell'
+alias rc='run_console'
 alias gp='gulp'
 alias pt='bin/dev pyunit'
 alias wau='workon aurelia'

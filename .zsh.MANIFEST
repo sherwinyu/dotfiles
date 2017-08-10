@@ -46,6 +46,19 @@ gt() {
   gulp test --testFile $1
 }
 
+function run_console() {
+  if [[ -n $1 ]]; then
+    echo fab fc:$1 load shell
+    fab fc:$1 load shell
+  else
+    bin/dev shell
+  fi
+}
+
+function select_deploy() {
+  ag --heading 'DEPLOY_NAME = ' | grep "DEPLOY_NAME = '" | sed 's/DEPLOY_NAME = //g' | tr -s ' ' | cut -f 2 -d ' ' | sed "s/'//g" | fzf-tmux -d 10
+}
+alias rcd='rc $(select_deploy)'
 
 function genome_grep() {
   curl $1 2>/dev/null | gunzip -c | grep ">" | grep "(plasmid\|chloroplast\|incision element\|mitochondrial\|mitochondrion)"
