@@ -1,9 +1,14 @@
 stty -ixon
 
+# Set up Benchling dotfiles
+# For docker for mac
+# https://benchling.quip.com/X3DBAaOLseww/Switching-to-Docker-for-Mac
+export AURELIA_ENABLE_DOCKER_FOR_MAC=true
+source ~/.benchling-dotfiles/.zshrc.benchling
+
 sourceit() {
   [[ -e $!  ]] && source $1
 }
-source ~/.benchling-dotfiles/.zshrc.benchling
 source ~/dotfiles/.zsh.variables
 source ~/dotfiles/.zsh.aliases
 source ~/dotfiles/.zsh.fancy_ctrlz
