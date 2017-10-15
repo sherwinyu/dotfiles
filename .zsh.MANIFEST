@@ -24,6 +24,10 @@ ggsed() {
   ag -l $1 | xargs gsed -i -e "s/$1/$2/g"
 }
 
+gdsed() {
+  gd $1... --numstat | cut -f 3 | xargs gsed -i -e $2
+}
+
 remove_prints() {
   gd dev... --numstat | cut -f 3 | xargs gsed -i -e "/print/d"
 }
@@ -43,7 +47,8 @@ agg() {
   ag "$*"
 }
 gt() {
-  gulp test --testFile $1
+  # gulp test --testFile $1
+  bin/dev jsunit --testFile $1
 }
 
 function run_console() {

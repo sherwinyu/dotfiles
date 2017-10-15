@@ -108,8 +108,10 @@ alias db='bin/db'
 alias rs='bin/runserver'
 alias psqlb='bin/psql -h localhost benchling'
 alias rc='run_console'
-alias gp='gulp'
+alias gp='bin/dev webpack'
+alias gbt='bin/dev build-jsunit'
 alias pt='bin/dev pyunit'
+alias ptb='bin/dev pyunit --pdb'
 alias wau='workon aurelia'
 
 alias ag="ag --noheading"
