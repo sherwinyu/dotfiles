@@ -144,3 +144,6 @@ nmap <leader>gs :GFiles?<CR>
 
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+" let g:fzf_layout = { 'left': '~35%' }
+tmap <c-l> <c-\><c-n>10<c-w>
+

@@ -221,6 +221,9 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
       \ | wincmd p | diffthis
 
 autocmd FileType less setlocal commentstring=/*%s*/
+call ColorschemeOldBetter()
+
+autocmd FileType python let python_highlight_all=1
 
 
 

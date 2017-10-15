@@ -14,6 +14,13 @@ endfunction
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call LoadPluginConfig('fzf')
+" Plug 'cocopon/iceberg.vim'
+" Plug 'kristijanhusak/vim-hybrid-material'
+" Plug 'kh3phr3n/python-syntax'
+Plug 'hdima/python-syntax'
+
+Plug 'eugen0329/vim-esearch'
+
 
 
 " GUI / aesthetics
@@ -89,10 +96,21 @@ call LoadPluginConfig('deoplete')
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'groenewege/vim-less'
 
-" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'othree/yajs.vim', {'for': ['javascript']}
-Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'gavocanov/vim-js-indent', { 'for': ['javascript', 'javascript.jsx'] }
+" " Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+" Plug 'othree/yajs.vim', {'for': ['javascript']}
+" Plug 'othree/yajs.vim', {'for': ['javascript']}
+" Plug 'neoclide/vim-jsx-improve', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'gavocanov/vim-js-indent', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'jelera/vim-javascript-syntax'
+
+" Plug 'othree/yajs.vim'
+Plug 'pangloss/vim-javascript'
+" Plug 'gavocanov/vim-js-indent'
+Plug 'MaxMEllon/vim-jsx-pretty'
+" Plug 'neoclide/vim-jsx-improve'
+" Plug 'jelera/vim-javascript-syntax'
+
 
 Plug 'kchmck/vim-coffee-script'
 Plug 'heartsentwined/vim-emblem'

@@ -100,6 +100,7 @@ function! g:HiLinks(isDark)
   endif
 
   if a:isDark
+    highlight link javascriptIdentifierName jsVariableDef
     highlight javascriptIdentifierName ctermfg=Cyan
     highlight javascriptDeemphasized ctermfg=DarkGray
     highlight javascriptOpBold ctermfg=Magenta cterm=bold
@@ -143,6 +144,7 @@ nnoremap <leader>=1 :call ColorschemeTomorrow()<CR>
 nnoremap <leader>=2 :call ColorschemeTomorrowNight()<CR>
 nnoremap <leader>=3 :call ColorschemeSolarizedLight()<CR>
 nnoremap <leader>=4 :call ColorschemeSolarizedDark()<CR>
+nnoremap <leader>=5 :call ColorschemeOldBetter()<CR>
 
 function! ColorschemeTomorrow()
   colorscheme Tomorrow
@@ -167,6 +169,41 @@ function! ColorschemeSolarizedDark()
   highlight iCursor guifg=white guibg=steelblue
   call g:HiLinks(1)
 endfunction
+
+function! ColorschemeOldBetter()
+  let python_highlight_all = 1
+  set background=dark
+  colorscheme Tomorrow-Night
+
+  highlight link jsObject Define
+  highlight link jsObjectKey Define
+  highlight link jsDestructuringBlock Define
+
+  highlight jsxCloseTag ctermfg=Magenta
+  highlight jsxTag ctermfg=Red
+
+  highlight special ctermfg=DarkMagenta cterm=bold
+
+  highlight link noise comment
+
+  highlight link jsUndefined Constant
+  highlight link jsNull Constant
+
+
+  highlight sherwinJsDef cterm=bold ctermfg=Red
+  highlight link jsVariableDef sherwinJsDef
+  highlight link jsClassDef sherwinJsDef
+  highlight link jsFuncName sherwinJsDef
+
+  highlight jsOperator ctermfg=Blue cterm=bold
+
+  highlight jsObjectProp ctermfg=Cyan
+  highlight jsFuncCall cterm=bold
+
+  highlight jsConditional ctermfg=Green cterm=bold
+  highlight jsParensIfElse ctermfg=Green cterm=bold
+endfunction
+call ColorschemeOldBetter()
 
 
 
@@ -208,7 +245,7 @@ if has("gui_running")
   colorscheme base16-twilight
   call g:HiLinks()
 else
-  call ColorschemeTomorrowNight()
+  " call ColorschemeTomorrowNight()
 endif
 
 
