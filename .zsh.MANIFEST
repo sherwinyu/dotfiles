@@ -58,8 +58,7 @@ gt() {
 
 function run_console() {
   if [[ -n $1 ]]; then
-    echo fab fc:$1 load shell
-    fab fc:$1 load shell
+    bin/db $1 remote-shell
   else
     bin/dev shell
   fi

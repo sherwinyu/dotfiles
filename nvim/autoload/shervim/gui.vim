@@ -172,6 +172,7 @@ endfunction
 
 function! ColorschemeOldBetter()
   let python_highlight_all = 1
+  highlight link pythonSpaceError clear
   set background=dark
   colorscheme Tomorrow-Night
 
