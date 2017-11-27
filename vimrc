@@ -13,6 +13,7 @@ set path+=~/dotfiles/vim-lib/plugin_config
 set path+=~/dotfiles/vim-lib/modules
 set suffixesadd+=.vim
 
+
 " For loading colors (Vim searches for a colors/COLORSCHEMENAME.vim file in RTP)
 set rtp+=~/dotfiles/vim-lib
 
@@ -46,6 +47,8 @@ call LoadModule('gui')
 call LoadModule('lightline')
 call LoadModule('lightline_winkle_colorscheme')
 
+let g:python_host_prog='/Users/sherwin/.pyenv/versions/neovim2/bin/python'
+let g:python_host_prog3='/Users/sherwin/.pyenv/versions/neovim3/bin/python'
 
 
 
@@ -216,9 +219,9 @@ set wildignore+=*/node_modules/*
 set formatoptions=croql
 
 " Hide swp files
-set backupdir=~/.vimlocal/backup//
-set directory=~/.vimlocal/swap//
-set undodir=~/.vimlocal/undo//
+set backupdir=~/.vimlocal/backup/
+set directory=~/.vimlocal/swap/
+set undodir=~/.vimlocal/undo/
 
 
 " Automatically check if file has been changed
