@@ -37,7 +37,7 @@ call LoadPluginConfig('goyo')
 " Moving within a file
 Plug 'justinmk/vim-sneak', {'on': '<Plug>Sneak_s'}
 call LoadPluginConfig('sneak')
-Plug 'camelcasemotion'
+Plug 'vim-scripts/camelcasemotion'
 call LoadPluginConfig('camel_case_motion')
 Plug 'AndrewRadev/switch.vim'
 call LoadPluginConfig('switch')
@@ -56,12 +56,12 @@ call LoadPluginConfig('targets')
 
 " Editing
 Plug 'AndrewRadev/sideways.vim'
-Plug 'commentary.vim'
+Plug 'vim-scripts/commentary.vim'
 call LoadPluginConfig('commentary')
 Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-abolish'
-Plug 'surround.vim'
+Plug 'vim-scripts/surround.vim'
 Plug 'jiangmiao/auto-pairs'
 " Fuck this shit
 " Plug 'tpope/vim-unimpaired'
