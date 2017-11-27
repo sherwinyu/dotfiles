@@ -5,8 +5,35 @@ echo dotfile copy over boostrap started
 pushd ~/
 mkdir -p ~/dotfiles_old
 
-mv .vimrc dotfiles_old
-mv .vim dotfiles_old
+
+# Install vim (junegun script)
+BASE=~/dotfiles
+
+# vimrc
+# back up original ~/.vimrc
+# then make ~/.vimrc point to $BASE/vimrc
+mv -v ~/.vimrc ~/.vimrc.old 2> /dev/null
+ln -sf $BASE/vimrc ~/.vimrc
+ln -sf ~/dotfiles/vim-lib ~/.vim
+
+# nvim
+mkdir -p ~/.config/nvim/autoload
+ln -sf $BASE/vimrc ~/.config/nvim/init.vim
+ln -sf $BASE/vim-lib/autoload/plug.vim ~/.config/nvim/autoload/
+
+# vim +PlugInstall +qall
+# End Install vim script
+
+
+
+
+# mv .vimrc dotfiles_old
+# mv .vim dotfiles_old
+# ln -s dotfiles/nvim .config/nvim
+# ln -s dotfiles/.vimrc .vimrc
+# ln -s dotfiles/.vim .vim
+
+
 mv .tmux.conf dotfiles_old
 mv .screenrc dotfiles_old
 mv .bashrc dotfiles_old
@@ -20,28 +47,28 @@ mv .teamocil dotfiles_old
 mv .irbrc dotfiles_old
 mv .agignore dotfiles_old
 
-mv .yadr dotfiles_old
-mv .zprezto dotfiles_old
+# mv .yadr dotfiles_old
+# mv .zprezto dotfiles_old
 
 mkdir .config
-ln -s dotfiles/.tmux.conf .tmux.conf
-ln -s dotfiles/.screenrc .screenrc
-ln -s dotfiles/.bashrc .bashrc
-ln -s dotfiles/.inputrc .inputrc
-ln -s dotfiles/.gitignore .gitignore
-ln -s dotfiles/dotzsh .zsh
-ln -s dotfiles/.zshrc .zshrc
-ln -s dotfiles/.gitconfig .gitconfig
-ln -s dotfiles/.ackrc .ackrc
-ln -s dotfiles/.teamocil .teamocil
-ln -s dotfiles/.irbrc .irbrc
-ln -s dotfiles/.pryrc .pryrc
-ln -s dotfiles/.agignore .agignore
-ln -s dotfiles/.ctags .ctags
-ln -s dotfiles/.tigrc .tigrc
+ln -sf dotfiles/.tmux.conf .tmux.conf
+ln -sf dotfiles/.screenrc .screenrc
+ln -sf dotfiles/.bashrc .bashrc
+ln -sf dotfiles/.inputrc .inputrc
+ln -sf dotfiles/.gitignore .gitignore
+ln -sf dotfiles/dotzsh .zsh
+ln -sf dotfiles/.zshrc .zshrc
+ln -sf dotfiles/.gitconfig .gitconfig
+ln -sf dotfiles/.ackrc .ackrc
+ln -sf dotfiles/.teamocil .teamocil
+ln -sf dotfiles/.irbrc .irbrc
+ln -sf dotfiles/.pryrc .pryrc
+ln -sf dotfiles/.agignore .agignore
+ln -sf dotfiles/.ctags .ctags
+ln -sf dotfiles/.tigrc .tigrc
 
-ln -s dotfiles/.yadr .yadr
-ln -s dotfiles/.zprezto .zprezto
+# ln -s dotfiles/.yadr .yadr
+# ln -s dotfiles/.zprezto .zprezto
 
 cp dotfiles/dircolors.ansi-dark .dircolors
 
