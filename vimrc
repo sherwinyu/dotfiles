@@ -2,41 +2,50 @@ echom 'THIS IS THE NEW VIMRC'
 let mapleader = "\<F14>"
 
 function! LoadFile(filename)
-  execute 'source ~/.config/nvim/sherneovim/' . a:filename
+  " execute 'source ~/.config/nvim/sherneovim/' . a:filename
+  execute 'source ~/dotfiles/vim-lib/' . a:filename
 endfunction
 
-source ~/.config/nvim/plugins.vim
-set path+=~/dotfiles/nvim
-set path+=~/dotfiles/nvim/sherneovim
-set path+=~/dotfiles/nvim/sherneovim/plugin_config
+
+
+call LoadFile('plugins.vim')
+set path+=~/dotfiles/vim-lib/
+set path+=~/dotfiles/vim-lib/plugin_config
+set path+=~/dotfiles/vim-lib/modules
 set suffixesadd+=.vim
+
+" For loading colors (Vim searches for a colors/COLORSCHEMENAME.vim file in RTP)
+set rtp+=~/dotfiles/vim-lib
 
 
 """""""""""""""""""""""""""""""""""""""
 " Modules to load modules load ------------------------------------
+function! LoadModule(module_name)
+  call LoadFile('modules/' . a:module_name . '.vim')
+endfunction
 
-runtime autoload/shervim/file_lifecycle.vim
-runtime autoload/shervim/RelativeNumbers.vim
-runtime autoload/shervim/window_management.vim
-runtime autoload/shervim/session.vim
-runtime autoload/shervim/splitjoin.vim
-runtime autoload/shervim/CleanupRequires.vim
-runtime autoload/shervim/editing.vim
-runtime autoload/shervim/mass-editing.vim
-runtime autoload/shervim/chomp.vim
-runtime autoload/shervim/information.vim
-runtime autoload/shervim/CreatePathsOnSave.vim
-runtime autoload/shervim/navigating.vim
-runtime autoload/shervim/ShowSyntaxGroup.vim
-runtime autoload/shervim/abbreviations.vim
-runtime autoload/shervim/insert_debug.vim
-runtime autoload/shervim/terminal.vim
-runtime autoload/shervim/CloseHiddenBuffers.vim
-runtime autoload/shervim/SortWords.vim
+call LoadModule('file_lifecycle')
+call LoadModule('RelativeNumbers')
+call LoadModule('window_management')
+call LoadModule('session')
+call LoadModule('splitjoin')
+call LoadModule('CleanupRequires')
+call LoadModule('editing')
+call LoadModule('mass-editing')
+call LoadModule('chomp')
+call LoadModule('information')
+call LoadModule('CreatePathsOnSave')
+call LoadModule('navigating')
+call LoadModule('ShowSyntaxGroup')
+call LoadModule('abbreviations')
+call LoadModule('insert_debug')
+call LoadModule('terminal')
+call LoadModule('CloseHiddenBuffers')
+call LoadModule('SortWords')
 
-runtime autoload/shervim/gui.vim
-runtime autoload/shervim/lightline.vim
-runtime autoload/shervim/lightline_winkle_colorscheme.vim
+call LoadModule('gui')
+call LoadModule('lightline')
+call LoadModule('lightline_winkle_colorscheme')
 
 
 
