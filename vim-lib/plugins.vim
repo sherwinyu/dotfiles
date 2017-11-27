@@ -1,4 +1,4 @@
-call plug#begin('~/dotfiles/.vim/plugged')
+call plug#begin('~/dotfiles/vim-lib/plugged')
 
 
 function! LoadPluginConfig(pluginName)
@@ -83,12 +83,14 @@ call LoadPluginConfig('neomake')
 
 
 " Completion
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-jedi'
-Plug 'SirVer/ultisnips'
-call LoadPluginConfig('ultisnips')
-Plug 'honza/vim-snippets'
-call LoadPluginConfig('deoplete')
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'zchee/deoplete-jedi'
+  Plug 'SirVer/ultisnips'
+  call LoadPluginConfig('ultisnips')
+  Plug 'honza/vim-snippets'
+  call LoadPluginConfig('deoplete')
+endif
 
 
 
