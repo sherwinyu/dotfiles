@@ -2396,15 +2396,15 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>186 284 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>332 453 616 174 0 0 1280 777 </string>
+	<string>1453 1749 616 174 481 800 2560 1440 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 364 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>195 317 796 473 0 0 1440 877 </string>
+	<string>259 282 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>185 206 490 377 0 0 1440 877 </string>
+	<string>206 805 1704 1567 -649 800 2560 1577 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1280 800 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -6851,7 +6851,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-27T22:12:22Z</date>
+	<date>2017-10-31T21:17:32Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUSkippedVersion</key>
