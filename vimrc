@@ -1,4 +1,3 @@
-echom 'THIS IS THE NEW VIMRC'
 let mapleader = "\<F14>"
 
 function! LoadFile(filename)

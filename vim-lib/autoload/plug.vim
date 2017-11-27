@@ -1,4 +1,3 @@
-echom 'HELLO SHERWINKLE'
 " vim-plug: Vim plugin manager
 " ============================
 "

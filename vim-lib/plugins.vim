@@ -114,7 +114,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 
 Plug 'kchmck/vim-coffee-script'
 Plug 'heartsentwined/vim-emblem'
-Plug 'jade.vim'
+Plug 'vim-scripts/jade.vim'
 
 Plug 'airblade/vim-gitgutter'
 call LoadPluginConfig('gitgutter')
