@@ -121,14 +121,17 @@ nmap <leader> viw"ty:FZF<cr><c-\><c-n>:call<space>SetRegisterT(GetNameVariation
 " nmap <leader>^ :call<space>SetRegisterT(AltName())<cr>:FZF<cr><c-\><c-n>"tpa<space>
 nmap <leader>^ :exe ':e ' . AltName()<cr>
 
-tmap \d <space>'def<space>\|<space>'class<space>
-tmap \T <space>'test<space>
-tmap \t <space>!test<space>
-tmap \c <space>^coffee<space>
-tmap \j <space>^coffee<space>
-tmap \p <space>^benchling<space>
-tmap \b <space>^benchling<space>
-tmap \a <space>'/api<space>
+if has('nvim')
+
+  tmap \d <space>'def<space>\|<space>'class<space>
+  tmap \T <space>'test<space>
+  tmap \t <space>!test<space>
+  tmap \c <space>^coffee<space>
+  tmap \j <space>^coffee<space>
+  tmap \p <space>^benchling<space>
+  tmap \b <space>^benchling<space>
+  tmap \a <space>'/api<space>
+endif
 
 
 " leader g r   Go to ReactClass
@@ -144,6 +147,3 @@ nmap <leader>gs :GFiles?<CR>
 
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-" let g:fzf_layout = { 'left': '~35%' }
-tmap <c-l> <c-\><c-n>10<c-w>
-
