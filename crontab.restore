@@ -1,0 +1,7 @@
+00 04  * * 0-7 sudo crontab ~/dotfiles/crontab
+00 05  * * 0-7 sudo crontab ~/dotfiles/crontab
+00 06  * * 0-7 sudo crontab ~/dotfiles/crontab
+00 07  * * 0-7 sudo crontab ~/dotfiles/crontab
+00 08  * * 0-7 sudo crontab ~/dotfiles/crontab
+00 09  * * 0-7 sudo crontab ~/dotfiles/crontab
+00 10  * * 0-7 sudo crontab ~/dotfiles/crontab

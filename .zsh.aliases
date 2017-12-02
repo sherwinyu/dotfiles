@@ -124,3 +124,7 @@ alias vimdiff='nvim -d'
 
 # Benchling psql
 alias psqlb='bin/dev psql -h localhost benchling'
+
+# crontab
+alias punt-cron-tab="sudo crontab ~/dotfiles/crontab.restore"
+alias restore-cron-tab="sudo crontab ~/dotfiles/crontab"
