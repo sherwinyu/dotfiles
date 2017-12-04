@@ -121,8 +121,9 @@ nmap <leader> viw"ty:FZF<cr><c-\><c-n>:call<space>SetRegisterT(GetNameVariation
 " nmap <leader>^ :call<space>SetRegisterT(AltName())<cr>:FZF<cr><c-\><c-n>"tpa<space>
 nmap <leader>^ :exe ':e ' . AltName()<cr>
 
-if has('nvim')
+nmap <leader>: :Commands<cr>
 
+if has('nvim')
   tmap \d <space>'def<space>\|<space>'class<space>
   tmap \T <space>'test<space>
   tmap \t <space>!test<space>
