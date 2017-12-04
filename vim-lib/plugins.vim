@@ -78,8 +78,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'kassio/neoterm'
 
 " Linting
-Plug 'benekastah/neomake', {'on': 'Neomake'}
-call LoadPluginConfig('neomake')
+" Plug 'benekastah/neomake', {'on': 'Neomake'}
+" call LoadPluginConfig('neomake')
+
+if has('nvim')
+  Plug 'w0rp/ale'
+  call LoadPluginConfig('ale')
+endif
 
 
 " Completion
