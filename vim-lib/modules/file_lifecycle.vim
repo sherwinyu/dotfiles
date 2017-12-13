@@ -1,7 +1,7 @@
 " Open commonly used files
-map <leader>=ve :e ~/.config/nvim/init.vim<CR>
-map <leader>=vp :e ~/.config/nvim/plugins.vim<CR>
-map <leader>=vr :so ~/.config/nvim/init.vim<CR>
+map <leader>=ve :e ~/dotfiles/vimrc<CR>
+map <leader>=vp :e ~/dotfiles/vim-lib/plugins.vim<CR>
+map <leader>=vr :so ~/dotfiles/vimrc<CR>
 map <leader>=r :so <c-r>%<CR>
 map <leader>=ze :e ~/.zshrc<CR>
 map <leader>=te :e ~/.tmux.conf<CR>
