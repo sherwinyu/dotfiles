@@ -43,6 +43,8 @@ map <f11> :call JumpToLastTab()<cr>
 
 
 " shift left, shift right to change tabs [terminal]
+nnoremap <right> gt
+nnoremap <left> gT
 nnoremap <s-right> gt
 nnoremap <s-left> gT
 
@@ -73,8 +75,8 @@ nnoremap <c-h> 10<c-w><
 nnoremap <c-k> 10<c-w>-
 nnoremap <c-j> 10<c-w>+
 
-nnoremap <left> <c-w>h
-nnoremap <right> <c-w>l
+" nnoremap <left> <c-w>h
+" nnoremap <right> <c-w>l
 nnoremap <up> <c-w>k
 nnoremap <down> <c-w>j
 
@@ -91,8 +93,8 @@ map ] <c-w><c-w>
 
 
 
-map <c-w><tab>  :call MoveToPrevTab()<CR>
-map <c-w>\  :call MoveToNextTab()<CR>
+map <c-w><left>  :call MoveToPrevTab()<CR>
+map <c-w><right>  :call MoveToNextTab()<CR>
 
 function! MoveToPrevTab()
   "there is only one window
