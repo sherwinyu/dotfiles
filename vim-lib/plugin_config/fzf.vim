@@ -124,9 +124,9 @@ nmap <leader>^ :exe ':e ' . AltName()<cr>
 nmap <leader>: :Commands<cr>
 
 if has('nvim')
-  tmap \d <space>'def<space>\|<space>'class<space>
-  tmap \T <space>'test<space>
-  tmap \t <space>!test<space>
+  tmap \d <space>'def\<space><space>\|<space>'class\<space><space>
+  tmap \T <space>^test<space>\|<space>'__tests__/
+  tmap \t <space>!test/<space>!__tests__/
   tmap \c <space>^coffee<space>
   tmap \j <space>^coffee<space>
   tmap \p <space>^benchling<space>
@@ -148,3 +148,17 @@ nmap <leader>gs :GFiles?<CR>
 
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+
+
+
+
+"""""""""""""""""""""" EXPERIMENTAL ZONE """""""""""""""""""
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
+
+command! -bang -nargs=* Sift
+  \ call fzf#vim#grep('sift --git  --line-number '.shellescape(<q-args>), 0, <bang>0)
+
+command! -bang -nargs=* UsedInClassSearch
+  \ call fzf#vim#grep('sift --git  --color --line-number --preceded-within="4:\bclass \w+\(" '.shellescape(<q-args>), 0, <bang>0)
