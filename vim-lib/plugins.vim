@@ -81,6 +81,7 @@ Plug 'kassio/neoterm'
 " Plug 'benekastah/neomake', {'on': 'Neomake'}
 " call LoadPluginConfig('neomake')
 
+Plug 'google/yapf', { 'rtp': 'plugins/vim'}
 if has('nvim')
   Plug 'w0rp/ale'
   call LoadPluginConfig('ale')
