@@ -27,6 +27,7 @@ endfunction
 call LoadModule('file_lifecycle')
 call LoadModule('RelativeNumbers')
 call LoadModule('window_management')
+call LoadModule('Rename')
 call LoadModule('session')
 call LoadModule('splitjoin')
 call LoadModule('CleanupRequires')
