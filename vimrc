@@ -15,6 +15,8 @@ set suffixesadd+=.vim
 
 
 " For loading colors (Vim searches for a colors/COLORSCHEMENAME.vim file in RTP)
+" Also for loading ultisnips (UltiSnips looks for subdirectories with names in
+" g:UltiSnipsSnippetDirectories under the rtp)
 set rtp+=~/dotfiles/vim-lib
 
 
