@@ -37,3 +37,7 @@ noremap <leader>; @s
 noremap <leader>, @c
 vnoremap <leader>; :normal @s<CR>
 vnoremap <leader>, :normal @c<CR>
+
+if has('nvim')
+  set inccommand=split
+endif
