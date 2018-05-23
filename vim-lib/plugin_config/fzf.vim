@@ -27,6 +27,10 @@ endfunction
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 
+" Jump to import
+map <leader>i <leader>*'import !./
+
+
 function! s:snakecase(word)
   let word = substitute(a:word,'::','/','g')
   let word = substitute(word,'\(\u\+\)\(\u\l\)','\1_\2','g')
@@ -133,6 +137,7 @@ if has('nvim')
   tmap \b <space>^benchling<space>
   tmap \a <space>'/api<space>
 endif
+
 
 
 " leader g r   Go to ReactClass
