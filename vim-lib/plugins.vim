@@ -112,6 +112,17 @@ Plug 'groenewege/vim-less'
 " Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'jelera/vim-javascript-syntax'
 
+" Plug 'leafgarland/typescript-vim', {'for': ['typescript']}
+Plug 'mhartington/nvim-typescript'
+Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript']}
+if has('nvim')
+  " Plug 'Shougo/vimproc.vim', {'do' : 'make'}  " needed for tsuquyomi
+  " Plug 'leafgarland/typescript-vim'
+  " Plug 'Quramy/tsuquyomi'
+  " call LoadPluginConfig('tsuquyomi')
+endif
+" Plug 'ianks/vim-tsx'
+
 " Plug 'othree/yajs.vim'
 Plug 'pangloss/vim-javascript'
 " Plug 'gavocanov/vim-js-indent'

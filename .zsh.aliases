@@ -128,3 +128,7 @@ alias psqlb='bin/dev psql -h localhost benchling'
 # crontab
 alias punt-cron-tab="sudo crontab ~/dotfiles/crontab.restore"
 alias restore-cron-tab="sudo crontab ~/dotfiles/crontab"
+
+alias pg="ping google.com"
+
+alias rm='trash'
