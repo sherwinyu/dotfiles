@@ -3,8 +3,8 @@ stty -ixon
 # Set up Benchling dotfiles
 # For docker for mac
 # https://benchling.quip.com/X3DBAaOLseww/Switching-to-Docker-for-Mac
-export AURELIA_ENABLE_DOCKER_FOR_MAC=true
-source ~/.benchling-dotfiles/.zshrc.benchling
+# export AURELIA_ENABLE_DOCKER_FOR_MAC=true
+# source ~/.benchling-dotfiles/.zshrc.benchling
 
 sourceit() {
   [[ -e $!  ]] && source $1
@@ -71,4 +71,8 @@ alias rcd='rc $(select_deploy)'
 
 function genome_grep() {
   curl $1 2>/dev/null | gunzip -c | grep ">" | grep "(plasmid\|chloroplast\|incision element\|mitochondrial\|mitochondrion)"
+}
+
+function convert() {
+  cat $1 | textutil -convert html -stdin -stdout | pandoc --from=html --to=markdown | sed -e 's/\[.*\]{\.Apple-converted-space}//g' > "$1.out"
 }
