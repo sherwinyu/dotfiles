@@ -14,6 +14,7 @@ source ~/dotfiles/.zsh.aliases
 source ~/dotfiles/.zsh.fancy_ctrlz
 source ~/dotfiles/.zsh.navigation
 source ~/dotfiles/.zsh.commandline
+source ~/dotfiles/zsh-config/fzf-git.zsh
 
 if [[ -r ~/dotfiles/.zshrc.local ]]; then
   source ~/dotfiles/.zshrc.local
