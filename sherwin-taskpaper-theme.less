@@ -1,12 +1,14 @@
 // Stored at  one of
 //   ~/Library/Containers/com.hogbaysoftware.TaskPaper3/Data/Library/Application Support/TaskPaper/StyleSheets/
 //   ~/Library/Containers/com.hogbaysoftware.TaskPaper3/Data/Library/Application Support/TaskPaper/StyleSheets/
+//   /Users/sherwin/Library/Containers/com.hogbaysoftware.TaskPaper3/Data/Library/Application Support/TaskPaper/StyleSheets
 // NOTE -- it appears SYMLINKING the file (`ln -s ~/dotfiles/sherwin-taskpaper-theme.less . ` from
 // the StyleSheets directory does NOT work -- it can't be a symlink!)
 
 // Font settings (you can change these to your preference)
 // --------------------------------------------------------------------------
-@font-family: 'SF Text Light';
+@font-family: 'Source Sans Pro';
+/* @font-family: 'SF Text Light'; */
 @line-height-multiple: 1.3;
 // @font-family: 'SF Mono';
 // @line-height-multiple: 1.4;
@@ -20,7 +22,6 @@
 // --------------------------------------------------------------------------
 @background-color: #f7f7f7;
 @tint-color: #8c19ff;
-@heading-color: #2600cf;
 @note-fg-color: #666;
 @note-bg-color: #fffab9;
 @link-color: blue;
@@ -36,46 +37,25 @@
 @font-family-header: @font-family;
 @font-family-note: @font-family;
 @font-size: @user-font-size;
-@font-size-header: @user-font-size * 20/18;
+@font-size-header: @user-font-size * 22/18;
 @note-font-size: @user-font-size;
 @tag-font-size: @user-font-size * 16/18;
-@padding: @font-size * @line-height-multiple / 8;
-// @selection-color: mix(@tint-color, @background-color, 30%); // default
-// @invisibles-color: mix(@tint-color, @background-color, 70%); // default
+@padding: @font-size * @line-height-multiple / 12;
 
 // Styles
 // --------------------------------------------------------------------------
 
-// Typewriter-mode
-editor {
-  typewriter-scroll-percent: 50%;
-  bottom-padding-percent: 50%;
-}
 
 editor {
-  // item-indent: @font-size;
+  /* item-indent: @font-size*2; */
   line-height-multiple: @line-height-multiple;
   guide-line-color: mix(@mute-color, @background-color, 10%);
   editor-wrap-to-column: 105;
   item-wrap-to-column: 90;
+  editor-wrap-to-column: 80;
+  item-wrap-to-column: 60;
 }
 
-item[data-type=project] {
-  color: @heading-color;
-  font-family: @font-family-header;
-  font-size: @font-size-header;
-  font-weight: normal;
-}
-
-item {
-  paragraph-spacing-before: @padding;
-  paragraph-spacing-after: @padding;
-}
-
-item[data-type=project] {
-  paragraph-spacing-before: @padding * 2;
-  paragraph-spacing-after: @padding * 2;
-}
 
 item[data-type='note'] {
   // paragraph-spacing-after: @font-size;
@@ -109,26 +89,78 @@ run[tag],
 item[data-type='note'] > run[tag] {
   background-color: @tag-bg-color;
   color: @tag-fg-color;
-  font-size: @tag-font-size;
+  font-size: @tag-font-size * 20/16;
   text-decoration: none;
 }
 /////-------------- Sherwin's contributions below
 
-item[data-today] {
-  font-weight: bold;
-}
 
+
+@color-text: #555555;
+@color-text-muted: mix(#555555, @background-color, 50%);
+@color-heading: mix(#2600cf, #444444, 50%);
 @color-p1: rgb(255, 0, 0);
 @color-p2: rgb(224, 62, 62);
 @color-p3: rgb(204, 108, 108);
 @color-p4: rgb(183, 134, 134);
-@color-today: rgb(226, 154, 9);
+@color-today: orange;
 @color-chore: rgb(196, 178, 88);
+@color-break: pink;
+@color-internet: lightblue;
+@color-due: mix(@color-today, @background-color, 50%);
+@color-errand: @color-chore;
+@color-deep: green;
+
 @color-p1-muted: mix(@color-p1, @background-color, 50%);
 @color-p2-muted: mix(@color-p2, @background-color, 50%);
 @color-p3-muted: mix(@color-p3, @background-color, 50%);
 @color-p4-muted: mix(@color-p4, @background-color, 50%);
+@color-today-muted: mix(@color-today, @background-color, 50%);
+@color-chore-muted: mix(@color-chore, @background-color, 50%);
+@color-break-muted: mix(@color-break, @background-color, 50%);
+@color-internet-muted: mix(@color-internet, @background-color, 50%);
+@color-due-muted: mix(@color-due, @background-color, 50%);
+@color-errand-muted: mix(@color-errand, @background-color, 50%);
+@color-deep-muted: mix(green, @background-color, 50%);
 
+@color-selection: mix(@background-color, @color-text, 85%);
+
+// Typewriter-mode
+editor {
+  top-padding-percent: 50%;
+  left-padding-percent: 20%;
+  typewriter-scroll-percent: 30%;
+  bottom-padding-percent: 30%;
+  selection-background-color: @color-selection;
+  invisibles-color: @color-text-muted;
+}
+
+// HEADERS
+item[data-type=project] {
+  font-family: @font-family-header;
+  font-weight: 500;
+  paragraph-spacing-before: @padding * 1.5;
+  paragraph-spacing-after: @padding * 1.5;
+  color: mix(@color-heading, @background-color, 65%);
+  font-size: @font-size-header * 0.85;
+}
+
+// Primary Headers
+item[data-type=project].item[depth=1] {
+  color: @color-heading;
+  font-size: @font-size-header;
+}
+
+// Items themselves
+item {
+  paragraph-spacing-before: @padding;
+  paragraph-spacing-after: @padding;
+  color: @color-text;
+}
+item[data-today] {
+  font-weight: bold;
+  color: #777777; // this color will get overridden by the p1-p4 colors
+}
 item[data-p1] {
   color: @color-p1;
 }
@@ -143,6 +175,7 @@ item[data-p4] {
 }
 
 
+// Tags
 run[tag=data-p1] {
   color: @color-p1-muted;
 }
@@ -157,19 +190,84 @@ run[tag=data-p4] {
 }
 run[tag=data-today] {
   color: @color-today;
-  font-weight: bold;
+  font-weight: 900;
+  font-size: @tag-font-size * 1.2;
+  text-transform: capitalize;
+}
+run[tag=data-due] {
+  color: @color-due;
 }
 run[tag=data-chore] {
   color: @color-chore;
+  font-weight: bold;
+}
+run[tag=data-errand] {
+  color: @color-chore;
+  font-weight: bold;
+}
+run[tag=data-break] {
+  color: @color-break;
+  font-weight: bold;
+}
+run[tag=data-internet] {
+  color: @color-internet;
+  font-weight: bold;
+}
+run[tag=data-deep] {
+  color: @color-deep;
+  font-weight: bold;
+}
+run[tag=data-done] {
+  color: @mute-color;
 }
 
+// Mute the colors of tags if they're in a DONE item
 item[data-done] {
-   > run[content] {
+  > run[content] {
     color: @mute-color;
     font-style: italic;
-    font-weight: light;
+    font-weight: extra-light;
 
     text-strikethrough-color: @mute-color;
   }
+  > run[tag] {
+    font-weight: extra-light;
+    font-style: italic;
+    color: @mute-color;
+    text-strikethrough-color: @mute-color;
+    text-decoration: strikethrough;
+  }
+  > run[tag=data-p1] {
+    color: @color-p1-muted;
+  }
+  > run[tag=data-p2] {
+    color: @color-p2-muted;
+  }
+  > run[tag=data-p3] {
+    color: @color-p3-muted;
+  }
+  > run[tag=data-p4] {
+    color: @color-p4-muted;
+  }
+  > run[tag=data-due] {
+    color: @color-due-muted;
+  }
+  > run[tag=data-today] {
+    color: @color-today-muted;
+  }
+  > run[tag=data-chore] {
+    color: @color-chore-muted;
+  }
+  > run[tag=data-errand] {
+    color: @color-chore-muted;
+  }
+  > run[tag=data-break] {
+    color: @color-break-muted;
+  }
+  > run[tag=data-internet] {
+    color: @color-internet-muted;
+  }
+  > run[tag=data-deep] {
+    color: @color-deep-muted;
+  }
 }
-
