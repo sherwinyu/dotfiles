@@ -11,6 +11,7 @@ alias ga='git add'
 alias gap='git add -p'
 alias gc='git commit'
 alias gcm='git commit -m'
+alias gcfu='git commit --fixup'
 alias gcam='git commit -am'
 alias gcAm='git commit --amend'
 alias gcAmm='git commit --amend -m'
@@ -33,6 +34,7 @@ alias grs="git reset"
 alias grsH="git reset --hard"
 alias grb="git rebase"
 alias grbi="git rebase -i"
+alias grbiq='git rebase-i --autosquash'
 alias grbd='git rebase dev'
 alias grbid='git rebase -i dev'
 alias gl='git log --pretty=format:"[%h] %an %cr: %s"'
@@ -132,3 +134,6 @@ alias restore-cron-tab="sudo crontab ~/dotfiles/crontab"
 alias pg="ping google.com"
 
 alias rm='trash'
+
+alias yf='yarn flow'
+alias yes='yarn eslint src'
