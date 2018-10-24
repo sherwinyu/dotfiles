@@ -2360,7 +2360,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Dropbox</string>
+	<string>~/dotfiles/app-prefs/iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -2400,11 +2400,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>75 101 918 512 0 0 1280 777 </string>
+	<string>269 113 918 512 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 341 650 352 0 0 1280 777 </string>
+	<string>630 225 650 352 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 1280 800 0 0 1280 777 </string>
+	<string>3 0 1274 777 0 0 1280 777 </string>
 	<key>NeverWarnAboutShortLivedSessions_A2657B2A-1D50-4F63-883E-C0994125CDDD</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_B9EC4299-992D-4367-80F5-B7EC47DF2CF7</key>
@@ -6688,11 +6688,11 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>E0738B2B-6557-4357-9904-6763F7BEDFC9</string>
+	<string>FBFA7A5C-57C0-4EB7-9057-6A9AF89CDB8D</string>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>531211173.623649</real>
+	<real>557943647.70084596</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -6743,7 +6743,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>~/dotfiles/app-prefs/iterm2</string>
+	<string>/Users/sherwin/dotfiles/app-prefs/iterm2</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -6759,7 +6759,7 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml?shard=56</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=17</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SUSendProfileInfo</key>
@@ -6771,6 +6771,8 @@
 	<key>Show Toolbelt</key>
 	<false/>
 	<key>ShowBookmarkName</key>
+	<false/>
+	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
