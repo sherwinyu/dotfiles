@@ -2190,7 +2190,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>A2657B2A-1D50-4F63-883E-C0994125CDDD</string>
+	<string>B9EC4299-992D-4367-80F5-B7EC47DF2CF7</string>
 	<key>DimBackgroundWindows</key>
 	<true/>
 	<key>DimInactiveSplitPanes</key>
@@ -2334,7 +2334,7 @@
 	<key>HotKeyBookmark</key>
 	<string>40C969CE-2954-48D9-BA79-79A61754FF19</string>
 	<key>HotKeyTogglesWindow</key>
-	<true/>
+	<false/>
 	<key>Hotkey</key>
 	<true/>
 	<key>HotkeyAutoHides</key>
@@ -2360,7 +2360,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/app-prefs/iterm2</string>
+	<string>~/Dropbox</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -2400,11 +2400,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 113 918 512 0 0 1280 800 </string>
+	<string>75 70 796 473 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>630 225 650 352 0 0 1280 777 </string>
+	<string>3 22 1274 755 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>3 0 1274 777 0 0 1280 777 </string>
+	<string>0 400 490 377 0 0 1280 777 </string>
 	<key>NeverWarnAboutShortLivedSessions_A2657B2A-1D50-4F63-883E-C0994125CDDD</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_B9EC4299-992D-4367-80F5-B7EC47DF2CF7</key>
@@ -6688,11 +6688,11 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>FBFA7A5C-57C0-4EB7-9057-6A9AF89CDB8D</string>
+	<string>E0738B2B-6557-4357-9904-6763F7BEDFC9</string>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>557943647.70084596</real>
+	<real>531211173.623649</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -6743,7 +6743,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/sherwin/dotfiles/app-prefs/iterm2</string>
+	<string>~/dotfiles/app-prefs/iterm2</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -6759,7 +6759,7 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml?shard=17</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=56</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SUSendProfileInfo</key>
@@ -6771,8 +6771,6 @@
 	<key>Show Toolbelt</key>
 	<false/>
 	<key>ShowBookmarkName</key>
-	<false/>
-	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
