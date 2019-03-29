@@ -1,15 +1,16 @@
 # weekdays
-00 22  * * 0-4 Say 'Prepare to go to bed!'
-30 22  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed!'
-35 22  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed!'
-40 22  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed!'
-45 22  * * 0-4 /sbin/ifconfig en0 down
-50 22  * * 0-4 /sbin/ifconfig en0 down
-55 22  * * 0-4 /sbin/ifconfig en0 down
-*/4 23  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed'
-*/3 0  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
-*/2 1  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
+30 21  * * 0-4 Say 'Prepare to go to bed!'
+44 21  * * 0-4 Say '2 minutes left'
+46 21  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed!'
+*/3 22  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed'
+1 22  * * 0-4 /sbin/ifconfig en0 down; say 'Fifteen minutes remaining'
+14 22  * * 0-4 /sbin/ifconfig en0 down; say 'One minute remaining'
+*/2 23  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed'
+*/2 0  * * 0-4 /sbin/ifconfig en0 down; say 'Go to bed'
+*/1 0  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
+*/1 1  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
 */1 2  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
+*/1 3  * * 1-5 /sbin/ifconfig en0 down; say 'Go to bed'
 
 
 # weekends
