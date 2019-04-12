@@ -77,3 +77,8 @@ function genome_grep() {
 function convert() {
   cat $1 | textutil -convert html -stdin -stdout | pandoc --from=html --to=markdown | sed -e 's/\[.*\]{\.Apple-converted-space}//g' > "$1.out"
 }
+
+function copyPrettyGitCommitInfoHash() {
+  git show --pretty=format:"[%h] %s" $1 | head -n 1 | tee >(tr '\n' ' '| pbcopy)
+}
+

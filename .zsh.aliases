@@ -49,6 +49,10 @@ alias gcod='gco dev'
 alias -g BRANCH='$(git branch | fzf-tmux -d 10)'
 alias gbcc="git branch G \* | cut -d ' ' -f2 | tee >(pbcopy)" # git copy branch
 alias reflog='git reflog --pretty=raw | tig --pretty=raw'
+alias gsh="git show"
+alias gshh=copyPrettyGitCommitInfoHash
+
+
 
 alias gsxnvim="gs --porcelain | cut -d ' ' -f 3 X nvim "
 
