@@ -40,9 +40,9 @@ snippet r?! "React Ternary"
 }
 endsnippet
 
-snippet r&&! "React and-block"
+snippet r&& "React and-block"
 {${1:conditional} && (
-  ${2:<component>}$0
+  <${2:component}>$0
 )}
 endsnippet
 
@@ -165,37 +165,43 @@ endsnippet
 
 
 
-snippet reactClass "React Class snippet"
+snippet reactConnectedComponent "React Connected Component Redux"
+// @flow
+import {connect} from 'react-redux';
+import * as React from 'react';
 import classNames from 'classnames';
-import React from 'react';
-import ReactDOM from 'react-dom';
 
-const WorkspaceItemTab = React.createClass({
-  propTypes: {
+import type {ReduxState} from '../store';
+import type {Dispatch} from '../actions/index';
 
-  },
-  getInitialState() {
-
-  },
+type Props = {
+  $2: $3,
+}
+class _$1 extends React.Component<Props> {
   render() {
+    const {$2} = this.props;
+    return <div>$1</div>
+
   }
-});
+};
+
+const mapStateToProps = (state: ReduxState) => {
+  return {
+  };
+};
+
+const mapDispatchToProps = (dispatch: Dispatch, ownProps) => {
+  return {
+  };
+};
+
+const $1 = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(_$1);
+export default $1;
 endsnippet
 
-
-
-snippet pstr "React.PropTypes.string"
-React.PropTypes.string
-endsnippet
-
-snippet pnum "React.PropTypes.number"
-React.PropTypes.number
-endsnippet
-
-snippet pbool "React.PropTypes.bool"
-React.PropTypes.bool
-endsnippet
-
-snippet pfunc "React.PropTypes.func"
-React.PropTypes.func
+snippet connect< "Connect<Props, OwnProps>"
+connect<Props, OwnProps, _, _, _, _>${3:($1)($2)}
 endsnippet

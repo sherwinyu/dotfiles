@@ -80,8 +80,6 @@ nnoremap <leader><f12> :!ctags -R coffee benchling<CR>
 
 
 " Set up gf for coffee requires
-set path+=~/work/aurelia/coffee
-set path+=~/aurelia/coffee
-set path+=~/aurelia/
+set path+=~/projects/note-app/src
 set suffixesadd+=.coffee,.js
 
