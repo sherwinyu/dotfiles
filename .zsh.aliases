@@ -137,7 +137,9 @@ alias restore-cron-tab="sudo crontab ~/dotfiles/crontab"
 
 alias pg="ping google.com"
 
-alias rm='trash'
+if test -f `which trash`; then
+    alias rm='trash'
+fi 
 
 alias yf='yarn flow'
 alias yes='yarn eslint src'
