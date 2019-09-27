@@ -7,8 +7,12 @@ stty -ixon
 # source ~/.benchling-dotfiles/.zshrc.benchling
 
 sourceit() {
-  [[ -e $!  ]] && source $1
+  [[ -e $1  ]] && source $1
 }
+# Asana specific overides
+sourceit ~/.bash_profile
+sourceit ~/dotfiles/zsh-asana.zsh
+
 source ~/dotfiles/.zsh.variables
 source ~/dotfiles/.zsh.aliases
 source ~/dotfiles/.zsh.fancy_ctrlz
