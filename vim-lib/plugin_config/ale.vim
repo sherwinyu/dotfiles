@@ -1,6 +1,8 @@
 let g:ale_fixers = {
 \ 'javascript': ['prettier'],
+\ 'typescript': ['prettier'],
 \ }
+let g:ale_linters_ignore = {'typescript': ['tslint']}
 " \ 'python': ['autopep8'],
 
 let g:ale_fix_on_save = 1

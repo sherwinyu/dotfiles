@@ -83,20 +83,21 @@ Plug 'kassio/neoterm'
 
 Plug 'google/yapf', { 'rtp': 'plugins/vim'}
 if has('nvim')
-  Plug 'w0rp/ale'
-  call LoadPluginConfig('ale')
+  " Plug 'w0rp/ale'
+  " call LoadPluginConfig('ale')
 endif
 
 
 " Completion
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim'
+  " Plug 'Shougo/deoplete.nvim'
   Plug 'zchee/deoplete-jedi'
   Plug 'SirVer/ultisnips'
   call LoadPluginConfig('ultisnips')
   Plug 'honza/vim-snippets'
-  call LoadPluginConfig('deoplete')
+  " call LoadPluginConfig('deoplete')
 endif
+
 
 
 
@@ -112,8 +113,15 @@ Plug 'groenewege/vim-less'
 " Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'jelera/vim-javascript-syntax'
 
-" Plug 'leafgarland/typescript-vim', {'for': ['typescript']}
-Plug 'mhartington/nvim-typescript'
+
+"Typescript
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+if has('NEVER')
+  Plug 'mhartington/nvim-typescript', {'for': ['typescript'], 'do': './install.sh' }
+  call LoadPluginConfig('nvim-typescript')
+endif
+
 Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript']}
 if has('nvim')
   " Plug 'Shougo/vimproc.vim', {'do' : 'make'}  " needed for tsuquyomi
@@ -131,9 +139,9 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 " Plug 'jelera/vim-javascript-syntax'
 
 
-Plug 'kchmck/vim-coffee-script'
-Plug 'heartsentwined/vim-emblem'
-Plug 'vim-scripts/jade.vim'
+" Plug 'kchmck/vim-coffee-script'
+" Plug 'heartsentwined/vim-emblem'
+" Plug 'vim-scripts/jade.vim'
 
 Plug 'airblade/vim-gitgutter'
 call LoadPluginConfig('gitgutter')
