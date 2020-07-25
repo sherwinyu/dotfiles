@@ -1,5 +1,7 @@
 {
+  "filepath": "THIS SHOULD be at ~/.config/nvim/coc-settings.json -> ~/dotfiles/coc-settings.json",
   "tsserver.enableJavascript": false,
+  "tsserver.enable": false,
   "flow": {
     "command": "flow",
     "args": ["lsp"],
@@ -8,5 +10,6 @@
     "requireRootPattern": true,
     "settings": {},
     "rootPatterns": [".flowconfig"]
-  }
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "json", "js", "javascript"]
 }
