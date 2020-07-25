@@ -11,6 +11,7 @@ call LoadFile('plugins.vim')
 set path+=~/dotfiles/vim-lib/
 set path+=~/dotfiles/vim-lib/plugin_config
 set path+=~/dotfiles/vim-lib/modules
+set path+=asana2/
 set suffixesadd+=.vim
 
 

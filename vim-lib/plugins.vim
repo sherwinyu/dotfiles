@@ -14,7 +14,6 @@ endfunction
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call LoadPluginConfig('fzf')
-" Plug 'cocopon/iceberg.vim'
 " Plug 'kristijanhusak/vim-hybrid-material'
 " Plug 'kh3phr3n/python-syntax'
 Plug 'hdima/python-syntax'
@@ -116,13 +115,16 @@ Plug 'groenewege/vim-less'
 
 "Typescript
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call LoadPluginConfig('coc')
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 if has('NEVER')
   Plug 'mhartington/nvim-typescript', {'for': ['typescript'], 'do': './install.sh' }
   call LoadPluginConfig('nvim-typescript')
 endif
 
-Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript']}
+" Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript']}
 if has('nvim')
   " Plug 'Shougo/vimproc.vim', {'do' : 'make'}  " needed for tsuquyomi
   " Plug 'leafgarland/typescript-vim'
